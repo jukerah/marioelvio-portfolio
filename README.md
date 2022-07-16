@@ -1,6 +1,6 @@
 # Mario Elvio Portfolio
 
-<img src="src/assets/preview/boltz-carregadores.jpg"/>
+<img src="preview.jpg"/>
 
 <br>
 
@@ -18,7 +18,7 @@ Sumário
 <h2 id="about">Project Description</h2>
 <br />
 
-> coming soon.
+> This project is a personal site to talk about myself and publish the projects I developed or worked on. The technologies used for the development of this site were chosen according to the project's need for code reuse, easy maintenance, readability and the entire design was thought for mobile first.
 
 <br />
 
@@ -29,17 +29,24 @@ Sumário
 
 ### Technologies used in development:
 
+* <strong>Figma</strong> - Editor for creating the interface design.
+* <strong>PhotoShop</strong> - Software used for image editing.
 * <strong>HTML5</strong> - Markup language.
-* <strong>React</strong> - Library for front-end development.
+* <strong>React.js</strong> - Library for front-end development.
 * <strong>TypeScript</strong> - Programming language used in development.
 * <strong>styled-components</strong> - React library used for styling.
+* <strong>Node.js</strong> - Server-side development.
+* <strong>Mysql</strong> - Database.
 
 <hr/>
 
 <h2 id="demo-project">Project Deployment</h2>
 
-<a align="left" href="#">coming soon
-</a>
+### Interface design with Figma:
+<a align="left" href="https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1">https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1</a>
+
+### Deploy:
+<a align="left" href="#">coming soon</a>
 
 <hr/>
 
@@ -52,7 +59,7 @@ Sumário
 * [X] Requirements gathering.
 * [X] Interface design.
 * [ ] Svgs adjustments.
-<br />Front end development:
+#### Front-end:
 * [ ] Project structure (folders, color palette, font and routes).
 * [ ] Menu - mobile
 * [ ] Menu - desktop
@@ -100,17 +107,34 @@ Sumário
 * [ ] Technologies page - mobile
 * [ ] Technologies page - desktop
 
+#### Back-end:
+> coming soon.
+
+#### Database:
+* [ ] Database Modeling
+* [ ] Database creation
+
 <hr/>
 
 <h2 id="pre-req">Prerequisites and project installation</h2>
 
-### Project Installation:
-- `npm install`
-### Project Execution:
-- `npm start`
+### Public (Front-end):
+#### Installation:
+#### `npm install`
+#### Execution:
+#### `npm start`
 
-### Project Build:
-- `npm run build`
+#### Build:
+#### `npm run build`
+
+
+### Server (Back-end):
+
+> coming soon.
+
+### Database:
+
+> coming soon.
 
 <hr/>
 
