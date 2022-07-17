@@ -58,7 +58,7 @@ Summary
 
 * [X] Requirements gathering.
 * [X] Interface design.
-* [ ] Svgs adjustments.
+* [X] Svgs adjustments.
 #### Front-end:
 * [ ] Project structure (folders, color palette, font and routes).
 * [ ] Menu - mobile
