@@ -1,22 +1,28 @@
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import * as C from './styles';
+
+import { SwitchMode } from '../SwitchMode';
 
 import { Context } from '../../contexts/Contexts';
 
 export const Header = () => {
     const { theme, dispatch } = useContext(Context);
+    
+    useEffect(() => {        
+        
+    }, []);
 
     const handleClickMenu = () => {
         if (theme.isMenuOpen.status) {
             dispatch({
-                type: 'CHANGE_STATUS',
+                type: 'CHANGE_MENU',
                 payload: {
                     status: false
                 }
             });
         } else {
             dispatch({
-                type: 'CHANGE_STATUS',
+                type: 'CHANGE_MENU',
                 payload: {
                     status: true
                 }
@@ -29,7 +35,9 @@ export const Header = () => {
             <C.Container>
                 <p>menu mobile</p>
                 <p>logo</p>
-                <p>switch button</p>
+
+                <SwitchMode />                 
+                
                 <nav>
                     <ul>
                         <li>

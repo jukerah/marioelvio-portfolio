@@ -10,7 +10,7 @@ export const menuInitialState: MenuType = {
 
 export const menuReducer = (state: MenuType, action: reducerActionType) => {
     switch (action.type) {
-        case 'CHANGE_STATUS':
+        case 'CHANGE_MENU':
             return {...state, status: action.payload.status};
             break;
     }

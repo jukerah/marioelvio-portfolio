@@ -5,6 +5,19 @@ const GlobalStyle = createGlobalStyle`
         --de-york: #6BC38B;
         --green-pea: #205734;
         --skeptic: #C2E3CE;
+        --white-ice: #F0FCF5;
+        --scorpion: #595959;
+        --limed-spruce: #374047;
+        --shark: #2a2f34;
+        --shark-dark: #1E2326;
+        --black: #000000;
+        --white: #FFFFFF;
+        --alabaster: #FCFCFC;
+        --alto: #F0F2F5;        
+        --dodger-blue: #4d74ff;
+        --silver-tree: #68b083;
+        --vivid-tangerine: #Ff8989;
+        --alizarin-crimson: #EB2121;
     }
 
     * {
@@ -19,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
 
         font-family: 'Roboto', Helvetica, Sans-Serif;
     }
+
+    
 `;
  
 export default GlobalStyle;

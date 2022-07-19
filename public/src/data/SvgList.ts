@@ -102,6 +102,7 @@ import darkModeLight from '../assets/system/icon/moon-light.svg';
 import darkModeDark from '../assets/system/icon/moon-dark.svg';
 import lightModeLight from '../assets/system/icon/sun-light.svg';
 import lightModeDark from '../assets/system/icon/sun-dark.svg';
+import backgroundSwitch from '../assets/system/background/switch-mode.svg';
 
 import socialLinkedinPrimary from '../assets/social/linkedin-primary.svg';
 import socialLinkedinLight from '../assets/social/linkedin-light.svg';
@@ -135,6 +136,9 @@ export const svgs:any = {
         src: avatar,
         altPt: 'Mario Elvio utilizando o notebook.',
         altEn: 'Mario Elvio using the notebook.'
+    },
+    background : {
+        switch: backgroundSwitch
     },
     systemIcon: {
         id: {
