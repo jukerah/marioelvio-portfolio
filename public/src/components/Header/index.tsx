@@ -1,17 +1,12 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import * as C from './styles';
+import { Context } from '../../contexts/Contexts';
 
 import { SwitchMode } from '../SwitchMode';
-
-import { Context } from '../../contexts/Contexts';
 
 export const Header = () => {
     const { theme, dispatch } = useContext(Context);
     
-    useEffect(() => {        
-        
-    }, []);
-
     const handleClickMenu = () => {
         if (theme.isMenuOpen.status) {
             dispatch({
@@ -31,10 +26,19 @@ export const Header = () => {
     }
 
     return (
-        <C.Header>
-            <C.Container>
-                <p>menu mobile</p>
-                <p>logo</p>
+        <C.Header mode={theme.mode.status}>
+            <C.Container mode={theme.mode.status}>
+                <C.MenuMobile
+                    mode={theme.mode.status}
+                    isMenuOpen={theme.isMenuOpen.status}
+                    onClick={handleClickMenu}
+                >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </C.MenuMobile>
+
+                <p>Logo</p>
 
                 <SwitchMode />                 
                 

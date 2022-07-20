@@ -1,26 +1,24 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../contexts/Contexts';
 
 export const SwitchMode = () => {
     const { theme, dispatch } = useContext(Context);
-    let localThemeMode:string | null = localStorage.getItem('themeMode');
-
+    const localThemeMode:string | null = localStorage.getItem('themeMode');
+    
     useEffect(() => {        
-        if(localThemeMode === null) {
-            localStorage.setItem('themeMode', 'dark');
-        } else {
+        if(theme.mode.status !== null) {
             dispatch({
                 type: 'CHANGE_MODE',
                 payload: {
-                    status: localThemeMode
+                    status: theme.mode.status
                 }
             });
         }
-    }, []);
+    }, [theme.mode.status, dispatch]);
 
-    const handleClickSwitch = (event:any) => {
+    const handleClickSwitch = () => {
         switch(theme.mode.status) {
             case 'dark':
                 localStorage.setItem('themeMode','light');
@@ -39,7 +37,7 @@ export const SwitchMode = () => {
     }
 
     return (
-        <C.ContainerSwitchTheme>
+        <C.ContainerSwitchTheme mode={theme.mode.status}>
             <p>Light</p>
             <label 
                 className="switch"

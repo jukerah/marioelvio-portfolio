@@ -5,14 +5,12 @@ export type MenuType = {
 }
 
 export const menuInitialState: MenuType = {
-    status: true,
+    status: false
 }
 
 export const menuReducer = (state: MenuType, action: reducerActionType) => {
-    switch (action.type) {
-        case 'CHANGE_MENU':
-            return {...state, status: action.payload.status};
-            break;
+    if (action.type === 'CHANGE_MENU') {
+        return {...state, status: action.payload.status};
     }
 
     return state;

@@ -29,8 +29,7 @@ const GlobalStyle = createGlobalStyle`
     
     body {
         width: 100%;
-
-        font-family: 'Roboto', Helvetica, Sans-Serif;
+        font-family: 'Exo 2', Helvetica, Sans-Serif;
     }
 
     

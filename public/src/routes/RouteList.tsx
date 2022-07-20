@@ -8,7 +8,7 @@ export const RouteList = () => {
         { path: '/home', element: <Main /> },
         { path: '/about', element: <Main /> },
         { path: '/portfolio', element: <Main /> },
-        { path: '/contato', element: <Main /> },
+        { path: '/contact', element: <Main /> },
         { path: '*', element: <NotFound /> }
     ]);
 }

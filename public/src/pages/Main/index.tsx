@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import * as C from './styles';
 import { HomePage } from '../../pages/Home';
 import { AboutPage } from '../../pages/About';
