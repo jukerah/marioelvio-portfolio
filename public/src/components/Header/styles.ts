@@ -80,3 +80,8 @@ export const MenuMobile = styled.div<Props>`
         top: ${(props) => props.isMenuOpen ? '-10px' : 0};
     }
 `;
+
+export const Logo = styled.img<Props>`
+    width: 160px;
+    @media (min-width: 768px) { width: 200px; }
+`;

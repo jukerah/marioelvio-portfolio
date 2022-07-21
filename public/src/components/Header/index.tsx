@@ -2,7 +2,9 @@ import { useContext } from 'react';
 import * as C from './styles';
 import { Context } from '../../contexts/Contexts';
 
+import { svgs } from '../../data/SvgList';
 import { SwitchMode } from '../SwitchMode';
+import { LoginLogoutButton } from '../LoginLogoutButton';
 
 export const Header = () => {
     const { theme, dispatch } = useContext(Context);
@@ -38,7 +40,7 @@ export const Header = () => {
                     <div></div>
                 </C.MenuMobile>
 
-                <p>Logo</p>
+                <C.Logo src={svgs.logo.marioElvio.src} alt={svgs.logo.marioElvio.altPt} />
 
                 <SwitchMode />                 
                 
@@ -58,7 +60,9 @@ export const Header = () => {
                         </li>
                     </ul>
                 </nav>
-                <p>login</p>
+                
+                <LoginLogoutButton />
+                
             </C.Container>
         </C.Header>
     );

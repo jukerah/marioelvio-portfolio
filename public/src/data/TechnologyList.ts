@@ -59,7 +59,7 @@ import gitPrimary from '../assets/technology/git.svg';
 import gitLight from '../assets/technology/git-light.svg';
 import gitDark from '../assets/technology/git-dark.svg';
 
-export const technologies:any = [
+export const technologies = [
     {
         id: 1,
         name: 'HTML5',

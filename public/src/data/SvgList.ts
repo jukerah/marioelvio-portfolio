@@ -119,7 +119,7 @@ import socialWhatsappDark from '../assets/social/whatsapp-dark.svg';
 
 import { technologies } from './TechnologyList';
 
-export const svgs:any = {
+export const svgs = {
     logo: {
         marioElvio: {
             src: marioElvioLogo,

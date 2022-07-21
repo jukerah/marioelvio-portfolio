@@ -16,6 +16,8 @@ export const ContainerSwitchTheme = styled.div<ModeProps>`
         font-size: 18px;
         text-transform: uppercase;
         font-weight: bold;
+        
+        transition: all ease-in .5s;
     }
     
     .switch {
