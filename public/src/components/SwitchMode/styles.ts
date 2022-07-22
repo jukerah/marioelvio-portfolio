@@ -53,7 +53,10 @@ export const ContainerSwitchTheme = styled.div<ModeProps>`
 
     input:checked + .slider:before { transform: translateX(0); }
 
-    .slider.round { border-radius: 32px; }
+    .slider.round {
+        border-radius: 32px;
+        left: 0;
+    }
 
     .slider.round:before { border-radius: 50%; }
 

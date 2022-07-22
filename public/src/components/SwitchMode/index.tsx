@@ -6,7 +6,6 @@ import { Context } from '../../contexts/Contexts';
 export const SwitchMode = () => {
     const { theme, dispatch } = useContext(Context);
     const localThemeMode:string | null = localStorage.getItem('themeMode');
-    
     useEffect(() => {        
         if(theme.mode.status !== null) {
             dispatch({
@@ -37,7 +36,9 @@ export const SwitchMode = () => {
     }
 
     return (
-        <C.ContainerSwitchTheme mode={theme.mode.status}>
+        <C.ContainerSwitchTheme
+            mode={theme.mode.status}
+        >
             <p>Light</p>
             <label 
                 className="switch"

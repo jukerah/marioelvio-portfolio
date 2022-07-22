@@ -3,21 +3,26 @@ import styled from "styled-components";
 interface ModeProps {
     mode: string | null;
 }
+export const LoginLogoutButton = styled.div<ModeProps>`
+    a {
+        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
-export const Button = styled.button<ModeProps>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
-    color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+        display: flex;
+        align-items: center;
 
-    display: flex;
-    align-items: center;
+        gap: 8px;
+        padding: 8px 0 8px 8px;
 
-    gap: 8px;
-    padding: 8px 0 8px 8px;
-    border: none;
+        font-size: 22px;
+        text-decoration: none;
 
-    font-size: 22px;
+        cursor: pointer;
 
-    cursor: pointer;
+        transition: all ease-in .5s;
 
-    transition: all ease-in .5s;
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
 `;

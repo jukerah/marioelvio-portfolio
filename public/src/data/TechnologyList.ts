@@ -1,72 +1,11 @@
-import htmlPrimary from '../assets/technology/html5.svg';
-import htmlLight from '../assets/technology/html5-light.svg';
-import htmlDark from '../assets/technology/html5-dark.svg';
-import cssPrimary from '../assets/technology/css3.svg';
-import cssLight from '../assets/technology/css3-light.svg';
-import cssDark from '../assets/technology/css3-dark.svg';
-import javascriptPrimary from '../assets/technology/javascript.svg';
-import javascriptLight from '../assets/technology/javascript-light.svg';
-import javascriptDark from '../assets/technology/javascript-dark.svg';
-import typescriptPrimary from '../assets/technology/typescript.svg';
-import typescriptLight from '../assets/technology/typescript-light.svg';
-import typescriptDark from '../assets/technology/typescript-dark.svg';
-import reactPrimary from '../assets/technology/react.svg';
-import reactLight from '../assets/technology/react-light.svg';
-import reactDark from '../assets/technology/react-dark.svg';
-import nodePrimary from '../assets/technology/node.svg';
-import nodeLight from '../assets/technology/node-light.svg';
-import nodeDark from '../assets/technology/node-dark.svg';
-import postgreesqlPrimary from '../assets/technology/postgreesql.svg';
-import postgreesqlLight from '../assets/technology/postgreesql-light.svg';
-import postgreesqlDark from '../assets/technology/postgreesql-dark.svg';
-import mysqlPrimary from '../assets/technology/mysql.svg';
-import mysqlLight from '../assets/technology/mysql-light.svg';
-import mysqlDark from '../assets/technology/mysql-dark.svg';
-import oraclePrimary from '../assets/technology/oracle.svg';
-import oracleLight from '../assets/technology/oracle-light.svg';
-import oracleDark from '../assets/technology/oracle-dark.svg';
-import javaPrimary from '../assets/technology/java.svg';
-import javaLight from '../assets/technology/java-light.svg';
-import javaDark from '../assets/technology/java-dark.svg';
-import githubPrimary from '../assets/technology/github.svg';
-import githubLight from '../assets/technology/github-light.svg';
-import githubDark from '../assets/technology/github-dark.svg';
-import mongodbPrimary from '../assets/technology/mongodb.svg';
-import mongodbLight from '../assets/technology/mongodb-light.svg';
-import mongodbDark from '../assets/technology/mongodb-dark.svg';
-import modelingPrimary from '../assets/technology/modeling.svg';
-import modelingLight from '../assets/technology/modeling-light.svg';
-import modelingDark from '../assets/technology/modeling-dark.svg';
-import sqlPrimary from '../assets/technology/sql.svg';
-import sqlLight from '../assets/technology/sql-light.svg';
-import sqlDark from '../assets/technology/sql-dark.svg';
-import uiuxPrimary from '../assets/technology/uiux.svg';
-import uiuxLight from '../assets/technology/uiux-light.svg';
-import uiuxDark from '../assets/technology/uiux-dark.svg';
-import seoPrimary from '../assets/technology/seo.svg';
-import seoLight from '../assets/technology/seo-light.svg';
-import seoDark from '../assets/technology/seo-dark.svg';
-import accessibilityPrimary from '../assets/technology/accessibility.svg';
-import accessibilityLight from '../assets/technology/accessibility-light.svg';
-import accessibilityDark from '../assets/technology/accessibility-dark.svg';
-import figmaPrimary from '../assets/technology/figma.svg';
-import figmaLight from '../assets/technology/figma-light.svg';
-import figmaDark from '../assets/technology/figma-dark.svg';
-import photoshopPrimary from '../assets/technology/photoshop.svg';
-import photoshopLight from '../assets/technology/photoshop-light.svg';
-import photoshopDark from '../assets/technology/photoshop-dark.svg';
-import gitPrimary from '../assets/technology/git.svg';
-import gitLight from '../assets/technology/git-light.svg';
-import gitDark from '../assets/technology/git-dark.svg';
-
 export const technologies = [
     {
         id: 1,
         name: 'HTML5',
         img: {
-            primary: htmlPrimary,
-            light: htmlLight,
-            dark: htmlDark,
+            primary: require('../assets/technology/html5.svg').default,
+            light: require('../assets/technology/html5-light.svg').default,
+            dark: require('../assets/technology/html5-dark.svg').default,
             altPt: 'Logotipo HTML5.',
             altEn: 'HTML5 logo.'
         }
@@ -75,9 +14,9 @@ export const technologies = [
         id: 2,
         name: 'CSS3',
         img: {
-            primary: cssPrimary,
-            light: cssLight,
-            dark: cssDark,
+            primary: require('../assets/technology/css3.svg').default,
+            light: require('../assets/technology/css3-light.svg').default,
+            dark: require('../assets/technology/css3-dark.svg').default,
             altPt: 'Logotipo CSS3.',
             altEn: 'CSS3 logo.'
         }
@@ -86,9 +25,9 @@ export const technologies = [
         id: 3,
         name: 'JavaScript',
         img: {
-            primary: javascriptPrimary,
-            light: javascriptLight,
-            dark: javascriptDark,
+            primary: require('../assets/technology/javascript.svg').default,
+            light: require('../assets/technology/javascript-light.svg').default,
+            dark: require('../assets/technology/javascript-dark.svg').default,
             altPt: 'Logotipo JavaScript.',
             altEn: 'JavaScript logo.'
         }
@@ -97,9 +36,9 @@ export const technologies = [
         id: 4,
         name: 'TypeScript',
         img: {
-            primary: typescriptPrimary,
-            light: typescriptLight,
-            dark: typescriptDark,
+            primary: require('../assets/technology/typescript.svg').default,
+            light: require('../assets/technology/typescript-light.svg').default,
+            dark: require('../assets/technology/typescript-dark.svg').default,
             altPt: 'Logotipo TypeScript.',
             altEn: 'TypeScript logo.'
         }
@@ -108,9 +47,9 @@ export const technologies = [
         id: 5,
         name: 'React.js',
         img: {
-            primary: reactPrimary,
-            light: reactLight,
-            dark: reactDark,
+            primary: require('../assets/technology/react.svg').default,
+            light: require('../assets/technology/react-light.svg').default,
+            dark: require('../assets/technology/react-dark.svg').default,
             altPt: 'Logotipo React.js.',
             altEn: 'React.js logo.'
         }
@@ -119,9 +58,9 @@ export const technologies = [
         id: 6,
         name: 'Node.js',
         img: {
-            primary: nodePrimary,
-            light: nodeLight,
-            dark: nodeDark,
+            primary: require('../assets/technology/node.svg').default,
+            light: require('../assets/technology/node-light.svg').default,
+            dark: require('../assets/technology/node-dark.svg').default,
             altPt: 'Logotipo Node.js.',
             altEn: 'Node.js logo.'
         }
@@ -130,9 +69,9 @@ export const technologies = [
         id: 7,
         name: 'PostgreeSQL',
         img: {
-            primary: postgreesqlPrimary,
-            light: postgreesqlLight,
-            dark: postgreesqlDark,
+            primary: require('../assets/technology/postgreesql.svg').default,
+            light: require('../assets/technology/postgreesql-light.svg').default,
+            dark: require('../assets/technology/postgreesql-dark.svg').default,
             altPt: 'Logotipo PostgreeSQL.',
             altEn: 'PostgreeSQL logo.'
         }
@@ -141,9 +80,9 @@ export const technologies = [
         id: 8,
         name: 'MySQL',
         img: {
-            primary: mysqlPrimary,
-            light: mysqlLight,
-            dark: mysqlDark,
+            primary: require('../assets/technology/mysql.svg').default,
+            light: require('../assets/technology/mysql-light.svg').default,
+            dark: require('../assets/technology/mysql-dark.svg').default,
             altPt: 'Logotipo MySQL.',
             altEn: 'MySQL logo.'
         }
@@ -152,9 +91,9 @@ export const technologies = [
         id: 9,
         name: 'PL/SQL',
         img: {
-            primary: oraclePrimary,
-            light: oracleLight,
-            dark: oracleDark,
+            primary: require('../assets/technology/oracle.svg').default,
+            light: require('../assets/technology/oracle-light.svg').default,
+            dark: require('../assets/technology/oracle-dark.svg').default,
             altPt: 'Logotipo PL/SQL.',
             altEn: 'PL/SQL logo.'
         }
@@ -163,9 +102,9 @@ export const technologies = [
         id: 10,
         name: 'Java',
         img: {
-            primary: javaPrimary,
-            light: javaLight,
-            dark: javaDark,
+            primary: require('../assets/technology/java.svg').default,
+            light: require('../assets/technology/java-light.svg').default,
+            dark: require('../assets/technology/java-dark.svg').default,
             altPt: 'Logotipo Java.',
             altEn: 'Java logo.'
         }
@@ -174,9 +113,9 @@ export const technologies = [
         id: 11,
         name: 'GitHub',
         img: {
-            primary: githubPrimary,
-            light: githubLight,
-            dark: githubDark,
+            primary: require('../assets/technology/github.svg').default,
+            light: require('../assets/technology/github-light.svg').default,
+            dark: require('../assets/technology/github-dark.svg').default,
             altPt: 'Logotipo GitHub.',
             altEn: 'GitHub logo.'
         }
@@ -185,9 +124,9 @@ export const technologies = [
         id: 12,
         name: 'MongoDB',
         img: {
-            primary: mongodbPrimary,
-            light: mongodbLight,
-            dark: mongodbDark,
+            primary: require('../assets/technology/mongodb.svg').default,
+            light: require('../assets/technology/mongodb-light.svg').default,
+            dark: require('../assets/technology/mongodb-dark.svg').default,
             altPt: 'Logotipo MongoDB.',
             altEn: 'MongoDB logo.'
         }
@@ -196,9 +135,9 @@ export const technologies = [
         id: 13,
         name: 'Modeling',
         img: {
-            primary: modelingPrimary,
-            light: modelingLight,
-            dark: modelingDark,
+            primary: require('../assets/technology/modeling.svg').default,
+            light: require('../assets/technology/modeling-light.svg').default,
+            dark: require('../assets/technology/modeling-dark.svg').default,
             altPt: 'Logotipo Modeling.',
             altEn: 'Modeling logo.'
         }
@@ -207,9 +146,9 @@ export const technologies = [
         id: 14,
         name: 'SQL',
         img: {
-            primary: sqlPrimary,
-            light: sqlLight,
-            dark: sqlDark,
+            primary: require('../assets/technology/sql.svg').default,
+            light: require('../assets/technology/sql-light.svg').default,
+            dark: require('../assets/technology/sql-dark.svg').default,
             altPt: 'Logotipo SQL.',
             altEn: 'SQL logo.'
         }
@@ -218,9 +157,9 @@ export const technologies = [
         id: 15,
         name: 'UI/UX',
         img: {
-            primary: uiuxPrimary,
-            light: uiuxLight,
-            dark: uiuxDark,
+            primary: require('../assets/technology/uiux.svg').default,
+            light: require('../assets/technology/uiux-light.svg').default,
+            dark: require('../assets/technology/uiux-dark.svg').default,
             altPt: 'Logotipo UI/UX.',
             altEn: 'UI/UX logo.'
         }
@@ -229,9 +168,9 @@ export const technologies = [
         id: 16,
         name: 'SEO',
         img: {
-            primary: seoPrimary,
-            light: seoLight,
-            dark: seoDark,
+            primary: require('../assets/technology/seo.svg').default,
+            light: require('../assets/technology/seo-light.svg').default,
+            dark: require('../assets/technology/seo-dark.svg').default,
             altPt: 'Logotipo SEO.',
             altEn: 'SEO logo.'
         }
@@ -240,9 +179,9 @@ export const technologies = [
         id: 17,
         name: 'Accessibility',
         img: {
-            primary: accessibilityPrimary,
-            light: accessibilityLight,
-            dark: accessibilityDark,
+            primary: require('../assets/technology/accessibility.svg').default,
+            light: require('../assets/technology/accessibility-light.svg').default,
+            dark: require('../assets/technology/accessibility-dark.svg').default,
             altPt: 'Logotipo Accessibility.',
             altEn: 'Accessibility logo.'
         }
@@ -251,9 +190,9 @@ export const technologies = [
         id: 18,
         name: 'Figma',
         img: {
-            primary: figmaPrimary,
-            light: figmaLight,
-            dark: figmaDark,
+            primary: require('../assets/technology/figma.svg').default,
+            light: require('../assets/technology/figma-light.svg').default,
+            dark: require('../assets/technology/figma-dark.svg').default,
             altPt: 'Logotipo Figma.',
             altEn: 'Figma logo.'
         }
@@ -262,9 +201,9 @@ export const technologies = [
         id: 19,
         name: 'PhotoShop',
         img: {
-            primary: photoshopPrimary,
-            light: photoshopLight,
-            dark: photoshopDark,
+            primary: require('../assets/technology/photoshop.svg').default,
+            light: require('../assets/technology/photoshop-light.svg').default,
+            dark: require('../assets/technology/photoshop-dark.svg').default,
             altPt: 'Logotipo PhotoShop.',
             altEn: 'PhotoShop logo.'
         }
@@ -273,9 +212,9 @@ export const technologies = [
         id: 20,
         name: 'Git',
         img: {
-            primary: gitPrimary,
-            light: gitLight,
-            dark: gitDark,
+            primary: require('../assets/technology/git.svg').default,
+            light: require('../assets/technology/git-light.svg').default,
+            dark: require('../assets/technology/git-dark.svg').default,
             altPt: 'Logotipo Git.',
             altEn: 'Git logo.'
         }
