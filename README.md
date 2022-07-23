@@ -61,8 +61,9 @@ Summary
 * [X] Svgs adjustments.
 #### Front-end:
 * [ ] Project structure (folders, color palette, fonts and routes).
-* [X] Menu - mobile
-* [X] Menu - desktop
+* [X] Header - mobile
+* [X] Header - desktop
+* [ ] Aside Menu - desktop
 * [ ] Home page - mobile
 * [ ] Home page - desktop
 * [ ] About page - mobile
