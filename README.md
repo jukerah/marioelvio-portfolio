@@ -63,7 +63,8 @@ Summary
 * [ ] Project structure (folders, color palette, fonts and routes).
 * [X] Header - mobile
 * [X] Header - desktop
-* [ ] Aside Menu - desktop
+* [X] Menu - mobile
+* [ ] Menu - desktop
 * [ ] Home page - mobile
 * [ ] Home page - desktop
 * [ ] About page - mobile

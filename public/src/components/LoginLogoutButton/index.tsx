@@ -7,30 +7,20 @@ import { svgs } from '../../data/SvgList';
 
 export const LoginLogoutButton = () => {
     const { theme, dispatch } = useContext(Context);
-    const widthDisplay: number = window.screen.width;
-
+    
     const handleClickMenu = () => {
-        if (theme.isMenuOpen.status) {
-            dispatch({
-                type: 'CHANGE_MENU',
-                payload: {
-                    status: false
-                }
-            });
-        } else {
-            dispatch({
-                type: 'CHANGE_MENU',
-                payload: {
-                    status: true
-                }
-            });
-        }
+        dispatch({
+            type: 'CHANGE_MENU',
+            payload: {
+                status: false
+            }
+        });
     }
 
     return (
         <C.LoginLogoutButton
             mode={theme.mode.status}
-            onClick={(widthDisplay < 1024) ? handleClickMenu : undefined }
+            onClick={handleClickMenu}
         >
             <Link to={'/login'} >            
                 <p>Login</p>
@@ -38,7 +28,7 @@ export const LoginLogoutButton = () => {
                         ? svgs.systemIcon.login.light
                         : svgs.systemIcon.login.dark
                     }
-                    alt={svgs.systemIcon.login.altPt}
+                    alt={svgs.systemIcon.login.altEn}
                 />
             </Link>
         </C.LoginLogoutButton>

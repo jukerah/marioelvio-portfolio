@@ -8,13 +8,16 @@ interface Props {
 export const MenuDesktop = styled.div<Props>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
-    display: flex;
+    display: none;
+    position: fixed;
     flex-direction: column;
 
     width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
     height: 100vh;
 
     transition: all ease-in .5s;
+
+    @media (min-width: 1024px) { display: flex; }
 `;
 
 export const MenuButton = styled.div<Props>`
@@ -79,5 +82,93 @@ export const MenuButton = styled.div<Props>`
 `;
 
 export const NavDesktop = styled.nav<Props>`
+    display: flex;
+    position: fixed;
+    align-items: flex-end;
+
     width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
+
+    margin-top: 100px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    li {
+        width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
+
+        ${ props  => (props.mode === 'light') && `
+            .img-light {
+                display: none;
+            }
+        `}
+
+        ${ props  => (props.mode === 'dark') && `
+            .img-dark {
+                display: none;
+            }
+        `}
+    }
+
+    li:hover {
+        background-color: var(--white-ice);
+        
+        width: ${(props) => props.isMenuOpen ? '292px' : '92px'};
+
+        border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
+
+        transition: all ease-in .2s;
+
+        p {
+            color: var(${(props) => props.mode === 'dark' && '--limed-spruce'});
+
+            transition: .1s;
+        }
+
+        ${ props  => props.mode === 'dark' && `
+            .img-light { display: none; }
+            .img-dark { display: block; }
+        `}
+
+        ${ props  => (!props.isMenuOpen) && `
+            p {
+                background-color: var(${props.mode === 'dark' ? '--black' : '--skeptic'});
+                color: var(${props.mode === 'dark' && '--white'});   
+                
+                opacity: 100;
+                padding: 16px;
+                border-radius: 8px;
+                box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+            }
+        `}
+    }
+
+    li a {
+        display: flex;
+        align-items: center;
+
+        gap: 32px;
+
+        height: 96px;
+
+        font-size: 28px;
+        font-weight: bold;
+        text-decoration: none;
+
+        img {
+            width: 48px;
+            height: 48px;
+
+            padding-left: 24px;
+        }
+    }
+
+    p {
+        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+        
+        transition: all ease-in ${(props) => props.isMenuOpen ? '1.5s' : '.2s'};
+        opacity: ${(props) => props.isMenuOpen ? 100 : 0};
+    }
 `;

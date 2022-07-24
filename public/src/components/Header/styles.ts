@@ -59,3 +59,9 @@ export const Logo = styled.img<Props>`
         height: 40px;
     }
 `;
+
+export const ContainerButton = styled.div`
+    display: none;
+
+    @media (min-width: 1024px) { display: block; }
+`;

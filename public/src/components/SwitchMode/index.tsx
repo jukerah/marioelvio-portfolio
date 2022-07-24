@@ -6,6 +6,7 @@ import { Context } from '../../contexts/Contexts';
 export const SwitchMode = () => {
     const { theme, dispatch } = useContext(Context);
     const localThemeMode:string | null = localStorage.getItem('themeMode');
+    
     useEffect(() => {        
         if(theme.mode.status !== null) {
             dispatch({

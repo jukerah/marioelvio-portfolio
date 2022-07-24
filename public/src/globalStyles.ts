@@ -31,8 +31,6 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         font-family: 'Exo 2', Helvetica, Sans-Serif;
     }
-
-    
 `;
  
 export default GlobalStyle;

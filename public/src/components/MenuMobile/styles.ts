@@ -48,6 +48,8 @@ export const MenuMobile = styled.div<Props>`
             top: ${(props) => props.isMenuOpen ? '-10px' : 0};
         }
     }
+
+    @media (min-width: 1024px) { display: none; }
 `;
 
 export const NavMobile = styled.nav<Props>`
@@ -58,7 +60,6 @@ export const NavMobile = styled.nav<Props>`
     position: fixed;
 
     width: 100%;
-    max-width: 400px;
     height: calc(100vh - 60px);
     margin-top: 100vh;
 
@@ -66,12 +67,22 @@ export const NavMobile = styled.nav<Props>`
 
     transition: all ease-in .5s;
 
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar { width: 6px; }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--de-york); 
+        border-radius: 3px;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
 
         list-style-type: none;
     }
+
     li a {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -87,6 +98,8 @@ export const NavMobile = styled.nav<Props>`
 
         gap: 24px;
         padding-left: 24px;
+
+        transition: all ease-in .2s;
     }
 
     li a:hover {
@@ -95,11 +108,12 @@ export const NavMobile = styled.nav<Props>`
     }
 
     @media (min-width: 768px) {
+        max-width: 400px;
         height: calc(100vh - 80px);
         margin-top: 100vh;
     }
 
-    @media (min-width: 1024px) { height: calc(100vh - 100px); }
+    @media (min-width: 1024px) { display: none; }
 `;
 
 export const ContainerButtons = styled.div<Props>`
@@ -110,4 +124,9 @@ export const ContainerButtons = styled.div<Props>`
     padding: 16px 0;
 
     div { padding: 16px; }
+
+    @media (max-width: 1024px)
+       and (max-height: 600px) {
+        margin-bottom: 60px;
+    }
 `;

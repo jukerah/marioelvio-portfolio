@@ -10,24 +10,14 @@ import { MenuMobile, NavMobile } from '../MenuMobile';
 
 export const Header = () => {
     const { theme, dispatch } = useContext(Context);
-    const widthDisplay: number = window.screen.width;
 
     const handleClickMenu = () => {
-        if (theme.isMenuOpen.status) {
-            dispatch({
-                type: 'CHANGE_MENU',
-                payload: {
-                    status: false
-                }
-            });
-        } else {
-            dispatch({
-                type: 'CHANGE_MENU',
-                payload: {
-                    status: true
-                }
-            });
-        }
+        dispatch({
+            type: 'CHANGE_MENU',
+            payload: {
+                status: false
+            }
+        });
     }
 
     return (
@@ -41,17 +31,22 @@ export const Header = () => {
                                 
                 <Link
                     to={'/'}
-                    onClick={(widthDisplay < 1024) ? handleClickMenu : undefined }
+                    onClick={handleClickMenu}
                 >
-                    <C.Logo src={svgs.logo.marioElvio.src} alt={svgs.logo.marioElvio.altPt} />
+                    <C.Logo
+                        src={svgs.logo.marioElvio.src}
+                        alt={svgs.logo.marioElvio.altEn}
+                    />
                 </Link>
 
-                {(widthDisplay >= 1024) &&
-                    <>
-                        <SwitchMode />
-                        <LoginLogoutButton />
-                    </>
-                }            
+                <C.ContainerButton>
+                    <SwitchMode />
+                </C.ContainerButton>
+
+                <C.ContainerButton>
+                    <LoginLogoutButton />
+                </C.ContainerButton>
+
             </C.Container>
 
             <NavMobile />
