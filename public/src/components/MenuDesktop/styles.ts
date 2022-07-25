@@ -5,7 +5,7 @@ interface Props {
     isMenuOpen?: boolean;
 }
 
-export const MenuDesktop = styled.div<Props>`
+export const MenuDesktop = styled.aside<Props>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     display: none;
@@ -70,7 +70,7 @@ export const MenuButton = styled.div<Props>`
         div:nth-of-type(2) {
             opacity: ${(props) => props.isMenuOpen ? 0 : 100};
             position: relative;
-            left: ${(props) => props.isMenuOpen ? '-100px' : 0};
+            left: ${(props) => props.isMenuOpen ? '-300px' : 0};
         }
 
         div:nth-of-type(3) {
@@ -99,16 +99,12 @@ export const NavDesktop = styled.nav<Props>`
     li {
         width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
 
-        ${ props  => (props.mode === 'light') && `
-            .img-light {
-                display: none;
-            }
+        ${props  => (props.mode === 'light') && `
+            .img-light { display: none; }
         `}
 
-        ${ props  => (props.mode === 'dark') && `
-            .img-dark {
-                display: none;
-            }
+        ${props  => (props.mode === 'dark') && `
+            .img-dark { display: none; }
         `}
     }
 
@@ -124,7 +120,10 @@ export const NavDesktop = styled.nav<Props>`
         p {
             color: var(${(props) => props.mode === 'dark' && '--limed-spruce'});
 
-            transition: .1s;
+            ${ props  => (!props.isMenuOpen) && `
+                transform: none;
+                transition: .2s;
+            `}
         }
 
         ${ props  => props.mode === 'dark' && `
@@ -137,7 +136,6 @@ export const NavDesktop = styled.nav<Props>`
                 background-color: var(${props.mode === 'dark' ? '--black' : '--skeptic'});
                 color: var(${props.mode === 'dark' && '--white'});   
                 
-                opacity: 100;
                 padding: 16px;
                 border-radius: 8px;
                 box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
@@ -156,6 +154,7 @@ export const NavDesktop = styled.nav<Props>`
         font-size: 28px;
         font-weight: bold;
         text-decoration: none;
+        text-transform: uppercase;
 
         img {
             width: 48px;
@@ -167,8 +166,9 @@ export const NavDesktop = styled.nav<Props>`
 
     p {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
-        
-        transition: all ease-in ${(props) => props.isMenuOpen ? '1.5s' : '.2s'};
-        opacity: ${(props) => props.isMenuOpen ? 100 : 0};
+
+        transform: translateX(${(props) => props.isMenuOpen ? 0 : '-300px'});
+
+        transition: all ease-in .5s;
     }
 `;

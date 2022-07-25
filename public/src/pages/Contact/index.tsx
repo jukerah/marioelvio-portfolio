@@ -1,9 +1,12 @@
+import { useTranslation } from 'react-i18next';
 import * as C from './styles';
 
-export const ContactPage = () => {    
+export const ContactPage = () => {
+    const { t } = useTranslation();   
+
     return (        
         <C.ContactSection>
-            <h1>Contact</h1>
+            <h1>{t('page.contact.title')}</h1>
         </C.ContactSection>
     );
 };

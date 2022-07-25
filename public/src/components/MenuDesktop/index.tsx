@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as C from './styles';
@@ -6,6 +7,7 @@ import { Context } from '../../contexts/Contexts';
 import { svgs } from '../../data/SvgList';
 
 export const MenuDesktop = () => {
+    const { t } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -36,7 +38,7 @@ export const MenuDesktop = () => {
                 isMenuOpen={theme.isMenuOpen.status}
                 onClick={handleClickMenu}
             >
-                <button>
+                <button aria-label='Menu'>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -53,14 +55,14 @@ export const MenuDesktop = () => {
                             <img
                                 className='img-light'
                                 src={svgs.systemIcon.home.light}
-                                alt={svgs.systemIcon.home.altEn}
+                                alt={t('svgs.systemIcon.home.alt')}
                             />
                             <img
                                 className='img-dark'
                                 src={svgs.systemIcon.home.dark}
-                                alt={svgs.systemIcon.home.altEn}
+                                alt={t('svgs.systemIcon.home.alt')}
                             />
-                            <p>Home</p>
+                            <p>{t('page.home.title')}</p>
                         </Link>
                     </li>
                     <li>
@@ -68,14 +70,14 @@ export const MenuDesktop = () => {
                             <img
                                 className='img-light'
                                 src={svgs.systemIcon.about.light}
-                                alt={svgs.systemIcon.about.altEn}
+                                alt={t('svgs.systemIcon.about.alt')}
                             />
                             <img
                                 className='img-dark'
                                 src={svgs.systemIcon.about.dark}
-                                alt={svgs.systemIcon.about.altEn}
+                                alt={t('svgs.systemIcon.about.alt')}
                             />
-                            <p>About</p>
+                            <p>{t('page.about.title')}</p>
                         </Link>
                     </li>
                     <li>
@@ -83,14 +85,14 @@ export const MenuDesktop = () => {
                             <img
                                 className='img-light'
                                 src={svgs.systemIcon.book.light}
-                                alt={svgs.systemIcon.book.altEn}
+                                alt={t('svgs.systemIcon.book.alt')}
                             />
                             <img
                                 className='img-dark'
                                 src={svgs.systemIcon.book.dark}
-                                alt={svgs.systemIcon.book.altEn}
+                                alt={t('svgs.systemIcon.book.alt')}
                             />
-                            <p>Portfolio</p>
+                            <p>{t('page.portfolio.title')}</p>
                         </Link>
                     </li>
                     <li>
@@ -98,14 +100,14 @@ export const MenuDesktop = () => {
                             <img
                                 className='img-light'
                                 src={svgs.systemIcon.article.light}
-                                alt={svgs.systemIcon.article.altEn}
+                                alt={t('svgs.systemIcon.article.alt')}
                             />
                             <img
                                 className='img-dark'
                                 src={svgs.systemIcon.article.dark}
-                                alt={svgs.systemIcon.article.altEn}
+                                alt={t('svgs.systemIcon.article.alt')}
                             />
-                            <p>Blog</p>
+                            <p>{t('page.blog.title')}</p>
                         </Link>
                     </li>
                     <li>
@@ -113,14 +115,14 @@ export const MenuDesktop = () => {
                             <img
                                 className='img-light'
                                 src={svgs.systemIcon.mail.light}
-                                alt={svgs.systemIcon.mail.altEn}
+                                alt={t('svgs.systemIcon.mail.alt')}
                             />
                             <img
                                 className='img-dark'
                                 src={svgs.systemIcon.mail.dark}
-                                alt={svgs.systemIcon.mail.altEn}
+                                alt={t('svgs.systemIcon.mail.alt')}
                             />
-                            <p>Contact</p>
+                            <p>{t('page.contact.title')}</p>
                         </Link>
                     </li>
                 </ul>

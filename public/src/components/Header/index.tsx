@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as C from './styles';
@@ -9,6 +10,7 @@ import { LoginLogoutButton } from '../LoginLogoutButton';
 import { MenuMobile, NavMobile } from '../MenuMobile';
 
 export const Header = () => {
+    const { t } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -35,7 +37,7 @@ export const Header = () => {
                 >
                     <C.Logo
                         src={svgs.logo.marioElvio.src}
-                        alt={svgs.logo.marioElvio.altEn}
+                        alt={t('svgs.logo.marioElvio.alt')}
                     />
                 </Link>
 

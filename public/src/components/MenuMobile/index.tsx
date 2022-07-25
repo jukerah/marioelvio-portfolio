@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as C from './styles';
@@ -34,7 +35,7 @@ export const MenuMobile = () => {
             isMenuOpen={theme.isMenuOpen.status}
             onClick={handleClickMenu}
         >
-            <button>
+            <button aria-label='Menu'>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -44,6 +45,7 @@ export const MenuMobile = () => {
 }
 
 export const NavMobile = () => {
+    const { t } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -79,9 +81,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.home.light
                                 : svgs.systemIcon.home.dark
                             }
-                            alt={svgs.systemIcon.home.altEn}
+                            alt={t('svgs.systemIcon.home.alt')}
                         />
-                        <p>Home</p>
+                        <p>{t('page.home.title')}</p>
                     </Link>
                 </li>
                 <li>
@@ -93,9 +95,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.about.light
                                 : svgs.systemIcon.about.dark
                             }
-                            alt={svgs.systemIcon.about.altEn}
+                            alt={t('svgs.systemIcon.about.alt')}
                         />
-                        <p>About</p>
+                        <p>{t('page.about.title')}</p>
                     </Link>
                 </li>
                 <li>
@@ -107,9 +109,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.book.light
                                 : svgs.systemIcon.book.dark
                             }
-                            alt={svgs.systemIcon.book.altEn}
+                            alt={t('svgs.systemIcon.book.alt')}
                         />
-                        <p>Portfolio</p>
+                        <p>{t('page.portfolio.title')}</p>
                     </Link>
                 </li>
                 <li>
@@ -121,9 +123,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.article.light
                                 : svgs.systemIcon.article.dark
                             }
-                            alt={svgs.systemIcon.article.altEn}
+                            alt={t('svgs.systemIcon.article.alt')}
                         />
-                        <p>Blog</p>
+                        <p>{t('page.blog.title')}</p>
                     </Link>
                 </li>
                 <li>
@@ -135,9 +137,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.mail.light
                                 : svgs.systemIcon.mail.dark
                             }
-                            alt={svgs.systemIcon.mail.altEn}
+                            alt={t('svgs.systemIcon.mail.alt')}
                         />
-                        <p>Contact</p>
+                        <p>{t('page.contact.title')}</p>
                     </Link>
                 </li>
             </ul>
