@@ -60,11 +60,12 @@ Summary
 * [X] Interface design.
 * [X] Svgs adjustments.
 #### Front-end:
-* [ ] Project structure ([X]folders, [X]color palette, [X]fonts and [ ]routes).
+* [X] Project structure (folders, color palette, fonts and routes).
 * [X] Header - mobile
 * [X] Header - desktop
 * [X] Menu - mobile
 * [X] Menu - desktop
+* [X] Multi-language
 * [ ] Home page - mobile
 * [ ] Home page - desktop
 * [ ] About page - mobile
