@@ -46,7 +46,7 @@ Summary
 <a align="left" href="https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1">https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1</a>
 
 ### Deploy:
-<a align="left" href="#">coming soon</a>
+<a align="left" href="https://www.marioelvio.com/" target="_blank">https://www.marioelvio.com/</a>
 
 <hr/>
 
@@ -143,9 +143,9 @@ Summary
 
 <h2 align="center">Author</h2>
 
-<a href="https://marioelvio.com">
+<a href="https://marioelvio.com" target="_blank">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81795443?v=4" width="100px;" alt=""/>
-</a> <a href="https://marioelvio.com" title="Mario Elvio"></a>
+</a> <a href="https://marioelvio.com" title="Mario Elvio" target="_blank"></a>
 
 <p>Developed by <a href="https://marioelvio.com">Mario Elvio</a>.</p>
 
