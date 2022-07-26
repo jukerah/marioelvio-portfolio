@@ -21,6 +21,11 @@ export const svgs = {
     background : {
         switch: require('../assets/system/background/switch-mode.svg').default
     },
+    country: {
+        brazil: require('../assets/country/br.svg').default,
+        unitedStates: require('../assets/country/us.svg').default,
+        spain: require('../assets/country/es.svg').default,
+    },
     systemIcon: {
         id: {
             light: require('../assets/system/icon/id-light.svg').default,

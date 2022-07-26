@@ -11,15 +11,6 @@ export const ContainerSwitchTheme = styled.div<ModeProps>`
     
     gap: 16px;
     
-    p {
-        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: bold;
-        
-        transition: all ease-in .5s;
-    }
-    
     .switch {
         position: relative;
         display: inline-block;
@@ -59,6 +50,4 @@ export const ContainerSwitchTheme = styled.div<ModeProps>`
     }
 
     .slider.round:before { border-radius: 50%; }
-
-    @media (min-width: 1024px) { p { font-size: 24px; } }
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface ModeProps {
     mode: string | null;
 }
-export const LoginLogoutButton = styled.div<ModeProps>`
+export const LoginLogoutButton = styled.div<ModeProps>`    
     a {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -23,6 +23,10 @@ export const LoginLogoutButton = styled.div<ModeProps>`
         img {
             width: 24px;
             height: 24px;
+        }
+
+        @media (min-width: 1024px) {
+            &:hover { text-decoration: underline; }
         }
     }
 `;

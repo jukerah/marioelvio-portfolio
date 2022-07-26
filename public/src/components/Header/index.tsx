@@ -8,6 +8,7 @@ import { svgs } from '../../data/SvgList';
 import { SwitchMode } from '../SwitchMode';
 import { LoginLogoutButton } from '../LoginLogoutButton';
 import { MenuMobile, NavMobile } from '../MenuMobile';
+import { ChangeLang } from '../ChangeLang';
 
 export const Header = () => {
     const { t } = useTranslation();
@@ -46,6 +47,7 @@ export const Header = () => {
                 </C.ContainerButton>
 
                 <C.ContainerButton>
+                    <ChangeLang />
                     <LoginLogoutButton />
                 </C.ContainerButton>
 

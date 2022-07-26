@@ -62,6 +62,9 @@ export const Logo = styled.img<Props>`
 
 export const ContainerButton = styled.div`
     display: none;
+    flex-direction: row;
 
-    @media (min-width: 1024px) { display: block; }
+    gap: 24px;
+
+    @media (min-width: 1024px) { display: flex; }
 `;

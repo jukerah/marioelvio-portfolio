@@ -1,4 +1,5 @@
 {
+    "development": "Site está em desenvolvimento, acompanhe as novidades por aqui ou GitHub:",
     "docTitle": "Mario Elvio | Desenvolvedor front-end",
     "page": {
         "home": {
@@ -28,6 +29,17 @@
         },
         "avatar": {
             "alt": "Mario Elvio utilizando o notebook."
+        },
+        "country": {
+            "brazil": {
+                "alt": "Bandeira do Brasil."
+            },
+            "unitedStates": {
+                "alt": "Bandeira do Estados Unidos."
+            },
+            "spain": {
+                "alt": "Bandeira da Espanha."
+            }
         },
         "systemIcon": {
             "id": {

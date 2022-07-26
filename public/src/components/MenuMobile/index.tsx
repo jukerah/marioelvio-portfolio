@@ -7,6 +7,7 @@ import { Context } from '../../contexts/Contexts';
 import { svgs } from '../../data/SvgList';
 import { SwitchMode } from '../SwitchMode';
 import { LoginLogoutButton } from '../LoginLogoutButton';
+import { ChangeLang } from '../ChangeLang';
 
 export const MenuMobile = () => {
     const { theme, dispatch } = useContext(Context);
@@ -77,7 +78,8 @@ export const NavMobile = () => {
                         to={'/home'}
                         onClick={handleClickMenu}
                     >
-                        <img src={(theme.mode.status === 'dark')
+                        <img
+                            src={(theme.mode.status === 'dark')
                                 ? svgs.systemIcon.home.light
                                 : svgs.systemIcon.home.dark
                             }
@@ -91,7 +93,8 @@ export const NavMobile = () => {
                         to={'/about'}
                         onClick={handleClickMenu}
                     >
-                        <img src={(theme.mode.status === 'dark')
+                        <img
+                            src={(theme.mode.status === 'dark')
                                 ? svgs.systemIcon.about.light
                                 : svgs.systemIcon.about.dark
                             }
@@ -105,7 +108,8 @@ export const NavMobile = () => {
                         to={'/portfolio'}
                         onClick={handleClickMenu}
                     >
-                        <img src={(theme.mode.status === 'dark')
+                        <img
+                            src={(theme.mode.status === 'dark')
                                 ? svgs.systemIcon.book.light
                                 : svgs.systemIcon.book.dark
                             }
@@ -119,7 +123,8 @@ export const NavMobile = () => {
                         to={'/blog'}
                         onClick={handleClickMenu}
                     >
-                        <img src={(theme.mode.status === 'dark')
+                        <img
+                            src={(theme.mode.status === 'dark')
                                 ? svgs.systemIcon.article.light
                                 : svgs.systemIcon.article.dark
                             }
@@ -133,7 +138,8 @@ export const NavMobile = () => {
                         to={'/contact'}
                         onClick={handleClickMenu}
                     >
-                        <img src={(theme.mode.status === 'dark')
+                        <img
+                            src={(theme.mode.status === 'dark')
                                 ? svgs.systemIcon.mail.light
                                 : svgs.systemIcon.mail.dark
                             }
@@ -144,8 +150,11 @@ export const NavMobile = () => {
                 </li>
             </ul>
             <C.ContainerButtons>
-                <SwitchMode />
                 <LoginLogoutButton/>
+                <div className='top-line'>
+                    <ChangeLang />
+                    <SwitchMode />
+                </div>
             </C.ContainerButtons>
         </C.NavMobile>
     );

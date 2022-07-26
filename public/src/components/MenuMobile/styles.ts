@@ -67,15 +67,6 @@ export const NavMobile = styled.nav<Props>`
 
     transition: all ease-in .5s;
 
-    overflow-y: scroll;
-
-    ::-webkit-scrollbar { width: 6px; }
-    
-    ::-webkit-scrollbar-thumb {
-        background: var(--de-york); 
-        border-radius: 3px;
-    }
-
     ul {
         display: flex;
         flex-direction: column;
@@ -88,8 +79,8 @@ export const NavMobile = styled.nav<Props>`
 
         display: flex;
         align-items: center;
-
-        height: 72px;
+        
+        height: 64px;
 
         font-size: 28px;
         font-weight: bold;
@@ -100,11 +91,27 @@ export const NavMobile = styled.nav<Props>`
         padding-left: 24px;
 
         transition: all ease-in .2s;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     li a:hover {
         background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white-ice'});
         border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
+    }
+
+    @media (max-width: 1024px) and (max-height: 600px) {
+        overflow-y: scroll;
+
+        ::-webkit-scrollbar { width: 6px; }
+    
+        ::-webkit-scrollbar-thumb {
+            background: var(--de-york); 
+            border-radius: 3px;
+        }
     }
 
     @media (min-width: 768px) {
@@ -124,6 +131,11 @@ export const ContainerButtons = styled.div<Props>`
     padding: 16px 0;
 
     div { padding: 16px; }
+
+    .top-line {
+        display: flex;
+        gap: 32px;
+    }
 
     @media (max-width: 1024px)
        and (max-height: 600px) {

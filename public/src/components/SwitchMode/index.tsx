@@ -40,18 +40,19 @@ export const SwitchMode = () => {
         <C.ContainerSwitchTheme
             mode={theme.mode.status}
         >
-            <p>Light</p>
             <label 
                 className="switch"
                 onClick={handleClickSwitch}
             >
                 <input 
                     type="checkbox"
-                    defaultChecked={(localThemeMode === 'dark') ? false : true}
+                    defaultChecked={(localThemeMode === 'dark')
+                        ? false
+                        : true
+                    }
                 />
                 <span className="slider round"></span>
             </label>
-            <p>Dark</p>
         </C.ContainerSwitchTheme>
     );
 }

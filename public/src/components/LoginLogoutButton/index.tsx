@@ -30,7 +30,7 @@ export const LoginLogoutButton = () => {
                         ? svgs.systemIcon.login.light
                         : svgs.systemIcon.login.dark
                     }
-                    alt={t('systemIcon.login.alt')}
+                    alt={t('svgs.systemIcon.login.alt')}
                 />
             </Link>
         </C.LoginLogoutButton>
