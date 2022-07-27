@@ -6,7 +6,7 @@ export const ContactPage = () => {
 
     return (        
         <C.ContactSection>
-            <h1>{t('page.contact.title')}</h1>
+            <h1>{t('page.contact.name')}</h1>
         </C.ContactSection>
     );
 };

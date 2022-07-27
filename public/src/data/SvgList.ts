@@ -19,7 +19,23 @@ export const svgs = {
         altEn: 'Mario Elvio using the notebook.'
     },
     background : {
-        switch: require('../assets/system/background/switch-mode.svg').default
+        switch: require('../assets/system/background/switch-mode.svg').default,
+        home: {
+            dark: {
+                landscape: {
+                    small: require('../assets/system/background/home-landscape-small-dark.svg').default,
+                    large: require('../assets/system/background/home-landscape-large-dark.svg').default
+                },
+                portrait: require('../assets/system/background/home-portrait-dark.svg').default
+            },
+            light: {
+                landscape: {
+                    small: require('../assets/system/background/home-landscape-small-light.svg').default,
+                    large: require('../assets/system/background/home-landscape-large-light.svg').default,
+                },
+                portrait: require('../assets/system/background/home-portrait-light.svg').default
+            }
+        }
     },
     country: {
         brazil: require('../assets/country/br.svg').default,

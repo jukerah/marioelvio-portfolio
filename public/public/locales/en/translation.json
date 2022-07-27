@@ -3,19 +3,24 @@
     "docTitle": "Mario Elvio | Front-end developer",
     "page": {
         "home": {
-            "title": "Home"
+            "name": "Home",
+            "title": {
+                "hello": "Hi there!",
+                "name": "I'm Mario Elvio",
+                "work": "front-end developer"
+            }
         },
         "about": {
-            "title": "About"
+            "name": "About"
         },
         "portfolio": {
-            "title": "Portfolio"
+            "name": "Portfolio"
         },
         "blog": {
-            "title": "Blog"
+            "name": "Blog"
         },
         "contact": {
-            "title": "Contact"
+            "name": "Contact"
         }
     },
     "svgs": {

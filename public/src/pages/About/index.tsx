@@ -6,7 +6,7 @@ export const AboutPage = () => {
 
     return (        
         <C.AboutSection>
-            <h1>{t('page.about.title')}</h1>
+            <h1>{t('page.about.name')}</h1>
         </C.AboutSection>
     );
 };

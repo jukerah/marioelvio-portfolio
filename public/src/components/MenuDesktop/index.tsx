@@ -62,7 +62,7 @@ export const MenuDesktop = () => {
                                 src={svgs.systemIcon.home.dark}
                                 alt={t('svgs.systemIcon.home.alt')}
                             />
-                            <p>{t('page.home.title')}</p>
+                            <p>{t('page.home.name')}</p>
                         </Link>
                     </li>
                     <li>
@@ -77,7 +77,7 @@ export const MenuDesktop = () => {
                                 src={svgs.systemIcon.about.dark}
                                 alt={t('svgs.systemIcon.about.alt')}
                             />
-                            <p>{t('page.about.title')}</p>
+                            <p>{t('page.about.name')}</p>
                         </Link>
                     </li>
                     <li>
@@ -92,7 +92,7 @@ export const MenuDesktop = () => {
                                 src={svgs.systemIcon.book.dark}
                                 alt={t('svgs.systemIcon.book.alt')}
                             />
-                            <p>{t('page.portfolio.title')}</p>
+                            <p>{t('page.portfolio.name')}</p>
                         </Link>
                     </li>
                     <li>
@@ -107,7 +107,7 @@ export const MenuDesktop = () => {
                                 src={svgs.systemIcon.article.dark}
                                 alt={t('svgs.systemIcon.article.alt')}
                             />
-                            <p>{t('page.blog.title')}</p>
+                            <p>{t('page.blog.name')}</p>
                         </Link>
                     </li>
                     <li>
@@ -122,7 +122,7 @@ export const MenuDesktop = () => {
                                 src={svgs.systemIcon.mail.dark}
                                 alt={t('svgs.systemIcon.mail.alt')}
                             />
-                            <p>{t('page.contact.title')}</p>
+                            <p>{t('page.contact.name')}</p>
                         </Link>
                     </li>
                 </ul>

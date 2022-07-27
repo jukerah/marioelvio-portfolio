@@ -9,7 +9,6 @@ export const ChangeLang = styled.button<ModeProps>`
     border: none;
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
     width: 80px;

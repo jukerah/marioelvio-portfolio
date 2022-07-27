@@ -22,5 +22,7 @@
   "start_url": "https://www.marioelvio.com",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "scope": "/",
+  "description": "Front-end developer"
 }

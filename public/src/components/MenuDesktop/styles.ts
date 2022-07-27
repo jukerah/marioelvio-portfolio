@@ -168,7 +168,6 @@ export const NavDesktop = styled.nav<Props>`
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
         transform: translateX(${(props) => props.isMenuOpen ? 0 : '-300px'});
-
         transition: all ease-in .5s;
     }
 `;

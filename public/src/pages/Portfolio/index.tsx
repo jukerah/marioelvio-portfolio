@@ -6,7 +6,7 @@ export const PortfolioPage = () => {
 
     return (        
         <C.PortfolioSection>
-            <h1>{t('page.portfolio.title')}</h1>
+            <h1>{t('page.portfolio.name')}</h1>
         </C.PortfolioSection>
     );
 };
