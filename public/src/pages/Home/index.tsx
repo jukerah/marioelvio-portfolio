@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import * as C from './styles';
 
 import { svgs } from '../../data/SvgList';
 import { Context } from '../../contexts/Contexts';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 export const HomePage = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const { theme } = useContext(Context);
     
     return (        
@@ -27,14 +29,38 @@ export const HomePage = () => {
             }
         >
             <C.Container>
-                <C.ContainerInfo>
-                    <img src={svgs.avatar.src} alt={t('svgs.avatar.alt')}/>
+                <C.ContainerInfo
+                    isMenuOpen={theme.isMenuOpen.status}
+                >
+                    <img className='avatar' src={svgs.avatar.src} alt={t('svgs.avatar.alt')}/>
 
-                    <C.Info>                        
-                        <h1>{t('page.home.title.hello')}<br />{t('page.home.title.name')}<br />{t('page.home.title.work')}</h1>
+                    <C.Info
+                        mode={theme.mode.status}
+                        lang={i18n.language}
+                    >                        
+                        <h1>
+                            <span className='title-hello'>
+                                {(i18n.language === 'en')
+                                    ? 'Hi there!'
+                                    : 'Olá!'
+                                }
+                            </span><br />
+                            <span className='title-name'>
+                                {(i18n.language === 'en')
+                                    ? <>I'm Mario <span className='accent-color'>Elvio</span></>
+                                    : <>Eu sou Mario <span className='accent-color'>Elvio</span></>
+                                }
+                            </span><br />
+                            <span className='title-work'>
+                                {(i18n.language === 'en')
+                                    ? <><span className='accent-color'>Front-end</span> developer</>
+                                    : <>Desenvolvedor <span className='accent-color'>front-end</span></>
+                                }
+                            </span>
+                        </h1>
 
-                        <C.Buttons>
-                            <a href="/">
+                        <C.SocialButtons>
+                            <a href="https://www.linkedin.com/in/marioelvio/" target="_blank" rel="noopener noreferrer">
                                 <img
                                     className='img'
                                     src={(theme.mode.status === 'dark')
@@ -47,7 +73,7 @@ export const HomePage = () => {
                                     alt={t('svgs.socialIcon.linkedin.alt')}
                                 />
                             </a>
-                            <a href="/">
+                            <a href="https://github.com/jukerah" target="_blank" rel="noopener noreferrer">
                                 <img
                                     className='img'
                                     src={(theme.mode.status === 'dark')
@@ -60,7 +86,7 @@ export const HomePage = () => {
                                     alt={t('svgs.socialIcon.github.alt')}
                                 />
                             </a>
-                            <a href="/">
+                            <a href="https://www.youtube.com/channel/UCIuG63VswXMTYUuzeZgqRjw" target="_blank" rel="noopener noreferrer">
                                 <img
                                     className='img'
                                     src={(theme.mode.status === 'dark')
@@ -73,7 +99,7 @@ export const HomePage = () => {
                                     alt={t('svgs.socialIcon.youtube.alt')}
                                 />
                             </a>
-                            <a href="/">
+                            <a href="https://api.whatsapp.com/send?phone=5516988658468" target="_blank" rel="noopener noreferrer">
                                 <img
                                     className='img'
                                     src={(theme.mode.status === 'dark')
@@ -86,13 +112,26 @@ export const HomePage = () => {
                                     alt={t('svgs.socialIcon.whatsapp.alt')}
                                 />
                             </a>
-                        </C.Buttons>
+                        </C.SocialButtons>
                     </C.Info>
                 </C.ContainerInfo>
-                <C.Buttons>
-                    <button>More about me</button>
-                    <button>My portfolio</button>
-                </C.Buttons>
+                <C.NavButtons>
+                    <PrimaryButton
+                        text={'More about me'}
+                        backgroundColor={'--limed-spruce'}
+                        backgroundColorHover={'--de-york'}
+                        color={'--white'}
+                        colorHover={'--limed-spruce'}
+                    />
+                
+                    <PrimaryButton
+                        text={'My portfolio'}
+                        backgroundColor={'--de-york'}
+                        backgroundColorHover={'--de-york'}
+                        color={'--limed-spruce'}
+                        colorHover={'--limed-spruce'}
+                    />
+                </C.NavButtons>
             </C.Container>
         </C.HomeSection>
     );

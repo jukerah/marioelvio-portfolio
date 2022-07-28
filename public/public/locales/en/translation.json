@@ -3,12 +3,7 @@
     "docTitle": "Mario Elvio | Front-end developer",
     "page": {
         "home": {
-            "name": "Home",
-            "title": {
-                "hello": "Hi there!",
-                "name": "I'm Mario Elvio",
-                "work": "front-end developer"
-            }
+            "name": "Home"
         },
         "about": {
             "name": "About"

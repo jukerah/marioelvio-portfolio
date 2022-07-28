@@ -1,4 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
 import * as C from './styles';
 
 import { HomePage } from '../../pages/Home';
@@ -6,21 +5,9 @@ import { AboutPage } from '../../pages/About';
 import { PortfolioPage } from '../../pages/Portfolio';
 import { ContactPage } from '../Contact';
 
-import { Context } from '../../contexts/Contexts';
-
 export const Main = () => {
-    const { theme } = useContext(Context);
-    const [ scrollBarWidth, setScrollBarWidth ] = useState<number>();
-
-    useEffect(() => {
-        setScrollBarWidth(window.innerWidth - document.documentElement.clientWidth);
-    }, []);
-
     return (
-        <C.Main
-            isMenuOpen={theme.isMenuOpen.status}
-            scrollBarWidth={scrollBarWidth}
-        >
+        <C.Main>
             <HomePage /*linkScroll={props.page}*/ />
             <AboutPage /*linkScroll={props.page}*/ />
             <PortfolioPage /*linkScroll={props.page}*/ />
