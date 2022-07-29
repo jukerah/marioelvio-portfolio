@@ -47,7 +47,22 @@ export const Container = styled.div<Props>`
         list-style: none;
     }
 
-    @media (min-width: 1024px) { padding: 0 32px; }
+    .container-switch { display: none; }
+
+    .container-buttons {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        width: 200px;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 0 32px;
+
+        .container-switch, .container-buttons { display: flex; }
+    }
 `;
 
 export const Logo = styled.img<Props>`
@@ -58,13 +73,4 @@ export const Logo = styled.img<Props>`
         width: 200px;
         height: 40px;
     }
-`;
-
-export const ContainerButton = styled.div`
-    display: none;
-    flex-direction: row;
-
-    gap: 24px;
-
-    @media (min-width: 1024px) { display: flex; }
 `;

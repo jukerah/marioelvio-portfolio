@@ -25,7 +25,7 @@ export const LoginLogoutButton = () => {
             onClick={handleClickMenu}
         >
             <Link to={'/login'} >            
-                <p>Login</p>
+                <p>{t('page.login.loginButton')}</p>
                 <img src={(theme.mode.status === 'dark')
                         ? svgs.systemIcon.login.light
                         : svgs.systemIcon.login.dark

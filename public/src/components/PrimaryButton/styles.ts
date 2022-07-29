@@ -11,7 +11,6 @@ interface Props {
 
 export const PrimaryButton = styled.div<Props>`
     background-color: var(${(props) => props.backgroundColor});
-    color: var(${(props) => props.color});
     
     display: flex;
     justify-content: center;
@@ -27,11 +26,21 @@ export const PrimaryButton = styled.div<Props>`
     font-weight: bold;
     text-transform: uppercase;
 
+    transition: all ease-in .5s;
+
+    a {
+        color: var(${(props) => props.color});
+        text-decoration: none;
+    }
+
     cursor: pointer;
 
     &:hover {
         background-color: var(${(props) => props.backgroundColorHover});
-        color: var(${(props) => props.colorHover});
+
+        a {
+            color: var(${(props) => props.colorHover}); transition: all ease-in .5s;
+        }
     }
 
     @media (min-width: 768px) {
@@ -49,8 +58,6 @@ export const PrimaryButton = styled.div<Props>`
         font-size: ${(props) => props.isMenuOpen ? '24px' : '40px'};
 
         border-radius: 48px;
-
-        p { transition: all ease-in .5s; }
     }
 
     @media (min-width: 1250px) {

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import * as C from './styles';
 
 import { Context } from '../../contexts/Contexts';
@@ -8,7 +9,8 @@ interface Props {
     backgroundColor: string,
     backgroundColorHover: string,
     color: string,
-    colorHover: string
+    colorHover: string,
+    url: string
 }
 
 export const PrimaryButton = (props:Props) => {
@@ -23,7 +25,7 @@ export const PrimaryButton = (props:Props) => {
             color={props.color}
             colorHover={props.colorHover}
         >
-            <p>{props.text}</p>
+            <Link to={props.url}>{props.text}</Link>
         </C.PrimaryButton>
     );
 }

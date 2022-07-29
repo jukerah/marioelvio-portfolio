@@ -38,9 +38,7 @@ export const Container = styled.section`
     gap: 28px;
     margin-top: 60px;
 
-    @media (orientation: landscape) {
-        padding: 24px 0;
-    }
+    @media (orientation: landscape) { padding: 24px 0; }
 
     @media (min-width: 768px) {
         gap: 48px;
@@ -61,6 +59,8 @@ export const ContainerInfo = styled.section<Props>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 24px;
     
     .avatar {
         display: none;
@@ -68,8 +68,6 @@ export const ContainerInfo = styled.section<Props>`
         width: 272px;
         height: 340px;
     }
-
-    gap: 24px;
 
     @media (min-width: 1024px) {
         height: 340px;
@@ -106,10 +104,6 @@ export const Info = styled.section<Props>`
         line-height: 1.4;
         white-space: nowrap;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    }
-
-    span {
-        transition: all ease-in .5s;
     }
 
     .title-hello {
@@ -199,23 +193,48 @@ export const SocialButtons = styled.div`
         }
     }
 
-    img {
-        border-radius: 6px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    a {
+        width: 56px;
+        height: 56px;
+
+        img {
+            width: 56px;
+            height: 56px;
+
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+        }
     }
 
-    @media (max-width: 767px) {
+    @media (min-width: 360px) {
         a {
-            flex: 1;
+            width: 64px;
+            height: 64px;
 
             img {
-                width: 100%;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+
+    @media (min-width: 400px) {
+        a {
+            width: 72px;
+            height: 72px;
+
+            img {
+                width: 72px;
+                height: 72px;
             }
         }
     }
 
     @media (min-width: 768px) {
         a {
+            width: 128px;
+            height: 128px;
+
             img {
                 width: 128px;
                 height: 128px;
@@ -228,6 +247,9 @@ export const SocialButtons = styled.div`
 
     @media (min-width: 1024px) {
         a {
+            width: 96px;
+            height: 96px;
+
             img {
                 width: 96px;
                 height: 96px;

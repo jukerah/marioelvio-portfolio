@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import * as C from './styles';
 
 import { svgs } from '../../data/SvgList';
@@ -54,7 +53,7 @@ export const HomePage = () => {
                             <span className='title-work'>
                                 {(i18n.language === 'en')
                                     ? <><span className='accent-color'>Front-end</span> developer</>
-                                    : <>Desenvolvedor <span className='accent-color'>front-end</span></>
+                                    : <>Desenvolvedor <span className='accent-color' lang="en">front-end</span></>
                                 }
                             </span>
                         </h1>
@@ -117,19 +116,21 @@ export const HomePage = () => {
                 </C.ContainerInfo>
                 <C.NavButtons>
                     <PrimaryButton
-                        text={'More about me'}
+                        text={t('page.home.aboutButton')}
                         backgroundColor={'--limed-spruce'}
                         backgroundColorHover={'--de-york'}
                         color={'--white'}
                         colorHover={'--limed-spruce'}
+                        url={'/about'}
                     />
                 
                     <PrimaryButton
-                        text={'My portfolio'}
-                        backgroundColor={'--de-york'}
+                        text={t('page.home.portfolioButton')}
+                        backgroundColor={'--skeptic'}
                         backgroundColorHover={'--de-york'}
                         color={'--limed-spruce'}
                         colorHover={'--limed-spruce'}
+                        url={'/portfolio'}
                     />
                 </C.NavButtons>
             </C.Container>

@@ -3,7 +3,9 @@
     "docTitle": "Mario Elvio | Front-end developer",
     "page": {
         "home": {
-            "name": "Home"
+            "name": "Home",
+            "aboutButton": "More about me",
+            "portfolioButton": "My portfolio"
         },
         "about": {
             "name": "About"
@@ -16,6 +18,11 @@
         },
         "contact": {
             "name": "Contact"
+        },
+        "login": {
+            "name": "Login",
+            "loginButton": "Login",
+            "logoutButton": "Logout"
         }
     },
     "svgs": {

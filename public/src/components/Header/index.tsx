@@ -42,14 +42,14 @@ export const Header = () => {
                     />
                 </Link>
 
-                <C.ContainerButton>
+                <div className='container-switch'>
                     <SwitchMode />
-                </C.ContainerButton>
+                </div>
 
-                <C.ContainerButton>
+                <div className='container-buttons'>
                     <ChangeLang />
                     <LoginLogoutButton />
-                </C.ContainerButton>
+                </div>
 
             </C.Container>
 

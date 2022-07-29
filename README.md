@@ -66,8 +66,8 @@ Summary
 * [X] Menu - mobile
 * [X] Menu - desktop
 * [X] Multi-language
-* [ ] Home page - mobile
-* [ ] Home page - desktop
+* [X] Home page - mobile
+* [X] Home page - desktop
 * [ ] About page - mobile
 * [ ] About page - desktop
 * [ ] Portfolio page - mobile
