@@ -33,7 +33,7 @@ export const Header = () => {
                 <MenuMobile />
                                 
                 <Link
-                    to={'/'}
+                    to={'/home'}
                     onClick={handleClickMenu}
                 >
                     <C.Logo

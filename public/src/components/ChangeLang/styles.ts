@@ -27,13 +27,14 @@ export const ChangeLang = styled.button<ModeProps>`
     p {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
         font-size: 22px;
+        transition: all ease-in .5s;
     }
 
     @media (min-width: 1024px) {
         background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
 
         p { margin-top: 4px; }
-        
+
         &:hover { p { text-decoration: underline; } }
     }
 `;

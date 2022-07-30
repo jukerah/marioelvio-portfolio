@@ -26,8 +26,6 @@ export const PrimaryButton = styled.div<Props>`
     font-weight: bold;
     text-transform: uppercase;
 
-    transition: all ease-in .5s;
-
     a {
         color: var(${(props) => props.color});
         text-decoration: none;
@@ -37,7 +35,8 @@ export const PrimaryButton = styled.div<Props>`
 
     &:hover {
         background-color: var(${(props) => props.backgroundColorHover});
-
+        
+        transition: all ease-in .5s;
         a {
             color: var(${(props) => props.colorHover}); transition: all ease-in .5s;
         }
@@ -58,6 +57,8 @@ export const PrimaryButton = styled.div<Props>`
         font-size: ${(props) => props.isMenuOpen ? '24px' : '40px'};
 
         border-radius: 48px;
+
+        a { transition: ${(props) => props.isMenuOpen ? '0s' : 'all ease-in .5s'}; }
     }
 
     @media (min-width: 1250px) {

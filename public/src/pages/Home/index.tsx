@@ -1,17 +1,25 @@
+import { useContext, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
 import * as C from './styles';
 
 import { svgs } from '../../data/SvgList';
 import { Context } from '../../contexts/Contexts';
 import { PrimaryButton } from '../../components/PrimaryButton';
 
-export const HomePage = () => {
+export const HomePage = (props:any) => {
+    const homePage = useRef(props.linkScroll);
     const { t, i18n } = useTranslation();
     const { theme } = useContext(Context);
     
+    useEffect(() => {
+        if (props.linkScroll === 'home') {           
+            homePage.current.scrollIntoView({ behavior: 'smooth'})
+        }
+    }, [props.linkScroll]);
+    
     return (        
         <C.HomeSection
+            ref={homePage}
             mode={theme.mode.status}
             isMenuOpen={theme.isMenuOpen.status}
             backgroundLandscapeSmall={(theme.mode.status === 'dark')
@@ -27,7 +35,9 @@ export const HomePage = () => {
                 : svgs.background.home.light.portrait
             }
         >
-            <C.Container>
+            <C.Container
+                isMenuOpen={theme.isMenuOpen.status}
+            >
                 <C.ContainerInfo
                     isMenuOpen={theme.isMenuOpen.status}
                 >
@@ -114,7 +124,9 @@ export const HomePage = () => {
                         </C.SocialButtons>
                     </C.Info>
                 </C.ContainerInfo>
-                <C.NavButtons>
+                <C.NavButtons
+                    isMenuOpen={theme.isMenuOpen.status}
+                >
                     <PrimaryButton
                         text={t('page.home.aboutButton')}
                         backgroundColor={'--limed-spruce'}

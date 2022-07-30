@@ -1,12 +1,21 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as C from './styles';
 
-export const AboutPage = () => {
-    const { t } = useTranslation();   
+export const AboutPage = (props:any) => {
+    const aboutPage = useRef(props.linkScroll);
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        if (props.linkScroll === 'about') {
+            aboutPage.current.scrollIntoView({ behavior: 'smooth'}) 
+        }
+    }, [props.linkScroll]);
 
     return (        
-        <C.AboutSection>
-            <h1>{t('page.about.name')}</h1>
+        <C.AboutSection ref={aboutPage}>
+            <h1>{t('development')}</h1>
+            <a href="https://github.com/jukerah/marioelvio-portfolio" target="_blank" rel="noopener noreferrer">https://github.com/jukerah/marioelvio-portfolio</a>
         </C.AboutSection>
     );
 };

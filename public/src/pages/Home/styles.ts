@@ -31,9 +31,11 @@ export const HomeSection = styled.section<Props>`
     background-size: cover;
 `;
 
-export const Container = styled.section`
+export const Container = styled.div<Props>`
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-end;
 
     gap: 28px;
     margin-top: 60px;
@@ -47,15 +49,21 @@ export const Container = styled.section`
 
     @media (min-width: 1024px) {
         gap: 32px;
-        margin-top: 100px;
+        margin-top: 0;
+
+        margin-left: ${(props) => props.isMenuOpen ? '-24px' : 0};
     }
 
     @media (orientation: landscape) and (min-width: 1024px) {
-        padding: 32px 0;
+        padding: 100px 0 48px 0;
+    }
+
+    @media (min-width: 1250px) {
+        margin-left: 0;
     }
 `;
 
-export const ContainerInfo = styled.section<Props>`
+export const ContainerInfo = styled.div<Props>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,7 +97,7 @@ export const ContainerInfo = styled.section<Props>`
     }
 `;
 
-export const Info = styled.section<Props>`
+export const Info = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -260,7 +268,7 @@ export const SocialButtons = styled.div`
     }
 `;
 
-export const NavButtons = styled.div`
+export const NavButtons = styled.div<Props>`
     display: flex;
     flex-direction: column;
 
@@ -274,5 +282,13 @@ export const NavButtons = styled.div`
         flex-direction: row;
 
         gap: 24px;
+
+        padding: ${(props) => props.isMenuOpen ? '0 24px' : 0};
+        max-width: ${(props) => props.isMenuOpen ? 'calc(100% - 24px)' : '100%'};
+    }
+
+    @media (min-width: 1250px) {
+        padding: 0;
+        max-width: 100%;
     }
 `;
