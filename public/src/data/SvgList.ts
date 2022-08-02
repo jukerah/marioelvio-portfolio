@@ -4,8 +4,10 @@ export const svgs = {
     logo: {
         marioElvio: {
             src: require('../assets/system/logo/marioelvio-logo.svg').default,
-            altPt: 'Logotipo Mario Elvio, Mario na cor branca, Elvio na cor verde e uma cor cinza escuro de fundo.',
-            altEn: 'Mario Elvio logo, Mario in white, Elvio in green and a dark gray background color.'
+            alt: {
+                pt: 'Logotipo Mario Elvio, Mario na cor branca, Elvio na cor verde e uma cor cinza escuro de fundo.',
+                en: 'Mario Elvio logo, Mario in white, Elvio in green and a dark gray background color.'
+            }
         },
         adminPanel: {
             src: require('../assets/system/logo/adminpanel-logo.svg').default,

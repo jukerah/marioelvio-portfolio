@@ -11,7 +11,7 @@ import { MenuMobile, NavMobile } from '../MenuMobile';
 import { ChangeLang } from '../ChangeLang';
 
 export const Header = () => {
-    const { t } = useTranslation();
+    const { i18n } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -38,7 +38,10 @@ export const Header = () => {
                 >
                     <C.Logo
                         src={svgs.logo.marioElvio.src}
-                        alt={t('svgs.logo.marioElvio.alt')}
+                        alt={(i18n.language === 'en')
+                                ? svgs.logo.marioElvio.alt.en
+                                : svgs.logo.marioElvio.alt.pt
+                            }
                     />
                 </Link>
 

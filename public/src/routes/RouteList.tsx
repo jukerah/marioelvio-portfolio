@@ -11,9 +11,9 @@ export const RouteList = () => {
         { path: '/', element: <HomePage page={'home'} /> },
         { path: '/home', element: <HomePage page={'home'} /> },
         { path: '/about', element: <AboutPage page={'about'} /> },
-        { path: '/portfolio', element: <PortfolioPage /> },
-        { path: '/contact', element: <ContactPage /> },
-        { path: '/login', element: <LoginPage /> },
+        { path: '/portfolio', element: <PortfolioPage page={'portfolio'} /> },
+        { path: '/contact', element: <ContactPage page={'contact'} /> },
+        { path: '/login', element: <LoginPage page={'login'} /> },
         { path: '*', element: <NotFound /> }
     ]);
 }

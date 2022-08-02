@@ -1,62 +1,47 @@
-{
-    "development": "Site is under development, follow the news here or GitHub:",
-    "docTitle": "Mario Elvio | Front-end developer",
+module.exports = {
+    "development": "Site está em desenvolvimento, acompanhe as novidades por aqui ou GitHub:",
+    "docTitle": "Mario Elvio | Desenvolvedor front-end",
     "page": {
         "home": {
-            "name": "Home",
-            "aboutButton": "More about me",
-            "portfolioButton": "My portfolio"
+            "name": "Início",
+            "aboutButton": "Mais sobre mim",
+            "portfolioButton": "Meu portfólio"
         },
         "about": {
-            "name": "About",
-            "personalResume": {
-                "title": "Personal resume",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae."
-            },
-            "professionalResume": {
-                "title": "Professional resume",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae."
-            },
-            "myInterests": {
-                "title": "My interests",
-                "tech": [
-                    {
-                        "id": 1,
-                        "idTech": 1,
-                        "name": "HTML5",
-                        "alt": "HTML5 logo."},
-                    {
-                        "id": 2,
-                        "idTech": 2,
-                        "name": "CSS3",
-                        "alt": "CSS3 logo."
-                    },
-                    {
-                        "id": 3,
-                        "idTech": 3,
-                        "name": "JavaScript",
-                        "alt": "JavaScript logo."
-                    },
-                    {
-                        "id": 4,
-                        "idTech": 4,
-                        "name": "TypeScript",
-                        "alt": "TypeScript logo."
-                    },
-                    {
-                        "id": 5,
-                        "idTech": 5,
-                        "name": "React.js",
-                        "alt": "React logo."
-                    },
-                    {
-                        "id": 6,
-                        "idTech": 1,
-                        "name": "Node.js",
-                        "alt": "Node logo."
-                    }
-                ]
-            },
+            "name": "Sobre",
+            "personalResume": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
+            "professionalResume": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
+            "myInterests": [
+                {
+                    "id": 1,
+                    "name": "HTML5",
+                    "alt": "logotipo HTML5."},
+                {
+                    "id": 2,
+                    "name": "CSS3",
+                    "alt": "logotipo CSS3."
+                },
+                {
+                    "id": 3,
+                    "name": "JavaScript",
+                    "alt": "logotipo JavaScript."
+                },
+                {
+                    "id": 4,
+                    "name": "TypeScript",
+                    "alt": "logotipo TypeScript."
+                },
+                {
+                    "id": 5,
+                    "name": "React.js",
+                    "alt": "logotipo React."
+                },
+                {
+                    "id": 6,
+                    "name": "Node.js",
+                    "alt": "logotipo Node."
+                }
+            ],
             "personalDetails": {
                 "phone": "+55 16 98865-8468",
                 "email": "devmarioelvio@gmail.com",
@@ -77,39 +62,39 @@
             "workExperience": [
                 {
                     "id": 1,
-                    "jobRole": "Systems Analyst",
+                    "jobRole": "Analista de sistemas",
                     "company": "DXC Technology",
                     "start": "10 / 2021",
                     "theEnd": "",
                     "Current": true,
-                    "seniority": "Intern",
-                    "Activities": "Support for mission-critical processes in the client Claro Brasil (NET), carrying out treatments and monitoring incidents until their closure to ensure the availability of applications and data integrity services."
+                    "seniority": "Estagiário",
+                    "Activities": "Suporte aos processos de missão crítica no cliente Claro Brasil (NET), realizando tratamentos e monitorando os incidentes até o seu encerramento para garantir a disponibilidade dos aplicativos e serviços de integridade dos dados."
                 },
                 {
                     "id": 2,
-                    "jobRole": "Developer",
+                    "jobRole": "Desenvolvedor",
                     "company": "Freelancer",
                     "start": "04 / 2021",
                     "theEnd": "",
                     "Current": true,
                     "seniority": "Intern",
-                    "Activities": "Requirements gathering, interface creation and prototypes using Figma with a focus on the best possible user experience, SQL, PL/SQL development, database modeling, Git, GitHub, front-end development using HTML5, CSS3, JavaScript, TypeScript and React.js."
+                    "Activities": "Levantamento de requisitos, criação de interfaces e protótipos utilizando Figma com foco na melhor experiência de usuário possível, SQL, desenvolvimento PL/SQL, modelagem de banco de dados, Git, GitHub, desenvolvimento front-end usando HTML5, CSS3, JavaScript, TypeScript e React.js."
                 },
                 {
                     "id": 3,
-                    "jobRole": "Service provider",
-                    "company": "Autonomous",
+                    "jobRole": "Prestador de serviços",
+                    "company": "Autônomo",
                     "start": "03 / 2011",
                     "theEnd": "09 / 2021",
                     "Current": false,
                     "seniority": "",
-                    "Activities": "Customer service and service delivery."
+                    "Activities": "Atendimento ao cliente e prestação de serviços."
                 }
             ],
             "education": [
                 {
                     "id": 1,
-                    "course": "Analysis and sistems development",
+                    "course": "Análise e desenvolvimento de sistemas",
                     "start": "02 / 2021",
                     "theEnd": "08 / 2023",
                     "college": "UNIARA"
@@ -118,14 +103,14 @@
             "courses": [
                 {
                     "id": 1,
-                    "course": "English",
+                    "course": "Inglês",
                     "start": "2021",
                     "theEnd": "2024",
                     "college": "Prof.Kenny"
                 },
                 {
                     "id": 2,
-                    "course": "UI/UX, SQL, PL/SQL and Database Modeling.",
+                    "course": "UI/UX, SQL, PL/SQL and Modelagem de banco de dados.",
                     "start": "2022",
                     "theEnd": "2022",
                     "college": "Udemy"
@@ -160,7 +145,7 @@
                 },
                 {
                     "id": 7,
-                    "course": "HTML5, CSS3 and Programming Logic.",
+                    "course": "HTML5, CSS3 and Lógica de programação.",
                     "start": "2021",
                     "theEnd": "2021",
                     "college": "DIGITAL INNOVATION ONE"
@@ -185,52 +170,52 @@
                 "skill": [
                     {
                         "id": 1,
-                        "name": "Communication",
+                        "name": "Comunicação",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 2,
-                        "name": "Teamwork",
+                        "name": "Trabalho em equipe",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 3,
-                        "name": "Creativity",
+                        "name": "Criatividade",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 4,
-                        "name": "Dedication",
+                        "name": "Dedicação",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 5,
-                        "name": "Analytical Ability",
+                        "name": "Habilidade analítica",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 6,
-                        "name": "Flexibility",
+                        "name": "Flexibilidade",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 7,
-                        "name": "Ethic", 
+                        "name": "Ética", 
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 8,
-                        "name": "Collaborative Spirit",
+                        "name": "Espírito Colaborativo",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 9,
-                        "name": "Emotional Stability",
+                        "name": "Estabilidade emocional",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     },
                     {
                         "id": 10,
-                        "name": "Self-Teached",
+                        "name": "Autodidata",
                         "description": "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                     }
                 ]
@@ -243,49 +228,49 @@
                             "id": 1,
                             "idTech": 1,
                             "name": "HTML5",
-                            "Alt": "HTML5 logo."
+                            "Alt": "Logotipo HTML5."
                         },
                         {
                             "id": 2,
-                            "idTech": 2,
+                            "idTech": 1,
                             "name": "CSS3",
-                            "Alt": "CSS3 logo."
+                            "Alt": "Logotipo CSS3."
                         },
                         {
                             "id": 3,
-                            "idTech": 3,
+                            "idTech": 1,
                             "name": "JavaScript",
-                            "Alt": "JavaScript logo."
+                            "Alt": "Logotipo JavaScript."
                         },
                         {
                             "id": 4,
-                            "idTech": 4,
+                            "idTech": 1,
                             "name": "TypeScript",
-                            "Alt": "TypeScript logo."
+                            "Alt": "Logotipo TypeScript."
                         },
                         {
                             "id": 5,
-                            "idTech": 5,
+                            "idTech": 1,
                             "name": "React.js",
-                            "Alt": "React logo."
+                            "Alt": "Logotipo React."
                         },
                         {
                             "id": 6,
-                            "idTech": 16,
+                            "idTech": 1,
                             "name": "SEO",
-                            "Alt": "SEO logo."
+                            "Alt": "Logotipo SEO."
                         },
                         {
                             "id": 7,
-                            "idTech": 17,
+                            "idTech": 1,
                             "name": "Accessibility",
-                            "Alt": "Accessibility logo."
+                            "Alt": "Logotipo accessibility."
                         },
                         {
                             "id": 8,
-                            "idTech": 15,
+                            "idTech": 1,
                             "name": "UI/UX",
-                            "Alt": "UI/UX logo."
+                            "Alt": "Logotipo UI/UX."
                         }
                     ]
                 },
@@ -293,21 +278,21 @@
                     "skill": [
                         {
                             "id": 1,
-                            "idTech": 3,
+                            "idTech": 1,
                             "name": "JavaScript",
-                            "Alt": "JavaScript logo."
+                            "Alt": "Logotipo JavaScript."
                         },
                         {
                             "id": 2,
-                            "idTech": 4,
+                            "idTech": 1,
                             "name": "TypeScript",
-                            "Alt": "TypeScript logo."
+                            "Alt": "Logotipo TypeScript."
                         },
                         {
                             "id": 3,
-                            "idTech": 6,
+                            "idTech": 1,
                             "name": "Node.js",
-                            "Alt": "Node logo."
+                            "Alt": "Logotipo Node."
                         }
                     ]
                 },
@@ -315,27 +300,27 @@
                     "skill": [
                         {
                             "id": 1,
-                            "idTech": 20,
+                            "idTech": 1,
                             "name": "GIT",
-                            "Alt": "GIT logo."
+                            "Alt": "Logotipo GIT."
                         },
                         {
                             "id": 2,
-                            "idTech": 11,
+                            "idTech": 1,
                             "name": "GitHub",
-                            "Alt": "GitHub logo."
+                            "Alt": "Logotipo GitHub."
                         },
                         {
                             "id": 3,
-                            "idTech": 19,
+                            "idTech": 1,
                             "name": "PhotoShop",
-                            "Alt": "PhotoShop logo."
+                            "Alt": "Logotipo PhotoShop."
                         },
                         {
                             "id": 4,
-                            "idTech": 18,
+                            "idTech": 1,
                             "name": "Figma",
-                            "Alt": "Figma logo."
+                            "Alt": "Logotipo Figma."
                         }
                     ]
                 },
@@ -343,225 +328,225 @@
                     "skill": [
                         {
                             "id": 1,
-                            "idTech": 13,
+                            "idTech": 1,
                             "name": "Modeling",
-                            "Alt": "Modeling logo."
+                            "Alt": "Logotipo modeling."
                         },
                         {
                             "id": 2,
-                            "idTech": 8,
+                            "idTech": 1,
                             "name": "MySQL",
-                            "Alt": "MySQL logo."
+                            "Alt": "Logotipo MySQL."
                         },
                         {
                             "id": 3,
-                            "idTech": 14,
+                            "idTech": 1,
                             "name": "SQL",
-                            "Alt": "SQL logo."
+                            "Alt": "Logotipo SQL."
                         },
                         {
                             "id": 4,
-                            "idTech": 9,
+                            "idTech": 1,
                             "name": "PL/SQL",
-                            "Alt": "PL/SQL logo."
+                            "Alt": "Logotipo PL/SQL."
                         }
                     ]
                 }
             }
         },
         "portfolio": {
-            "name": "Portfolio"
+            "name": "Portfólio"
         },
         "blog": {
             "name": "Blog"
         },
         "contact": {
-            "name": "Contact"
+            "name": "Contato"
         },
         "login": {
-            "name": "Login",
-            "loginButton": "Login",
-            "logoutButton": "Logout"
+            "name": "Entrar",
+            "loginButton": "Entrar",
+            "logoutButton": "Sair"
         }
     },
     "svgs": {
         "logo": {
             "marioElvio": {
-                "alt": "Mario Elvio logo, Mario in white, Elvio in green and a dark gray background color."
+                "alt": "Logotipo Mario Elvio, Mario na cor branca, Elvio na cor verde e uma cor cinza escuro de fundo."
             },
             "adminPanel": {
-                "alt": "Admin panel logo, white admin, green panel and a dark gray background color."
+                "alt": "Logotipo painel de administração, administração na cor branca, painel na cor verde e uma cor cinza escuro de fundo."
             }
         },
         "avatar": {
-            "alt": "Mario Elvio using the notebook."
+            "alt": "Mario Elvio utilizando o notebook."
         },
         "country": {
             "brazil": {
-                "alt": "Brazil's flag."
+                "alt": "Bandeira do Brasil."
             },
             "unitedStates": {
-                "alt": "United states's flag."
+                "alt": "Bandeira do Estados Unidos."
             },
             "spain": {
-                "alt": "Spanish flag."
+                "alt": "Bandeira da Espanha."
             }
         },
         "systemIcon": {
             "id": {
-                "alt": "Identity document icon."
+                "alt": "Ícone documento de identidade."
             },
             "mobile": {
-                "alt": "mobile device icon."
+                "alt": "Ícone dispositivo móvel."
             },
             "database": {
-                "alt": "Database icon."
+                "alt": "Ícone banco de dados."
             },
             "softSkill": {
-                "alt": "Soft skill icon."
+                "alt": "Ícone habilidades interpessoais."
             },
             "hardSkill": {
-                "alt": "Hard skill icon."
+                "alt": "Ícone habilidades técnicas."
             },
             "certificate": {
-                "alt": "Certificate icon."
+                "alt": "Ícone certificado."
             },
             "myInterests": {
-                "alt": "My interests icon."
+                "alt": "Ícone meus interesses."
             },
             "work": {
-                "alt": "Work icon."
+                "alt": "Ícone trabalho."
             },
             "education": {
-                "altEn": "Education icon."
+                "altPt": "Ícone educação."
             },
             "course": {
-                "alt": "Course icon."
+                "alt": "Ícone curso."
             },
             "backEnd": {
-                "alt": "Back-end icon."
+                "alt": "Ícone back-end."
             },
             "frontEnd": {
-                "alt": "Front-end icon."
+                "alt": "Ícone front-end."
             },
             "tool": {
-                "alt": "Tool icon."
+                "alt": "Ícone ferramentas."
             },
             "loading": {
-                "alt": "Loading icon."
+                "alt": "Ícone carregamento."
             },
             "mapPin": {
-                "alt": "Map pin icon."
+                "alt": "Ícone ponto no mapa."
             },
             "home": {
-                "alt": "Home icon."
+                "alt": "Ícone início."
             },
             "send": {
-                "alt": "end icon."
+                "alt": "Ícone enviar."
             },
             "chevronDown": {
-                "alt": "Chevron down icon."
+                "alt": "Ícone seta para baixo."
             },
             "chevronUp": {
-                "alt": "Chevron up icon."
+                "alt": "Ícone seta para cima."
             },
             "chevronLeft": {
-                "alt": "Chevron left icon."
+                "alt": "Ícone seta para esquerda."
             },
             "chevronRight": {
-                "alt": "Chevron right icon."
+                "alt": "Ícone seta para direita."
             },
             "about": {
-                "alt": "About icon."
+                "alt": "Ícone Sobre."
             },
             "phone": {
-                "alt": "Phone icon."
+                "alt": "Ícone telefone."
             },
             "magnifyingGlass": {
-                "alt": "Magnifying glass icon."
+                "alt": "'Ícone lupa."
             },
             "book": {
-                "alt": "Book icon."
+                "alt": "Ícone livro."
             },
             "mail": {
-                "alt": "E-mail icon."
+                "alt": "Ícone e-mail."
             },
             "login": {
-                "alt": "Login icon."
+                "alt": "Ícone logar."
             },
             "logout": {
-                "alt": "Logout icon."
+                "alt": "Ícone deslogar."
             },
             "pencil": {
-                "alt": "Pencil icon."
+                "alt": "Ícone caneta."
             },
             "download": {
-                "alt": "Download icon."
+                "alt": "Ícone baixar."
             },
             "dotsVertical": {
-                "alt": "Dots vertical icon."
+                "alt": "Ícone opções."
             },
             "delete": {
-                "alt": "Delete icon."
+                "alt": "Ícone deletar."
             },
             "edit": {
-                "alt": "Edit icon."
+                "alt": "Ícone editar."
             },
             "save": {
-                "alt": "Save icon."
+                "alt": "Ícone salvar."
             },
             "slideMode": {
-                "alt": "Slide icon."
+                "alt": "Ícone modo deslizar."
             },
             "gridMode": {
-                "alt": "List mode icon."
+                "alt": "Ícone modo lista."
             },
             "link": {
-                "alt": "Link icon."
+                "alt": "Ícone link."
             },
             "close": {
-                "alt": "Close icon."
+                "alt": "Ícone fechar."
             },
             "alertTriangle": {
-                "alt": "Alert triangle icon."
+                "alt": "Ícone triângulo de alerta."
             },
             "plus": {
-                "alt": "Plus icon."
+                "alt": "Ícone mais."
             },
             "folder": {
-                "alt": "Folder icon."
+                "alt": "Ícone pasta."
             },
             "article": {
-                "alt": "Article icon."
+                "alt": "Ícone artigo."
             },
             "youtube": {
-                "alt": "Youtube icon."
+                "alt": "Ícone Youtube."
             },
             "linkedin": {
-                "alt": "Linkedin icon."
+                "alt": "Ícone Linkedin."
             },
             "github": {
-                "alt": "Github icon."
+                "alt": "Ícone Github."
             },
             "change": {
-                "alt": "Change icon."
+                "alt": "Ícone trocar."
             },
             "technology": {
-                "alt": "Technology icon."
+                "alt": "Ícone tecnologia."
             }
         },
         "socialIcon": {
             "whatsapp": {
-                "alt": "WhatsApp button."
+                "alt": "Botão WhatsApp."
             },
             "linkedin": {
-                "alt": "Linkedin button."
+                "alt": "Botão Linkedin."
             },
             "youtube": {
-                "alt": "Youtube button."
+                "alt": "Botão Youtube."
             },
             "github": {
-                "alt": "GitHub button."
+                "alt": "Botão GitHub."
             }
         },
         "technologies": [
@@ -574,115 +559,115 @@
             {
                 "id": 2,
                 "img": {
-                    "alt": "CSS3 logo."
+                    "alt": "Logotipo CSS3."
                 }
             },
             {
                 "id": 3,
                 "img": {
-                    "alt": "JavaScript logo."
+                    "alt": "Logotipo JavaScript."
                 }
             },
             {
                 "id": 4,
                 "img": {
-                    "alt": "TypeScript logo."
+                    "alt": "Logotipo TypeScript."
                 }
             },
             {
                 "id": 5,
                 "img": {
-                    "alt": "React.js logo."
+                    "alt": "Logotipo React.js."
                 }
             },
             {
                 "id": 6,
                 "img": {
-                    "alt": "Node.js logo."
+                    "alt": "Logotipo Node.js."
                 }
             },
             {
                 "id": 7,
                 "img": {
-                    "alt": "PostgreeSQL logo."
+                    "alt": "Logotipo PostgreeSQL."
                 }
             },
             {
                 "id": 8,
                 "img": {
-                    "alt": "MySQL logo."
+                    "alt": "Logotipo MySQL."
                 }
             },
             {
                 "id": 9,
                 "img": {
-                    "alt": "PL/SQL logo."
+                    "alt": "Logotipo PL/SQL."
                 }
             },
             {
                 "id": 10,
                 "img": {
-                    "alt": "Java logo."
+                    "alt": "Logotipo Java."
                 }
             },
             {
                 "id": 11,
                 "img": {
-                    "alt": "GitHub logo."
+                    "alt": "Logotipo GitHub."
                 }
             },
             {
                 "id": 12,
                 "img": {
-                    "alt": "MongoDB logo."
+                    "alt": "Logotipo MongoDB."
                 }
             },
             {
                 "id": 13,
                 "img": {
-                    "alt": "Modeling logo."
+                    "alt": "Logotipo Modeling."
                 }
             },
             {
                 "id": 14,
                 "img": {
-                    "alt": "SQL logo."
+                    "alt": "Logotipo SQL."
                 }
             },
             {
                 "id": 15,
                 "img": {
-                    "alt": "UI/UX logo."
+                    "alt": "Logotipo UI/UX."
                 }
             },
             {
                 "id": 16,
                 "img": {
-                    "alt": "SEO logo."
+                    "alt": "Logotipo SEO."
                 }
             },
             {
                 "id": 17,
                 "img": {
-                    "alt": "Accessibility logo."
+                    "alt": "Logotipo Accessibility."
                 }
             },
             {
                 "id": 18,
                 "img": {
-                    "alt": "Figma logo."
+                    "alt": "Logotipo Figma."
                 }
             },
             {
                 "id": 19,
                 "img": {
-                    "alt": "PhotoShop logo."
+                    "alt": "Logotipo PhotoShop."
                 }
             },
             {
                 "id": 20,
                 "img": {
-                    "alt": "Git logo."
+                    "alt": "Logotipo Git."
                 }
             }
         ]

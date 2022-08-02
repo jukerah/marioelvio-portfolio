@@ -7,15 +7,15 @@ import { Context } from '../../contexts/Contexts';
 import { PrimaryButton } from '../../components/PrimaryButton';
 
 export const HomePage = (props:any) => {
-    const homePage = useRef(props.linkScroll);
+    const homePage = useRef(props.page);
     const { t, i18n } = useTranslation();
     const { theme } = useContext(Context);
     
     useEffect(() => {
-        if (props.linkScroll === 'home') {           
-            homePage.current.scrollIntoView({ behavior: 'smooth'})
+        if (props.page === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    }, [props.linkScroll]);
+    }, [props.page]);
     
     return (        
         <C.HomeSection
