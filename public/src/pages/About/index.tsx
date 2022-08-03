@@ -23,7 +23,7 @@ export const AboutPage = (props:any) => {
             mode={theme.mode.status}
         >
             <C.Container>
-                <TitlePage 
+                <TitlePage
                     title={t('page.about.name')}
                 />
 

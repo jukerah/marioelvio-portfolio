@@ -15,7 +15,7 @@ type ContextType = {
 
 const initialState = {
     isMenuOpen: menuInitialState,
-    mode: modeInitialState
+    mode: modeInitialState,
 }
 
 export const Context = createContext<ContextType>({
@@ -25,7 +25,7 @@ export const Context = createContext<ContextType>({
 
 const mainReducer = (state: initialStateType, action: reducerActionType) => ({
     isMenuOpen: menuReducer(state.isMenuOpen, action),
-    mode: modeReducer(state.mode, action)
+    mode: modeReducer(state.mode, action),
 });
 
 type ContextProviderProps = {
