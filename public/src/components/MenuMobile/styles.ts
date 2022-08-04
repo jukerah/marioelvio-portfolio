@@ -132,11 +132,6 @@ export const ContainerButtons = styled.div<Props>`
 
     div { padding: 16px; }
 
-    .top-line {
-        display: flex;
-        gap: 32px;
-    }
-
     @media (max-width: 1024px)
        and (max-height: 600px) {
         margin-bottom: 60px;

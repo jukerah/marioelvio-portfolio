@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as C from './styles';
@@ -8,10 +7,8 @@ import { svgs } from '../../data/SvgList';
 import { SwitchMode } from '../SwitchMode';
 import { LoginLogoutButton } from '../LoginLogoutButton';
 import { MenuMobile, NavMobile } from '../MenuMobile';
-import { ChangeLang } from '../ChangeLang';
 
 export const Header = () => {
-    const { i18n } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -38,19 +35,15 @@ export const Header = () => {
                 >
                     <C.Logo
                         src={svgs.logo.marioElvio.src}
-                        alt={(i18n.language === 'en')
-                                ? svgs.logo.marioElvio.alt.en
-                                : svgs.logo.marioElvio.alt.pt
-                            }
+                        alt={svgs.logo.marioElvio.alt}
                     />
                 </Link>
 
-                <div className='container-switch'>
+                <div className='container-button'>
                     <SwitchMode />
                 </div>
 
-                <div className='container-buttons'>
-                    <ChangeLang />
+                <div className='container-button'>
                     <LoginLogoutButton />
                 </div>
 

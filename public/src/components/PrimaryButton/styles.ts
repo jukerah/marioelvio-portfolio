@@ -48,7 +48,6 @@ export const PrimaryButton = styled.div<Props>`
         font-size: 55px;
 
         border-radius: 64px;
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
     @media (min-width: 1024px) {
@@ -59,6 +58,10 @@ export const PrimaryButton = styled.div<Props>`
         border-radius: 48px;
 
         a { transition: ${(props) => props.isMenuOpen ? '0s' : 'all ease-in .5s'}; }
+        
+        &:hover {
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+        }
     }
 
     @media (min-width: 1250px) {

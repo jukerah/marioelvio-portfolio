@@ -2,7 +2,6 @@ import styled from "styled-components";
 interface Props {
     mode?: string | null;
     isMenuOpen?: boolean;
-    lang?: string;
     backgroundLandscapeSmall?: string;
     backgroundLandscapeLarge?: string;
     backgroundPortrait?: string;
@@ -114,57 +113,35 @@ export const Info = styled.div<Props>`
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     }
 
-    .title-hello {
-        font-size: ${(props) => props.lang === 'en' ? '32px' : '24px'};
-    }
-    .title-name  {
-        font-size: ${(props) => props.lang === 'en' ? '35px' : '28.5px'};
-    }
-    .title-work  {
-        font-size: ${(props) => props.lang === 'en' ? '24px' : '20px'};
-    }
+    .title-hello { font-size: 32px; }
+    .title-name  { font-size: 35px; }
+    .title-work  { font-size: 24px; }
+
     .accent-color {
         color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
     }
 
     @media (min-width: 360px) {
-        .title-hello {
-            font-size: ${(props) => props.lang === 'en' ? '34px' : '28px'};
-        }
-        .title-name  {
-            font-size: ${(props) => props.lang === 'en' ? '41px' : '31.5px'};
-        }
-        .title-work  {
-            font-size: ${(props) => props.lang === 'en' ? '28px' : '22px'};
-        }
+        .title-hello { font-size: 34px; }
+        .title-name  { font-size: 41px; }
+        .title-work  { font-size: 28px; }
     }
 
     @media (min-width: 400px) {
-        .title-name  {
-            font-size: ${(props) => props.lang === 'en' ? '45.2px' : '35.7px'};
-        }
-        .title-work  {
-            font-size: ${(props) => props.lang === 'en' ? '31px' : '25px'};
-        }
+        .title-name  { font-size: 45.2px; }
+        .title-work  { font-size: 31px; }
     }
     
     @media (min-width: 768px) {
-        h1 {
-            line-height: 1.1;
-            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-        }
+        h1 { line-height: 1.1; }
 
         gap: 40px;
 
         .title-hello {
             font-size: 56px;
         }
-        .title-name  {
-            font-size: ${(props) => props.lang === 'en' ? '82px' : '66px'};
-        }
-        .title-work  {
-            font-size: ${(props) => props.lang === 'en' ? '56px' : '46.1px'};
-        }
+        .title-name  { font-size: 82px; }
+        .title-work  { font-size: 56px; }
     }
 
     @media (min-width: 1024px) {
@@ -174,15 +151,9 @@ export const Info = styled.div<Props>`
 
         h1 { line-height: 1.2; }
 
-        .title-hello {
-            font-size: ${(props) => props.lang === 'en' ? '56px' : '56px'};
-        }
-        .title-name  {
-            font-size: ${(props) => props.lang === 'en' ? '70px' : '55.8px'};
-        }
-        .title-work  {
-            font-size: ${(props) => props.lang === 'en' ? '48px' : '38.9px'};
-        }
+        .title-hello { font-size: 56px; }
+        .title-name  { font-size: 70px; }
+        .title-work  { font-size: 48px; }
     }
 `;
 
@@ -191,7 +162,7 @@ export const SocialButtons = styled.div`
     justify-content: space-between;
 
     gap: 16px;
-    
+
     a {
         .img-hover { display: none; }
 
@@ -204,13 +175,12 @@ export const SocialButtons = styled.div`
     a {
         width: 56px;
         height: 56px;
-
+        
         img {
             width: 56px;
             height: 56px;
 
             border-radius: 6px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
         }
     }
 
@@ -248,7 +218,6 @@ export const SocialButtons = styled.div`
                 height: 128px;
 
                 border-radius: 12px;
-                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
             }
         }
     }
@@ -258,12 +227,21 @@ export const SocialButtons = styled.div`
             width: 96px;
             height: 96px;
 
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+
+            transition: all ease-in .3s;
+
             img {
                 width: 96px;
                 height: 96px;
 
                 border-radius: 8px;
             }
+        }
+
+        a:hover {       
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
         }
     }
 `;

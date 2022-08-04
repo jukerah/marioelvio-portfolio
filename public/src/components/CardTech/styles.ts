@@ -17,7 +17,6 @@ export const CardTech = styled.figure<ModeProps>`
     height: 144px;
 
     font-size: 16px;
-    text-transform: uppercase;
     text-align: center;
 
     border-radius: 4px;
@@ -33,7 +32,7 @@ export const CardTech = styled.figure<ModeProps>`
 
     .img-hover { display: none; }
 
-    &:hover {
+    &:hover, &:focus {
         background-color: var(--skeptic);
         color: var(--limed-spruce);
         box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);

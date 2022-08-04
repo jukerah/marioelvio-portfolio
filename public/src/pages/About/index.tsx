@@ -1,15 +1,14 @@
 import { useContext, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import * as C from './styles';
 
 import { Context } from '../../contexts/Contexts';
 import { TitlePage } from '../../components/TitlePage';
 import { SubTitle } from '../../components/SubTitle';
-import { svgs } from '../../data/SvgList';
 import { CardTech } from '../../components/CardTech';
+import { pageInfo } from '../../data/PageData';
+import { svgs } from '../../data/SvgList';
 
 export const AboutPage = (props:any) => {
-    const { t, i18n } = useTranslation();
     const { theme } = useContext(Context);
 
     useEffect(() => {
@@ -24,47 +23,162 @@ export const AboutPage = (props:any) => {
         >
             <C.Container>
                 <TitlePage
-                    title={t('page.about.name')}
+                    title={'About'}
                 />
 
                 <C.ContainerResume
                     mode={theme.mode.status}
                 >
                     <SubTitle 
-                        subTitle={t('page.about.personalResume.title')}
+                        subTitle={pageInfo.about.personalResume.title}
                     />
-                    <p>{t('page.about.personalResume.description')}</p>
+                    <p>{pageInfo.about.personalResume.resume}</p>
                 </C.ContainerResume>
 
                 <C.ContainerResume
                     mode={theme.mode.status}
                 >
                     <SubTitle 
-                        subTitle={t('page.about.professionalResume.title')}
+                        subTitle={pageInfo.about.professionalResume.title}
                     />
-                    <p>{t('page.about.professionalResume.description')}</p>
+                    <p>{pageInfo.about.professionalResume.resume}</p>
                 </C.ContainerResume>
 
                 <C.ContainerMyInterests
                     mode={theme.mode.status}
+                    isMenuOpen={theme.isMenuOpen.status}
                 >
                     <SubTitle 
-                        subTitle={t('page.about.myInterests.title')}
+                        subTitle={pageInfo.about.myInterests.title}
                     />
 
                     <div className='grid'>
-                        {svgs.technologies.map((tech:any) => (
+                        {pageInfo.about.myInterests.tech.map((tech:any) => (
                             <CardTech
                                 key={tech.id}
-                                src={tech.img.light}
+                                src={(theme.mode.status === 'dark')
+                                    ? tech.img.light
+                                    : tech.img.dark
+                                }
                                 srcHover={tech.img.primary}
-                                alt={tech.img.alt[i18n.language]}
+                                alt={tech.img.alt}
                                 tech={tech.name}
                             />
                         ))}
                     </div>        
 
                 </C.ContainerMyInterests>
+
+                <C.ContainerPersonalDetails
+                    mode={theme.mode.status}
+                >
+                    <SubTitle 
+                        subTitle={pageInfo.about.personalDetails.title}
+                    />
+
+                    <div className='container-info'>
+                        <div>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.phone.light
+                                        : svgs.systemIcon.phone.dark
+                                    }
+                                    alt={svgs.systemIcon.phone.alt}
+                                />
+                                <figcaption>
+                                    <a 
+                                        href={`tel:${pageInfo.about.personalDetails.phone}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {pageInfo.about.personalDetails.phone}
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.mail.light
+                                        : svgs.systemIcon.mail.dark
+                                    }
+                                    alt={svgs.systemIcon.mail.alt}
+                                />
+                                <figcaption>
+                                    <a
+                                        href={`mailto:${pageInfo.about.personalDetails.email}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {pageInfo.about.personalDetails.email}
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.mapPin.light
+                                        : svgs.systemIcon.mapPin.dark
+                                    }
+                                    alt={svgs.systemIcon.mapPin.alt}
+                                />
+                                <figcaption>
+                                    {pageInfo.about.personalDetails.address}
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.linkedin.light
+                                        : svgs.systemIcon.linkedin.dark
+                                    }
+                                    alt={svgs.systemIcon.linkedin.alt}
+                                />
+                                <figcaption>
+                                    <a
+                                        href={pageInfo.about.personalDetails.linkedin.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {pageInfo.about.personalDetails.linkedin.text}
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.github.light
+                                        : svgs.systemIcon.github.dark
+                                    }
+                                    alt={svgs.systemIcon.github.alt}
+                                />
+                                <figcaption>
+                                    <a
+                                        href={pageInfo.about.personalDetails.github.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {pageInfo.about.personalDetails.github.text}
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src={(theme.mode.status === 'dark')
+                                        ? svgs.systemIcon.youtube.light
+                                        : svgs.systemIcon.youtube.dark
+                                    }
+                                    alt={svgs.systemIcon.youtube.alt}
+                                />
+                                <figcaption>
+                                    <a
+                                        href={pageInfo.about.personalDetails.youtube.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {pageInfo.about.personalDetails.youtube.text}
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </C.ContainerPersonalDetails>
             </C.Container>
         </C.AboutSection>
         

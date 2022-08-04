@@ -47,21 +47,12 @@ export const Container = styled.div<Props>`
         list-style: none;
     }
 
-    .container-switch { display: none; }
-
-    .container-buttons {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-
-        width: 200px;
-    }
+    .container-button { display: none; }
 
     @media (min-width: 1024px) {
         padding: 0 32px;
 
-        .container-switch, .container-buttons { display: flex; }
+        .container-button { display: block; }
     }
 `;
 

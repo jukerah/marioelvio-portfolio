@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as C from './styles';
@@ -7,7 +6,6 @@ import { Context } from '../../contexts/Contexts';
 import { svgs } from '../../data/SvgList';
 import { SwitchMode } from '../SwitchMode';
 import { LoginLogoutButton } from '../LoginLogoutButton';
-import { ChangeLang } from '../ChangeLang';
 
 export const MenuMobile = () => {
     const { theme, dispatch } = useContext(Context);
@@ -46,7 +44,6 @@ export const MenuMobile = () => {
 }
 
 export const NavMobile = () => {
-    const { t } = useTranslation();
     const { theme, dispatch } = useContext(Context);
 
     const handleClickMenu = () => {
@@ -83,9 +80,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.home.light
                                 : svgs.systemIcon.home.dark
                             }
-                            alt={t('svgs.systemIcon.home.alt')}
+                            alt={svgs.systemIcon.home.alt}
                         />
-                        <p>{t('page.home.name')}</p>
+                        <p>Home</p>
                     </Link>
                 </li>
                 <li>
@@ -98,9 +95,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.about.light
                                 : svgs.systemIcon.about.dark
                             }
-                            alt={t('svgs.systemIcon.about.alt')}
+                            alt={svgs.systemIcon.about.alt}
                         />
-                        <p>{t('page.about.name')}</p>
+                        <p>About</p>
                     </Link>
                 </li>
                 <li>
@@ -113,9 +110,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.book.light
                                 : svgs.systemIcon.book.dark
                             }
-                            alt={t('svgs.systemIcon.book.alt')}
+                            alt={svgs.systemIcon.book.alt}
                         />
-                        <p>{t('page.portfolio.name')}</p>
+                        <p>Portfolio</p>
                     </Link>
                 </li>
                 <li>
@@ -128,9 +125,9 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.article.light
                                 : svgs.systemIcon.article.dark
                             }
-                            alt={t('svgs.systemIcon.article.alt')}
+                            alt={svgs.systemIcon.article.alt}
                         />
-                        <p>{t('page.blog.name')}</p>
+                        <p>Blog</p>
                     </Link>
                 </li>
                 <li>
@@ -143,18 +140,15 @@ export const NavMobile = () => {
                                 ? svgs.systemIcon.mail.light
                                 : svgs.systemIcon.mail.dark
                             }
-                            alt={t('svgs.systemIcon.mail.alt')}
+                            alt={svgs.systemIcon.mail.alt}
                         />
-                        <p>{t('page.contact.name')}</p>
+                        <p>Contact</p>
                     </Link>
                 </li>
             </ul>
             <C.ContainerButtons>
                 <LoginLogoutButton/>
-                <div className='top-line'>
-                    <ChangeLang />
-                    <SwitchMode />
-                </div>
+                <SwitchMode />
             </C.ContainerButtons>
         </C.NavMobile>
     );

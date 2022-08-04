@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface Props {
     mode?: string | null;
-    //isMenuOpen?: boolean;
+    isMenuOpen?: boolean;
 }
 
 export const AboutSection = styled.section<Props>`
@@ -26,7 +26,7 @@ export const AboutSection = styled.section<Props>`
     }
 `;
 
-export const Container = styled.section<Props>`
+export const Container = styled.div<Props>`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -45,7 +45,7 @@ export const Container = styled.section<Props>`
     }
 `;
 
-export const ContainerResume = styled.section<Props>`
+export const ContainerResume = styled.div<Props>`
     display: flex;
     flex-direction: column;
 
@@ -60,10 +60,16 @@ export const ContainerResume = styled.section<Props>`
         transition: all ease-in .5s;
     }
 
-    @media (min-width: 768px) { p { font-size: 22px; } }
+    @media (min-width: 768px) {
+        p { font-size: 22px; }
+
+        gap: 24px;
+    }
+
+    @media (min-width: 1024px) { gap: 32px; }
 `;
 
-export const ContainerMyInterests = styled.section<Props>`
+export const ContainerMyInterests = styled.div<Props>`
     display: flex;
     flex-direction: column;
 
@@ -82,13 +88,72 @@ export const ContainerMyInterests = styled.section<Props>`
 
     @media (min-width: 768px) { 
         .grid { grid-template-columns: repeat(4, 1fr); }
+
+        gap: 24px;
     }
 
-    @media (min-width: 1024px) { 
-        .grid { grid-template-columns: repeat(5, 1fr); }
+    @media (min-width: 1024px) { gap: 32px; }
+
+    @media (min-width: 1100px) {
+        .grid { grid-template-columns: ${(props) => props.isMenuOpen ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)'}; }
     }
 
     @media (min-width: 1250px) { 
         .grid { grid-template-columns: repeat(6, 1fr); }
     }
+`;
+
+export const ContainerPersonalDetails = styled.div<Props>`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 16px;
+
+    .container-info {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        figure {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            gap: 8px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        a, figure {
+            color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed_spruce'});
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            gap: 16px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        gap: 24px;
+
+        .container-info {
+            flex-direction: row;
+
+            a, figure { font-size: 22px; }
+            
+            gap: 56px;
+        }
+    }
+
+    @media (min-width: 1024px) { gap: 32px; }
 `;
