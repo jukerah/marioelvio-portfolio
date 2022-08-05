@@ -16,7 +16,7 @@ export const ContainerTitle = styled.div`
 export const TitlePage = styled.h1<ModeProps>`
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
-    font-size: 28px;
+    font-size: 1.75em;
     text-transform: uppercase;
     text-align: center;
 
@@ -29,14 +29,14 @@ export const TitlePage = styled.h1<ModeProps>`
     transition: all ease-in .5s;
 
     @media (min-width: 768px) {
-        font-size: 48px;
+        font-size: 3em;
         
         border-width: 6px;
         margin-top: 32px;
     }
 
     @media (min-width: 1024px) {
-        font-size: 64px;
+        font-size: 4em;
 
         border-width: 8px;
         margin-top: 48px;

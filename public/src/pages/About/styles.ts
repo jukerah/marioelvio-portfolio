@@ -29,6 +29,7 @@ export const AboutSection = styled.section<Props>`
 export const Container = styled.div<Props>`
     display: flex;
     flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
 
     width: 100%;
@@ -54,14 +55,14 @@ export const ContainerResume = styled.div<Props>`
     p {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
         
-        font-size: 16px;
+        font-size: 1em;
         text-indent: 1.5em;
         
         transition: all ease-in .5s;
     }
 
     @media (min-width: 768px) {
-        p { font-size: 22px; }
+        p { font-size: 1.375em; }
 
         gap: 24px;
     }
@@ -72,6 +73,8 @@ export const ContainerResume = styled.div<Props>`
 export const ContainerMyInterests = styled.div<Props>`
     display: flex;
     flex-direction: column;
+
+    width: 100%;
 
     gap: 16px;
 
@@ -109,7 +112,7 @@ export const ContainerPersonalDetails = styled.div<Props>`
     flex-direction: column;
 
     gap: 16px;
-
+    
     .container-info {
         display: flex;
         flex-direction: column;
@@ -121,18 +124,20 @@ export const ContainerPersonalDetails = styled.div<Props>`
             justify-content: flex-start;
             align-items: center;
 
-            gap: 8px;
+            gap: 16px;
 
             img {
                 width: 24px;
                 height: 24px;
             }
+            
+            font-size: 16px;
         }
-
-        a, figure {
+        
+        a, figcaption {
             color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed_spruce'});
             text-decoration: none;
-            font-size: 16px;
+            word-break: break-word;
         }
 
         div {
@@ -143,15 +148,23 @@ export const ContainerPersonalDetails = styled.div<Props>`
         }
     }
 
+    @media (min-width: 350px) {
+        figure { font-size: 18px !important; }
+    }
+
+    @media (min-width: 380px) {
+        figure { font-size: 22px !important; }
+    }
+
     @media (min-width: 768px) {
         gap: 24px;
 
         .container-info {
             flex-direction: row;
 
-            a, figure { font-size: 22px; }
+            figure { font-size: 1.375em; }
             
-            gap: 56px;
+            gap: ${(props) => props.isMenuOpen ? '32px' : '48px'};
         }
     }
 

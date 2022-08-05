@@ -23,7 +23,7 @@ export const CardTech = styled.figure<ModeProps>`
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     gap: 16px;
 
-    transition: all ease-in .5s;
+    transition: all ease-in .1s;
 
     img {
         width: 64px;

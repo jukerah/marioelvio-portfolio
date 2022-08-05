@@ -7,6 +7,7 @@ import { SubTitle } from '../../components/SubTitle';
 import { CardTech } from '../../components/CardTech';
 import { pageInfo } from '../../data/PageData';
 import { svgs } from '../../data/SvgList';
+import { DownloadButton } from './DownloadButton';
 
 export const AboutPage = (props:any) => {
     const { theme } = useContext(Context);
@@ -71,6 +72,7 @@ export const AboutPage = (props:any) => {
 
                 <C.ContainerPersonalDetails
                     mode={theme.mode.status}
+                    isMenuOpen={theme.isMenuOpen.status}
                 >
                     <SubTitle 
                         subTitle={pageInfo.about.personalDetails.title}
@@ -179,6 +181,8 @@ export const AboutPage = (props:any) => {
                         </div>
                     </div>
                 </C.ContainerPersonalDetails>
+
+                <DownloadButton />
             </C.Container>
         </C.AboutSection>
         

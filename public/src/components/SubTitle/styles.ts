@@ -9,13 +9,13 @@ export const SubTitle = styled.h2<ModeProps>`
 
     width: 100%;
 
-    font-size: 20px;
+    font-size: 1.25em;
     text-transform: uppercase;
     text-align: center;
 
     transition: all ease-in .5s;
 
-    @media (min-width: 768px) { font-size: 32px; }
+    @media (min-width: 768px) { font-size: 2em; }
 
-    @media (min-width: 1024px) { font-size: 40px; }
+    @media (min-width: 1024px) { font-size: 2.5em; }
 `;
