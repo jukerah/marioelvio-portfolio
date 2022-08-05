@@ -47,18 +47,18 @@ export const DownloadButton = () => {
                     alt={svgs.systemIcon.download.alt}
                 />
                 <a
-                    href="/"
+                    href="https://marioelvio.com/cv_mario_elvio_en.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    download
+                    onClick={() => setIsOpened(false)}
                 >
                     CV - En
                 </a>
                 <a
-                    href="/"
+                    href="https://marioelvio.com/cv_mario_elvio_pt.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    download
+                    onClick={() => setIsOpened(false)}
                 >
                     CV - Pt
                 </a>

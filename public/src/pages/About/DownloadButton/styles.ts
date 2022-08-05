@@ -53,12 +53,13 @@ export const DownloadButton = styled.button<Props>`
         `}
     }
 
-    @media (min-width: 768px) {
-        
-    }
-
     @media (min-width: 1024px) {
-        
+        width: 280px;
+        height: 64px;
+
+        border-radius: 32px;
+
+        p { font-size: 24px; }
     }
 `;
 
