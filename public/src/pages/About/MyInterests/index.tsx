@@ -6,7 +6,7 @@ import { SubTitle } from '../../../components/SubTitle';
 import { CardTech } from '../../../components/CardTech';
 
 interface Props {
-    title: string;    
+    title: string;
     interestList: any;
 }
 
