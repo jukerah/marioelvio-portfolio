@@ -5,9 +5,11 @@ interface Props {
     backgroundLandscapeSmall?: string;
     backgroundLandscapeLarge?: string;
     backgroundPortrait?: string;
+    delayLoad?: string;
 }
 
 export const HomeSection = styled.section<Props>`
+    background-color: var(--shark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +40,27 @@ export const Container = styled.div<Props>`
 
     gap: 28px;
     margin-top: 60px;
+
+    .load-title {
+        animation: typing 2s steps(100) .5s normal both;
+    }
+
+    .load-avatar {
+        animation: typing 2s steps(100) 1s normal both;
+    }
+
+    .load-social {
+        animation: typing 2s steps(100) 1.5s normal both;
+    }
+
+    .load-button {
+        animation: typing 2s steps(100) 2.5s normal both;
+    }
+
+    @keyframes typing {
+        from { opacity: 0; }
+        to { opacity: 100; }
+    }
 
     @media (orientation: landscape) { padding: 24px 0; }
 
@@ -104,6 +127,7 @@ export const Info = styled.div<Props>`
     gap: 24px;
     
     h1 {
+        position: relative;
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
         font-weight: bold;
@@ -228,9 +252,9 @@ export const SocialButtons = styled.div`
             height: 96px;
 
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-            border-radius: 8px;
+            border-radius: 10px;
 
-            transition: all ease-in .3s;
+            transition: all ease-in .1s;
 
             img {
                 width: 96px;

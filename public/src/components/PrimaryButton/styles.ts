@@ -36,9 +36,9 @@ export const PrimaryButton = styled.div<Props>`
     &:hover {
         background-color: var(${(props) => props.backgroundColorHover});
         
-        transition: all ease-in .5s;
+        transition: all ease-in .1s;
         a {
-            color: var(${(props) => props.colorHover}); transition: all ease-in .5s;
+            color: var(${(props) => props.colorHover}); transition: all ease-in .1s;
         }
     }
 

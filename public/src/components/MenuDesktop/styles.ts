@@ -11,6 +11,7 @@ export const MenuDesktop = styled.aside<Props>`
     display: none;
     position: fixed;
     flex-direction: column;
+    z-index: 1;
 
     width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
     height: 100vh;

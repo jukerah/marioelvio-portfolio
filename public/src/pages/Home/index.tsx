@@ -37,18 +37,18 @@ export const HomePage = (props:any) => {
                 <C.ContainerInfo
                     isMenuOpen={theme.isMenuOpen.status}
                 >
-                    <img className='avatar' src={svgs.avatar.src} alt={svgs.avatar.alt}/>
+                    <img className='avatar load-avatar' src={svgs.avatar.src} alt={svgs.avatar.alt}/>
 
                     <C.Info
                         mode={theme.mode.status}
                     >                        
-                        <h1>
+                        <h1 className='load-title'>
                             <span className='title-hello'>Hi there!</span><br />
                             <span className='title-name'>I'm Mario <span className='accent-color'>Elvio</span></span><br />
                             <span className='title-work'><span className='accent-color'>Front-end</span> developer</span>
                         </h1>
 
-                        <C.SocialButtons>
+                        <C.SocialButtons className='load-social'>
                             <a href="https://www.linkedin.com/in/marioelvio/" target="_blank" rel="noopener noreferrer">
                                 <img
                                     className='img'
@@ -105,6 +105,7 @@ export const HomePage = (props:any) => {
                     </C.Info>
                 </C.ContainerInfo>
                 <C.NavButtons
+                    className='load-button'
                     isMenuOpen={theme.isMenuOpen.status}
                 >
                     <PrimaryButton
