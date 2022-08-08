@@ -13,12 +13,8 @@ export const Resume = (props:Props) => {
     const { theme } = useContext(Context);
 
     return (        
-        <C.Resume
-            mode={theme.mode.status}
-        >
-            <SubTitle
-                subTitle={props.title}
-            />
+        <C.Resume mode={theme.mode.status}>
+            <SubTitle subTitle={props.title} />
             <p>{props.description}</p>
         </C.Resume>        
     );

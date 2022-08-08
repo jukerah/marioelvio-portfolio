@@ -26,9 +26,7 @@ export const PersonalDetails = (props:Props) => {
             mode={theme.mode.status}
             isMenuOpen={theme.isMenuOpen.status}
         >
-            <SubTitle
-                subTitle={props.title}
-            />
+            <SubTitle subTitle={props.title} />
             
             <div className='container-info'>
                 <div>

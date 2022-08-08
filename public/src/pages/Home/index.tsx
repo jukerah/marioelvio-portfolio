@@ -31,17 +31,11 @@ export const HomePage = (props:any) => {
                 : svgs.background.home.light.portrait
             }
         >
-            <C.Container
-                isMenuOpen={theme.isMenuOpen.status}
-            >
-                <C.ContainerInfo
-                    isMenuOpen={theme.isMenuOpen.status}
-                >
+            <C.Container isMenuOpen={theme.isMenuOpen.status}>
+                <C.ContainerInfo isMenuOpen={theme.isMenuOpen.status}>
                     <img className='avatar load-avatar' src={svgs.avatar.src} alt={svgs.avatar.alt}/>
 
-                    <C.Info
-                        mode={theme.mode.status}
-                    >                        
+                    <C.Info mode={theme.mode.status}>                        
                         <h1 className='load-title'>
                             <span className='title-hello'>Hi there!</span><br />
                             <span className='title-name'>I'm Mario <span className='accent-color'>Elvio</span></span><br />

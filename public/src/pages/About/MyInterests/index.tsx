@@ -14,12 +14,8 @@ export const MyInterests = (props:Props) => {
     const { theme } = useContext(Context);
 
     return (        
-        <C.MyInterests
-            isMenuOpen={theme.isMenuOpen.status}
-        >
-            <SubTitle
-                subTitle={props.title}
-            />
+        <C.MyInterests isMenuOpen={theme.isMenuOpen.status}>
+            <SubTitle subTitle={props.title}/>
             
             <div className='grid'>
                 {props.interestList.tech.map((tech:any) => (

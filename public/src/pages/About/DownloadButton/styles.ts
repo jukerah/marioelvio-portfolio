@@ -55,7 +55,7 @@ export const DownloadButton = styled.button<Props>`
 
     @media (min-width: 1024px) {
         width: 280px;
-        height: 64px;
+        min-height: 64px;
 
         border-radius: 32px;
 

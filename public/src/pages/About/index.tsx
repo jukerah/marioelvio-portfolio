@@ -8,7 +8,7 @@ import { Resume } from './Resume';
 import { MyInterests } from './MyInterests';
 import { PersonalDetails } from './PersonalDetails';
 import { DownloadButton } from './DownloadButton';
-import { SubTitle } from '../../components/SubTitle';
+import { TimeLine } from './TimeLine';
 
 export const AboutPage = (props:any) => {
     const { theme } = useContext(Context);
@@ -20,13 +20,9 @@ export const AboutPage = (props:any) => {
     }, [props.page]);
 
     return (        
-        <C.AboutSection
-            mode={theme.mode.status}
-        >
+        <C.AboutSection mode={theme.mode.status}>
             <C.Container>
-                <TitlePage
-                    title={'About'}
-                />
+                <TitlePage title={'About'}/>
 
                 <Resume
                     title={pageInfo.about.personalResume.title}
@@ -58,56 +54,7 @@ export const AboutPage = (props:any) => {
 
                 <DownloadButton />
 
-                <C.ContainerTimeLine
-                    mode={theme.mode.status}
-                >
-                    <C.ContainerLeft
-                        mode={theme.mode.status}
-                    >
-                        <C.WorkExperience
-                            mode={theme.mode.status}
-                        >
-                            <div className='info'></div>
-                            <div className='container-line'>
-                                <div className='line'></div>
-                            </div>
-                        </C.WorkExperience>
-
-                        <C.WorkExperience
-                            mode={theme.mode.status}
-                        >
-                            <div className='info'></div>
-                            <div className='container-line'>
-                                <div className='line'></div>
-                            </div>
-                        </C.WorkExperience>
-                    </C.ContainerLeft>
-
-                    <C.CenterLine
-                        mode={theme.mode.status}
-                    />
-
-                    <C.ContainerRight
-                        mode={theme.mode.status}
-                    >
-                        <SubTitle
-                            subTitle={'Education'}
-                        />
-
-                        <C.Education
-                            mode={theme.mode.status}
-                            position={'right'}
-                        >
-                            <div className='container-line'>
-                                <div className='line'></div>
-                            </div>
-                            <div className='info'>
-                                <h3>asdasd</h3>
-                                <p>dffgd</p>
-                            </div>
-                        </C.Education>
-                    </C.ContainerRight>
-                </C.ContainerTimeLine>
+                <TimeLine />
             </C.Container>
         </C.AboutSection>
         
