@@ -14,10 +14,7 @@ export const CardTech = (props:Props) => {
     const { theme } = useContext(Context);
 
     return ( 
-        <C.CardTech
-            mode={theme.mode.status}
-            tabIndex={0}
-        >
+        <C.CardTech mode={theme.mode.status}>
             <img className='img' src={props.src} alt={props.alt} />
             <img className='img-hover' src={props.srcHover} alt={props.alt} />
             <figcaption>{props.tech}</figcaption>

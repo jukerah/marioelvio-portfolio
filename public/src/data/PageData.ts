@@ -104,9 +104,9 @@ export const pageInfo =  {
                 company: "DXC Technology",
                 start: "10 / 2021",
                 theEnd: "",
-                Current: true,
+                current: true,
                 seniority: "Intern",
-                Activities: "Support for mission-critical processes in the client Claro Brasil (NET), carrying out treatments and monitoring incidents until their closure to ensure the availability of applications and data integrity services."
+                activities: "Support for mission-critical processes in the client Claro Brasil (NET), carrying out treatments and monitoring incidents until their closure to ensure the availability of applications and data integrity services."
             },
             {
                 id: 2,
@@ -114,9 +114,9 @@ export const pageInfo =  {
                 company: "Freelancer",
                 start: "04 / 2021",
                 theEnd: "",
-                Current: true,
+                current: true,
                 seniority: "",
-                Activities: "Requirements gathering, interface creation and prototypes using Figma with a focus on the best possible user experience, SQL, PL/SQL development, database modeling, Git, GitHub, front-end development using HTML5, CSS3, JavaScript, TypeScript and React.js."
+                activities: "Requirements gathering, interface creation and prototypes using Figma with a focus on the best possible user experience, SQL, PL/SQL development, database modeling, Git, GitHub, front-end development using HTML5, CSS3, JavaScript, TypeScript and React.js."
             },
             {
                 id: 3,
@@ -124,9 +124,9 @@ export const pageInfo =  {
                 company: "Autonomous",
                 start: "03 / 2011",
                 theEnd: "09 / 2021",
-                Current: false,
+                current: false,
                 seniority: "",
-                Activities: "Customer service and service delivery."
+                activities: "Customer service and service delivery."
             }
         ],
         education: [
@@ -141,7 +141,7 @@ export const pageInfo =  {
         courses: [
             {
                 id: 1,
-                course: "English",
+                course: "English.",
                 start: "2021",
                 theEnd: "2024",
                 college: "Prof.Kenny"
@@ -199,6 +199,7 @@ export const pageInfo =  {
         certificates: [
             {
                 id: 1,
+                certificateIssuer: "Certiprof",
                 certificate: "LGPDF™ and SFPC™.",
                 year: "2021"
             }

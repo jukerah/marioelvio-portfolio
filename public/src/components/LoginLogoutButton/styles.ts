@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-interface ModeProps {
+interface Props {
     mode: string | null;
 }
-export const LoginLogoutButton = styled.div<ModeProps>`    
+export const LoginLogoutButton = styled.div<Props>`    
     a {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -20,9 +20,13 @@ export const LoginLogoutButton = styled.div<ModeProps>`
 
         transition: all ease-in .5s;
 
-        img {
+        svg {
+            fill: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
             width: 24px;
             height: 24px;
+
+            transition: all ease-in .5s;
         }
 
         @media (min-width: 1024px) {

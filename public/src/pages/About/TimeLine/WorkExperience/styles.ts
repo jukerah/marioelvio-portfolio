@@ -27,21 +27,17 @@ export const WorkExperience = styled.div`
     @media (min-width: 1024px) { gap: 24px; }
 `;
 
-export const Work = styled.div<Props>`
+export const WorkInfo = styled.div<Props>`
     display: flex;
     flex-direction: column;
     
-    gap: 8px;
+    gap: 16px;
 
-    transition: all ease-in .1s;
+    .job-role, .seniority, .activities {
+        color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
 
-    h3, p { font-size: 16px; }
-
-    @media (min-width: 768px) {
-        h3, p { font-size: 18px; }
+        font-weight: 700;
     }
 
-    @media (min-width: 1024px) {
-        h3, p { font-size: 22px; }
-    }
+    .period-seniority, .activities { text-transform: uppercase; }
 `;

@@ -34,23 +34,9 @@ export const AboutPage = (props:any) => {
                     description={pageInfo.about.professionalResume.resume}
                 />
 
-                <MyInterests
-                    title={pageInfo.about.myInterests.title}
-                    interestList={pageInfo.about.myInterests}
-                />
+                <MyInterests />
 
-                <PersonalDetails
-                    title={pageInfo.about.personalDetails.title}
-                    phone={pageInfo.about.personalDetails.phone}
-                    email={pageInfo.about.personalDetails.email}
-                    address={pageInfo.about.personalDetails.address}
-                    linkedinUrl={pageInfo.about.personalDetails.linkedin.url}
-                    linkedinText={pageInfo.about.personalDetails.linkedin.text}
-                    githubUrl={pageInfo.about.personalDetails.github.url}
-                    githubText={pageInfo.about.personalDetails.github.text}
-                    youtubeUrl={pageInfo.about.personalDetails.youtube.url}
-                    youtubeText={pageInfo.about.personalDetails.youtube.text}
-                />
+                <PersonalDetails />
 
                 <DownloadButton />
 

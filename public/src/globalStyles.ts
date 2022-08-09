@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
     :root {
         --de-york: #6BC38B;
         --green-pea: #205734;
@@ -29,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     
     body {
         width: 100%;
-        font-family: 'Exo 2', Helvetica, Sans-Serif;
+        font-family: 'Exo 2', sans-serif;
     }
 `;
  

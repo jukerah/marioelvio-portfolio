@@ -18,6 +18,11 @@ export const ContainerInfo = styled.div<Props>`
 
     &:hover {
         background-color: var(--white-ice);
+
+        h3, p { color: var(--limed-spruce); }
+
+        .color-hover { color: var(--green-pea); }
+
         box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
     }
 `;

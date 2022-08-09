@@ -36,7 +36,7 @@ export const MenuButton = styled.div<Props>`
     cursor: pointer;
 
     button {
-        background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
+        background-color: rgba(0, 0, 0, 0);
 
         display: flex;
         align-items: flex-end;
@@ -46,8 +46,6 @@ export const MenuButton = styled.div<Props>`
 
         border: none;
         margin-right: ${(props) => props.isMenuOpen ? '32px' : '26px'};
-
-        transition: all ease-in .5s;
 
         cursor: pointer;
 
@@ -97,16 +95,36 @@ export const NavDesktop = styled.nav<Props>`
         justify-content: space-between;
     }
 
-    li {
+    li a {
+        display: flex;
+        align-items: center;
+
+        gap: 32px;
+
         width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
+        height: 96px;
 
-        ${props  => (props.mode === 'light') && `
-            .img-light { display: none; }
-        `}
+        font-size: 28px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
 
-        ${props  => (props.mode === 'dark') && `
-            .img-dark { display: none; }
-        `}
+        svg {
+            stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+            .fill {
+                fill: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+            }
+
+            display: flex;
+            position: ${ props  => (!props.isMenuOpen) && 'absolute'};
+
+            width: 48px;
+            height: 48px;
+
+            padding-left: 24px;
+
+            transition: all ease-in .5s;
+        }
     }
 
     li:hover {
@@ -124,13 +142,16 @@ export const NavDesktop = styled.nav<Props>`
             ${ props  => (!props.isMenuOpen) && `
                 transform: none;
                 transition: .2s;
+                margin-left: 112px;
             `}
         }
 
-        ${ props  => props.mode === 'dark' && `
-            .img-light { display: none; }
-            .img-dark { display: block; }
-        `}
+        svg {
+            stroke: var(--limed-spruce);
+            .fill {
+                fill: var(--limed-spruce);
+            }
+        }
 
         ${ props  => (!props.isMenuOpen) && `
             p {
@@ -142,27 +163,6 @@ export const NavDesktop = styled.nav<Props>`
                 box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
             }
         `}
-    }
-
-    li a {
-        display: flex;
-        align-items: center;
-
-        gap: 32px;
-
-        height: 96px;
-
-        font-size: 28px;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        img {
-            width: 48px;
-            height: 48px;
-
-            padding-left: 24px;
-        }
     }
 
     p {

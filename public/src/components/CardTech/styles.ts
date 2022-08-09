@@ -32,7 +32,7 @@ export const CardTech = styled.figure<ModeProps>`
 
     .img-hover { display: none; }
 
-    &:hover, &:focus {
+    &:hover {
         background-color: var(--skeptic);
         color: var(--limed-spruce);
         box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);

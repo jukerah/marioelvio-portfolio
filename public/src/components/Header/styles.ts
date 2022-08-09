@@ -57,7 +57,7 @@ export const Container = styled.div<Props>`
     }
 `;
 
-export const Logo = styled.img<Props>`
+export const Logo = styled.svg<Props>`
     width: 160px;
     height: 32px;
 

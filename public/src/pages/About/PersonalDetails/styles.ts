@@ -18,28 +18,34 @@ export const PersonalDetails = styled.div<Props>`
 
         gap: 16px;
 
-        figure {
+        .info {
             display: flex;
             justify-content: flex-start;
             align-items: center;
 
             gap: 16px;
 
-            img {
+            svg {
+                stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
                 width: 24px;
                 height: 24px;
+
+                transition: all ease-in .5s;
             }
             
             font-size: 16px;
         }
         
-        a, figcaption {
+        a, p {
             color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed_spruce'});
             text-decoration: none;
             word-break: break-word;
+
+            transition: all ease-in .5s;
         }
 
-        div {
+        .direction {
             display: flex;
             flex-direction: column;
 
@@ -48,11 +54,11 @@ export const PersonalDetails = styled.div<Props>`
     }
 
     @media (min-width: 350px) {
-        figure { font-size: 18px !important; }
+        .info { font-size: 18px !important; }
     }
 
     @media (min-width: 380px) {
-        figure { font-size: 22px !important; }
+        .info { font-size: 22px !important; }
     }
 
     @media (min-width: 768px) {
@@ -61,7 +67,7 @@ export const PersonalDetails = styled.div<Props>`
         .container-info {
             flex-direction: row;
 
-            figure { font-size: 1.375em; }
+            .info { font-size: 1.375em; }
             
             gap: ${(props) => props.isMenuOpen ? '32px' : '48px'};
         }

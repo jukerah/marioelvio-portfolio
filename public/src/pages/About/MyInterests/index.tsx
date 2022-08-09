@@ -2,23 +2,19 @@ import { useContext } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../../contexts/Contexts';
+import { pageInfo } from '../../../data/PageData';
 import { SubTitle } from '../../../components/SubTitle';
 import { CardTech } from '../../../components/CardTech';
 
-interface Props {
-    title: string;
-    interestList: any;
-}
-
-export const MyInterests = (props:Props) => {
+export const MyInterests = () => {
     const { theme } = useContext(Context);
 
     return (        
         <C.MyInterests isMenuOpen={theme.isMenuOpen.status}>
-            <SubTitle subTitle={props.title}/>
+            <SubTitle subTitle={pageInfo.about.myInterests.title}/>
             
             <div className='grid'>
-                {props.interestList.tech.map((tech:any) => (
+                {pageInfo.about.myInterests.tech.map((tech:any) => (
                     <CardTech
                         key={tech.id}
                         src={(theme.mode.status === 'dark')

@@ -23,7 +23,7 @@ export const PrimaryButton = styled.div<Props>`
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
 
     a {

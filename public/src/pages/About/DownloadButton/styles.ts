@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const DownloadButton = styled.button<Props>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
+    background-color: rgba(0, 0, 0, 0);
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
     display: flex;
@@ -28,17 +28,17 @@ export const DownloadButton = styled.button<Props>`
 
     p {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
     }
 
-    img {
+    svg {
+        stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
         width: 24px;
         height: 24px;
-    }
 
-    .img-hover {
-        display: none;
+        transition: all ease-in .1s;
     }
 
     &:hover {
@@ -48,8 +48,7 @@ export const DownloadButton = styled.button<Props>`
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
         ${(props) => props.mode === 'dark' && `
-            .img { display: none; }
-            .img-hover { display: block; }
+            svg { stroke: var(--limed-spruce); }
         `}
     }
 
@@ -96,8 +95,10 @@ export const ContainerCV = styled.div<Props>`
     bottom: calc(50% - 100px);
     gap: 8px;
 
-    img {
+    svg {
         background-color: var(--alizarin-crimson);
+        stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
         position: absolute;
 
         width: 24px;

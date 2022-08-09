@@ -9,7 +9,7 @@ export const MenuMobile = styled.div<Props>`
     padding: 16px 16px 16px 0;
 
     button {
-        background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
+        background-color: rgba(0, 0, 0, 0);
 
         display: flex;
         flex-direction: column;
@@ -39,7 +39,7 @@ export const MenuMobile = styled.div<Props>`
         div:nth-of-type(2) {
             opacity: ${(props) => props.isMenuOpen ? 0 : 100};
             position: relative;
-            left: ${(props) => props.isMenuOpen ? '-100px' : 0};
+            right: ${(props) => props.isMenuOpen ? '-100px' : 0};
         }
 
         div:nth-of-type(3) {
@@ -63,7 +63,7 @@ export const NavMobile = styled.nav<Props>`
     height: calc(100vh - 60px);
     margin-top: 100vh;
 
-    left: ${(props) => props.isMenuOpen ? 0 : '-100vw'};
+    right: ${(props) => props.isMenuOpen ? 0 : '-100vw'};
 
     transition: all ease-in .5s;
 
@@ -83,7 +83,7 @@ export const NavMobile = styled.nav<Props>`
         height: 64px;
 
         font-size: 28px;
-        font-weight: bold;
+        font-weight: 700;
         text-decoration: none;
         text-transform: uppercase;
 
@@ -92,9 +92,13 @@ export const NavMobile = styled.nav<Props>`
 
         transition: all ease-in .2s;
 
-        img {
+        svg {
+            stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
             width: 24px;
             height: 24px;
+
+            transition: all ease-in .2s;
         }
     }
 

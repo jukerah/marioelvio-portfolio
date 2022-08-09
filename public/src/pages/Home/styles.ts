@@ -130,7 +130,7 @@ export const Info = styled.div<Props>`
         position: relative;
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
         line-height: 1.4;
         white-space: nowrap;
@@ -181,30 +181,37 @@ export const Info = styled.div<Props>`
     }
 `;
 
-export const SocialButtons = styled.div`
+export const SocialButtons = styled.div<Props>`
     display: flex;
     justify-content: space-between;
 
     gap: 16px;
 
     a {
-        .img-hover { display: none; }
-
-        &:hover, &:focus {
-            .img {display: none; }
-            .img-hover {display: block; }
-        }
-    }
-
-    a {
         width: 56px;
         height: 56px;
         
-        img {
+        svg {
             width: 56px;
             height: 56px;
 
             border-radius: 6px;
+
+            transition: all ease-in .1s;
+        }
+
+        .fill-social {
+            fill: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--white'});
+        }
+
+        .fill-background {
+            fill: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+        }
+
+        &:hover {
+            .fill-social { fill: var(--limed-spruce); }
+
+            .fill-background { fill: var(--de-york); }
         }
     }
 
@@ -213,7 +220,7 @@ export const SocialButtons = styled.div`
             width: 64px;
             height: 64px;
 
-            img {
+            svg {
                 width: 64px;
                 height: 64px;
             }
@@ -225,7 +232,7 @@ export const SocialButtons = styled.div`
             width: 72px;
             height: 72px;
 
-            img {
+            svg {
                 width: 72px;
                 height: 72px;
             }
@@ -237,7 +244,7 @@ export const SocialButtons = styled.div`
             width: 128px;
             height: 128px;
 
-            img {
+            svg {
                 width: 128px;
                 height: 128px;
 
@@ -256,7 +263,7 @@ export const SocialButtons = styled.div`
 
             transition: all ease-in .1s;
 
-            img {
+            svg {
                 width: 96px;
                 height: 96px;
 
