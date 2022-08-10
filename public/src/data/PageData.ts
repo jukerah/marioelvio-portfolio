@@ -205,7 +205,7 @@ export const pageInfo =  {
             }
         ],
         softSkills: {
-            description: "",
+            description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
             skill: [
                 {
                     id: 1,
@@ -215,40 +215,17 @@ export const pageInfo =  {
                 {
                     id: 2,
                     name: "Teamwork",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
+                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                 },
                 {
                     id: 3,
                     name: "Creativity",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
-                },
-                {
-                    id: 4,
-                    name: {
-                        pt: "Dedicação",
-                        en: "Dedication"
-                    },
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
+                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.Lorem ipsum dolor sit amet consec tetur adipisicing elit.Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                 },
                 {
                     id: 4,
                     name: "Dedication",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
-                },
-                {
-                    id: 4,
-                    name: "Dedication",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
-                },
-                {
-                    id: 4,
-                    name: "Dedication",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
-                },
-                {
-                    id: 4,
-                    name: "Dedication",
-                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
+                    description: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.Lorem ipsum dolor sit amet consec tetur adipisicing elit."
                 },
                 {
                     id: 5,

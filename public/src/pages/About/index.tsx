@@ -9,6 +9,7 @@ import { MyInterests } from './MyInterests';
 import { PersonalDetails } from './PersonalDetails';
 import { DownloadButton } from './DownloadButton';
 import { TimeLine } from './TimeLine';
+import { SoftSkills } from './softSkills';
 
 export const AboutPage = (props:any) => {
     const { theme } = useContext(Context);
@@ -41,6 +42,8 @@ export const AboutPage = (props:any) => {
                 <DownloadButton />
 
                 <TimeLine />
+
+                <SoftSkills />
             </C.Container>
         </C.AboutSection>
         

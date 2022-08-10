@@ -3,7 +3,6 @@ import styled from "styled-components";
 interface Props {
     mode?: string | null;
     isMenuOpen?: boolean;
-    position?: 'left' | 'right';
 }
 
 export const AboutSection = styled.section<Props>`

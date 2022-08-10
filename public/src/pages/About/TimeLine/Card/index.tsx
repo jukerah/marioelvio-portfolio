@@ -13,7 +13,6 @@ export const Card = (props:Props) => {
 
     return (
         <C.Card
-            key={props.key}
             mode={theme.mode.status}
         >
             {props.content}
