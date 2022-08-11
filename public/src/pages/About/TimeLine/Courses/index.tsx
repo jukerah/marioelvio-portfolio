@@ -32,10 +32,10 @@ export const Courses = () => {
                                         <ContainerInfo content={
                                             <C.CoursesInfo mode={theme.mode.status}>
                                                 <h3>
-                                                    {course.start}
-                                                    <> - </>
-                                                    {course.theEnd}
-                                                    <> | </>
+                                                    {(course.start !== course.theEnd)
+                                                        ? `${course.start} - ${course.theEnd} | `
+                                                        : `${course.theEnd} | `
+                                                    }
                                                     <span className='college color-hover'>
                                                         {course.college}
                                                     </span>
