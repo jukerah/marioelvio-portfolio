@@ -3,9 +3,10 @@ import styled from "styled-components";
 interface Props {
     mode?: string | null;
     show?: boolean;
+    heightDescription?: string;
 }
 
-export const ContainerSoftSkills = styled.div<Props>`
+export const ContainerHardSkills = styled.div<Props>`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -37,30 +38,13 @@ export const ContainerSoftSkills = styled.div<Props>`
     }
 `;
 
-export const SoftSkills = styled.div<Props>`
+export const HardSkills = styled.div<Props>`
     display: flex;
     flex-direction: column;
 
     width: 100%;
 
-    transition: all ease-in .5s;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-
-        gap: 16px;
-    }
-
-    @media (min-width: 1024px) { gap: 24px; }
-`;
-
-export const ContainerCard = styled.div<Props>`
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    gap: 8px;
+    gap: 16px;
 
     @media (min-width: 1024px) { gap: 16px; }
 `;

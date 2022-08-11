@@ -1,20 +1,26 @@
 import { useContext } from 'react';
 import * as C from './styles';
 
-import { Context } from '../../../contexts/Contexts';
-import { pageInfo } from '../../../data/PageData';
-import { SubTitle } from '../../../components/SubTitle';
-import { CardTech } from '../../../components/CardTech';
+import { Context } from '../../../../contexts/Contexts';
+import { CardTech } from '../../../../components/CardTech';
 
-export const MyInterests = () => {
+interface Props {
+    stack: string;
+    skillList: any;
+    svg: any;
+}
+
+export const ContainerSkill = (props:Props) => {
     const { theme } = useContext(Context);
 
     return (        
-        <C.MyInterests isMenuOpen={theme.isMenuOpen.status}>
-            <SubTitle subTitle={pageInfo.about.myInterests.title}/>
-            
+        <C.ContainerSkill isMenuOpen={theme.isMenuOpen.status}>
+            <C.TitleStack mode={theme.mode.status}>
+                {props.svg}
+                <h3>{props.stack}</h3>
+            </C.TitleStack>
             <div className='container-card'>
-                {pageInfo.about.myInterests.tech.map((tech:any) => (
+                {props.skillList.map((tech:any) => (
                     <CardTech
                         key={tech.id}
                         src={(theme.mode.status === 'dark')
@@ -27,6 +33,6 @@ export const MyInterests = () => {
                     />
                 ))}
             </div>
-        </C.MyInterests>        
+        </C.ContainerSkill>      
     );
 };

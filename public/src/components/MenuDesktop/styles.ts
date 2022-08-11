@@ -134,7 +134,7 @@ export const NavDesktop = styled.nav<Props>`
 
         border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
 
-        transition: all ease-in .2s;
+        transition: all ease-in .1s;
 
         p {
             color: var(${(props) => props.mode === 'dark' && '--limed-spruce'});

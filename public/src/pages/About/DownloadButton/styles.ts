@@ -64,7 +64,7 @@ export const DownloadButton = styled.button<Props>`
 
 export const BackgroundCv = styled.div<Props>`
     background-color: rgba(${(props) => props.mode === 'dark' ? '0,0,0, 0.9' : 'f,f,f, 0.9'});
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(6px);
     display: ${(props) => props.isOpened ? 'flex' : 'none'};
     align-items: center;
     justify-content: center;

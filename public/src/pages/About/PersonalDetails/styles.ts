@@ -74,4 +74,9 @@ export const PersonalDetails = styled.div<Props>`
     }
 
     @media (min-width: 1024px) { gap: 32px; }
+
+    @media (min-width: 1300px) {
+        .container-info { gap: 64px; }
+        .info { font-size: 32px !important; }
+    }
 `;

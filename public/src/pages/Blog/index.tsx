@@ -5,24 +5,24 @@ import * as C from './styles';
 import { Context } from '../../contexts/Contexts';
 import { TitlePage } from '../../components/TitlePage';
 
-export const ContactPage = (props:any) => {
-    const aboutPage = useRef(props.page);
+export const BlogPage = (props:any) => {
+    const blogPage = useRef(props.page);
     const { t } = useTranslation();
     const { theme } = useContext(Context);
 
     useEffect(() => {
-        if (props.page === 'contact') {
+        if (props.page === 'blog') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }, [props.page]);
 
     return (        
         <C.ContactSection
-            ref={aboutPage}
+            ref={blogPage}
             mode={theme.mode.status}
         >
             <TitlePage 
-                title={t('page.contact.name')}
+                title={t('page.blog.name')}
             />
             <h2>{t('development')}</h2>
             <a href="https://github.com/jukerah/marioelvio-portfolio" target="_blank" rel="noopener noreferrer">https://github.com/jukerah/marioelvio-portfolio</a>

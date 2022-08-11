@@ -12,30 +12,17 @@ export const MyInterests = styled.div<Props>`
 
     gap: 16px;
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .container-card {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
 
         gap: 16px;
     }
 
-    @media (min-width: 550px) { 
-        .grid { grid-template-columns: repeat(3, 1fr); }
-    }
+    @media (min-width: 1024px) {
+        gap: 32px;
 
-    @media (min-width: 768px) { 
-        .grid { grid-template-columns: repeat(4, 1fr); }
-
-        gap: 24px;
-    }
-
-    @media (min-width: 1024px) { gap: 32px; }
-
-    @media (min-width: 1100px) {
-        .grid { grid-template-columns: ${(props) => props.isMenuOpen ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)'}; }
-    }
-
-    @media (min-width: 1250px) { 
-        .grid { grid-template-columns: repeat(6, 1fr); }
+        .container-card { gap: 24px; }
     }
 `;

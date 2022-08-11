@@ -14,6 +14,7 @@ export const CardTech = styled.figure<ModeProps>`
     flex-direction: column;
 
     width: 100%;
+    max-width: 128px;
     height: 144px;
 
     font-size: 16px;
@@ -42,6 +43,7 @@ export const CardTech = styled.figure<ModeProps>`
     }
 
     @media (min-width: 768px) {
+        max-width: 168px;
         height: 200px;
         
         font-size: 18px;
@@ -53,6 +55,7 @@ export const CardTech = styled.figure<ModeProps>`
     }
 
     @media (min-width: 1024px) {
+        max-width: 176px;
         height: 214px;
 
         font-size: 20px;
@@ -62,4 +65,6 @@ export const CardTech = styled.figure<ModeProps>`
             height: 128px;
         }
     }
+
+    //@media (min-width: 1366px) { max-width: 197px; }
 `;

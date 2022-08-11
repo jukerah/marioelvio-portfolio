@@ -40,9 +40,7 @@ export const Courses = () => {
                                                         {course.college}
                                                     </span>
                                                 </h3>
-                                                <p>
-                                                    {course.course}
-                                                </p>
+                                                <p>{course.course}</p>
                                             </C.CoursesInfo>
                                         }/>
                                     </>
