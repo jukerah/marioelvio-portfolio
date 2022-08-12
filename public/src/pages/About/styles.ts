@@ -10,6 +10,8 @@ export const AboutSection = styled.section<Props>`
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
     width: 100%;
 

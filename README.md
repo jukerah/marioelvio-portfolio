@@ -61,53 +61,31 @@ Summary
 * [X] Svgs adjustments.
 #### Front-end:
 * [X] Project structure (folders, color palette, fonts and routes).
-* [X] Header - mobile
-* [X] Header - desktop
-* [X] Menu - mobile
-* [X] Menu - desktop
-* [X] Multi-language
-* [X] Home page - mobile
-* [X] About page - mobile
-* [X] About page - desktop
-* [ ] Portfolio page - mobile
-* [ ] Portfolio page - desktop
-* [ ] Blog page - mobile
-* [ ] Blog page - desktop
-* [ ] Contact page - mobile
-* [ ] Contact page - desktop
-* [ ] Login page - mobile
-* [ ] Login page - desktop
+* [X] Header
+* [X] Menu
+* [X] Footer
+* [ ] Multi-language
+* [X] Home page
+* [X] About page
+* [ ] Portfolio page
+* [ ] Blog page
+* [ ] Contact page
+* [ ] Login page
 <br />AdminPanel:
-* [ ] Settings page - mobile
-* [ ] Settings page - desktop
-* [ ] About page - mobile
-* [ ] About page - desktop
-* [ ] Resume page - mobile
-* [ ] Resume page - desktop
-* [ ] Personal details page - mobile
-* [ ] Personal details page - desktop
-* [ ] My interests page - mobile
-* [ ] My interests page - desktop
-* [ ] Work Experience page - mobile
-* [ ] Work Experience page - desktop
-* [ ] Education page - mobile
-* [ ] Education page - desktop
-* [ ] Certificates page - mobile
-* [ ] Certificates page - desktop
-* [ ] Courses page - mobile
-* [ ] Courses page - desktop
-* [ ] Soft Skills page - mobile
-* [ ] Soft Skills page - desktop
-* [ ] Hard Skills page - mobile
-* [ ] Hard Skills page - desktop
-* [ ] Portfolio list page - mobile
-* [ ] Portfolio list page - desktop
-* [ ] Edit portfolio page - mobile
-* [ ] Edit portfolio page - desktop
-* [ ] Technologies page - mobile
-* [ ] Technologies page - desktop
-* [ ] Technologies page - mobile
-* [ ] Technologies page - desktop
+* [ ] Settings page
+* [ ] About page
+* [ ] Resume page
+* [ ] Personal details page
+* [ ] My interests page
+* [ ] Work Experience page
+* [ ] Education page
+* [ ] Certificates page
+* [ ] Courses page
+* [ ] Soft Skills page
+* [ ] Hard Skills page
+* [ ] Portfolio list page
+* [ ] Edit portfolio page
+* [ ] Technologies page
 
 #### Back-end:
 > coming soon.

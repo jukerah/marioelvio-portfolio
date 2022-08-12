@@ -11,6 +11,7 @@ import { DownloadButton } from './DownloadButton';
 import { TimeLine } from './TimeLine';
 import { SoftSkills } from './softSkills';
 import { HardSkills } from './HardSkills';
+import { Footer } from '../../components/Footer';
 
 export const AboutPage = (props:any) => {
     const { theme } = useContext(Context);
@@ -50,6 +51,7 @@ export const AboutPage = (props:any) => {
 
                 <DownloadButton />
             </C.Container>
+            <Footer />
         </C.AboutSection>
         
     );
