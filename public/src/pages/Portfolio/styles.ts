@@ -10,19 +10,26 @@ export const PortfolioSection = styled.section<Props>`
     background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
     width: 100%;
+    min-height: calc(100vh - 60px);
 
     padding-top: 60px;
 
     transition: all ease-in .5s;
 
-    @media (min-width: 768px) { padding-top: 80px; }
+    @media (min-width: 768px) {
+        min-height: calc(100vh - 80px);
+        padding-top: 80px;
+    }
 
-    @media (min-width: 1024px) { padding-top: 100px; }
+    @media (min-width: 1024px) {
+        min-height: calc(100vh - 100px);
+        padding-top: 100px;
+    }
 `;
 
 export const Container = styled.div<Props>`
@@ -147,7 +154,7 @@ export const ContainerPortfolio = styled.div`
 `;
 
 export const SliderMode = styled.div<Props>`
-    display: ${(props) => props.showMode === 'slider' ? 'flex' : 'none'};
+    display: flex;
 
     width: 100%;
 
@@ -157,12 +164,14 @@ export const SliderMode = styled.div<Props>`
 `;
 
 export const GridMode = styled.div<Props>`
-    display: ${(props) => props.showMode === 'grid' ? 'flex' : 'none'};
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
 
     width: 100%;
 
     gap: 16px;
+
+    @media (min-width: 768px) { grid-template-columns: auto auto; }
 
     @media (min-width: 1024px) { gap: 24px; }
 `;
@@ -184,7 +193,7 @@ export const Project = styled.div`
     }
 
     .project-info {
-        display: flex;
+        display: none;
         align-items: center;
         flex-direction: column;
         position: absolute;
@@ -192,7 +201,6 @@ export const Project = styled.div`
         gap: 24px;
 
         transition: all ease-in .3s;
-        opacity: 0;
 
         h3 {
             color: var(--limed-spruce);
@@ -216,6 +224,6 @@ export const Project = styled.div`
     &:hover, &:focus {
         img { opacity: 0; }
 
-        .project-info { opacity: 1; }
+        .project-info { display: flex; }
     }
 `;

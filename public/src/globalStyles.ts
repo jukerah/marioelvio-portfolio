@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         --black: #000000;
         --white: #FFFFFF;
         --alabaster: #FCFCFC;
-        --alto: #F0F2F5;        
+        --alto: #F0F2F5;
         --dodger-blue: #4d74ff;
         --silver-tree: #68b083;
         --vivid-tangerine: #Ff8989;
