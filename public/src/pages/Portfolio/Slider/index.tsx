@@ -1,96 +1,78 @@
 import { useContext, useState } from "react";
-import * as C from './styles';
+import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
-import imgTest from "../../../assets/banner/1.jpg";
+import { Project } from "../Project";
+import { ProjectListType } from "../../../types/ProjectListType"
 
-export const Slider = () => {
-    const { theme } = useContext(Context);
-    const [ activeBanner, setActiveBanner ] = useState<number>(0);
-    const countBannerList:number = 5;
-
-    const handleClickChangeBanner = (position: number) => {
-        if (position === 1) {
-            if (activeBanner >= 0 && activeBanner < (countBannerList - 1)) {
-                setActiveBanner(activeBanner + position);
-            }
-        } else {
-            if (activeBanner > 0) setActiveBanner(activeBanner + position);
-        }
-    }
-
-    return (
-        <C.ContainerSlider>
-
-            <C.ButtonChangeImg
-                mode={theme.mode.status}
-                onClick={() => handleClickChangeBanner(-1)}
-                position={'left'}
-                disable={(activeBanner === 0) ? true : false}
-            >
-                <div className="button-change-img">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </C.ButtonChangeImg>
-
-            <C.Slider>
-                <C.ContainerProject position={activeBanner * 100} countBanner={countBannerList}>
-                    <C.Project>
-                    <img src={imgTest} alt="" />
-                    <div className="project-info">
-                        <h3>Project Name</h3>
-                        <a href="/">View more</a>
-                    </div>
-                    </C.Project>
-                    <C.Project>
-                    <img src={imgTest} alt="" />
-                    <div className="project-info">
-                        <h3>Project Name</h3>
-                        <a href="/">View more</a>
-                    </div>
-                    </C.Project>
-                    <C.Project>
-                    <img src={imgTest} alt="" />
-                    <div className="project-info">
-                        <h3>Project Name</h3>
-                        <a href="/">View more</a>
-                    </div>
-                    </C.Project>
-                    <C.Project>
-                    <img src={imgTest} alt="" />
-                    <div className="project-info">
-                        <h3>Project Name</h3>
-                        <a href="/">View more</a>
-                    </div>
-                    </C.Project>
-                    <C.Project>
-                    <img src={imgTest} alt="" />
-                    <div className="project-info">
-                        <h3>Project Name</h3>
-                        <a href="/">View more</a>
-                    </div>
-                    </C.Project>
-                </C.ContainerProject>
-
-                <C.ContainerPercent position={((activeBanner + 1) / countBannerList) * 100}>
-                    <div className="percent-line"></div>
-                </C.ContainerPercent>
-            </C.Slider>
-
-            <C.ButtonChangeImg
-                mode={theme.mode.status}
-                onClick={() => handleClickChangeBanner(1)}
-                position={'right'}
-                disable={(activeBanner === (countBannerList - 1)) ? true : false}
-            >
-                <div className="button-change-img">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </C.ButtonChangeImg>
-        </C.ContainerSlider>
-    );
+interface Props {
+  ProjectList: ProjectListType[];
 }
+
+export const Slider = (props:Props) => {
+  const { theme } = useContext(Context);
+  const [activeBanner, setActiveBanner] = useState<number>(0);
+  const countBannerList: number = props.ProjectList.length;
+
+  const handleClickChangeBanner = (position: number) => {
+    if (position === 1) {
+      if (activeBanner >= 0 && activeBanner < countBannerList - 1) {
+        setActiveBanner(activeBanner + position);
+      }
+    } else {
+      if (activeBanner > 0) setActiveBanner(activeBanner + position);
+    }
+  };
+
+  return (
+    <C.ContainerSlider>
+      <C.ButtonChangeImg
+        mode={theme.mode.status}
+        onClick={() => handleClickChangeBanner(-1)}
+        position={"left"}
+        disable={activeBanner === 0 ? true : false}
+      >
+        <div className="button-change-img">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </C.ButtonChangeImg>
+
+      <C.Slider>
+        <C.ContainerProject
+          position={activeBanner * 100}
+          countBanner={countBannerList}
+        >
+          {props.ProjectList.map((project: any) => (
+            <Project
+              name={project.name}
+              src={project.img}
+              alt={project.alt}
+              url={project.url}
+            />
+          ))}
+        </C.ContainerProject>
+
+        <C.ContainerPercent
+          position={((activeBanner + 1) / countBannerList) * 100}
+        >
+          <div className="percent-line"></div>
+        </C.ContainerPercent>
+      </C.Slider>
+
+      <C.ButtonChangeImg
+        mode={theme.mode.status}
+        onClick={() => handleClickChangeBanner(1)}
+        position={"right"}
+        disable={activeBanner === countBannerList - 1 ? true : false}
+      >
+        <div className="button-change-img">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </C.ButtonChangeImg>
+    </C.ContainerSlider>
+  );
+};

@@ -55,6 +55,7 @@ export const Container = styled.div<Props>`
 export const ContainerButtons = styled.div<Props>`
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     width: 100%;
 

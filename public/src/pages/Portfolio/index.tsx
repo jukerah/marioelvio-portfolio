@@ -4,8 +4,9 @@ import * as C from "./styles";
 import { Context } from "../../contexts/Contexts";
 import { TitlePage } from "../../components/TitlePage";
 
-import imgTest from "../../assets/banner/1.jpg";
 import { Slider } from "./Slider";
+import { pageInfo } from "../../data/PageData";
+import { Project } from "./Project";
 
 export const PortfolioPage = (props: any) => {
   const { theme } = useContext(Context);
@@ -59,7 +60,9 @@ export const PortfolioPage = (props: any) => {
         <C.ContainerPortfolio>
 
           {(showMode === 'slider') &&
-            <Slider />
+            <Slider
+              ProjectList={pageInfo.portfolio.project}
+            />
           }
 
 
@@ -73,45 +76,14 @@ export const PortfolioPage = (props: any) => {
 
           {(showMode === 'grid') &&
             <C.GridMode showMode={showMode}>
-              <C.Project>
-                <img src={imgTest} alt="" />
-                <div className="project-info">
-                  <h3>Project Name</h3>
-                  <a href="/">View more</a>
-                </div>
-              </C.Project>
-
-              <C.Project>
-                <img src={imgTest} alt="" />
-                <div className="project-info">
-                  <h3>Project Name</h3>
-                  <a href="/">View more</a>
-                </div>
-              </C.Project>
-
-              <C.Project>
-                <img src={imgTest} alt="" />
-                <div className="project-info">
-                  <h3>Project Name</h3>
-                  <a href="/">View more</a>
-                </div>
-              </C.Project>
-
-              <C.Project>
-                <img src={imgTest} alt="" />
-                <div className="project-info">
-                  <h3>Project Name</h3>
-                  <a href="/">View more</a>
-                </div>
-              </C.Project>
-
-              <C.Project>
-                <img src={imgTest} alt="" />
-                <div className="project-info">
-                  <h3>Project Name</h3>
-                  <a href="/">View more</a>
-                </div>
-              </C.Project>
+              {pageInfo.portfolio.project.map((project:any) => (
+                  <Project
+                    name={project.name}
+                    src={project.img}
+                    alt={project.alt}
+                    url={project.url}
+                  />
+              ))}
             </C.GridMode>
           }
         </C.ContainerPortfolio>

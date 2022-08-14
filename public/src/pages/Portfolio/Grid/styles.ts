@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const ContainerSlider = styled.div`
+interface Props{
+    position?: number;
+    countBanner?: number;
+}
+
+export const ContainerSlider = styled.div<Props>`
     display: flex;
     align-items: center;
     
@@ -23,26 +28,16 @@ export const Slider = styled.div`
     }
 `;
 
-interface ContainerProjectProps {
-    position: number;
-    countBanner: number;
-}
-
-export const ContainerProject = styled.div<ContainerProjectProps>`
+export const ContainerProject = styled.div<Props>`
     display: flex;
     position: relative;
     
     width: calc(100% * ${(props) => props.countBanner});
 
-    right: ${(props) => props.position}%;
     transition: all ease 0.5s;
 `;
 
-interface ContainerPercentProps {
-    position: number;
-}
-
-export const ContainerPercent = styled.div<ContainerPercentProps>`
+export const ContainerPercent = styled.div<Props>`
     background-color: var(--limed-spruce);
     display: flex;
 
@@ -91,19 +86,12 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
 
     left: ${(props) => (props.position === 'left') && 0};
     right: ${(props) => (props.position === 'right') && 0};
-    padding: ${(props) => (props.position === 'left')
-        ? '24px 16px 24px 0'
-        : '24px 0 24px 16px'
-    };
+    padding: ${(props) => (props.position === 'left') ? '24px 16px 24px 0' : '24px 0 24px 16px'};
 
     cursor: pointer;
 
     .button-change-img {
         background-color: ${(props) => (props.mode === 'dark') ? 'rgba(255, 255, 255, .7)' : 'rgba(0, 0, 0, .7)'};
-        opacity: ${(props) => (props.disable)
-            ? '0.1'
-            : '1'
-        };
 
         display: flex;
         justify-content: center;
@@ -114,10 +102,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
     }
 
     svg {
-        stroke: var(${(props) => props.mode === 'dark'
-            ? '--limed-spruce'
-            : '--white'
-        });
+        stroke: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--white'});
 
         width: 56px;
         height: 56px;
@@ -129,10 +114,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
     }
 
     @media (min-width: 768px) {
-        padding: ${(props) => (props.position === 'left')
-            ? '56px 48px 56px 0'
-            : '56px 0 56px 48px'
-        };
+        padding: ${(props) => (props.position === 'left') ? '56px 48px 56px 0' : '56px 0 56px 48px'};
     }
 
     @media (min-width: 1024px) {
@@ -160,5 +142,57 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
                     : '--limed-spruce'
             });
         }
+    }
+`;
+
+export const Project = styled.div`
+    background-color: var(--skeptic);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    width: 100%;
+
+    img { 
+        width: 100%;
+        transition: all ease-in .3s;
+    }
+
+    .project-info {
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+
+        gap: 24px;
+
+        transition: all ease-in .3s;
+
+        h3 {
+            color: var(--limed-spruce);
+            font-size: 24px;
+        }
+
+        a {
+            background-color: var(--limed-spruce);
+            color: var(--white);
+
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            padding: 8px 24px;
+            border-radius: 20px;
+        }
+    }
+
+    &:hover, &:focus {
+        img { opacity: 0; }
+
+        .project-info { display: flex; }
     }
 `;

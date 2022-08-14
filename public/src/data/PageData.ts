@@ -1,3 +1,7 @@
+import projectOne from '../assets/banner/a.jpg';
+import projectTwo from '../assets/banner/b.jpg';
+import projectThree from '../assets/banner/c.jpg';
+
 export const pageInfo =  {
     development: "Site is under development, follow the news here or GitHub:",
     htmlTitle: "Mario Elvio | Front-end developer",
@@ -474,6 +478,44 @@ export const pageInfo =  {
     },
     portfolio: {
         name: "Portfolio",
+        project: [
+            {
+                id: 1,
+                name: "Project 1",
+                img: projectOne,
+                alt: "Project 1",
+                url: "project-1",
+                technologies: [
+                    "TECH1",
+                    "TECH2",
+                    "TECH3"
+                ]
+            },
+            {
+                id: 2,
+                name: "Project 2",
+                img: projectTwo,
+                alt: "Project 2",
+                url: "project-2",
+                technologies: [
+                    "TECH1",
+                    "TECH2",
+                    "TECH3"
+                ]
+            },
+            {
+                id: 3,
+                name: "Project 3",
+                img: projectThree,
+                alt: "Project 3",
+                url: "project-3",
+                technologies: [
+                    "TECH1",
+                    "TECH2",
+                    "TECH3"
+                ]
+            }
+        ]
     },
     blog: {
         name: "Blog"
