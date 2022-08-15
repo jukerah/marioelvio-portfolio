@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    showMode?: 'slider' | 'grid';
-    isActive?: boolean;
+interface PortfolioSectionProps {
+    mode: string | null;
 }
 
-export const PortfolioSection = styled.section<Props>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
+export const PortfolioSection = styled.section<PortfolioSectionProps>`
+    background-color: var(${(props) => props.mode === 'dark'
+        ? '--shark-dark'
+        : '--white'
+    });
 
     display: flex;
     justify-content: flex-start;
@@ -32,7 +33,7 @@ export const PortfolioSection = styled.section<Props>`
     }
 `;
 
-export const Container = styled.div<Props>`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +53,7 @@ export const Container = styled.div<Props>`
     }
 `;
 
-export const ContainerButtons = styled.div<Props>`
+export const ContainerButtons = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -62,7 +63,7 @@ export const ContainerButtons = styled.div<Props>`
     gap: 16px;
 `;
 
-export const SelectButton = styled.select<Props>`
+export const SelectButton = styled.select`
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -98,7 +99,12 @@ export const SelectButton = styled.select<Props>`
     }
 `;
 
-export const Button = styled.button<Props>`
+interface ButtonProps {
+    mode: string | null;
+    isActive: boolean;
+}
+
+export const Button = styled.button<ButtonProps>`
     background-color: var(${(props) => props.mode === 'dark'
         ? props.isActive
             ? '--de-york'
@@ -107,23 +113,22 @@ export const Button = styled.button<Props>`
             ? '--de-york'
             : '--limed-spruce'
     });
-    box-shadow: ${(props) => props.isActive && '2px 2px 2px rgba(0, 0, 0, 0.25)'};
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     width: 40px;
     height: 40px;
-
+    
     border: none;
+    box-shadow: ${(props) => props.isActive && '2px 2px 2px rgba(0, 0, 0, 0.25)'};
 
     cursor: pointer;
 
     transition: all ease-in .1s;
 
     svg {
-
         stroke: var(${(props) => props.mode === 'dark'
             ? '--limed-spruce'
             : props.isActive
@@ -152,79 +157,4 @@ export const Button = styled.button<Props>`
 
 export const ContainerPortfolio = styled.div`
     width: 100%;
-`;
-
-export const SliderMode = styled.div<Props>`
-    display: flex;
-
-    width: 100%;
-
-    gap: 16px;
-
-    @media (min-width: 1024px) { gap: 24px; }
-`;
-
-export const GridMode = styled.div<Props>`
-    display: grid;
-    grid-template-columns: auto;
-
-    width: 100%;
-
-    gap: 16px;
-
-    @media (min-width: 768px) { grid-template-columns: auto auto; }
-
-    @media (min-width: 1024px) { gap: 24px; }
-`;
-
-export const Project = styled.div`
-    background-color: var(--skeptic);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-
-    width: 100%;
-
-    img { 
-        width: 100%;
-        transition: all ease-in .3s;
-    }
-
-    .project-info {
-        display: none;
-        align-items: center;
-        flex-direction: column;
-        position: absolute;
-
-        gap: 24px;
-
-        transition: all ease-in .3s;
-
-        h3 {
-            color: var(--limed-spruce);
-            font-size: 24px;
-        }
-
-        a {
-            background-color: var(--limed-spruce);
-            color: var(--white);
-
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-
-            padding: 8px 24px;
-            border-radius: 20px;
-        }
-    }
-
-    &:hover, &:focus {
-        img { opacity: 0; }
-
-        .project-info { display: flex; }
-    }
 `;

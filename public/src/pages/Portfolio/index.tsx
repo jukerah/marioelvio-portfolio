@@ -4,17 +4,27 @@ import * as C from "./styles";
 import { Context } from "../../contexts/Contexts";
 import { TitlePage } from "../../components/TitlePage";
 
-import { Slider } from "./Slider";
 import { pageInfo } from "../../data/PageData";
-import { Project } from "./Project";
+import { SliderMode } from "./Slider";
+import { GridMode } from "./Grid";
 
-export const PortfolioPage = (props: any) => {
+interface Props {
+  page: string;
+}
+
+export const PortfolioPage = (props: Props) => {
   const { theme } = useContext(Context);
-  const [showMode, setShowMode] = useState<"slider" | "grid">("slider");
+  const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
+  const [ searchValue, setSearchValue ] = useState<string>("All");
+  //const [ countBannerList, setCountBannerList ] = useState<number>(0);
 
   useEffect(() => {
     if (props.page === "portfolio") window.scrollTo({ top: 0, behavior: "smooth" });
   }, [props.page]);
+
+  /*useEffect(() => {
+    console.log(pageInfo.portfolio.project.map((project:any) => project.category.includes(searchValue)));
+  }, [searchValue]);*/
 
   return (
     <C.PortfolioSection mode={theme.mode.status}>
@@ -22,7 +32,9 @@ export const PortfolioPage = (props: any) => {
         <TitlePage title={"Portfolio"} />
 
         <C.ContainerButtons>
-          <C.SelectButton>
+          <C.SelectButton
+            onChange={e => setSearchValue(e.target.value)}
+          >
             <option value="All" selected>All</option>
             <option value="Front-end">Front-end</option>
             <option value="Back-end">Back-end</option>
@@ -58,33 +70,18 @@ export const PortfolioPage = (props: any) => {
         </C.ContainerButtons>
 
         <C.ContainerPortfolio>
-
           {(showMode === 'slider') &&
-            <Slider
+            <SliderMode
               ProjectList={pageInfo.portfolio.project}
+              searchProject={searchValue}
             />
           }
 
-
-
-
-
-
-
-
-
-
           {(showMode === 'grid') &&
-            <C.GridMode showMode={showMode}>
-              {pageInfo.portfolio.project.map((project:any) => (
-                  <Project
-                    name={project.name}
-                    src={project.img}
-                    alt={project.alt}
-                    url={project.url}
-                  />
-              ))}
-            </C.GridMode>
+            <GridMode
+              ProjectList={pageInfo.portfolio.project}
+              searchProject={searchValue}
+            />
           }
         </C.ContainerPortfolio>
       </C.Container>

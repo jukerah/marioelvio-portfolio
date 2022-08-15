@@ -7,9 +7,10 @@ import { ProjectListType } from "../../../types/ProjectListType"
 
 interface Props {
   ProjectList: ProjectListType[];
+  searchProject: string;
 }
 
-export const Slider = (props:Props) => {
+export const SliderMode = (props: Props) => {
   const { theme } = useContext(Context);
   const [activeBanner, setActiveBanner] = useState<number>(0);
   const countBannerList: number = props.ProjectList.length;
@@ -44,14 +45,17 @@ export const Slider = (props:Props) => {
           position={activeBanner * 100}
           countBanner={countBannerList}
         >
-          {props.ProjectList.map((project: any) => (
-            <Project
-              name={project.name}
-              src={project.img}
-              alt={project.alt}
-              url={project.url}
-            />
-          ))}
+          {props.ProjectList.map((project: any, index:number) =>
+              project.category.includes(props.searchProject) && (
+                <Project
+                  key={index}
+                  name={project.name}
+                  src={project.img}
+                  alt={project.alt}
+                  url={project.url}
+                />
+              )
+          )}
         </C.ContainerProject>
 
         <C.ContainerPercent

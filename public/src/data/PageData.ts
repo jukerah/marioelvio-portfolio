@@ -485,6 +485,13 @@ export const pageInfo =  {
                 img: projectOne,
                 alt: "Project 1",
                 url: "project-1",
+                category: [
+                    "All",
+                    "Front-end",
+                    "Back-end",
+                    "Full-stack",
+                    "UI Design"
+                ],
                 technologies: [
                     "TECH1",
                     "TECH2",
@@ -497,6 +504,10 @@ export const pageInfo =  {
                 img: projectTwo,
                 alt: "Project 2",
                 url: "project-2",
+                category: [
+                    "All",
+                    "UI Design"
+                ],
                 technologies: [
                     "TECH1",
                     "TECH2",
@@ -509,6 +520,10 @@ export const pageInfo =  {
                 img: projectThree,
                 alt: "Project 3",
                 url: "project-3",
+                category: [
+                    "All",
+                    "Front-end"
+                ],
                 technologies: [
                     "TECH1",
                     "TECH2",

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Project = styled.div`
-    background-color: var(--skeptic);
+    background-color: var(--limed-spruce);
 
     display: flex;
     justify-content: center;
@@ -27,13 +27,13 @@ export const Project = styled.div`
         transition: all ease-in .3s;
 
         h3 {
-            color: var(--limed-spruce);
+            color: var(--white);
             font-size: 24px;
         }
 
         a {
-            background-color: var(--limed-spruce);
-            color: var(--white);
+            background-color: var(--skeptic);
+            color: var(--limed-spruce);
 
             font-size: 18px;
             font-weight: 700;
@@ -42,11 +42,13 @@ export const Project = styled.div`
 
             padding: 8px 24px;
             border-radius: 20px;
+
+            &:hover { background-color: var(--de-york); }
         }
     }
 
     &:hover, &:focus {
-        img { opacity: 0; }
+        img { opacity: .05; }
 
         .project-info { display: flex; }
     }

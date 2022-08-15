@@ -145,6 +145,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
 
         .button-change-img {
             background-color: rgba(0, 0, 0, 0);
+            opacity: 1;
 
             width: 100%;
             height: 100%;
