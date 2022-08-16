@@ -16,15 +16,10 @@ export const PortfolioPage = (props: Props) => {
   const { theme } = useContext(Context);
   const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
   const [ searchValue, setSearchValue ] = useState<string>("All");
-  //const [ countBannerList, setCountBannerList ] = useState<number>(0);
 
   useEffect(() => {
     if (props.page === "portfolio") window.scrollTo({ top: 0, behavior: "smooth" });
   }, [props.page]);
-
-  /*useEffect(() => {
-    console.log(pageInfo.portfolio.project.map((project:any) => project.category.includes(searchValue)));
-  }, [searchValue]);*/
 
   return (
     <C.PortfolioSection mode={theme.mode.status}>

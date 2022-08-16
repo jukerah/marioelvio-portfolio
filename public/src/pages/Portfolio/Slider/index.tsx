@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
@@ -13,7 +13,6 @@ interface Props {
 export const SliderMode = (props: Props) => {
   const { theme } = useContext(Context);
   const [activeBanner, setActiveBanner] = useState<number>(0);
-  const countBannerList: number = props.ProjectList.length;
 
   const handleClickChangeBanner = (position: number) => {
     if (position === 1) {
@@ -24,6 +23,16 @@ export const SliderMode = (props: Props) => {
       if (activeBanner > 0) setActiveBanner(activeBanner + position);
     }
   };
+
+  const projectFilter = (item: ProjectListType) => {
+    return item.category.includes(props.searchProject);
+  }
+
+  const countBannerList: number = props.ProjectList.filter(projectFilter).length;
+
+  useEffect(() => {
+    setActiveBanner(0);
+  }, [countBannerList]);
 
   return (
     <C.ContainerSlider>
