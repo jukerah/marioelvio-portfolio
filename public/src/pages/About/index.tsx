@@ -51,6 +51,7 @@ export const AboutPage = (props:any) => {
 
                 <DownloadButton />
             </C.Container>
+            
             <Footer />
         </C.AboutSection>
         

@@ -11,7 +11,7 @@ export const PortfolioSection = styled.section<PortfolioSectionProps>`
     });
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 

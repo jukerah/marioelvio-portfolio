@@ -34,7 +34,7 @@ function App() {
             <RouteList />
           </C.ContainerMain>
 
-        </C.ContainerWeb>   
+        </C.ContainerWeb> 
     </div>
   );
 }

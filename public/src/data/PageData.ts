@@ -1,6 +1,6 @@
-import projectOne from '../assets/banner/a.jpg';
-import projectTwo from '../assets/banner/b.jpg';
-import projectThree from '../assets/banner/c.jpg';
+import projectOne from '../assets/banner/1.jpg';
+import projectTwo from '../assets/banner/2.jpg';
+import projectThree from '../assets/banner/3.jpg';
 
 export const pageInfo =  {
     development: "Site is under development, follow the news here or GitHub:",

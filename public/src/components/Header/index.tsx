@@ -30,8 +30,8 @@ export const Header = () => {
             aria-label='Mario Elvio logo'
           >
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M181.512 0.0128411C194.286 0.0128411 200 6.83146 200 19.9936C200 32.244 195.167 39.4992 183.005 40H182.968H0L1.07672 11.1075C1.32142 4.67416 5.86076 0 12.0152 0H174.734C176.997 0 179.249 0.0256822 181.512 0.0256822V0.0128411Z"
                 fill="#374047"
             />

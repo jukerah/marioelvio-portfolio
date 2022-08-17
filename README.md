@@ -67,7 +67,7 @@ Summary
 * [ ] Multi-language
 * [X] Home page
 * [X] About page
-* [ ] Portfolio page
+* [X] Portfolio page
 * [ ] Blog page
 * [ ] Contact page
 * [ ] Login page
