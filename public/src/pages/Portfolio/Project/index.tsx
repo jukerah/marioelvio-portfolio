@@ -1,4 +1,5 @@
 import * as C from "./styles";
+import { Link } from 'react-router-dom';
 
 interface Props {
   name: string;
@@ -13,7 +14,7 @@ export const Project = (props: Props) => {
       <img src={props.src} alt={props.alt} />
       <div className="project-info">
         <h3>{props.name}</h3>
-        <a href={props.url}>View more</a>
+        <Link to={`/portfolio/${props.url}`}>View more</Link>
       </div>
     </C.Project>
   );

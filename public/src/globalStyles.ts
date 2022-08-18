@@ -1,7 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
- 
+
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+    @font-face {
+        font-family: 'Exo 2';
+        src: url('./assets/fonts/Exo2-Regular.ttf') format('ttf'),
+             url('./assets/fonts/Exo2-Bold.ttf') format('ttf');
+    }
 
     :root {
         --de-york: #6BC38B;
@@ -33,6 +37,8 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         font-family: 'Exo 2', sans-serif;
     }
+
+    h1, h2 { word-spacing: 6px; }
 `;
  
 export default GlobalStyle;

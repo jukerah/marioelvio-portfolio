@@ -1,7 +1,3 @@
-import projectOne from '../assets/banner/1.jpg';
-import projectTwo from '../assets/banner/2.jpg';
-import projectThree from '../assets/banner/3.jpg';
-
 export const pageInfo =  {
     development: "Site is under development, follow the news here or GitHub:",
     htmlTitle: "Mario Elvio | Front-end developer",
@@ -481,27 +477,39 @@ export const pageInfo =  {
         project: [
             {
                 id: 1,
-                name: "Project 1",
-                img: projectOne,
-                alt: "Project 1",
-                url: "project-1",
+                name: "Boltz Carregadores",
+                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
+                img: require('../assets/banner/boltz-carregadores.jpg'),
+                alt: "Boltz Carregadores",
+                url: "boltz-carregadores",
                 category: [
                     "All",
                     "Front-end",
-                    "Back-end",
-                    "Full-stack",
                     "UI Design"
                 ],
                 technologies: [
-                    "TECH1",
-                    "TECH2",
-                    "TECH3"
-                ]
+                    "Figma",
+                    "HTML5",
+                    "React.js",
+                    "TypeScript",
+                    "Styled Components",
+                    "React Router DOM",
+                    "Hooks",
+                    "Context",
+                    "React Scroll",
+                    "usehooks-ts"
+                ],
+                resources: {
+                    webSite: "https://www.boltzcarregadores.com.br",
+                    gitHub: "",
+                    figma: "https://www.figma.com/file/fsN99ba8jI6J2vMNrOtB7A/Boltz-Carregadores?node-id=25%3A174"
+                }
             },
             {
                 id: 2,
                 name: "Project 2",
-                img: projectTwo,
+                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
+                img: require('../assets/banner/2.jpg'),
                 alt: "Project 2",
                 url: "project-2",
                 category: [
@@ -512,12 +520,18 @@ export const pageInfo =  {
                     "TECH1",
                     "TECH2",
                     "TECH3"
-                ]
+                ],
+                resources: {
+                    webSite: "",
+                    gitHub: "",
+                    figma: ""
+                }
             },
             {
                 id: 3,
                 name: "Project 3",
-                img: projectThree,
+                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
+                img: require('../assets/banner/3.jpg'),
                 alt: "Project 3",
                 url: "project-3",
                 category: [
@@ -528,7 +542,12 @@ export const pageInfo =  {
                     "TECH1",
                     "TECH2",
                     "TECH3"
-                ]
+                ],
+                resources: {
+                    webSite: "",
+                    gitHub: "",
+                    figma: ""
+                }
             }
         ]
     },

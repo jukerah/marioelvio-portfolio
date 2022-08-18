@@ -37,6 +37,7 @@ export const SkillName = styled.div<Props>`
         });
         
         font-size: 1.125em;
+        line-height: 110%;
 
         transition: all ease-in .5s;
     }
@@ -71,10 +72,9 @@ export const SkillDescription = styled.p<Props>`
     padding: 8px;
 
     font-size: 1em;
+    line-height: 150%;
 
     transition: all ease-in .5s;
 
-    @media (min-width: 768px) { font-size: 1.125em; }
-
-    @media (min-width: 1024px) { font-size: 1.375em; }
+    @media (min-width: 768px) { font-size: 1.375em; }
 `;

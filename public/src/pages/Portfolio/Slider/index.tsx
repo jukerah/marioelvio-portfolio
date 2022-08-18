@@ -4,6 +4,7 @@ import * as C from "./styles";
 import { Context } from "../../../contexts/Contexts";
 import { Project } from "../Project";
 import { ProjectListType } from "../../../types/ProjectListType"
+import { NoDataFound } from "../NoDataFound";
 
 interface Props {
   ProjectList: ProjectListType[];
@@ -34,58 +35,64 @@ export const SliderMode = (props: Props) => {
     setActiveBanner(0);
   }, [countBannerList]);
 
-  return (
-    <C.ContainerSlider>
-      <C.ButtonChangeImg
-        mode={theme.mode.status}
-        onClick={() => handleClickChangeBanner(-1)}
-        position={"left"}
-        disable={activeBanner === 0 ? true : false}
-      >
-        <div className="button-change-img">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 6L9 12L15 18" stroke-width="2" strokeLinecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </C.ButtonChangeImg>
-
-      <C.Slider>
-        <C.ContainerProject
-          position={activeBanner * 100}
-          countBanner={countBannerList}
+  if (countBannerList === 0) {
+    return (
+      <NoDataFound />
+    );
+  } else {
+    return (
+      <C.ContainerSlider>
+        <C.ButtonChangeImg
+          mode={theme.mode.status}
+          onClick={() => handleClickChangeBanner(-1)}
+          position={"left"}
+          disable={activeBanner === 0 ? true : false}
         >
-          {props.ProjectList.map((project: any, index:number) =>
-              project.category.includes(props.searchProject) && (
-                <Project
-                  key={index}
-                  name={project.name}
-                  src={project.img}
-                  alt={project.alt}
-                  url={project.url}
-                />
-              )
-          )}
-        </C.ContainerProject>
+          <div className="button-change-img">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 6L9 12L15 18" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </C.ButtonChangeImg>
 
-        <C.ContainerPercent
-          position={((activeBanner + 1) / countBannerList) * 100}
+        <C.Slider>
+          <C.ContainerProject
+            position={activeBanner * 100}
+            countBanner={countBannerList}
+          >
+            {props.ProjectList.map((project: any, index:number) =>
+                project.category.includes(props.searchProject) && (
+                  <Project
+                    key={index}
+                    name={project.name}
+                    src={project.img}
+                    alt={project.alt}
+                    url={project.url}
+                  />
+                )
+            )}
+          </C.ContainerProject>
+
+          <C.ContainerPercent
+            position={((activeBanner + 1) / countBannerList) * 100}
+          >
+            <div className="percent-line"></div>
+          </C.ContainerPercent>
+        </C.Slider>
+
+        <C.ButtonChangeImg
+          mode={theme.mode.status}
+          onClick={() => handleClickChangeBanner(1)}
+          position={"right"}
+          disable={activeBanner === countBannerList - 1 ? true : false}
         >
-          <div className="percent-line"></div>
-        </C.ContainerPercent>
-      </C.Slider>
-
-      <C.ButtonChangeImg
-        mode={theme.mode.status}
-        onClick={() => handleClickChangeBanner(1)}
-        position={"right"}
-        disable={activeBanner === countBannerList - 1 ? true : false}
-      >
-        <div className="button-change-img">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke-width="2" strokeLinecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </C.ButtonChangeImg>
-    </C.ContainerSlider>
-  );
+          <div className="button-change-img">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </C.ButtonChangeImg>
+      </C.ContainerSlider>
+    );
+  }
 };

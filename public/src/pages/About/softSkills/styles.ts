@@ -20,6 +20,7 @@ export const ContainerSoftSkills = styled.div<Props>`
         width: 100%;
 
         font-size: 1em;
+        line-height: 150%;
 
         transition: all ease-in .5s;
     }
@@ -27,14 +28,10 @@ export const ContainerSoftSkills = styled.div<Props>`
     @media (min-width: 768px) {
         gap: 24px;
 
-        .description-skills { font-size: 1.125em; }
-    }
-
-    @media (min-width: 1024px) {
-        gap: 32px;
-
         .description-skills { font-size: 1.375em; }
     }
+
+    @media (min-width: 1024px) { gap: 32px; }
 `;
 
 export const SoftSkills = styled.div<Props>`

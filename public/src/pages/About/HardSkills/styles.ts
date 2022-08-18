@@ -21,6 +21,7 @@ export const ContainerHardSkills = styled.div<Props>`
         width: 100%;
 
         font-size: 1em;
+        line-height: 150%;
 
         transition: all ease-in .5s;
     }

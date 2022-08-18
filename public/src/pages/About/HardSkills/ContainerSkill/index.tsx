@@ -20,9 +20,9 @@ export const ContainerSkill = (props:Props) => {
                 <h3>{props.stack}</h3>
             </C.TitleStack>
             <div className='container-card'>
-                {props.skillList.map((tech:any) => (
+                {props.skillList.map((tech:any, index:number) => (
                     <CardTech
-                        key={tech.id}
+                        key={index}
                         src={(theme.mode.status === 'dark')
                             ? tech.img.light
                             : tech.img.dark

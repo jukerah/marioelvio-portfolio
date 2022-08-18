@@ -17,7 +17,7 @@ export const ViewMoreButton = (props:Props) => {
         >
             view more
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 9L12 15L18 9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         </C.ViewMoreButton>
     );
