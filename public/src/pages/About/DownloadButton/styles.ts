@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
-    isOpened?: boolean;
-    isMenuOpen?: boolean;
+interface DownloadButtonProps {
+    mode: string;
 }
 
-export const DownloadButton = styled.button<Props>`
+export const DownloadButton = styled.button<DownloadButtonProps>`
     background-color: rgba(0, 0, 0, 0);
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -30,6 +28,7 @@ export const DownloadButton = styled.button<Props>`
         font-size: 18px;
         font-weight: 700;
         text-transform: uppercase;
+        margin-top: 2px;
     }
 
     svg {
@@ -62,9 +61,16 @@ export const DownloadButton = styled.button<Props>`
     }
 `;
 
-export const BackgroundCv = styled.div<Props>`
+interface BackgroundCvProps {
+    mode: string;
+    isOpened: boolean;
+    isMenuOpen: boolean;
+}
+
+export const BackgroundCv = styled.div<BackgroundCvProps>`
     background-color: rgba(${(props) => props.mode === 'dark' ? '0,0,0, 0.9' : 'f,f,f, 0.9'});
     backdrop-filter: blur(6px);
+    
     display: ${(props) => props.isOpened ? 'flex' : 'none'};
     align-items: center;
     justify-content: center;
@@ -81,10 +87,18 @@ export const BackgroundCv = styled.div<Props>`
     }
 `;
 
-export const ContainerCV = styled.div<Props>`
+interface ContainerCVProps {
+    mode: string;
+    isOpened: boolean;
+}
+
+export const ContainerCV = styled.div<ContainerCVProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--alto'});
 
-    display: ${(props) => props.isOpened ? 'flex' : 'none'};
+    display: ${(props) => props.isOpened
+        ? 'flex'
+        : 'none'
+    };
     justify-content: center;
     flex-direction: column;
     position: fixed;

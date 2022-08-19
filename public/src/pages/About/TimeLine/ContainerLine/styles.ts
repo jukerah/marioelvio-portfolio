@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
-    isMenuOpen?: boolean;
+interface ContainerLineProps {
+    mode: string;
+    isMenuOpen: boolean;
 }
 
-export const ContainerLine = styled.div<Props>`
+export const ContainerLine = styled.div<ContainerLineProps>`
     display: none;
     align-items: center;
     width: 10px;
@@ -24,6 +24,6 @@ export const ContainerLine = styled.div<Props>`
     @media (min-width: 1024px) { width: 20px; }
 
     @media (min-width: 1024px) and (max-width: 1200px) {
-        display: ${(props) => props.isMenuOpen ? 'none' : 'flex'};
+        display: ${(props) => props.isMenuOpen ? 'none': 'flex'};
     }
 `;

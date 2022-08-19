@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
+interface ResumeProps {
+    mode: string;
 }
 
-export const Resume = styled.div<Props>`
+export const Resume = styled.div<ResumeProps>`
     display: flex;
     flex-direction: column;
 
@@ -22,7 +22,7 @@ export const Resume = styled.div<Props>`
 
     @media (min-width: 768px) {
         p { font-size: 1.375em; }
-
+        
         gap: 24px;
     }
 

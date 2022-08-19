@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface MenuMobileProps {
+    mode: string;
+    isMenuOpen: boolean;
 }
 
-export const MenuMobile = styled.div<Props>`
+export const MenuMobile = styled.div<MenuMobileProps>`
     padding: 16px 16px 16px 0;
 
     button {
@@ -22,6 +22,7 @@ export const MenuMobile = styled.div<Props>`
 
         div {
             background-color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+
             width: 32px;
             height: 4px;
 
@@ -52,7 +53,12 @@ export const MenuMobile = styled.div<Props>`
     @media (min-width: 1024px) { display: none; }
 `;
 
-export const NavMobile = styled.nav<Props>`
+interface NavMobileProps {
+    mode: string;
+    isMenuOpen: boolean;
+}
+
+export const NavMobile = styled.nav<NavMobileProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'}); 
 
     display: flex;
@@ -94,6 +100,9 @@ export const NavMobile = styled.nav<Props>`
 
         svg {
             stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+            .fill {
+                fill: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+            }
 
             width: 24px;
             height: 24px;
@@ -127,7 +136,7 @@ export const NavMobile = styled.nav<Props>`
     @media (min-width: 1024px) { display: none; }
 `;
 
-export const ContainerButtons = styled.div<Props>`
+export const ContainerButtons = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

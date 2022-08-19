@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { ProjectListType } from "../../types/ProjectListType";
-import { pageInfo } from "../../data/PageData";
 
+import { pageInfo } from "../../data/PageData";
 import { Footer } from "../../components/Footer";
+import { BackButton } from "../../components/BackButton";
 
 interface Props {
   page: string;
@@ -15,7 +16,6 @@ interface Props {
 export const ProjectPage = (props: Props) => {
   const { theme } = useContext(Context);
   const params = useParams();
-  const navigate = useNavigate();
 
   const searchProject = (project: ProjectListType) => { return project.url === params.slug; }    
   const projectInfo: ProjectListType[] = pageInfo.portfolio.project.filter(searchProject);
@@ -25,26 +25,15 @@ export const ProjectPage = (props: Props) => {
     if (props.page === "project") window.scrollTo({ top: 0, behavior: "smooth" });
   }, [props.page]);
 
-  const handleBackButton = () => { navigate('/portfolio'); }
-
   return (
     <C.ProjectSection mode={theme.mode.status}>
       <C.Container mode={theme.mode.status}>
         <C.Header>
-          <C.BackButton
-            mode={theme.mode.status}
-            onClick={handleBackButton}
-          >
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 6L9 12L15 18" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-
-            <p>Back</p>
-          </C.BackButton>
+          <BackButton url={'/portfolio'}/>
           <h1>{project.name}</h1>        
         </C.Header>
 
-        <img src={project.img} alt={project.alt} />
+        <img src={project.img} alt={project.alt}/>
 
         <C.Description mode={theme.mode.status}>
           <h2>About this Project</h2>
@@ -64,7 +53,11 @@ export const ProjectPage = (props: Props) => {
           </C.Technologies>
 
           <C.Resources mode={theme.mode.status}>
-            <h2>Resources</h2>
+            {(project.resources.webSite !== "" ||
+                project.resources.gitHub !== "" ||
+                project.resources.figma !== "") &&
+              <h2>Resources</h2>
+            }
             <ul>
               {(project.resources.webSite !== "") &&
                 <li>

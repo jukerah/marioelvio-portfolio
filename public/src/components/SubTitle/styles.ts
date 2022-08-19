@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface ModeProps {
-    mode: string | null;
+interface SubTitleProps {
+    mode: string;
 }
 
-export const SubTitle = styled.h2<ModeProps>`
+export const SubTitle = styled.h2<SubTitleProps>`
     color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
 
     width: 100%;

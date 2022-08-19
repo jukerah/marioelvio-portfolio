@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 interface NoDataFoundProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const NoDataFound = styled.p<NoDataFoundProps>`
-    color: var(${(props) => props.mode === 'dark'
-        ? '--white'
-        : '--limed-spruce'
-    });
+    color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
     font-size: 1em;
 

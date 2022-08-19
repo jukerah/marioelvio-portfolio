@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface ContainerEducationProps {
+    isMenuOpen: boolean;
 }
 
-export const ContainerEducation = styled.div<Props>`
+export const ContainerEducation = styled.div<ContainerEducationProps>`
     display: flex;
     flex-direction: column;
 
@@ -27,7 +26,11 @@ export const Education = styled.div`
     @media (min-width: 1024px) { gap: 24px; }
 `;
 
-export const EducationInfo = styled.div<Props>`
+interface EducationInfoProps {
+    mode: string;
+}
+
+export const EducationInfo = styled.div<EducationInfoProps>`
     display: flex;
     flex-direction: column;
     

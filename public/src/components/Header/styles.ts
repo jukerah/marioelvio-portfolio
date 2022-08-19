@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface HeaderProps {
+    mode: string;
+    isMenuOpen: boolean;
 }
 
-export const Header = styled.header<Props>`
+export const Header = styled.header<HeaderProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -18,7 +18,6 @@ export const Header = styled.header<Props>`
 
     width: 100%;
     height: 60px;
-
     top: 0;
 
     transition: all ease-in .5s;
@@ -31,7 +30,11 @@ export const Header = styled.header<Props>`
     }
 `;
 
-export const Container = styled.div<Props>`
+interface ContainerProps {
+    mode: string;
+}
+
+export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,7 +51,13 @@ export const Container = styled.div<Props>`
         list-style: none;
     }
 
+    a { height: 32px; }
+
     .container-button { display: none; }
+
+    @media (min-width: 768px) {
+        a { height: 40px; }
+    }
 
     @media (min-width: 1024px) {
         padding: 0 32px;
@@ -57,7 +66,7 @@ export const Container = styled.div<Props>`
     }
 `;
 
-export const Logo = styled.svg<Props>`
+export const Logo = styled.svg`
     width: 160px;
     height: 32px;
 

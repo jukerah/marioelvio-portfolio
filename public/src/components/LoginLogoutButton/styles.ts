@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
+interface LoginLogoutButtonProps {
+    mode: string;
 }
-export const LoginLogoutButton = styled.div<Props>`    
+export const LoginLogoutButton = styled.div<LoginLogoutButtonProps>`    
     a {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 

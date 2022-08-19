@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface ModeProps {
+interface CardTechProps {
     mode: string | null;
 }
 
-export const CardTech = styled.figure<ModeProps>`
+export const CardTech = styled.figure<CardTechProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
@@ -65,6 +65,4 @@ export const CardTech = styled.figure<ModeProps>`
             height: 128px;
         }
     }
-
-    //@media (min-width: 1366px) { max-width: 197px; }
 `;

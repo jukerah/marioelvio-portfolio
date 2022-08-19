@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-    isMenuOpen: boolean;
-}
-
-export const MyInterests = styled.div<Props>`
+export const MyInterests = styled.div`
     display: flex;
     flex-direction: column;
 

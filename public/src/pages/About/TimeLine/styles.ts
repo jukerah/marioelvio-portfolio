@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
-    isMenuOpen?: boolean;
+interface TimeLineProps {
+    isMenuOpen: boolean;
 }
 
-export const TimeLine = styled.div<Props>`
+export const TimeLine = styled.div<TimeLineProps>`
     display: flex;
     flex-direction: column;
 
@@ -32,7 +31,12 @@ export const TimeLine = styled.div<Props>`
     }
 `;
 
-export const CenterLine = styled.div<Props>`
+interface CenterLineProps {
+    mode: string;
+    isMenuOpen: boolean;
+}
+
+export const CenterLine = styled.div<CenterLineProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
     
     display: none;
@@ -59,8 +63,7 @@ export const CenterLine = styled.div<Props>`
         display: ${(props) => props.isMenuOpen ? 'none' : 'flex'};
     }
 `;
-
-export const ContainerLeft = styled.div<Props>`
+export const ContainerLeft = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -71,7 +74,7 @@ export const ContainerLeft = styled.div<Props>`
     @media (min-width: 1024px) { gap: 24px; }
 `;
 
-export const ContainerRight = styled.div<Props>`
+export const ContainerRight = styled.div`
     display: flex;
     flex-direction: column;
 

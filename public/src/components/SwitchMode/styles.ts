@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface ModeProps {
-    mode: string | null;
+interface ContainerSwitchThemeProps {
+    mode: string;
 }
 
-export const ContainerSwitchTheme = styled.div<ModeProps>`
+export const ContainerSwitchTheme = styled.div<ContainerSwitchThemeProps>`
     display: flex;
     align-items: center;
     
@@ -33,14 +33,18 @@ export const ContainerSwitchTheme = styled.div<ModeProps>`
     }
 
     .slider:before {
-        width: 32px;
-        height: 32px;
-        position: absolute;
-        content: "";
-        transition: 0.5s;
         background: conic-gradient(from 180deg at 50% 50%, #6CC390 0deg, #5EA076 177.37deg, #6BC38B 348deg, #6CC390 360deg);
         box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.25);
+
+        position: absolute;
+
+        width: 32px;
+        height: 32px;
+        
+        content: "";
         transform: translateX(32px);
+
+        transition: 0.5s;
     }
 
     input:checked + .slider:before { transform: translateX(0); }

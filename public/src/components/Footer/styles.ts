@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface ModeProps {
-    mode: string | null;
+interface FooterProps {
+    mode: string;
 }
 
-export const Footer = styled.footer<ModeProps>`
+export const Footer = styled.footer<FooterProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     display: flex;
@@ -41,7 +41,11 @@ export const Footer = styled.footer<ModeProps>`
     }
 `;
 
-export const SocialButtons = styled.div<ModeProps>`
+interface SocialButtonsProps {
+    mode: string;
+}
+
+export const SocialButtons = styled.div<SocialButtonsProps>`
     display: flex;
     justify-content: center;
 

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface AboutSectionProps {
+    mode: string;
 }
 
-export const AboutSection = styled.section<Props>`
+export const AboutSection = styled.section<AboutSectionProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
 
     display: flex;
@@ -24,7 +23,7 @@ export const AboutSection = styled.section<Props>`
     @media (min-width: 1024px) { padding-top: 100px; }
 `;
 
-export const Container = styled.div<Props>`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

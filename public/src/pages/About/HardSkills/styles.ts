@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    show?: boolean;
-    heightDescription?: string;
+interface ContainerHardSkillsProps {
+    mode: string;
 }
 
-export const ContainerHardSkills = styled.div<Props>`
+export const ContainerHardSkills = styled.div<ContainerHardSkillsProps>`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -39,7 +37,7 @@ export const ContainerHardSkills = styled.div<Props>`
     }
 `;
 
-export const HardSkills = styled.div<Props>`
+export const HardSkills = styled.div`
     display: flex;
     flex-direction: column;
 

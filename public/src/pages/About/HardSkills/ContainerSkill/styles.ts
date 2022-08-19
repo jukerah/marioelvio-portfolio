@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    show?: boolean;
-    isMenuOpen?: boolean;
-}
-
-export const ContainerSkill = styled.div<Props>`
+export const ContainerSkill = styled.div`
     display: flex;
     flex-direction: column;
     
@@ -28,7 +22,11 @@ export const ContainerSkill = styled.div<Props>`
 
 `;
 
-export const TitleStack = styled.div<Props>`
+interface TitleStackProps {
+    mode: string;
+}
+
+export const TitleStack = styled.div<TitleStackProps>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,8 +45,6 @@ export const TitleStack = styled.div<Props>`
     svg {
         width: 64px;
         height: 64px;
-
-        transform: rotateX(${(props) => props.show && '180deg'});
 
         transition: all ease-in .5s;
     }

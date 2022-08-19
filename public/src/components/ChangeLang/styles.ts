@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface ModeProps {
-    mode: string | null;
+interface ChangeLangProps {
+    mode: string;
 }
 
-export const ChangeLang = styled.button<ModeProps>`
+export const ChangeLang = styled.button<ChangeLangProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'}); 
     border: none;
 

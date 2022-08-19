@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 interface PortfolioSectionProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const PortfolioSection = styled.section<PortfolioSectionProps>`
-    background-color: var(${(props) => props.mode === 'dark'
-        ? '--shark-dark'
-        : '--white'
-    });
+    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
 
     display: flex;
     justify-content: space-between;
@@ -100,7 +97,7 @@ export const SelectButton = styled.select`
 `;
 
 interface ButtonProps {
-    mode: string | null;
+    mode: string;
     isActive: boolean;
 }
 

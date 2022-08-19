@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
+interface PrimaryButtonProps {
+    mode: string;
     isMenuOpen: boolean;
-    backgroundColor: string,
-    backgroundColorHover: string,
-    color: string,
-    colorHover: string
+    backgroundColor: string;
+    backgroundColorHover: string;
+    color: string;
+    colorHover: string;
 }
 
-export const PrimaryButton = styled.div<Props>`
+export const PrimaryButton = styled.div<PrimaryButtonProps>`
     background-color: var(${(props) => props.backgroundColor});
     
     display: flex;
@@ -38,7 +38,9 @@ export const PrimaryButton = styled.div<Props>`
         
         transition: all ease-in .1s;
         a {
-            color: var(${(props) => props.colorHover}); transition: all ease-in .1s;
+            color: var(${(props) => props.colorHover});
+            
+            transition: all ease-in .1s;
         }
     }
 
@@ -51,13 +53,15 @@ export const PrimaryButton = styled.div<Props>`
     }
 
     @media (min-width: 1024px) {
-        height: ${(props) => props.isMenuOpen ? '80px' : '96px'};
+        height: ${(props) => props.isMenuOpen ? '80px': '96px'};
 
         font-size: ${(props) => props.isMenuOpen ? '24px' : '40px'};
 
         border-radius: 48px;
 
-        a { transition: ${(props) => props.isMenuOpen ? '0s' : 'all ease-in .5s'}; }
+        a { 
+            transition: ${(props) => props.isMenuOpen ? '0s' : 'all ease-in .5s'};
+        }
         
         &:hover {
             box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);

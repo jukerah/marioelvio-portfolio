@@ -1,21 +1,24 @@
 import styled from "styled-components";
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
-    backgroundLandscapeSmall?: string;
-    backgroundLandscapeLarge?: string;
-    backgroundPortrait?: string;
-    delayLoad?: string;
+
+interface HomeSectionProps {
+    mode: string;
+    isMenuOpen: boolean;
+    backgroundLandscapeSmall: string;
+    backgroundLandscapeLarge: string;
+    backgroundPortrait: string;
 }
 
-export const HomeSection = styled.section<Props>`
-    background-color: var(--shark);
+export const HomeSection = styled.section<HomeSectionProps>`
+    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--alabaster'});
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     width: 100%;
     min-height: 100vh;
+
+    transition: all ease-in .5s;
 
     @media (orientation: landscape) {
         background-image: url(${props => props.backgroundLandscapeSmall});
@@ -32,7 +35,11 @@ export const HomeSection = styled.section<Props>`
     background-size: cover;
 `;
 
-export const Container = styled.div<Props>`
+interface ContainerProps {
+    isMenuOpen: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -85,7 +92,11 @@ export const Container = styled.div<Props>`
     }
 `;
 
-export const ContainerInfo = styled.div<Props>`
+interface ContainerInfoProps {
+    isMenuOpen: boolean;
+}
+
+export const ContainerInfo = styled.div<ContainerInfoProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -119,7 +130,11 @@ export const ContainerInfo = styled.div<Props>`
     }
 `;
 
-export const Info = styled.div<Props>`
+interface InfoProps {
+    mode: string;
+}
+
+export const Info = styled.div<InfoProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -181,7 +196,11 @@ export const Info = styled.div<Props>`
     }
 `;
 
-export const SocialButtons = styled.div<Props>`
+interface SocialButtonsProps {
+    mode: string;
+}
+
+export const SocialButtons = styled.div<SocialButtonsProps>`
     display: flex;
     justify-content: space-between;
 
@@ -277,7 +296,11 @@ export const SocialButtons = styled.div<Props>`
     }
 `;
 
-export const NavButtons = styled.div<Props>`
+interface NavButtonsProps {
+    isMenuOpen: boolean;
+}
+
+export const NavButtons = styled.div<NavButtonsProps>`
     display: flex;
     flex-direction: column;
 

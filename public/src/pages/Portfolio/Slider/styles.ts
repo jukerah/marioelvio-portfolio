@@ -77,7 +77,7 @@ export const PositionButton = styled.div`
 `;
 
 interface ButtonChangeImgProps {
-    mode: string | null;
+    mode: string;
     position: string;
     disable: boolean;
 }
@@ -91,10 +91,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
 
     left: ${(props) => (props.position === 'left') && 0};
     right: ${(props) => (props.position === 'right') && 0};
-    padding: ${(props) => (props.position === 'left')
-        ? '24px 16px 24px 0'
-        : '24px 0 24px 16px'
-    };
+    padding: ${(props) => (props.position === 'left') ? '24px 16px 24px 0' : '24px 0 24px 16px'};
 
     cursor: pointer;
 
@@ -114,10 +111,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
     }
 
     svg {
-        stroke: var(${(props) => props.mode === 'dark'
-            ? '--limed-spruce'
-            : '--white'
-        });
+        stroke: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--white'});
 
         width: 56px;
         height: 56px;
@@ -129,10 +123,7 @@ export const ButtonChangeImg = styled.div<ButtonChangeImgProps>`
     }
 
     @media (min-width: 768px) {
-        padding: ${(props) => (props.position === 'left')
-            ? '56px 48px 56px 0'
-            : '56px 0 56px 48px'
-        };
+        padding: ${(props) => (props.position === 'left') ? '56px 48px 56px 0' : '56px 0 56px 48px'};
     }
 
     @media (min-width: 1024px) {

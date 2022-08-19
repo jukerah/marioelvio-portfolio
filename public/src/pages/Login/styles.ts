@@ -1,7 +1,6 @@
 import styled from "styled-components";
 interface Props {
-    mode?: string | null;
-    //isMenuOpen?: boolean;
+    mode: string ;
 }
 
 export const LoginSection = styled.section<Props>`

@@ -1,8 +1,9 @@
 import { useContext, useEffect } from "react";
 import * as C from "./styles";
 
-import { svgs } from "../../data/SvgList";
 import { Context } from "../../contexts/Contexts";
+import { svgs } from "../../data/SvgList";
+
 import { PrimaryButton } from "../../components/PrimaryButton";
 
 export const HomePage = (props: any) => {
@@ -16,21 +17,9 @@ export const HomePage = (props: any) => {
     <C.HomeSection
       mode={theme.mode.status}
       isMenuOpen={theme.isMenuOpen.status}
-      backgroundLandscapeSmall={
-        theme.mode.status === "dark"
-          ? svgs.background.home.dark.landscape.small
-          : svgs.background.home.light.landscape.small
-      }
-      backgroundLandscapeLarge={
-        theme.mode.status === "dark"
-          ? svgs.background.home.dark.landscape.large
-          : svgs.background.home.light.landscape.large
-      }
-      backgroundPortrait={
-        theme.mode.status === "dark"
-          ? svgs.background.home.dark.portrait
-          : svgs.background.home.light.portrait
-      }
+      backgroundLandscapeSmall={svgs.background.home.landscape.small}
+      backgroundLandscapeLarge={svgs.background.home.landscape.large}
+      backgroundPortrait={svgs.background.home.portrait}
     >
       <C.Container isMenuOpen={theme.isMenuOpen.status}>
         <C.ContainerInfo isMenuOpen={theme.isMenuOpen.status}>
@@ -81,7 +70,10 @@ export const HomePage = (props: any) => {
               </span>
             </h1>
 
-            <C.SocialButtons className="load-social" mode={theme.mode.status}>
+            <C.SocialButtons
+              className="load-social"
+              mode={theme.mode.status}
+            >
               <a
                 aria-label="Linkedin button"
                 href="https://www.linkedin.com/in/marioelvio/"

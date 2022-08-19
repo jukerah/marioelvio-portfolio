@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
+interface ContainerInfoProps {
+    mode: string;
 }
 
-export const ContainerInfo = styled.div<Props>`
+export const ContainerInfo = styled.div<ContainerInfoProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     flex: 1;

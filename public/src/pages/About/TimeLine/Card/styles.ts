@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode: string | null;
+interface CardProps {
+    mode: string;
 }
 
-export const Card = styled.div<Props>`
+export const Card = styled.div<CardProps>`
     display: flex;
 
     width: 100%;

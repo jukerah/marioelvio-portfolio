@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-interface ModeProps {
-    mode: string | null;
-}
-
 export const ContainerTitle = styled.div`
     display: flex;
     justify-content: center;
 
     width: 100%;
 
-    @media (min-width: 1024px) {justify-content: flex-start; }
+    @media (min-width: 1024px) { justify-content: flex-start; }
 `;
 
-export const TitlePage = styled.h1<ModeProps>`
+interface TitlePageProps {
+    mode: string;
+}
+
+export const TitlePage = styled.h1<TitlePageProps>`
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
     font-size: 1.75em;

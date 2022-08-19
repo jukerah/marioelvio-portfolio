@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    show?: boolean;
+interface ContainerSoftSkillsProps {
+    mode: string;
 }
 
-export const ContainerSoftSkills = styled.div<Props>`
+export const ContainerSoftSkills = styled.div<ContainerSoftSkillsProps>`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -34,7 +33,11 @@ export const ContainerSoftSkills = styled.div<Props>`
     @media (min-width: 1024px) { gap: 32px; }
 `;
 
-export const SoftSkills = styled.div<Props>`
+interface SoftSkillsProps {
+    mode: string;
+}
+
+export const SoftSkills = styled.div<SoftSkillsProps>`
     display: flex;
     flex-direction: column;
 
@@ -51,7 +54,7 @@ export const SoftSkills = styled.div<Props>`
     @media (min-width: 1024px) { gap: 24px; }
 `;
 
-export const ContainerCard = styled.div<Props>`
+export const ContainerCard = styled.div`
     display: flex;
     flex-direction: column;
 

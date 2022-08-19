@@ -1,59 +1,61 @@
-import { useContext, useEffect } from 'react';
-import * as C from './styles';
+import { useContext, useEffect } from "react";
+import * as C from "./styles";
 
-import { Context } from '../../contexts/Contexts';
-import { TitlePage } from '../../components/TitlePage';
-import { pageInfo } from '../../data/PageData';
-import { Resume } from './Resume';
-import { MyInterests } from './MyInterests';
-import { PersonalDetails } from './PersonalDetails';
-import { DownloadButton } from './DownloadButton';
-import { TimeLine } from './TimeLine';
-import { SoftSkills } from './softSkills';
-import { HardSkills } from './HardSkills';
-import { Footer } from '../../components/Footer';
+import { Context } from "../../contexts/Contexts";
+import { pageInfo } from "../../data/PageData";
 
-export const AboutPage = (props:any) => {
-    const { theme } = useContext(Context);
+import { TitlePage } from "../../components/TitlePage";
+import { Resume } from "./Resume";
+import { MyInterests } from "./MyInterests";
+import { PersonalDetails } from "./PersonalDetails";
+import { DownloadButton } from "./DownloadButton";
+import { TimeLine } from "./TimeLine";
+import { SoftSkills } from "./softSkills";
+import { HardSkills } from "./HardSkills";
+import { Footer } from "../../components/Footer";
 
-    useEffect(() => {
-        if (props.page === 'about') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    }, [props.page]);
+interface Props {
+  page: string;
+}
 
-    return (        
-        <C.AboutSection mode={theme.mode.status}>
-            <C.Container>
-                <TitlePage title={'About'}/>
+export const AboutPage = (props: Props) => {
+  const { theme } = useContext(Context);
 
-                <Resume
-                    title={pageInfo.about.personalResume.title}
-                    description={pageInfo.about.personalResume.resume}
-                />
+  useEffect(() => {
+    if (props.page === "about") window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [props.page]);
 
-                <Resume
-                    title={pageInfo.about.professionalResume.title}
-                    description={pageInfo.about.professionalResume.resume}
-                />
+  return (
+    <C.AboutSection mode={theme.mode.status}>
+      <C.Container>
+        <TitlePage title={"About"} />
 
-                <MyInterests />
+        <Resume
+          title={pageInfo.about.personalResume.title}
+          description={pageInfo.about.personalResume.resume}
+        />
 
-                <PersonalDetails />
+        <Resume
+          title={pageInfo.about.professionalResume.title}
+          description={pageInfo.about.professionalResume.resume}
+        />
 
-                <DownloadButton />
+        <MyInterests />
 
-                <TimeLine />
+        <PersonalDetails />
 
-                <SoftSkills />
+        <DownloadButton />
 
-                <HardSkills />
+        <TimeLine />
 
-                <DownloadButton />
-            </C.Container>
-            
-            <Footer />
-        </C.AboutSection>
-        
-    );
+        <SoftSkills />
+
+        <HardSkills />
+
+        <DownloadButton />
+      </C.Container>
+
+      <Footer />
+    </C.AboutSection>
+  );
 };

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
+interface ViewMoreButtonProps {
+    mode: string;
 }
 
-export const ViewMoreButton = styled.button<Props>`
+export const ViewMoreButton = styled.button<ViewMoreButtonProps>`
     background-color: rgba(0, 0, 0, 0);
     color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 

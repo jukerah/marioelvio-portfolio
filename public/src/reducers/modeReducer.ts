@@ -1,7 +1,7 @@
 import { reducerActionType } from '../types/reducerActionType';
 
 export type ModeType = {
-    status: string | null;
+    status: string;
 }
 
 const localThemeMode:string | null = localStorage.getItem('themeMode');

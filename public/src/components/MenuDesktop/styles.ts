@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface MenuDesktopProps {
+    mode: string;
+    isMenuOpen: boolean;
 }
 
-export const MenuDesktop = styled.aside<Props>`
+export const MenuDesktop = styled.aside<MenuDesktopProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     display: none;
@@ -21,7 +21,12 @@ export const MenuDesktop = styled.aside<Props>`
     @media (min-width: 1024px) { display: flex; }
 `;
 
-export const MenuButton = styled.div<Props>`
+interface MenuButtonProps {
+    mode: string;
+    isMenuOpen: boolean;
+}
+
+export const MenuButton = styled.div<MenuButtonProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
 
     width: ${(props) => props.isMenuOpen ? '300px' : '100px'};
@@ -80,7 +85,12 @@ export const MenuButton = styled.div<Props>`
     }
 `;
 
-export const NavDesktop = styled.nav<Props>`
+interface NavDesktopProps {
+    mode: string;
+    isMenuOpen: boolean;
+}
+
+export const NavDesktop = styled.nav<NavDesktopProps>`
     display: flex;
     position: fixed;
     align-items: flex-end;

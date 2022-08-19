@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 interface ProjectSectionProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const ProjectSection = styled.section<ProjectSectionProps>`
-    background-color: var(${(props) => props.mode === 'dark'
-        ? '--shark-dark'
-        : '--white'
-    });
+    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
 
     display: flex;
     justify-content: space-between;
@@ -34,7 +31,7 @@ export const ProjectSection = styled.section<ProjectSectionProps>`
 `;
 
 interface ContainerProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -49,10 +46,7 @@ export const Container = styled.div<ContainerProps>`
     gap: 32px;
 
     h1 {
-        color: var(${(props) => props.mode === 'dark'
-            ? '--white'
-            : '--limed-spruce'
-        });
+        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
         font-size: 1.5em;
         font-weight: 700;
@@ -62,10 +56,7 @@ export const Container = styled.div<ContainerProps>`
     }
 
     h2 {
-        color: var(${(props) => props.mode === 'dark'
-            ? '--de-york'
-            : '--green-pea'
-        });
+        color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
 
         font-size: 1.25em;
         text-align: center;
@@ -103,7 +94,7 @@ export const Header = styled.div`
 `;
 
 interface DescriptionProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const Description = styled.div<DescriptionProps>`
@@ -113,10 +104,7 @@ export const Description = styled.div<DescriptionProps>`
     gap: 16px;
 
     p {
-        color: var(${(props) => props.mode === 'dark'
-            ? '--white'
-            : '--limed-spruce'
-        });
+        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
         
         font-size: 1em;
         text-indent: 1.5em;
@@ -145,15 +133,12 @@ export const ContainerTechRes = styled.div<ContainerTechResProps>`
     @media (min-width: 1024px) { gap: 48px; }
 
     @media (min-width: 1024px) and (max-width: 1200px) {
-        flex-direction: ${(props) => props.isMenuOpen
-            ? 'column'
-            : 'row'
-        };
+        flex-direction: ${(props) => props.isMenuOpen ? 'column' : 'row'};
     }
 `;
 
 interface TechnologiesProps {
-    mode: string | null;
+    mode: string;
 }
 
 export const Technologies = styled.div<TechnologiesProps>`
@@ -175,14 +160,8 @@ export const Technologies = styled.div<TechnologiesProps>`
     }
 
     p {
-        background-color: var(${(props) => props.mode === 'dark'
-            ? '--limed-spruce'
-            : '--alto'
-        });
-        color: var(${(props) => props.mode === 'dark'
-            ? '--white'
-            : '--limed-spruce'
-        });
+        background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
+        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
         font-size: 16px;
 
@@ -215,7 +194,7 @@ export const Technologies = styled.div<TechnologiesProps>`
 `;
 
 interface ResourcesProps {
-    mode: string | null;
+    mode: string;
 }
 
 
@@ -235,10 +214,7 @@ export const Resources = styled.div<ResourcesProps>`
     }
 
     a {
-        background-color: var(${(props) => props.mode === 'dark'
-            ? '--limed-spruce'
-            : '--alto'
-        });
+        background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
         display: flex;
         justify-content: center;
@@ -257,17 +233,11 @@ export const Resources = styled.div<ResourcesProps>`
     
         svg {
             .stroke {
-                stroke: var(${(props) => props.mode === 'dark'
-                    ? '--white'
-                    : '--limed-spruce'
-                });
+                stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
             }
 
             .fill {
-                fill: var(${(props) => props.mode === 'dark'
-                    ? '--white'
-                    : '--limed-spruce'
-                });
+                fill: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
             }
 
             width: 24px;
@@ -277,10 +247,7 @@ export const Resources = styled.div<ResourcesProps>`
         }
 
         p {
-            color: var(${(props) => props.mode === 'dark'
-                ? '--white'
-                : '--limed-spruce'
-            });
+            color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
             font-size: 16px;
         }
@@ -311,70 +278,5 @@ export const Resources = styled.div<ResourcesProps>`
 
             p { font-size: 22px; }
         }
-    }
-`;
-
-interface BackButtonProps {
-    mode: string | null;
-}
-
-export const BackButton = styled.div<BackButtonProps>`
-    background-color: var(${(props) => props.mode === 'dark'
-        ? '--limed-spruce'
-        : '--alto'
-    });
-
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-
-    width: 80px;
-    height: 32px;
-    
-    border: none;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-
-    padding-left: 2px;
-    gap: 8px;
-
-    cursor: pointer;
-
-    &, svg, p { transition: all ease-in .1s; }
-
-    svg {
-        stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
-
-        width: 24px;
-        height: 24px;
-    }
-
-    p {
-        color: var(${(props) => props.mode === 'dark'
-            ? '--white'
-            : '--limed-spruce'
-        });
-
-        font-size: 16px;
-        margin-bottom: 2px;
-    }
-
-    &:hover {
-        background-color: var(--de-york);
-
-        svg { stroke: var(--limed-spruce) };
-
-        p { color: var(--limed-spruce); }
-
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
-    }
-
-    @media (min-width: 1024px) {
-        width: 104px;
-        height: 40px;
-
-        p { font-size: 22px; }
-
-        padding-left: 8px;
     }
 `;

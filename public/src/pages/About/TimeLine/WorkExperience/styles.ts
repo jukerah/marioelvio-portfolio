@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    isMenuOpen?: boolean;
+interface ContainerWorkExperienceProps {
+    isMenuOpen: boolean;
 }
 
-export const ContainerWorkExperience = styled.div<Props>`
+export const ContainerWorkExperience = styled.div<ContainerWorkExperienceProps>`
     display: flex;
     flex-direction: column;
 
@@ -27,7 +26,11 @@ export const WorkExperience = styled.div`
     @media (min-width: 1024px) { gap: 24px; }
 `;
 
-export const WorkInfo = styled.div<Props>`
+interface WorkInfoProps {
+    mode: string;
+}
+
+export const WorkInfo = styled.div<WorkInfoProps>`
     display: flex;
     flex-direction: column;
     
