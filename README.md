@@ -68,6 +68,7 @@ Summary
 * [X] Home page
 * [X] About page
 * [X] Portfolio page
+* [X] Project page
 * [ ] Blog page
 * [ ] Contact page
 * [ ] Login page

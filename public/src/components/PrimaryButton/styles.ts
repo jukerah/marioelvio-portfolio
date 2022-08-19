@@ -53,7 +53,7 @@ export const PrimaryButton = styled.div<PrimaryButtonProps>`
     }
 
     @media (min-width: 1024px) {
-        height: ${(props) => props.isMenuOpen ? '80px': '96px'};
+        height: ${(props) => props.isMenuOpen ? '80px' : '96px'};
 
         font-size: ${(props) => props.isMenuOpen ? '24px' : '40px'};
 
