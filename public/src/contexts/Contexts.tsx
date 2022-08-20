@@ -2,12 +2,14 @@ import { createContext, useReducer } from 'react';
 import { MenuType, menuInitialState, menuReducer } from '../reducers/menuReducer';
 import { ModeType, modeInitialState, modeReducer } from '../reducers/modeReducer'
 import { SoftSkillInitialState, SoftSkillType, softSkillReducer } from '../reducers/softSkillReducer';
+import { activePageInitialState, activePageType, activePageReducer } from '../reducers/activePageReducer';
 import { reducerActionType } from '../types/reducerActionType';
 
 type initialStateType = {
     isMenuOpen: MenuType;
     mode: ModeType;
     showSoftSkill: SoftSkillType;
+    activePage: activePageType;
 }
 
 type ContextType = {
@@ -18,7 +20,8 @@ type ContextType = {
 const initialState = {
     isMenuOpen: menuInitialState,
     mode: modeInitialState,
-    showSoftSkill: SoftSkillInitialState
+    showSoftSkill: SoftSkillInitialState,
+    activePage: activePageInitialState
 }
 
 export const Context = createContext<ContextType>({
@@ -29,7 +32,8 @@ export const Context = createContext<ContextType>({
 const mainReducer = (state: initialStateType, action: reducerActionType) => ({
     isMenuOpen: menuReducer(state.isMenuOpen, action),
     mode: modeReducer(state.mode, action),
-    showSoftSkill: softSkillReducer(state.showSoftSkill, action)
+    showSoftSkill: softSkillReducer(state.showSoftSkill, action),
+    activePage: activePageReducer(state.activePage, action)
 });
 
 type ContextProviderProps = {

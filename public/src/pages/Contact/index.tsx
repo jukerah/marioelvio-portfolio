@@ -8,11 +8,20 @@ import { TitlePage } from "../../components/TitlePage";
 export const ContactPage = (props: any) => {
   const aboutPage = useRef(props.page);
   const { t } = useTranslation();
-  const { theme } = useContext(Context);
+  const { theme, dispatch } = useContext(Context);
 
   useEffect(() => {
-    if (props.page === "contact") window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [props.page]);
+    if (props.page === "contact") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      dispatch({
+        type: "CHANGE_ACTIVE_PAGE",
+        payload: {
+          status: props.page,
+        },
+      });
+    }
+  },[props.page, dispatch, theme.activePage.status]);
 
   return (
     <C.ContactSection ref={aboutPage} mode={theme.mode.status}>

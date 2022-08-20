@@ -88,6 +88,7 @@ export const MenuButton = styled.div<MenuButtonProps>`
 interface NavDesktopProps {
     mode: string;
     isMenuOpen: boolean;
+    activePage: string;
 }
 
 export const NavDesktop = styled.nav<NavDesktopProps>`
@@ -126,7 +127,7 @@ export const NavDesktop = styled.nav<NavDesktopProps>`
             }
 
             display: flex;
-            position: ${ props  => (!props.isMenuOpen) && 'absolute'};
+            position: ${props  => (!props.isMenuOpen) && 'absolute'};
 
             width: 48px;
             height: 48px;
@@ -136,6 +137,29 @@ export const NavDesktop = styled.nav<NavDesktopProps>`
             transition: all ease-in .5s;
         }
     }
+
+    
+    #${(props) => props.activePage} {
+        background-color: var(--white-ice);
+    
+        width: ${(props) => props.isMenuOpen ? '292px' : '92px'};
+
+        border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
+
+        transition: all ease-in .5s;
+
+        p { color: var(${(props) => props.mode === 'dark' && '--limed-spruce'}); }
+
+        svg {
+            stroke: var(--limed-spruce);
+            .fill {
+                fill: var(--limed-spruce);
+            }
+
+            transition: 0s;
+        }  
+    }
+
 
     li:hover {
         background-color: var(--white-ice);

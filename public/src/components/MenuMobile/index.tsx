@@ -68,9 +68,10 @@ export const NavMobile = () => {
     <C.NavMobile
       mode={theme.mode.status}
       isMenuOpen={theme.isMenuOpen.status}
+      activePage={theme.activePage.status}
     >
       <ul>
-        <li>
+        <li id="home">
           <Link to={"/home"} onClick={handleClickMenu}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H3L12 3L21 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -80,7 +81,7 @@ export const NavMobile = () => {
             <p>Home</p>
           </Link>
         </li>
-        <li>
+        <li id="about">
           <Link to={"/about"} onClick={handleClickMenu}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -89,7 +90,7 @@ export const NavMobile = () => {
             <p>About</p>
           </Link>
         </li>
-        <li>
+        <li id="portfolio">
           <Link to={"/portfolio"} onClick={handleClickMenu}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 19C4.36817 18.21 5.92017 17.7942 7.5 17.7942C9.07983 17.7942 10.6318 18.21 12 19C13.3682 18.21 14.9202 17.7942 16.5 17.7942C18.0798 17.7942 19.6318 18.21 21 19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -101,7 +102,7 @@ export const NavMobile = () => {
             <p>Portfolio</p>
           </Link>
         </li>
-        <li>
+        <li id="blog">
           <Link to={"/blog"} onClick={handleClickMenu}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2 4.88889V19C2 19.5523 2.44772 20 3 20H7.17708H21.1667C21.3877 20 21.5996 19.9064 21.7559 19.7397C21.9122 19.573 22 19.3469 22 19.1111V4.88889C22 4.65314 21.9122 4.42705 21.7559 4.26035C21.5996 4.09365 21.3877 4 21.1667 4H2.83333C2.61232 4 2.40036 4.09365 2.24408 4.26035C2.0878 4.42705 2 4.65314 2 4.88889Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -115,7 +116,7 @@ export const NavMobile = () => {
             <p>Blog</p>
           </Link>
         </li>
-        <li>
+        <li id="contact">
           <Link to={"/contact"} onClick={handleClickMenu}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -126,8 +127,8 @@ export const NavMobile = () => {
         </li>
       </ul>
       <C.ContainerButtons>
-        <LoginLogoutButton />
         <SwitchMode />
+        <LoginLogoutButton />
       </C.ContainerButtons>
     </C.NavMobile>
   );

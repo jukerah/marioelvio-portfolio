@@ -8,7 +8,7 @@ import { TechnologyListType } from "../../../../types/TechnologyListType";
 interface Props {
   stack: string;
   skillList: TechnologyListType[];
-  svg: any;
+  svg: React.ReactNode;
 }
 
 export const ContainerSkill = (props: Props) => {

@@ -7,11 +7,20 @@ import { svgs } from "../../data/SvgList";
 import { PrimaryButton } from "../../components/PrimaryButton";
 
 export const HomePage = (props: any) => {
-  const { theme } = useContext(Context);
+  const { theme, dispatch } = useContext(Context);
 
   useEffect(() => {
-    if (props.page === "home") window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [props.page]);
+    if (props.page === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      dispatch({
+        type: "CHANGE_ACTIVE_PAGE",
+        payload: {
+          status: props.page,
+        },
+      });
+    }
+  },[props.page, dispatch, theme.activePage.status]);
 
   return (
     <C.HomeSection

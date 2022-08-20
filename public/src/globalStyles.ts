@@ -1,12 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-        font-family: 'Exo 2';
-        src: url('./assets/fonts/Exo2-Regular.ttf') format('ttf'),
-             url('./assets/fonts/Exo2-Bold.ttf') format('ttf');
-    }
-
     :root {
         --de-york: #6BC38B;
         --green-pea: #205734;

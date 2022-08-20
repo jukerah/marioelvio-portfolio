@@ -19,11 +19,20 @@ interface Props {
 }
 
 export const AboutPage = (props: Props) => {
-  const { theme } = useContext(Context);
+  const { theme, dispatch } = useContext(Context);
 
   useEffect(() => {
-    if (props.page === "about") window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [props.page]);
+    if (props.page === "about") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      dispatch({
+        type: "CHANGE_ACTIVE_PAGE",
+        payload: {
+          status: props.page,
+        },
+      });
+    }
+  },[props.page, dispatch, theme.activePage.status]);
 
   return (
     <C.AboutSection mode={theme.mode.status}>

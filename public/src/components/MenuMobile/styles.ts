@@ -56,10 +56,11 @@ export const MenuMobile = styled.div<MenuMobileProps>`
 interface NavMobileProps {
     mode: string;
     isMenuOpen: boolean;
+    activePage: string;
 }
 
 export const NavMobile = styled.nav<NavMobileProps>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'}); 
+    background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--white'}); 
 
     display: flex;
     flex-direction: column;
@@ -112,6 +113,11 @@ export const NavMobile = styled.nav<NavMobileProps>`
     }
 
     li a:hover {
+        background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white-ice'});
+        border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
+    }
+
+    #${(props) => props.activePage} a {
         background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white-ice'});
         border-left: 8px solid var(${(props) => props.mode === 'dark' ? '--de-york' : '--scorpion'});
     }

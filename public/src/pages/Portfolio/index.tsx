@@ -14,13 +14,22 @@ interface Props {
 }
 
 export const PortfolioPage = (props: Props) => {
-  const { theme } = useContext(Context);
+  const { theme, dispatch } = useContext(Context);
   const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
   const [ searchValue, setSearchValue ] = useState<string>("All");
 
   useEffect(() => {
-    if (props.page === "portfolio") window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [props.page]);
+    if (props.page === "portfolio") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      dispatch({
+        type: "CHANGE_ACTIVE_PAGE",
+        payload: {
+          status: props.page,
+        },
+      });
+    }
+  },[props.page, dispatch, theme.activePage.status]);
 
   return (
     <C.PortfolioSection mode={theme.mode.status}>

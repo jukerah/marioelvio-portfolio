@@ -14,16 +14,25 @@ interface Props {
 }
 
 export const ProjectPage = (props: Props) => {
-  const { theme } = useContext(Context);
+  const { theme, dispatch } = useContext(Context);
   const params = useParams();
 
   const searchProject = (project: ProjectListType) => { return project.url === params.slug; }    
   const projectInfo: ProjectListType[] = pageInfo.portfolio.project.filter(searchProject);
   const project: ProjectListType = projectInfo[0];
-  
+
   useEffect(() => {
-    if (props.page === "project") window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [props.page]);
+    if (props.page === "project") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      dispatch({
+        type: "CHANGE_ACTIVE_PAGE",
+        payload: {
+          status: "",
+        },
+      });
+    }
+  },[props.page, dispatch, theme.activePage.status]);
 
   return (
     <C.ProjectSection mode={theme.mode.status}>
