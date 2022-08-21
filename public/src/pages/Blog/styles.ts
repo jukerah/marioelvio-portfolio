@@ -1,29 +1,30 @@
 import styled from "styled-components";
 
-interface Props {
-    mode?: string | null;
-    //isMenuOpen?: boolean;
+interface BlogSectionProps {
+    mode: string;
 }
 
-export const ContactSection = styled.section<Props>`
+export const BlogSection = styled.section<BlogSectionProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
+    * { color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'}); }
 
     display: flex;
     flex-direction: column;
 
     width: 100%;
+    min-height: calc(100vh - 60px);
 
-    padding: 60px 24px 24px 24px;
+    padding-top: 60px;
 
     transition: all ease-in .5s;
 
-    * { color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'}); }
-
     @media (min-width: 768px) {
-        padding: 80px 24px 24px 24px;
+        min-height: calc(100vh - 80px);
+        padding-top: 80px;
     }
 
     @media (min-width: 1024px) {
-        padding: 100px 32px 32px 32px;
+        min-height: calc(100vh - 100px);
+        padding-top: 100px;
     }
 `;

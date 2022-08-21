@@ -8,29 +8,28 @@ const GlobalStyle = createGlobalStyle`
         --white-ice: #F0FCF5;
         --scorpion: #595959;
         --limed-spruce: #374047;
-        --shark: #2a2f34;
+        --shark: #2A2F34;
         --shark-dark: #1E2326;
         --black: #000000;
         --white: #FFFFFF;
         --alabaster: #FCFCFC;
         --alto: #F0F2F5;
-        --dodger-blue: #4d74ff;
-        --silver-tree: #68b083;
-        --vivid-tangerine: #Ff8989;
+        --dodger-blue: #4D74FF;
+        --silver-tree: #68B083;
+        --vivid-tangerine: #FF8989;
         --alizarin-crimson: #EB2121;
     }
 
     * {
         margin: 0;
         padding: 0;
+        
+        font-family: 'Exo 2', sans-serif;
     }
 
     html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
     
-    body {
-        width: 100%;
-        font-family: 'Exo 2', sans-serif;
-    }
+    body { width: 100%; }
 
     h1, h2 { word-spacing: 6px; }
 `;

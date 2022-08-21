@@ -6,7 +6,9 @@ interface MenuMobileProps {
 }
 
 export const MenuMobile = styled.div<MenuMobileProps>`
-    padding: 16px 16px 16px 0;
+    padding: 16px;
+
+    margin-right: -16px;
 
     button {
         background-color: rgba(0, 0, 0, 0);

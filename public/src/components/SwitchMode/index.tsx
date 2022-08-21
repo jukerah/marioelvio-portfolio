@@ -38,6 +38,7 @@ export const SwitchMode = () => {
 
   return (
     <C.ContainerSwitchTheme mode={theme.mode.status}>
+      <p>Light</p>
       <label className="switch" onClick={handleClickSwitch}>
         <input
           type="checkbox"
@@ -48,6 +49,7 @@ export const SwitchMode = () => {
         />
         <span className="slider round"></span>
       </label>
+      <p>Dark</p>
     </C.ContainerSwitchTheme>
   );
 };

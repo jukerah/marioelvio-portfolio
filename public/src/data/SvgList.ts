@@ -7,6 +7,10 @@ export const svgs = {
                 large: require('../assets/system/background/home-landscape-large.svg').default,
             },
             portrait: require('../assets/system/background/home-portrait.svg').default
+        },
+        contact: {
+            light: require('../assets/system/background/contact-light.svg').default,
+            dark: require('../assets/system/background/contact-dark.svg').default
         }
     },
     country: {

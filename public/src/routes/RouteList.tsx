@@ -18,6 +18,6 @@ export const RouteList = () => {
         { path: '/blog', element: <BlogPage page={'blog'} /> },
         { path: '/contact', element: <ContactPage page={'contact'} /> },
         { path: '/login', element: <LoginPage page={'login'} /> },
-        { path: '*', element: <NotFound /> }
+        { path: '*', element: <NotFound page={'notFound'} /> }
     ]);
 }

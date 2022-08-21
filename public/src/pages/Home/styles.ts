@@ -14,6 +14,7 @@ export const HomeSection = styled.section<HomeSectionProps>`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 
     width: 100%;
     min-height: 100vh;
@@ -42,31 +43,77 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
     justify-content: flex-end;
+    position: fixed;
+    box-sizing: border-box;
 
     gap: 28px;
     margin-top: 60px;
 
-    .load-title {
-        animation: typing 2s steps(100) .5s normal both;
+    .load-title { animation: title 2s; }
+
+    .load-avatar { animation: avatar 2s; }
+
+    .load-social { animation: social 2s; }
+
+    .load-button { animation: button 2s; }
+
+    @keyframes title {
+        from {
+            transform: skew(180deg,180deg);
+            opacity: 0;
+            margin-top: -150vh;
+        }
+        50% {opacity: .5;}
+        75% {opacity: .75;}
+        to {
+            transform: skew(0deg,0deg);
+            opacity: 3;
+            margin-top: 0;
+        }
     }
 
-    .load-avatar {
-        animation: typing 2s steps(100) 1s normal both;
+    @keyframes avatar {
+        from {
+            transform: skew(-180deg,-180deg);
+            opacity: 0;
+            margin-left: -100vw;
+        }
+        50% {opacity: .5;}
+        75% {opacity: .75;}
+        to {
+            transform: skew(0deg,0deg);
+            opacity: 1;
+            margin-left: 0;
+        }
     }
 
-    .load-social {
-        animation: typing 2s steps(100) 1.5s normal both;
+    @keyframes social {
+        from {
+            transform: skew(180deg,180deg);
+            opacity: 0;
+        }
+        50% {opacity: .5;}
+        75% {opacity: .75;}
+        to {
+            transform: skew(0deg,0deg);
+            opacity: 1;
+        }
     }
 
-    .load-button {
-        animation: typing 2s steps(100) 2.5s normal both;
-    }
-
-    @keyframes typing {
-        from { opacity: 0; }
-        to { opacity: 100; }
+    @keyframes button {
+        from {
+            transform: skew(-180deg,-180deg);
+            opacity: 0;
+            margin-bottom: -100vh;
+        }
+        50% {opacity: .5;}
+        75% {opacity: .75;}
+        to {
+            transform: skew(0deg,0deg);
+            opacity: 1;
+            margin-bottom: 0;
+        }
     }
 
     @media (orientation: landscape) { padding: 24px 0; }

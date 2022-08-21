@@ -29,6 +29,7 @@ export const PrimaryButton = styled.div<PrimaryButtonProps>`
     a {
         color: var(${(props) => props.color});
         text-decoration: none;
+        white-space: nowrap;
     }
 
     cursor: pointer;

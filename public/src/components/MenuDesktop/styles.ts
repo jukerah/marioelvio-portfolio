@@ -148,7 +148,14 @@ export const NavDesktop = styled.nav<NavDesktopProps>`
 
         transition: all ease-in .5s;
 
-        p { color: var(${(props) => props.mode === 'dark' && '--limed-spruce'}); }
+        p {
+            color: var(${(props) => props.mode === 'dark'
+                ? props.isMenuOpen
+                    ? '--limed-spruce'
+                    : '--white'
+                : '--limed-spruce'
+            });
+        }
 
         svg {
             stroke: var(--limed-spruce);
