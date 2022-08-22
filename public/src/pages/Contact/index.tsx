@@ -7,12 +7,33 @@ import { pageInfo } from "../../data/PageData";
 import { svgs } from "../../data/SvgList";
 import { Footer } from "../../components/Footer";
 
-export const ContactPage = (props: any) => {
+export interface Props {
+  page: string;
+}
+
+export const ContactPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
-  const [ nameAlert/*, setNameAlert*/ ] = useState<string>('Please fill in the name field');
-  const [ emailAlert/*, setEmailAlert*/ ] = useState<string>('');
-  const [ phoneAlert/*, setPhoneAlert*/ ] = useState<string>('Please fill in the phone field');
-const [ messageAlert/*, setMessageAlert*/ ] = useState<string>('');
+
+  const [ name, setName ] = useState<string>('');
+  const [ nameAlert, setNameAlert ] = useState<string>('');
+  const [ showNameAlert, setShowNameAlert ] = useState<boolean>(false);
+  const [ isValitedName, setIsValitedName ] = useState<boolean>(false);
+
+  const [ email, setEmail ] = useState<string>('');
+  const [ emailAlert, setEmailAlert ] = useState<string>('');
+  const [ showEmailAlert, setShowEmailAlert ] = useState<boolean>(false);
+  const [ isValitedEmail, setIsValitedEmail ] = useState<boolean>(false);
+  const emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+
+  const [ phone, setPhone ] = useState<string>('');
+  const [ phoneAlert, setPhoneAlert ] = useState<string>('');
+  const [ showPhoneAlert, setShowPhoneAlert ] = useState<boolean>(false);
+  const [ isValitedPhone, setIsValitedPhone ] = useState<boolean>(false);
+
+  const [ message, setMessage ] = useState<string>('');
+  const [ messageAlert, setMessageAlert ] = useState<string>('');
+  const [ showMessageAlert, setShowMessageAlert ] = useState<boolean>(false);
+  const [ isValitedMessage, setIsValitedMessage ] = useState<boolean>(false);
 
   useEffect(() => {
     if (props.page === "contact") {
@@ -26,6 +47,75 @@ const [ messageAlert/*, setMessageAlert*/ ] = useState<string>('');
       });
     }
   },[props.page, dispatch, theme.activePage.status]);
+
+  useEffect(() => {
+    if (name !== '') {
+      setNameAlert('');
+      setShowNameAlert(false);
+      setIsValitedName(true);
+    } else setIsValitedName(false);
+
+    if (email !== '') {
+      setEmailAlert('');
+      setShowEmailAlert(false);
+      emailRegex.test(email) ? setIsValitedEmail(true) : setIsValitedEmail(false);
+    } else setIsValitedEmail(false);
+
+    if (phone.length !== 0) {
+      setPhoneAlert('');
+      setShowPhoneAlert(false);
+      phone.length >= 11 ? setIsValitedPhone(true) : setIsValitedPhone(false);
+    } else setIsValitedPhone(false);
+
+    if (message !== '') {
+      setMessageAlert('');
+      setShowMessageAlert(false);
+      setIsValitedMessage(true);
+    } else setIsValitedMessage(false);
+  }, [name, email, emailRegex, phone, message]);
+
+  const valitedForm = () => { return (isValitedName && isValitedEmail && isValitedPhone && isValitedMessage) ? true : false; }
+
+  const handleClickSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (valitedForm()) {
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+      alert('Message sent successfully!');
+    }
+    if (name === '') {
+      setNameAlert('Please fill in the name field');
+      setShowNameAlert(true);
+    }
+    if (!emailRegex.test(email) || email === '') {
+      setEmailAlert('Invalid email!');
+      setShowEmailAlert(true);
+    } else if (!emailRegex.test(email)) {
+      setEmailAlert('Please fill in the email field');
+      setShowEmailAlert(true);
+    }
+    
+    if (phone.length === 0) {
+      setPhoneAlert('Please fill in the phone field');
+      setShowPhoneAlert(true);
+    } else if (phone.length > 0 && phone.length < 11) {
+      setPhoneAlert('Invalid phone!');
+      setShowPhoneAlert(true);
+    }
+
+    if (message === '') {
+      setMessageAlert('Please fill in the message field');
+      setShowMessageAlert(true);
+    }
+  }
+
+  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
+  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const handleChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value);
+  const handleChangeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value);
 
   return (
     <C.ContactSection
@@ -86,32 +176,76 @@ const [ messageAlert/*, setMessageAlert*/ ] = useState<string>('');
           </C.Info>
 
           <C.Form
-            action=""
+            action="/contact"
             mode={theme.mode.status}
           >
             <div className="container">
               <div>
-                <input name="name" type="text" placeholder="Name*" autoComplete="off" />
+                <C.Input
+                  onChange={handleChangeName}
+                  mode={theme.mode.status}
+                  alert={showNameAlert}
+                  isValited={isValitedName}
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={name}
+                  placeholder="Name*"
+                  required
+                />
                 <p>{nameAlert}</p>
               </div>
               <div>
-                <input name="email" type="email" placeholder="Email*" autoComplete="off" />
+                <C.Input
+                  onChange={handleChangeEmail}
+                  mode={theme.mode.status}
+                  alert={showEmailAlert}
+                  isValited={isValitedEmail}
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={email}
+                  placeholder="Email*"
+                  required
+                />
                 <p>{emailAlert}</p>
               </div>
               <div>
-                <input name="phone" type="text" placeholder="Phone*" autoComplete="off" />
+                <C.Input
+                  onChange={handleChangePhone}
+                  mode={theme.mode.status}
+                  alert={showPhoneAlert}
+                  isValited={isValitedPhone}
+                  id="phone"
+                  name="phone"
+                  type="number"
+                  value={phone}
+                  placeholder="Phone*"
+                  required
+                />
                 <p>{phoneAlert}</p>
               </div>
               <div>
-                <textarea name="message" rows={7} placeholder="Message*" autoComplete="off"></textarea>
+                <C.TextArea
+                  onChange={handleChangeMessage}
+                  mode={theme.mode.status}
+                  alert={showMessageAlert}
+                  isValited={isValitedMessage}
+                  id="message"
+                  name="message"
+                  rows={7}
+                  value={message}
+                  placeholder="Message*"
+                  required
+                />
                 <p>{messageAlert}</p>
               </div>
             </div>
-            <button>
+            <button onClick={handleClickSubmit}>
               <p>Send Message</p>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 14L21 3" stroke="#374047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20.9996 3L14.4996 21C14.4557 21.0957 14.3853 21.1769 14.2966 21.2338C14.208 21.2906 14.1049 21.3209 13.9996 21.3209C13.8943 21.3209 13.7912 21.2906 13.7025 21.2338C13.6139 21.1769 13.5435 21.0957 13.4996 21L9.99958 14L2.99958 10.5C2.90384 10.4561 2.82271 10.3857 2.76583 10.2971C2.70895 10.2084 2.67871 10.1053 2.67871 10C2.67871 9.89468 2.70895 9.79158 2.76583 9.70295C2.82271 9.61431 2.90384 9.54387 2.99958 9.5L20.9996 3Z" stroke="#374047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="#374047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M20.9996 3L14.4996 21C14.4557 21.0957 14.3853 21.1769 14.2966 21.2338C14.208 21.2906 14.1049 21.3209 13.9996 21.3209C13.8943 21.3209 13.7912 21.2906 13.7025 21.2338C13.6139 21.1769 13.5435 21.0957 13.4996 21L9.99958 14L2.99958 10.5C2.90384 10.4561 2.82271 10.3857 2.76583 10.2971C2.70895 10.2084 2.67871 10.1053 2.67871 10C2.67871 9.89468 2.70895 9.79158 2.76583 9.70295C2.82271 9.61431 2.90384 9.54387 2.99958 9.5L20.9996 3Z" stroke="#374047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           </C.Form>

@@ -14,7 +14,10 @@ export const HomeSection = styled.section<HomeSectionProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+
+    html, body {
+        overflow: hidden;
+    }
 
     width: 100%;
     min-height: 100vh;
@@ -43,20 +46,19 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    position: fixed;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 
     gap: 28px;
     margin-top: 60px;
 
-    .load-title { animation: title 2s; }
+    .load-title { animation: title 2s steps(60) both; }
 
-    .load-avatar { animation: avatar 2s; }
+    .load-avatar { animation: avatar 2s steps(60) both; }
 
-    .load-social { animation: social 2s; }
+    .load-social { animation: social 2s steps(60) both; }
 
-    .load-button { animation: button 2s; }
+    .load-button { animation: button 2s steps(60) both; }
 
     @keyframes title {
         from {
@@ -119,11 +121,16 @@ export const Container = styled.div<ContainerProps>`
     @media (orientation: landscape) { padding: 24px 0; }
 
     @media (min-width: 768px) {
+        max-height: calc(100vh - 80px);
+
         gap: 48px;
         margin-top: 80px;
     }
 
     @media (min-width: 1024px) {
+        max-width: calc(100vw - ${(props) => props.isMenuOpen ? '300px' : '100px'});
+        max-height: calc(100vh - 100px);
+
         gap: 32px;
         margin-top: 0;
 

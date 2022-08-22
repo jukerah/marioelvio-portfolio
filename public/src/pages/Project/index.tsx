@@ -28,7 +28,7 @@ export const ProjectPage = (props: Props) => {
       dispatch({
         type: "CHANGE_ACTIVE_PAGE",
         payload: {
-          status: "",
+          status: props.page,
         },
       });
     }

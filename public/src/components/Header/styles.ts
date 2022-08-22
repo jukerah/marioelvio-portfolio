@@ -17,6 +17,7 @@ export const Header = styled.header<HeaderProps>`
     z-index: 2;
 
     width: 100%;
+    max-width: 100vw;
     height: 60px;
     top: 0;
 
@@ -26,6 +27,7 @@ export const Header = styled.header<HeaderProps>`
 
     @media (min-width: 1024px) {
         width: calc(100% - ${(props) => props.isMenuOpen ? '300px' : '100px'});
+        max-width: calc(100vw - ${(props) => props.isMenuOpen ? '300px' : '100px'});
         height: 100px;
     }
 `;

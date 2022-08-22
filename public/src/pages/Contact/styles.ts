@@ -58,7 +58,7 @@ interface ContainerInfoFormProps {
     isMenuOpen: boolean;
 }
 
-export const ContainerInfoForm = styled.form<ContainerInfoFormProps>`
+export const ContainerInfoForm = styled.div<ContainerInfoFormProps>`
     display: flex;
     flex-direction: column;
 
@@ -180,12 +180,15 @@ export const Form = styled.form<FormProps>`
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     box-sizing: border-box;
 
     width: 100%;
 
     padding: 24px;
+    gap: 16px;
     border-radius: 0 32px;
 
     transition: all ease-in .5s;
@@ -194,43 +197,9 @@ export const Form = styled.form<FormProps>`
         display: flex;
         flex-direction: column;
 
-        gap: 8px;
-    }
-
-    input {
-        height: 48px;
-        padding: 0 16px;
-    }
-
-    input, textarea {
-        background-color: var(--alto);
-        color: var(--limed-spruce);
-        border: 4px solid var(--alto);
-        box-sizing: border-box;
-        
         width: 100%;
 
-        font-size: 16px;
-
-        &:focus {
-            outline: none;
-            border-color: var(--dodger-blue);
-        }
-
-        &::placeholder { color: var(--scorpion); }
-    }
-
-    textarea {
-        padding: 8px 16px;
-
-        resize: none;
-
-        &::-webkit-scrollbar {
-            width: 16px;
-            background-color: var(--scorpion);
-        }
-
-        &::-webkit-scrollbar-thumb { background-color: var(--de-york); }
+        gap: 8px;
     }
 
     .container p {
@@ -251,6 +220,7 @@ export const Form = styled.form<FormProps>`
         align-items: center;
         box-sizing: border-box;
 
+        width: 176px;
         height: 40px;
 
         font-size: 16px;
@@ -281,10 +251,8 @@ export const Form = styled.form<FormProps>`
     @media (min-width: 1024px) {
         padding: 32px;
 
-        input { height: 56px; }
-        input, textarea { font-size: 22px; }
-
         button {
+            width: 240px;
             height: 48px;
 
             p {
@@ -293,4 +261,94 @@ export const Form = styled.form<FormProps>`
             }
         }
     }
+`;
+
+interface InputProps {
+    mode: string;
+    alert: boolean;
+    isValited: boolean;
+}
+
+export const Input = styled.input<InputProps>`    
+    background-color: var(--alto);
+    color: var(--limed-spruce);
+    border: 4px solid var(--alto);
+    border-color: var(${(props) => props.alert
+        ? props.mode === 'dark'
+            ? '--vivid-tangerine'
+            : '--alizarin-crimson'
+        : props.isValited
+            ? '--silver-tree'
+            : '--alto'
+    });
+    box-sizing: border-box;
+    
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+        border-color: var(${(props) => props.isValited ? '--silver-tree' : '--dodger-blue'});
+    }
+
+    &::placeholder { color: var(--scorpion); }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &[type=number] { -moz-appearance: textfield; }
+
+    @media (min-width: 1024px) {
+        height: 56px;
+        font-size: 22px;
+    }
+`;
+
+interface TextAreaProps {
+    mode: string;
+    alert: boolean;
+    isValited: boolean;
+}
+
+export const TextArea = styled.textarea<TextAreaProps>`
+    background-color: var(--alto);
+    color: var(--limed-spruce);
+    border: 4px solid var(--alto);
+    border-color: var(${(props) => props.alert
+        ? props.mode === 'dark'
+            ? '--vivid-tangerine'
+            : '--alizarin-crimson'
+        : props.isValited
+            ? '--silver-tree'
+            : '--alto'
+    });
+    box-sizing: border-box;
+    
+    width: 100%;
+
+    font-size: 16px;
+
+    padding: 8px 16px;
+    resize: none;
+
+    &:focus {
+        outline: none;
+        border-color: var(${(props) => props.isValited ? '--silver-tree' : '--dodger-blue'});
+    }
+
+    &::placeholder { color: var(--scorpion); }
+
+    &::-webkit-scrollbar {
+        width: 16px;
+        background-color: var(--scorpion);
+    }
+
+    &::-webkit-scrollbar-thumb { background-color: var(--de-york); }
+
+    @media (min-width: 1024px) { font-size: 22px; }
 `;
