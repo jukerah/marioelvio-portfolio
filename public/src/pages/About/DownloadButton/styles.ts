@@ -111,7 +111,7 @@ export const ContainerCV = styled.div<ContainerCVProps>`
 
     svg {
         background-color: var(--alizarin-crimson);
-        stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
+        stroke: var(--white);
 
         position: absolute;
 

@@ -57,23 +57,23 @@ export const Container = styled.div<ContainerProps>`
 
     .container-button { display: none; }
 
+    svg {
+        width: 160px;
+        height: 32px;
+    }
+
     @media (min-width: 768px) {
         a { height: 40px; }
+        
+        svg {
+            width: 200px;
+            height: 40px;
+        }
     }
 
     @media (min-width: 1024px) {
         padding: 0 32px;
 
         .container-button { display: block; }
-    }
-`;
-
-export const Logo = styled.svg`
-    width: 160px;
-    height: 32px;
-
-    @media (min-width: 768px) {
-        width: 200px;
-        height: 40px;
     }
 `;

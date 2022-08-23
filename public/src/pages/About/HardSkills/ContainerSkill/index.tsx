@@ -2,8 +2,9 @@ import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { CardTech } from "../../../../components/CardTech";
 import { TechnologyListType } from "../../../../types/TechnologyListType";
+
+import { CardTech } from "../../../../components/CardTech";
 
 interface Props {
   stack: string;
@@ -22,7 +23,7 @@ export const ContainerSkill = (props: Props) => {
       </C.TitleStack>
 
       <div className="container-card">
-        {props.skillList.map((tech: any, index: number) => (
+        {props.skillList.map((tech: TechnologyListType, index: number) => (
           <CardTech
             key={index}
             src={theme.mode.status === "dark"

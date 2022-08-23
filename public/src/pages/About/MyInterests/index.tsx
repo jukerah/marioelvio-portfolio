@@ -3,10 +3,10 @@ import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
 import { pageInfo } from "../../../data/PageData";
+import { TechnologyListType } from "../../../types/TechnologyListType";
 
 import { SubTitle } from "../../../components/SubTitle";
 import { CardTech } from "../../../components/CardTech";
-import { TechnologyListType } from "../../../types/TechnologyListType";
 
 export const MyInterests = () => {
   const { theme } = useContext(Context);

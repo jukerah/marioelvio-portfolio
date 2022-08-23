@@ -2,6 +2,7 @@ import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
+import { svgs } from "../../../../data/SvgList";
 
 interface Props {
   id: number;
@@ -42,9 +43,7 @@ export const CardSkill = (props: Props) => {
         show={showStatus(props.id)}
       >
         <h3>{props.name}</h3>
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 9L12 15L18 9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        {svgs.systemIcon.chevronDown}
       </C.SkillName>
       <C.ContainerSkillDescription mode={theme.mode.status}>
         <C.SkillDescription
