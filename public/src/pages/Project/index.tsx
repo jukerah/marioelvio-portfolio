@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from 'react-router-dom';
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
-import { ProjectListType } from "../../types/ProjectListType";
+import { ProjectType } from "../../types/ProjectType";
 
 import { pageInfo } from "../../data/PageData";
 import { Footer } from "../../components/Footer";
@@ -16,11 +17,12 @@ interface Props {
 
 export const ProjectPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
+  const { i18n } = useTranslation();
   const params = useParams();
 
-  const searchProject = (project: ProjectListType) => { return project.url === params.slug; }    
-  const projectInfo: ProjectListType[] = pageInfo.portfolio.project.filter(searchProject);
-  const project: ProjectListType = projectInfo[0];
+  const searchProject = (project: ProjectType) => { return project.url === params.slug; }    
+  const projectInfo: ProjectType[] = pageInfo.portfolio.project.list.filter(searchProject);
+  const project: ProjectType = projectInfo[0];
 
   useEffect(() => {
     if (props.page === "project") {
@@ -46,15 +48,15 @@ export const ProjectPage = (props: Props) => {
         <img src={project.img} alt={project.alt}/>
 
         <C.Description mode={theme.mode.status}>
-          <h2>About this Project</h2>
-          <p>{project.description}</p>
+          <h2>{pageInfo.portfolio.project.aboutProject[ i18n.language as keyof typeof pageInfo.portfolio.project.aboutProject ]}</h2>
+          <p>{project.description[ i18n.language as keyof typeof project.description ]}</p>
         </C.Description>
 
         <C.ContainerTechRes isMenuOpen={theme.isMenuOpen.status}>
           <C.Technologies mode={theme.mode.status}>
-            <h2>Project Technologies</h2>
+            <h2>{pageInfo.portfolio.project.projectTechnologies[ i18n.language as keyof typeof pageInfo.portfolio.project.projectTechnologies ]}</h2>
             <ul>
-              {project.technologies.map((tech:any, index:number) => (
+              {project.technologies.map((tech:string, index:number) => (
                 <li key={index}>
                   <p>{tech}</p>
                 </li>
@@ -66,7 +68,7 @@ export const ProjectPage = (props: Props) => {
             {(project.resources.webSite !== "" ||
                 project.resources.gitHub !== "" ||
                 project.resources.figma !== "") &&
-              <h2>Resources</h2>
+              <h2>{pageInfo.portfolio.project.resources[ i18n.language as keyof typeof pageInfo.portfolio.project.resources ]}</h2>
             }
             <ul>
               {(project.resources.webSite !== "") &&

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
@@ -10,6 +11,8 @@ import { ContainerSkill } from "./ContainerSkill";
 
 export const HardSkills = () => {
   const { theme } = useContext(Context);
+  const { i18n } = useTranslation();
+
   const countFrontEnd: number = pageInfo.about.hardSkills.frontEnd.skill.length;
   const countBackEnd: number = pageInfo.about.hardSkills.backEnd.skill.length;
   const countMobile: number = pageInfo.about.hardSkills.mobile.skill.length;
@@ -18,10 +21,10 @@ export const HardSkills = () => {
 
   return (
     <C.ContainerHardSkills mode={theme.mode.status}>
-      <SubTitle subTitle={"Hard skills"} />
+      <SubTitle subTitle={pageInfo.about.hardSkills.title[ i18n.language as keyof typeof pageInfo.about.hardSkills.title ]} />
 
       <p className="description-skills">
-        {pageInfo.about.hardSkills.description}
+        {pageInfo.about.hardSkills.description[ i18n.language as keyof typeof pageInfo.about.hardSkills.description ]}
       </p>
 
       <C.HardSkills>
@@ -51,7 +54,7 @@ export const HardSkills = () => {
 
         {countTools > 0 && (
           <ContainerSkill
-            stack={"Tools"}
+            stack={pageInfo.about.hardSkills.tools.name[ i18n.language as keyof typeof pageInfo.about.hardSkills.tools.name ]}
             skillList={pageInfo.about.hardSkills.tools.skill}
             svg={svgs.systemIcon.tools}
           />
@@ -59,7 +62,7 @@ export const HardSkills = () => {
 
         {countDatabase > 0 && (
           <ContainerSkill
-            stack={"Database"}
+            stack={pageInfo.about.hardSkills.database.name[ i18n.language as keyof typeof pageInfo.about.hardSkills.database.name ]}
             skillList={pageInfo.about.hardSkills.database.skill}
             svg={svgs.systemIcon.database}
           />

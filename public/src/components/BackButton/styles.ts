@@ -8,17 +8,18 @@ export const BackButton = styled.div<BackButtonProps>`
     background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     display: flex;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
 
-    width: 80px;
+    width: 94px;
     height: 32px;
     
     border: none;
     border-radius: 4px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
-    padding-left: 2px;
+    padding-right: 8px;
     gap: 8px;
 
     cursor: pointer;
@@ -50,11 +51,9 @@ export const BackButton = styled.div<BackButtonProps>`
     }
 
     @media (min-width: 1024px) {
-        width: 104px;
+        width: 120px;
         height: 40px;
 
         p { font-size: 22px; }
-
-        padding-left: 8px;
     }
 `;

@@ -1,7 +1,9 @@
-export type ProjectListType = {
+import { LangType } from "./LangType";
+
+export type ProjectType = {
   id: number;
   name: string;
-  description: string;
+  description: LangType;
   img: string;
   alt: string;
   url:string;

@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
 import { pageInfo } from "../../../../data/PageData";
+import { CourseType } from "../../../../types/CourseType";
+
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
 import { ContainerLine } from "../ContainerLine";
@@ -11,15 +14,16 @@ import { ViewMoreButton } from "../ViewMoreButton";
 
 export const Courses = () => {
   const { theme } = useContext(Context);
-  const [ countCourses ] = useState<number>(pageInfo.about.courses.length);
+  const { i18n } = useTranslation();
+  const [ countCourses ] = useState<number>(pageInfo.about.courses.courseList.length);
   const [ showCourses, setShowCourses ] = useState<number>(2);
 
   return (
     <C.ContainerCourses isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={"Courses"} />
+      <SubTitle subTitle={pageInfo.about.courses.title[ i18n.language as keyof typeof pageInfo.about.courses.title ]} />
 
       <C.Courses><>
-        {pageInfo.about.courses.map((course: any, index) => index <= showCourses && (
+        {pageInfo.about.courses.courseList.map((course: CourseType, index) => index <= showCourses && (
           <Card
             key={course.id}
             content={<>
@@ -36,7 +40,7 @@ export const Courses = () => {
                       {course.college}
                     </span>
                   </h3>
-                  <p>{course.course}</p>
+                  <p>{course.course[ i18n.language as keyof typeof course.course ]}</p>
                 </C.CoursesInfo>
               }/>
             </>}

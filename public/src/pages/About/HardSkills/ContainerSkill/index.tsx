@@ -1,19 +1,21 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { TechnologyListType } from "../../../../types/TechnologyListType";
+import { TechnologyType } from "../../../../types/TechnologyType";
 
 import { CardTech } from "../../../../components/CardTech";
 
 interface Props {
   stack: string;
-  skillList: TechnologyListType[];
+  skillList: TechnologyType[];
   svg: React.ReactNode;
 }
 
 export const ContainerSkill = (props: Props) => {
   const { theme } = useContext(Context);
+  const { i18n } = useTranslation();
 
   return (
     <C.ContainerSkill>
@@ -23,7 +25,7 @@ export const ContainerSkill = (props: Props) => {
       </C.TitleStack>
 
       <div className="container-card">
-        {props.skillList.map((tech: TechnologyListType, index: number) => (
+        {props.skillList.map((tech: TechnologyType, index: number) => (
           <CardTech
             key={index}
             src={theme.mode.status === "dark"
@@ -31,7 +33,7 @@ export const ContainerSkill = (props: Props) => {
               : tech.img.dark
             }
             srcHover={tech.img.primary}
-            alt={tech.img.alt}
+            alt={tech.img.alt[ i18n.language as keyof typeof tech.img.alt ]}
             tech={tech.name}
           />
         ))}

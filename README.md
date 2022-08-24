@@ -70,7 +70,7 @@ Summary
 * [X] Portfolio page
 * [X] Project page
 * [ ] Blog page
-* [ ] Contact page
+* [X] Contact page
 * [ ] Login page
 <br />AdminPanel:
 * [ ] Settings page

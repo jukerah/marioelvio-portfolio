@@ -1,16 +1,16 @@
 import * as C from "./styles";
 
 import { Project } from "../Project";
-import { ProjectListType } from "../../../types/ProjectListType";
+import { ProjectType } from "../../../types/ProjectType";
 import { NoDataFound } from "../NoDataFound";
 
 interface Props {
-  ProjectList: ProjectListType[];
+  ProjectList: ProjectType[];
   searchProject: string;
 }
 
 export const GridMode = (props: Props) => {
-  const projectFilter = (item: ProjectListType) => {
+  const projectFilter = (item: ProjectType) => {
     return item.category.includes(props.searchProject);
   }
 
@@ -23,7 +23,7 @@ export const GridMode = (props: Props) => {
   } else {
     return (
       <C.ContainerGrid>
-        {props.ProjectList.map((project: any, index:number) =>
+        {props.ProjectList.map((project: ProjectType, index:number) =>
           project.category.includes(props.searchProject) && (
             <Project
               key={index}

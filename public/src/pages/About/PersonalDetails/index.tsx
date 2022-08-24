@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
@@ -9,10 +10,11 @@ import { SubTitle } from "../../../components/SubTitle";
 
 export const PersonalDetails = () => {
   const { theme } = useContext(Context);
+  const { i18n } = useTranslation();
 
   return (
     <C.PersonalDetails>
-      <SubTitle subTitle={pageInfo.about.personalDetails.title} />
+      <SubTitle subTitle={pageInfo.about.personalDetails.title[ i18n.language as keyof typeof pageInfo.about.personalDetails.title ]} />
 
       <C.ContainerInfo
         mode={theme.mode.status}

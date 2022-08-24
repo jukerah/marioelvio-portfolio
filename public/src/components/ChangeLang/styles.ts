@@ -19,7 +19,7 @@ export const ChangeLang = styled.button<ChangeLangProps>`
 
     transition: all ease-in .5s;
 
-    img {
+    svg {
         width: 40px;
         height: 30px;
     }
@@ -27,6 +27,8 @@ export const ChangeLang = styled.button<ChangeLangProps>`
     p {
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
         font-size: 22px;
+
+        margin-bottom: 4px;
         transition: all ease-in .5s;
     }
 

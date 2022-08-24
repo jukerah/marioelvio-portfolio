@@ -7,7 +7,7 @@ import { svgs } from "../../data/SvgList";
 
 export const ChangeLang = () => {
   const { theme } = useContext(Context);
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const changeLanguage = () => {
     switch (i18n.language) {
@@ -24,18 +24,10 @@ export const ChangeLang = () => {
 
   return (
     <C.ChangeLang mode={theme.mode.status} onClick={changeLanguage}>
-      <img
-        src={
-          i18n.language === "en" || i18n.language === "en-US"
-            ? svgs.country.brazil
-            : svgs.country.unitedStates
-        }
-        alt={
-          i18n.language === "en"
-            ? t("svgs.country.brazil.alt")
-            : t("svgs.country.unitedStates.alt")
-        }
-      />
+      {i18n.language === "en" || i18n.language === "en-US"
+        ? svgs.country.brazil
+        : svgs.country.unitedStates
+      }
       <p>{i18n.language === "en" ? "Pt" : "En"}</p>
     </C.ChangeLang>
   );

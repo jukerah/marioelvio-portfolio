@@ -1,77 +1,44 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
 import { pageInfo } from "../../../data/PageData";
+import { SoftSkillType } from "../../../types/SoftSkillType";
 
 import { SubTitle } from "../../../components/SubTitle";
 import { CardSkill } from "./CardSkill";
 
 export const SoftSkills = () => {
   const { theme } = useContext(Context);
+  const { i18n } = useTranslation();
 
   return (
     <C.ContainerSoftSkills mode={theme.mode.status}>
-      <SubTitle subTitle={"Soft skills"} />
+      <SubTitle subTitle={pageInfo.about.softSkills.title[ i18n.language as keyof typeof pageInfo.about.softSkills.title ]} />
 
       <p className="description-skills">
-        {pageInfo.about.softSkills.description}
+        {pageInfo.about.softSkills.description[ i18n.language as keyof typeof pageInfo.about.softSkills.description ]}
       </p>
 
       <C.SoftSkills mode={theme.mode.status}>
         <C.ContainerCard>
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[0].id}
-            name={pageInfo.about.softSkills.skill[0].name}
-            description={pageInfo.about.softSkills.skill[0].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[1].id}
-            name={pageInfo.about.softSkills.skill[1].name}
-            description={pageInfo.about.softSkills.skill[1].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[2].id}
-            name={pageInfo.about.softSkills.skill[2].name}
-            description={pageInfo.about.softSkills.skill[2].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[3].id}
-            name={pageInfo.about.softSkills.skill[3].name}
-            description={pageInfo.about.softSkills.skill[3].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[4].id}
-            name={pageInfo.about.softSkills.skill[4].name}
-            description={pageInfo.about.softSkills.skill[4].description}
-          />
+          {pageInfo.about.softSkills.skill.map((softskill: SoftSkillType, index) => index < 5 && (                
+            <CardSkill
+              id={softskill.id}
+              name={softskill.name[ i18n.language as keyof typeof softskill.name ]}
+              description={softskill.description[ i18n.language as keyof typeof softskill.description ]}
+            />
+          ))}
         </C.ContainerCard>
         <C.ContainerCard>
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[5].id}
-            name={pageInfo.about.softSkills.skill[5].name}
-            description={pageInfo.about.softSkills.skill[5].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[6].id}
-            name={pageInfo.about.softSkills.skill[6].name}
-            description={pageInfo.about.softSkills.skill[6].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[7].id}
-            name={pageInfo.about.softSkills.skill[7].name}
-            description={pageInfo.about.softSkills.skill[7].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[8].id}
-            name={pageInfo.about.softSkills.skill[8].name}
-            description={pageInfo.about.softSkills.skill[8].description}
-          />
-          <CardSkill
-            id={pageInfo.about.softSkills.skill[9].id}
-            name={pageInfo.about.softSkills.skill[9].name}
-            description={pageInfo.about.softSkills.skill[9].description}
-          />
+          {pageInfo.about.softSkills.skill.map((softskill: SoftSkillType, index) => index >= 5 && (                
+            <CardSkill
+              id={softskill.id}
+              name={softskill.name[ i18n.language as keyof typeof softskill.name ]}
+              description={softskill.description[ i18n.language as keyof typeof softskill.description ]}
+            />
+          ))}
         </C.ContainerCard>
       </C.SoftSkills>
     </C.ContainerSoftSkills>

@@ -1,4 +1,6 @@
 import { useContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
@@ -20,6 +22,7 @@ interface Props {
 
 export const AboutPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     if (props.page === "about") {
@@ -37,16 +40,16 @@ export const AboutPage = (props: Props) => {
   return (
     <C.AboutSection mode={theme.mode.status}>
       <C.Container>
-        <TitlePage title={"About"} />
+        <TitlePage title={pageInfo.about.pageTitle[ i18n.language as keyof typeof pageInfo.about.pageTitle ]} />
 
         <Resume
-          title={pageInfo.about.personalResume.title}
-          description={pageInfo.about.personalResume.resume}
+          title={pageInfo.about.personalResume.title[ i18n.language as keyof typeof pageInfo.about.personalResume.title ]}
+          description={pageInfo.about.personalResume.resume[ i18n.language as keyof typeof pageInfo.about.personalResume.resume ]}
         />
 
         <Resume
-          title={pageInfo.about.professionalResume.title}
-          description={pageInfo.about.professionalResume.resume}
+          title={pageInfo.about.professionalResume.title[ i18n.language as keyof typeof pageInfo.about.professionalResume.title ]}
+          description={pageInfo.about.professionalResume.resume[ i18n.language as keyof typeof pageInfo.about.professionalResume.title ]}
         />
 
         <MyInterests />

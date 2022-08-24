@@ -74,6 +74,9 @@ export const Container = styled.div<ContainerProps>`
     @media (min-width: 1024px) {
         padding: 0 32px;
 
-        .container-button { display: block; }
+        .container-button {
+            display: flex;
+            gap: 16px;
+        }
     }
 `;

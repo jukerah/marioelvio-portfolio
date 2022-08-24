@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
 import { pageInfo } from "../../../../data/PageData";
+import { WorkExperienceType } from "../../../../types/WorkExperienceType";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
@@ -12,16 +14,17 @@ import { ViewMoreButton } from "../ViewMoreButton";
 
 export const WorkExperience = () => {
   const { theme } = useContext(Context);
-  const [countWork] = useState<number>(pageInfo.about.workExperience.length);
+  const { i18n } = useTranslation();
+  const [countWork] = useState<number>(pageInfo.about.workExperience.workList.length);
   const [showWork, setShowWork] = useState<number>(2);
 
   return (
     <C.ContainerWorkExperience isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={"Work experience"} />
+      <SubTitle subTitle={pageInfo.about.workExperience.title[ i18n.language as keyof typeof pageInfo.about.workExperience.title ]} />
 
       <C.WorkExperience>
         <>
-          {pageInfo.about.workExperience.map((workExperience: any, index) => index <= showWork && (
+          {pageInfo.about.workExperience.workList.map((workExperience: WorkExperienceType, index) => index <= showWork && (
             <Card
               key={workExperience.id}
               content={<>
@@ -29,7 +32,7 @@ export const WorkExperience = () => {
                   <C.WorkInfo mode={theme.mode.status}>
                     <h3>
                       <span className="job-role color-hover">
-                        {workExperience.jobRole}
+                        {workExperience.jobRole[ i18n.language as keyof typeof workExperience.jobRole ]}
                       </span>
                       <> | </>
                       {workExperience.company}
@@ -37,24 +40,24 @@ export const WorkExperience = () => {
                     <p className="period-seniority">
                       {workExperience.start}
                       <> - </>
-                      {workExperience.current
-                        ? (<>Current</>)
+                      {workExperience.currentStatus
+                        ? (<>{workExperience.current[ i18n.language as keyof typeof workExperience.current ]}</>)
                         : (<>{workExperience.theEnd}</>)
                       }
-                      {workExperience.seniority !== "" && (
+                      {workExperience.seniority[ i18n.language as keyof typeof workExperience.seniority ] !== "" && (
                         <>
                           <> | </>
                           <span className="seniority color-hover">
-                            {workExperience.seniority}
+                            {workExperience.seniority[ i18n.language as keyof typeof workExperience.seniority ]}
                           </span>
                         </>
                       )}
                     </p>
                     <p>
                       <span className="activities color-hover">
-                        Activities: 
+                      {pageInfo.about.workExperience.activities[ i18n.language as keyof typeof pageInfo.about.workExperience.activities ]}
                       </span>
-                      <> {workExperience.activities}</>
+                      <> {workExperience.activities[ i18n.language as keyof typeof workExperience.activities ]}</>
                     </p>
                   </C.WorkInfo>
                 }/>

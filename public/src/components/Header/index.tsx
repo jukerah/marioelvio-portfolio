@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
+import { svgs } from "../../data/SvgList";
 
 import { SwitchMode } from "../SwitchMode";
 import { LoginLogoutButton } from "../LoginLogoutButton";
 import { MenuMobile, NavMobile } from "../MenuMobile";
-import { svgs } from "../../data/SvgList";
+import { ChangeLang } from "../ChangeLang";
 
 export const Header = () => {
   const { theme, dispatch } = useContext(Context);
@@ -42,6 +43,7 @@ export const Header = () => {
         </div>
 
         <div className="container-button">
+          <ChangeLang />
           <LoginLogoutButton />
         </div>
       </C.Container>

@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
 import { pageInfo } from "../../../../data/PageData";
+import { CertificateType } from "../../../../types/CertificateType";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
@@ -12,15 +14,16 @@ import { ViewMoreButton } from "../ViewMoreButton";
 
 export const Certificates = () => {
   const { theme } = useContext(Context);
-  const [countCertificates] = useState<number>(pageInfo.about.certificates.length);
+  const { i18n } = useTranslation();
+  const [countCertificates] = useState<number>(pageInfo.about.certificates.certificateList.length);
   const [showCertificates, setShowCertificates] = useState<number>(2);
 
   return (
     <C.ContainerCertificates isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={"Certificates"} />
+      <SubTitle subTitle={pageInfo.about.certificates.title[ i18n.language as keyof typeof pageInfo.about.certificates.title ]} />
 
       <C.Certificates><>
-        {pageInfo.about.certificates.map((certificate: any, index) => index <= showCertificates && (
+        {pageInfo.about.certificates.certificateList.map((certificate: CertificateType, index) => index <= showCertificates && (
           <Card
             key={certificate.id}
             content={<>
@@ -35,7 +38,7 @@ export const Certificates = () => {
                       {certificate.certificateIssuer}
                     </span>
                   </h3>
-                  <p>{certificate.certificate}</p>
+                  <p>{certificate.certificate[ i18n.language as keyof typeof certificate.certificate ]}</p>
                 </C.CertificatesInfo>
               }/>
             </>}

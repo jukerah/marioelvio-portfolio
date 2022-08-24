@@ -5,11 +5,11 @@ import { Context } from "../../../contexts/Contexts";
 import { svgs } from "../../../data/SvgList";
 
 import { Project } from "../Project";
-import { ProjectListType } from "../../../types/ProjectListType"
+import { ProjectType } from "../../../types/ProjectType"
 import { NoDataFound } from "../NoDataFound";
 
 interface Props {
-  ProjectList: ProjectListType[];
+  ProjectList: ProjectType[];
   searchProject: string;
 }
 
@@ -27,7 +27,7 @@ export const SliderMode = (props: Props) => {
     }
   };
 
-  const projectFilter = (item: ProjectListType) => {
+  const projectFilter = (item: ProjectType) => {
     return item.category.includes(props.searchProject);
   }
 
