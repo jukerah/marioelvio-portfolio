@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
@@ -6,17 +6,6 @@ import { Context } from "../../contexts/Contexts";
 export const SwitchMode = () => {
   const { theme, dispatch } = useContext(Context);
   const localThemeMode: string | null = localStorage.getItem("themeMode");
-
-  useEffect(() => {
-    if (theme.mode.status !== null) {
-      dispatch({
-        type: "CHANGE_MODE",
-        payload: {
-          status: theme.mode.status,
-        },
-      });
-    }
-  }, [theme.mode.status, dispatch]);
 
   const handleClickSwitch = () => {
     switch (theme.mode.status) {

@@ -1,17 +1,16 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
-import { pageInfo } from "../../../data/PageData";
+import { pageData } from "../../../data/PageData";
 
 export const NoDataFound = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
   return (
     <C.NoDataFound mode={theme.mode.status}>
-      {pageInfo.portfolio.project.noDataFound[ i18n.language as keyof typeof pageInfo.portfolio.project.noDataFound ]}
+      {pageData.portfolio.project.noDataFound[lang]}
     </C.NoDataFound>
   );
 };

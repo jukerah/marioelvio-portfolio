@@ -1,8 +1,9 @@
-import * as C from "./styles";
-import { useTranslation } from "react-i18next";
+import { useContext } from "react";
 import { Link } from 'react-router-dom';
+import * as C from "./styles";
 
-import { pageInfo } from "../../../data/PageData";
+import { Context } from "../../../contexts/Contexts";
+import { pageData } from "../../../data/PageData";
 
 interface Props {
   name: string;
@@ -12,14 +13,15 @@ interface Props {
 }
 
 export const Project = (props: Props) => {
-  const { i18n } = useTranslation();
+  const { theme } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   return (
     <C.Project>
       <img src={props.src} alt={props.alt} />
       <div className="project-info">
         <h3>{props.name}</h3>
-        <Link to={`/portfolio/${props.url}`}>{pageInfo.button.viewMore[ i18n.language as keyof typeof pageInfo.button.viewMore ]}</Link>
+        <Link to={`/portfolio/${props.url}`}>{pageData.button.viewMore[lang]}</Link>
       </div>
     </C.Project>
   );

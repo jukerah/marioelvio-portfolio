@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
@@ -15,7 +14,7 @@ interface Props {
 
 export const ContainerSkill = (props: Props) => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
   return (
     <C.ContainerSkill>
@@ -33,7 +32,7 @@ export const ContainerSkill = (props: Props) => {
               : tech.img.dark
             }
             srcHover={tech.img.primary}
-            alt={tech.img.alt[ i18n.language as keyof typeof tech.img.alt ]}
+            alt={tech.img.alt[ lang as keyof typeof tech.img.alt ]}
             tech={tech.name}
           />
         ))}

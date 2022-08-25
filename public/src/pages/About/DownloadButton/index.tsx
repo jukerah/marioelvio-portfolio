@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
 import { svgs } from "../../../data/SvgList";
-import { pageInfo } from "../../../data/PageData";
+import { pageData } from "../../../data/PageData";
 
 export const DownloadButton = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
   const [ isOpened, setIsOpened ] = useState(false);
 
   return (
@@ -17,7 +16,7 @@ export const DownloadButton = () => {
         mode={theme.mode.status}
         onClick={() => setIsOpened(true)}
       >
-        <p>{pageInfo.about.download[ i18n.language as keyof typeof pageInfo.about.download ]}</p>
+        <p>{pageData.about.download[lang]}</p>
         {svgs.systemIcon.download}
       </C.DownloadButton>
 

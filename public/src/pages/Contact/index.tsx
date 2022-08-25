@@ -5,7 +5,7 @@ import { Context } from '../../contexts/Contexts';
 import { svgs } from '../../data/SvgList';
 
 import { TitlePage } from '../../components/TitlePage';
-import { pageInfo } from '../../data/PageData';
+import { pageInfo } from '../../data/PageInfo';
 import { Form } from './Form';
 import { Footer } from '../../components/Footer';
 

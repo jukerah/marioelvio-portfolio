@@ -4,8 +4,10 @@ import { ModeType, modeInitialState, modeReducer } from '../reducers/modeReducer
 import { SoftSkillInitialState, SoftSkillType, softSkillReducer } from '../reducers/softSkillReducer';
 import { activePageInitialState, activePageType, activePageReducer } from '../reducers/activePageReducer';
 import { reducerActionType } from '../types/reducerActionType';
+import { langInitialState, langReducer, themeLangType } from '../reducers/langReducer';
 
 type initialStateType = {
+    lang: themeLangType;
     isMenuOpen: MenuType;
     mode: ModeType;
     showSoftSkill: SoftSkillType;
@@ -18,6 +20,7 @@ type ContextType = {
 }
 
 const initialState = {
+    lang: langInitialState,
     isMenuOpen: menuInitialState,
     mode: modeInitialState,
     showSoftSkill: SoftSkillInitialState,
@@ -30,6 +33,7 @@ export const Context = createContext<ContextType>({
 });
 
 const mainReducer = (state: initialStateType, action: reducerActionType) => ({
+    lang: langReducer(state.lang, action),
     isMenuOpen: menuReducer(state.isMenuOpen, action),
     mode: modeReducer(state.mode, action),
     showSoftSkill: softSkillReducer(state.showSoftSkill, action),

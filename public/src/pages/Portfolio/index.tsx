@@ -1,10 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
-import { pageInfo } from "../../data/PageData";
+import { pageData } from "../../data/PageData";
 
 import { TitlePage } from "../../components/TitlePage";
 import { SliderMode } from "./Slider";
@@ -17,7 +16,7 @@ interface Props {
 
 export const PortfolioPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
   const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
   const [ searchValue, setSearchValue ] = useState<string>("All");
@@ -42,13 +41,13 @@ export const PortfolioPage = (props: Props) => {
   return (
     <C.PortfolioSection mode={theme.mode.status}>
       <C.Container>
-        <TitlePage title={pageInfo.portfolio.pageTitle[ i18n.language as keyof typeof pageInfo.portfolio.pageTitle ]} />
+        <TitlePage title={pageData.portfolio.pageTitle[lang]} />
 
         <C.ContainerButtons>
           <C.SelectButton
             onChange={e => handleClickSearch(e.target.value)}
           >
-            <option value="All">{i18n.language === 'en' ? 'All' : 'Todos'}</option>
+            <option value="All">{lang === 'en' ? 'All' : 'Todos'}</option>
             <option value="Front-end">Front-end</option>
             <option value="Back-end">Back-end</option>
             <option value="Full-stack">Full-stack</option>
@@ -76,14 +75,14 @@ export const PortfolioPage = (props: Props) => {
         <C.ContainerPortfolio>
           {(showMode === 'slider') &&
             <SliderMode
-              ProjectList={pageInfo.portfolio.project.list}
+              ProjectList={pageData.portfolio.project.list}
               searchProject={searchValue}
             />
           }
 
           {(showMode === 'grid') &&
             <GridMode
-              ProjectList={pageInfo.portfolio.project.list}
+              ProjectList={pageData.portfolio.project.list}
               searchProject={searchValue}
             />
           }

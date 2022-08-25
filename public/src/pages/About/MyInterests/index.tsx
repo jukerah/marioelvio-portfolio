@@ -1,27 +1,25 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 
 import { Context } from "../../../contexts/Contexts";
-import { pageInfo } from "../../../data/PageData";
-import { TechnologyType } from "../../../types/TechnologyType";
+import { pageData } from "../../../data/PageData";
 
 import { SubTitle } from "../../../components/SubTitle";
 import { CardTech } from "../../../components/CardTech";
 
 export const MyInterests = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
-  const myInterests: TechnologyType[] = pageInfo.about.myInterests.tech;
+  const myInterests: any = pageData.about.myInterests.tech;
 
   return (
     <C.MyInterests>
-      <SubTitle subTitle={pageInfo.about.myInterests.title[ i18n.language as keyof typeof pageInfo.about.myInterests.title ]}/>
+      <SubTitle subTitle={pageData.about.myInterests.title[lang]}/>
 
       <div className="container-card">
-        {myInterests.map((tech: TechnologyType) => (
+        {myInterests.map((tech: any) => (
           <CardTech
             key={tech.id}
             src={theme.mode.status === "dark"
@@ -29,7 +27,7 @@ export const MyInterests = () => {
                 : tech.img.dark
             }
             srcHover={tech.img.primary}
-            alt={tech.img.alt[ i18n.language as keyof typeof tech.img.alt ]}
+            alt={tech.img.alt[lang]}
             tech={tech.name}
           />
         ))}

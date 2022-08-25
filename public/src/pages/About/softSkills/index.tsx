@@ -1,42 +1,42 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
-import { pageInfo } from "../../../data/PageData";
-import { SoftSkillType } from "../../../types/SoftSkillType";
+import { pageData } from "../../../data/PageData";
 
 import { SubTitle } from "../../../components/SubTitle";
 import { CardSkill } from "./CardSkill";
 
 export const SoftSkills = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
   return (
     <C.ContainerSoftSkills mode={theme.mode.status}>
-      <SubTitle subTitle={pageInfo.about.softSkills.title[ i18n.language as keyof typeof pageInfo.about.softSkills.title ]} />
+      <SubTitle subTitle={pageData.about.softSkills.title[lang]} />
 
       <p className="description-skills">
-        {pageInfo.about.softSkills.description[ i18n.language as keyof typeof pageInfo.about.softSkills.description ]}
+        {pageData.about.softSkills.description[lang]}
       </p>
 
       <C.SoftSkills mode={theme.mode.status}>
         <C.ContainerCard>
-          {pageInfo.about.softSkills.skill.map((softskill: SoftSkillType, index) => index < 5 && (                
+          {pageData.about.softSkills.skill.map((softskill: any, index: number) => index < 5 && (                
             <CardSkill
+              key={index}
               id={softskill.id}
-              name={softskill.name[ i18n.language as keyof typeof softskill.name ]}
-              description={softskill.description[ i18n.language as keyof typeof softskill.description ]}
+              name={softskill.name[lang]}
+              description={softskill.description[lang]}
             />
           ))}
         </C.ContainerCard>
         <C.ContainerCard>
-          {pageInfo.about.softSkills.skill.map((softskill: SoftSkillType, index) => index >= 5 && (                
+          {pageData.about.softSkills.skill.map((softskill: any, index: number) => index >= 5 && (                
             <CardSkill
+              key={index}
               id={softskill.id}
-              name={softskill.name[ i18n.language as keyof typeof softskill.name ]}
-              description={softskill.description[ i18n.language as keyof typeof softskill.description ]}
+              name={softskill.name[lang]}
+              description={softskill.description[lang]}
             />
           ))}
         </C.ContainerCard>

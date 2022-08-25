@@ -1,20 +1,19 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
 import { svgs } from "../../../data/SvgList";
-import { pageInfo } from "../../../data/PageData";
+import { pageData } from "../../../data/PageData";
 
 import { SubTitle } from "../../../components/SubTitle";
 
 export const PersonalDetails = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
+  const lang: string = theme.lang.status;
 
   return (
     <C.PersonalDetails>
-      <SubTitle subTitle={pageInfo.about.personalDetails.title[ i18n.language as keyof typeof pageInfo.about.personalDetails.title ]} />
+      <SubTitle subTitle={pageData.about.personalDetails.title[lang]} />
 
       <C.ContainerInfo
         mode={theme.mode.status}
@@ -23,38 +22,38 @@ export const PersonalDetails = () => {
         <div className="direction">
           <div className="info">
             {svgs.systemIcon.phone}
-            <a href={`tel:${pageInfo.about.personalDetails.phone}`} target="_blank" rel="noopener noreferrer">
-              {pageInfo.about.personalDetails.phone}
+            <a href={`tel:${pageData.about.personalDetails.phone}`} target="_blank" rel="noopener noreferrer">
+              {pageData.about.personalDetails.phone}
             </a>
           </div>
           <div className="info">
             {svgs.systemIcon.mail}
-            <a href={`mailto:${pageInfo.about.personalDetails.email}`} target="_blank" rel="noopener noreferrer">
-              {pageInfo.about.personalDetails.email}
+            <a href={`mailto:${pageData.about.personalDetails.email}`} target="_blank" rel="noopener noreferrer">
+              {pageData.about.personalDetails.email}
             </a>
           </div>
           <div className="info">
             {svgs.systemIcon.mapPin}
-            <p>{pageInfo.about.personalDetails.address}</p>
+            <p>{pageData.about.personalDetails.address}</p>
           </div>
         </div>
         <div className="direction">
           <div className="info">
             {svgs.systemIcon.linkedin}
-            <a href={pageInfo.about.personalDetails.linkedin.url} target="_blank" rel="noopener noreferrer">
-              {pageInfo.about.personalDetails.linkedin.text}
+            <a href={pageData.about.personalDetails.linkedin.url} target="_blank" rel="noopener noreferrer">
+              {pageData.about.personalDetails.linkedin.text}
             </a>
           </div>
           <div className="info">
             {svgs.systemIcon.github}
-            <a href={pageInfo.about.personalDetails.github.url} target="_blank" rel="noopener noreferrer">
-              {pageInfo.about.personalDetails.github.text}
+            <a href={pageData.about.personalDetails.github.url} target="_blank" rel="noopener noreferrer">
+              {pageData.about.personalDetails.github.text}
             </a>
           </div>
           <div className="info">
             {svgs.systemIcon.youtube}
-            <a href={pageInfo.about.personalDetails.youtube.url} target="_blank" rel="noopener noreferrer">
-              {pageInfo.about.personalDetails.youtube.text}
+            <a href={pageData.about.personalDetails.youtube.url} target="_blank" rel="noopener noreferrer">
+              {pageData.about.personalDetails.youtube.text}
             </a>
           </div>
         </div>

@@ -1,10 +1,8 @@
 import { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { pageInfo } from "../../../../data/PageData";
-import { CourseType } from "../../../../types/CourseType";
+import { pageData } from "../../../../data/PageData";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
@@ -14,16 +12,16 @@ import { ViewMoreButton } from "../ViewMoreButton";
 
 export const Courses = () => {
   const { theme } = useContext(Context);
-  const { i18n } = useTranslation();
-  const [ countCourses ] = useState<number>(pageInfo.about.courses.courseList.length);
+  const lang: string = theme.lang.status;
+  const [ countCourses ] = useState<number>(pageData.about.courses.courseList.length);
   const [ showCourses, setShowCourses ] = useState<number>(2);
 
   return (
     <C.ContainerCourses isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={pageInfo.about.courses.title[ i18n.language as keyof typeof pageInfo.about.courses.title ]} />
+      <SubTitle subTitle={pageData.about.courses.title[lang]} />
 
       <C.Courses><>
-        {pageInfo.about.courses.courseList.map((course: CourseType, index) => index <= showCourses && (
+        {pageData.about.courses.courseList.map((course: any, index: number) => index <= showCourses && (
           <Card
             key={course.id}
             content={<>
@@ -40,7 +38,7 @@ export const Courses = () => {
                       {course.college}
                     </span>
                   </h3>
-                  <p>{course.course[ i18n.language as keyof typeof course.course ]}</p>
+                  <p>{course.course[ lang as keyof typeof course.course ]}</p>
                 </C.CoursesInfo>
               }/>
             </>}
