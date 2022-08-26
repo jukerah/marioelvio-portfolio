@@ -186,6 +186,7 @@ export const ContainerInfo = styled.div<ContainerInfoProps>`
 
 interface InfoProps {
     mode: string;
+    lang: string;
 }
 
 export const Info = styled.div<InfoProps>`
@@ -206,23 +207,23 @@ export const Info = styled.div<InfoProps>`
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     }
 
-    .title-hello { font-size: 32px; }
-    .title-name  { font-size: 35px; }
-    .title-work  { font-size: 24px; }
+    .title-hello { font-size: ${(props) => props.lang === 'en' ? '32px' : '24px'}; }
+    .title-name  { font-size: ${(props) => props.lang === 'en' ? '35px' : '27.3px'}; }
+    .title-work  { font-size: ${(props) => props.lang === 'en' ? '24.2px' : '20px'}; }
 
     .accent-color {
         color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
     }
 
     @media (min-width: 360px) {
-        .title-hello { font-size: 34px; }
-        .title-name  { font-size: 41px; }
-        .title-work  { font-size: 28px; }
+        .title-hello { font-size: ${(props) => props.lang === 'en' ? '34px' : '28px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '40.5px' : '30.2px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '28px' : '22px'}; }
     }
 
     @media (min-width: 400px) {
-        .title-name  { font-size: 45.2px; }
-        .title-work  { font-size: 31px; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '34px' : '28px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '31px' : '25px'}; }
     }
     
     @media (min-width: 768px) {
@@ -230,11 +231,9 @@ export const Info = styled.div<InfoProps>`
 
         gap: 40px;
 
-        .title-hello {
-            font-size: 56px;
-        }
-        .title-name  { font-size: 82px; }
-        .title-work  { font-size: 56px; }
+        .title-hello { font-size: 56px; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '82px' : '66px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '56px' : '46.1px'}; }
     }
 
     @media (min-width: 1024px) {
@@ -244,9 +243,9 @@ export const Info = styled.div<InfoProps>`
 
         h1 { line-height: 1.2; }
 
-        .title-hello { font-size: 56px; }
-        .title-name  { font-size: 70px; }
-        .title-work  { font-size: 48px; }
+        .title-hello { font-size: ${(props) => props.lang === 'en' ? '56px' : '56px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '70px' : '54.9px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '48px' : '38.9px'}; }
     }
 `;
 
@@ -369,6 +368,7 @@ export const NavButtons = styled.div<NavButtonsProps>`
 
         gap: 24px;
 
+        margin-left: ${(props) => props.isMenuOpen ? '24px' : 0};
         padding: ${(props) => props.isMenuOpen ? '0 24px' : 0};
         max-width: ${(props) => props.isMenuOpen ? 'calc(100% - 24px)' : '100%'};
     }

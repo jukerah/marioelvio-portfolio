@@ -55,16 +55,4 @@ export const ContainerSwitchTheme = styled.div<ContainerSwitchThemeProps>`
     }
 
     .slider.round:before { border-radius: 50%; }
-
-    p {
-        color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
-        
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    @media (min-width: 1024px) { p { font-size: 24px; } }
-
-    @media (min-width: 1024px) { p { font-size: 24px; } }
 `;

@@ -4,9 +4,11 @@ import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
+import { pageData } from "../../data/PageData";
 
 export const LoginLogoutButton = () => {
   const { theme, dispatch } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   const handleClickMenu = () => {
     dispatch({
@@ -23,7 +25,7 @@ export const LoginLogoutButton = () => {
       onClick={handleClickMenu}
     >
       <Link to={"/login"}>
-        <p>Login</p>
+        <p>{pageData.button.login[lang]}</p>
         {svgs.systemIcon.login}
       </Link>
     </C.LoginLogoutButton>

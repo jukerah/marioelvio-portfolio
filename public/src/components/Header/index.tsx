@@ -38,7 +38,7 @@ export const Header = () => {
 
         <MenuMobile />
 
-        <div className="container-button">
+        <div className="switch">
           <SwitchMode />
         </div>
 

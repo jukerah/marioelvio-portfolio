@@ -3,9 +3,11 @@ import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { TitlePage } from "../../components/TitlePage";
+import { pageData } from "../../data/PageData";
 
 export const LoginPage = (props: any) => {
   const { theme } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   useEffect(() => {
     if (props.page === "login") window.scrollTo({ top: 0, behavior: "smooth" });
@@ -14,7 +16,7 @@ export const LoginPage = (props: any) => {
   return (
     <C.LoginSection mode={theme.mode.status}>
       <TitlePage title={'Login'} />
-      <h2>Site is under development, follow the news here or GitHub:</h2>
+      <h2>{pageData.development[lang]}</h2>
       <a href="https://github.com/jukerah/marioelvio-portfolio" target="_blank" rel="noopener noreferrer">
         https://github.com/jukerah/marioelvio-portfolio
       </a>

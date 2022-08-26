@@ -1,10 +1,38 @@
 import { PageDataType } from "../types/PageInfoType";
 
 export const pageInfo: PageDataType = {
-  development: "Site is under development, follow the news here or GitHub:",
+  development: {
+    en: "Site is under development, follow the news here or GitHub:",
+    pt: "Site em desenvolvimento, acompanhe as novidades aqui ou no GitHub:"
+  },
   htmlTitle: "Mario Elvio | Front-end developer",
   home: {
-    pageTitle: "Home",
+    pageTitle: {
+      en: "Home",
+      pt: "Início"
+    },
+    info: {
+      hello: {
+        en: <span className="title-hello">Hi there!</span>,
+        pt: <span className="title-hello">Olá!</span>
+      },
+      name: {
+        en: <span className="title-name">
+              I'm Mario <span className="accent-color">Elvio</span>
+            </span>,
+        pt: <span className="title-name">
+              Eu sou Mario <span className="accent-color">Elvio</span>
+            </span>,
+      },
+      work: {
+        en: <span className="title-work">
+              <span className="accent-color">Front-end</span> developer
+            </span>,
+        pt: <span className="title-work">
+            Desenvolvedor <span className="accent-color">Front-end</span>
+          </span>
+      }
+    }
   },
   about: {
     pageTitle: {
@@ -243,8 +271,8 @@ export const pageInfo: PageDataType = {
     },
     courses: {
       title: {
-        en: "",
-        pt: "",
+        en: "Courses",
+        pt: "Cursos",
       },
       courseList: [
         {
@@ -854,13 +882,92 @@ export const pageInfo: PageDataType = {
     }
   },
   blog: {
-    name: "Blog",
+    pageTitle: {
+      en: "Blog",
+      pt: "Blog"
+    },
   },
   contact: {
-    name: "Contact",
+    pageTitle: {
+      en: "Contact",
+      pt: "Contato"
+    },
+    info: {
+      en: "Get in touch through the form or through one of our contacts. I will reply as soon as possible.",
+      pt: "Entre em contato através do formulário ou através de um de nossos contatos. Eu responderei o mais breve possível."
+    },
+        form: {
+            name: {
+              placeHolder: {
+                en: "Name*",
+                pt: "Nome*"
+              },
+              alert: {
+                empty: {
+                  en: "Fill in the name field!",
+                  pt: "Preencha o campo do nome!"
+                }
+              }
+            },
+            email: {
+              placeHolder: {
+                en: "Email*",
+                pt: "E-mail*"
+              },
+              alert: {
+                empty: {
+                  en: "Fill in the email field!",
+                  pt: "Preencha o campo de e-mail!"
+                },
+                invalid: {
+                  en: "Invalid email!",
+                  pt: "E-mail inválido!"
+                }
+              }
+            },
+            phone: {
+              placeHolder: {
+                en: "Phone*",
+                pt: "Telefone*"
+              },
+              alert: {
+                empty: {
+                  en: "Fill in the phone field!",
+                  pt: "Preencha o campo do telefone!"
+                },
+                invalid: {
+                  en: "Invalid phone!",
+                  pt: "Telefone inválido!"
+                }
+              }
+            },
+            message: {
+              placeHolder: {
+                en: "Message*",
+                pt: "Mensagem*"
+              },
+              alert: {
+                empty: {
+                  en: "Fill in the message field!",
+                  pt: "Preencha o campo da mensagem!"
+                }
+              },
+              send: {
+                en: "Message sent successfully!",
+                pt: "Mensagem enviada com sucesso!",
+              }
+            },
+        }
   },
   login: {
-    name: "Login",
+    pageTitle: {
+      en: "Login",
+      pt: "Entrar"
+    },
+  },
+  footer: {
+    en: "© Copyright 2021-2022 Mario Elvio. All rights reserved.",
+    pt: "© Copyright 2021-2022 Mario Elvio. Todos os direitos reservados."
   },
   button: {
     back: {
@@ -871,5 +978,21 @@ export const pageInfo: PageDataType = {
       en: "View more",
       pt: "Ver mais"
     },
+    moreAboutMe: {
+      en: "More about me",
+      pt: "Mais sobre mim"
+    },
+    myPortfolio: {
+      en: "My portfolio",
+      pt: "Meu porfólio"
+    },
+    login: {
+      en: "Login",
+      pt: "Entrar"
+    },
+    sendMessage: {
+      en: "Send Message",
+      pt: "Enviar Mensagem"
+    }
   }
 };

@@ -35,7 +35,7 @@ export const Form = styled.form<FormProps>`
         color: var(${(props) => props.mode === 'dark' ? '--vivid-tangerine' : '--alizarin-crimson'});
 
         display: block;
-        height: 20px;
+        min-height: 20px;
 
         font-size: 16px;
         margin-top: 4px;
@@ -54,7 +54,7 @@ export const Form = styled.form<FormProps>`
         align-items: center;
         box-sizing: border-box;
 
-        width: 176px;
+        width: 200px;
         height: 40px;
 
         font-size: 16px;
@@ -88,7 +88,7 @@ export const Form = styled.form<FormProps>`
         .container-fone { gap: 24px; }
 
         button {
-            width: 240px;
+            width: 280px;
             height: 48px;
 
             p {

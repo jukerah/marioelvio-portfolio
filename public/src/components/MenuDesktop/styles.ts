@@ -119,6 +119,7 @@ export const NavDesktop = styled.nav<NavDesktopProps>`
         font-weight: 700;
         text-decoration: none;
         text-transform: uppercase;
+        white-space: nowrap;
 
         svg {
             stroke: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});

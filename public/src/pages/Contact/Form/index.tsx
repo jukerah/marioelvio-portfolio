@@ -2,9 +2,11 @@ import { useContext, useEffect, useState, useMemo } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../../contexts/Contexts';
+import { pageData } from '../../../data/PageData';
 
 export const Form = () => {
   const { theme } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   const [ name, setName ] = useState<string>('');
   const [ nameAlert, setNameAlert ] = useState<string>('');
@@ -69,30 +71,30 @@ export const Form = () => {
       setEmail('');
       setPhone('');
       setMessage('');
-      alert('Message sent successfully!');
+      alert(pageData.contact.form.message.send[lang]);
     }
     if (name === '') {
-      setNameAlert('Please fill in the name field');
+      setNameAlert(pageData.contact.form.name.alert.empty[lang]);
       setShowNameAlert(true);
     }
     if (email === '') {
-      setEmailAlert('Please fill in the email field');
+      setEmailAlert(pageData.contact.form.email.alert.empty[lang]);
       setShowEmailAlert(true);
     } else if (!emailRegex.test(email)) {
-      setEmailAlert('Invalid email!');
+      setEmailAlert(pageData.contact.form.email.alert.invalid[lang]);
       setShowEmailAlert(true);
     }
     
     if (phone.length === 0) {
-      setPhoneAlert('Please fill in the phone field');
+      setPhoneAlert(pageData.contact.form.phone.alert.empty[lang]);
       setShowPhoneAlert(true);
     } else if (selectedDdi === '+55' && phone.length > 0 && phone.length < 11) {
-      setPhoneAlert('Invalid phone!');
+      setPhoneAlert(pageData.contact.form.phone.alert.invalid[lang]);
       setShowPhoneAlert(true);
     }
 
     if (message === '') {
-      setMessageAlert('Please fill in the message field');
+      setMessageAlert(pageData.contact.form.message.alert.empty[lang]);
       setShowMessageAlert(true);
     }
   }
@@ -121,7 +123,7 @@ export const Form = () => {
             name='name'
             type='text'
             value={name}
-            placeholder='Name*'
+            placeholder={pageData.contact.form.name.placeHolder[lang]}
             required
           />
           <p>{nameAlert}</p>
@@ -136,7 +138,7 @@ export const Form = () => {
             name='email'
             type='email'
             value={email}
-            placeholder='Email*'
+            placeholder={pageData.contact.form.email.placeHolder[lang]}
             required
           />
           <p>{emailAlert}</p>
@@ -162,7 +164,7 @@ export const Form = () => {
               type='text'
               value={phone}
               maxLength={(selectedDdi === '+55' ? 11 : 20)}
-              placeholder='Phone*'
+              placeholder={pageData.contact.form.phone.placeHolder[lang]}
               required
             />
           </div>
@@ -178,7 +180,7 @@ export const Form = () => {
             name='message'
             rows={7}
             value={message}
-            placeholder='Message*'
+            placeholder={pageData.contact.form.message.placeHolder[lang]}
             required
           />
           <p>{messageAlert}</p>
@@ -186,7 +188,7 @@ export const Form = () => {
       </div>
       
       <button onClick={handleClickSubmit}>
-        <p>Send Message</p>
+        <p>{pageData.button.sendMessage[lang]}</p>
         <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M10 14L21 3' stroke='#374047' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/>
           <path d='M20.9996 3L14.4996 21C14.4557 21.0957 14.3853 21.1769 14.2966 21.2338C14.208 21.2906 14.1049 21.3209 13.9996 21.3209C13.8943 21.3209 13.7912 21.2906 13.7025 21.2338C13.6139 21.1769 13.5435 21.0957 13.4996 21L9.99958 14L2.99958 10.5C2.90384 10.4561 2.82271 10.3857 2.76583 10.2971C2.70895 10.2084 2.67871 10.1053 2.67871 10C2.67871 9.89468 2.70895 9.79158 2.76583 9.70295C2.82271 9.61431 2.90384 9.54387 2.99958 9.5L20.9996 3Z' stroke='#374047' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/>

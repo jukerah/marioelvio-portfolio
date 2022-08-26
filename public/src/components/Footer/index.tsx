@@ -3,9 +3,11 @@ import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
+import { pageData } from "../../data/PageData";
 
 export const Footer = () => {
   const { theme } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   return (
     <C.Footer mode={theme.mode.status}>
@@ -43,7 +45,7 @@ export const Footer = () => {
           {svgs.socialButton.whatsapp}
         </a>
       </C.SocialButtons>
-      <p>© Copyright 2022 Mario Elvio. All rights reserved.</p>
+      <p>{pageData.footer[lang]}</p>
     </C.Footer>
   );
 };

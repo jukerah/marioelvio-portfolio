@@ -55,7 +55,14 @@ export const Container = styled.div<ContainerProps>`
 
     a { height: 32px; }
 
-    .container-button { display: none; }
+    .switch { display: none; }
+
+    .container-button {
+        display: none;
+        justify-content: space-between;
+
+        width: 200px
+    }
 
     svg {
         width: 160px;
@@ -74,9 +81,7 @@ export const Container = styled.div<ContainerProps>`
     @media (min-width: 1024px) {
         padding: 0 32px;
 
-        .container-button {
-            display: flex;
-            gap: 16px;
-        }
+        .switch,
+        .container-button { display: flex; }
     }
 `;

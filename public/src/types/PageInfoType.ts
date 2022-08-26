@@ -8,13 +8,27 @@ import { SoftSkillType } from "./SoftSkillType";
 import { LangType } from "./LangType";
 
 export type PageDataType = {
-    development: string;
+    development: LangType;
     htmlTitle: string;
     home: {
-        pageTitle: string;
+        pageTitle: LangType;
+        info: {
+            hello: {
+                en: React.ReactNode;
+                pt: React.ReactNode;
+            }
+            name: {
+                en: React.ReactNode;
+                pt: React.ReactNode;
+            }
+            work: {
+                en: React.ReactNode;
+                pt: React.ReactNode;
+            }
+          }
     }
     about: {
-        pageTitle: LangType,
+        pageTitle: LangType;
         personalResume: {
             title: LangType
             resume: LangType
@@ -56,7 +70,7 @@ export type PageDataType = {
             educationList: EducationType[];
         }
         courses: {
-            title: LangType
+            title: LangType;
             courseList: CourseType[];
         }
         certificates: {
@@ -101,16 +115,51 @@ export type PageDataType = {
         }
     }
     blog: {
-        name: string;
+        pageTitle: LangType;
     }
     contact: {
-        name: string;
+        pageTitle: LangType;
+        info: LangType;
+        form: {
+            name: {
+                placeHolder: LangType;
+                alert: {
+                    empty: LangType;
+                }
+            }
+            email: {
+                placeHolder: LangType;
+                alert: {
+                    empty: LangType;
+                    invalid: LangType;
+                }
+            }
+            phone: {
+                placeHolder: LangType;
+                alert: {
+                    empty: LangType;
+                    invalid: LangType;
+                }
+            }
+            message: {
+                placeHolder: LangType;
+                alert: {
+                    empty: LangType;
+                }
+                send: LangType;
+            }
+        }
     }
     login: {
-        name: string;
+        pageTitle: LangType;
     }
+    footer: LangType;
     button: {
         back: LangType;
         viewMore: LangType;
+        moreAboutMe: LangType;
+        myPortfolio: LangType;
+        login: LangType;
+        sendMessage: LangType;
     }
 }

@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
+import { pageData } from "../../data/PageData";
 import { svgs } from "../../data/SvgList";
 
 import { SwitchMode } from "../SwitchMode";
 import { LoginLogoutButton } from "../LoginLogoutButton";
+import { ChangeLang } from "../ChangeLang";
 
 export const MenuMobile = () => {
   const { theme, dispatch } = useContext(Context);
@@ -46,6 +48,7 @@ export const MenuMobile = () => {
 
 export const NavMobile = () => {
   const { theme, dispatch } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   const handleClickMenu = () => {
     if (theme.isMenuOpen.status) {
@@ -75,37 +78,44 @@ export const NavMobile = () => {
         <li id="home">
           <Link to={"/home"} onClick={handleClickMenu}>
             {svgs.systemIcon.home}
-            <p>Home</p>
+            <p>{pageData.home.pageTitle[lang]}</p>
           </Link>
         </li>
         <li id="about">
           <Link to={"/about"} onClick={handleClickMenu}>
             {svgs.systemIcon.user}
-            <p>About</p>
+            <p>{pageData.about.pageTitle[lang]}</p>
           </Link>
         </li>
         <li id="portfolio">
           <Link to={"/portfolio"} onClick={handleClickMenu}>
             {svgs.systemIcon.book}
-            <p>Portfolio</p>
+            <p>{pageData.portfolio.pageTitle[lang]}</p>
           </Link>
         </li>
         <li id="blog">
-          <Link to={"/blog"} onClick={handleClickMenu}>
+          <a
+            href="https://blog.marioelvio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {svgs.systemIcon.article}
-            <p>Blog</p>
-          </Link>
+            <p>{pageData.blog.pageTitle[lang]}</p>
+          </a>
         </li>
         <li id="contact">
           <Link to={"/contact"} onClick={handleClickMenu}>
             {svgs.systemIcon.mail}
-            <p>Contact</p>
+            <p>{pageData.contact.pageTitle[lang]}</p>
           </Link>
         </li>
       </ul>
       <C.ContainerButtons>
-        <SwitchMode />
-        <LoginLogoutButton />
+        <div className='top-line'>
+          <ChangeLang />
+          <SwitchMode />
+        </div>
+        <LoginLogoutButton/>
       </C.ContainerButtons>
     </C.NavMobile>
   );

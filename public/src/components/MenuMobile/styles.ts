@@ -62,7 +62,7 @@ interface NavMobileProps {
 }
 
 export const NavMobile = styled.nav<NavMobileProps>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--white'}); 
+    background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'}); 
 
     display: flex;
     flex-direction: column;
@@ -152,6 +152,11 @@ export const ContainerButtons = styled.div`
     padding: 16px 0;
 
     div { padding: 16px; }
+
+    .top-line {
+        display: flex;
+        gap: 32px;
+    }
 
     @media (max-width: 1024px)
        and (max-height: 600px) {

@@ -64,12 +64,12 @@ Summary
 * [X] Header
 * [X] Menu
 * [X] Footer
-* [ ] Multi-language
+* [X] Multi-language
 * [X] Home page
 * [X] About page
 * [X] Portfolio page
 * [X] Project page
-* [ ] Blog page
+* [X] Blog page
 * [X] Contact page
 * [ ] Login page
 <br />AdminPanel:

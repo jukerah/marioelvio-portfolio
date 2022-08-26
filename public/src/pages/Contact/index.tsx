@@ -5,9 +5,9 @@ import { Context } from '../../contexts/Contexts';
 import { svgs } from '../../data/SvgList';
 
 import { TitlePage } from '../../components/TitlePage';
-import { pageInfo } from '../../data/PageInfo';
 import { Form } from './Form';
 import { Footer } from '../../components/Footer';
+import { pageData } from '../../data/PageData';
 
 export interface Props {
   page: string;
@@ -15,6 +15,7 @@ export interface Props {
 
 export const ContactPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   useEffect(() => {
     if (props.page === 'contact') {
@@ -38,37 +39,37 @@ export const ContactPage = (props: Props) => {
       }
     >      
       <C.Container>
-        <TitlePage title={'Contact'} />
+        <TitlePage title={pageData.contact.pageTitle[lang]} />
         
         <C.ContainerInfoForm isMenuOpen={theme.isMenuOpen.status}>
           <C.Info
             mode={theme.mode.status}
             isMenuOpen={theme.isMenuOpen.status}
           >
-            <p className='description'>Get in touch through the form or through one of our contacts. I will reply as soon as possible.</p>
+            <p className='description'>{pageData.contact.info[lang]}</p>
             <ul>
               <li>
                 {svgs.systemIcon.phone}
-                <a href={`tel:${pageInfo.about.personalDetails.phone}`} target='_blank' rel='noopener noreferrer'>
-                  {pageInfo.about.personalDetails.phone}
+                <a href={`tel:${pageData.about.personalDetails.phone}`} target='_blank' rel='noopener noreferrer'>
+                  {pageData.about.personalDetails.phone}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.mail}
-                <a href={`mailto:${pageInfo.about.personalDetails.email}`} target='_blank' rel='noopener noreferrer'>
-                  {pageInfo.about.personalDetails.email}
+                <a href={`mailto:${pageData.about.personalDetails.email}`} target='_blank' rel='noopener noreferrer'>
+                  {pageData.about.personalDetails.email}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.linkedin}
-                <a href={pageInfo.about.personalDetails.linkedin.url} target='_blank' rel='noopener noreferrer'>
-                  {pageInfo.about.personalDetails.linkedin.text}
+                <a href={pageData.about.personalDetails.linkedin.url} target='_blank' rel='noopener noreferrer'>
+                  {pageData.about.personalDetails.linkedin.text}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.github}
-                <a href={pageInfo.about.personalDetails.github.url} target='_blank' rel='noopener noreferrer'>
-                  {pageInfo.about.personalDetails.github.text}
+                <a href={pageData.about.personalDetails.github.url} target='_blank' rel='noopener noreferrer'>
+                  {pageData.about.personalDetails.github.text}
                 </a>
               </li>
             </ul>

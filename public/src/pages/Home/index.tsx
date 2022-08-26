@@ -5,9 +5,11 @@ import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
 
 import { PrimaryButton } from "../../components/PrimaryButton";
+import { pageData } from "../../data/PageData";
 
 export const HomePage = (props: any) => {
   const { theme, dispatch } = useContext(Context);
+  const lang: string = theme.lang.status;
 
   useEffect(() => {
     if (props.page === "home") {
@@ -37,17 +39,16 @@ export const HomePage = (props: any) => {
         <C.ContainerInfo isMenuOpen={theme.isMenuOpen.status}>
           {svgs.avatar}
 
-          <C.Info mode={theme.mode.status}>
+          <C.Info
+            mode={theme.mode.status}
+            lang={lang}
+          >
             <h1 className="load-title">
-              <span className="title-hello">Hi there!</span>
+              {pageData.home.info.hello[lang]}
               <br />
-              <span className="title-name">
-                I'm Mario <span className="accent-color">Elvio</span>
-              </span>
+              {pageData.home.info.name[lang]}
               <br />
-              <span className="title-work">
-                <span className="accent-color">Front-end</span> developer
-              </span>
+              {pageData.home.info.work[lang]}
             </h1>
 
             <C.SocialButtons
@@ -94,7 +95,7 @@ export const HomePage = (props: any) => {
           isMenuOpen={theme.isMenuOpen.status}
         >
           <PrimaryButton
-            text={"More about me"}
+            text={pageData.button.moreAboutMe[lang]}
             backgroundColor={"--limed-spruce"}
             backgroundColorHover={"--de-york"}
             color={"--white"}
@@ -103,7 +104,7 @@ export const HomePage = (props: any) => {
           />
 
           <PrimaryButton
-            text={"My portfolio"}
+            text={pageData.button.myPortfolio[lang]}
             backgroundColor={"--skeptic"}
             backgroundColorHover={"--de-york"}
             color={"--limed-spruce"}
