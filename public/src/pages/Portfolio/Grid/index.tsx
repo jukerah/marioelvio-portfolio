@@ -5,7 +5,7 @@ import { ProjectType } from "../../../types/ProjectType";
 import { NoDataFound } from "../NoDataFound";
 
 interface Props {
-  ProjectList: ProjectType[];
+  projectList: ProjectType[];
   searchProject: string;
 }
 
@@ -14,7 +14,7 @@ export const GridMode = (props: Props) => {
     return item.category.includes(props.searchProject);
   }
 
-  const countBannerList: number = props.ProjectList.filter(projectFilter).length;
+  const countBannerList: number = props.projectList.filter(projectFilter).length;
 
   if (countBannerList === 0) {
     return (
@@ -23,8 +23,8 @@ export const GridMode = (props: Props) => {
   } else {
     return (
       <C.ContainerGrid>
-        {props.ProjectList.map((project: ProjectType, index:number) =>
-          project.category.includes(props.searchProject) && (
+        {props.searchProject === 'All' &&
+          (props.projectList.map((project: ProjectType, index:number) =>
             <Project
               key={index}
               name={project.name}
@@ -32,7 +32,19 @@ export const GridMode = (props: Props) => {
               alt={project.alt}
               url={project.url}
             />
-          )
+          ))
+        }
+        {props.searchProject !== 'All' &&
+          (props.projectList.map((project: ProjectType, index:number) =>
+            project.category.includes(props.searchProject) && (
+              <Project
+                key={index}
+                name={project.name}
+                src={project.img}
+                alt={project.alt}
+                url={project.url}
+              />
+          ))
         )}
       </C.ContainerGrid>
     );

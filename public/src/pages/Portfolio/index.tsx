@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
+import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
-import { pageData } from "../../data/PageData";
 
 import { TitlePage } from "../../components/TitlePage";
 import { SliderMode } from "./Slider";
@@ -20,6 +20,11 @@ export const PortfolioPage = (props: Props) => {
 
   const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
   const [ searchValue, setSearchValue ] = useState<string>("All");
+
+  const portfolio = {
+    title: pageInfo.portfolio.pageTitle[ lang as keyof typeof pageInfo.portfolio.pageTitle ],
+    projectList: pageInfo.portfolio.project.list
+  }
 
   useEffect(() => {
     if (props.page === "portfolio") {
@@ -41,7 +46,7 @@ export const PortfolioPage = (props: Props) => {
   return (
     <C.PortfolioSection mode={theme.mode.status}>
       <C.Container>
-        <TitlePage title={pageData.portfolio.pageTitle[lang]} />
+        <TitlePage title={portfolio.title} />
 
         <C.ContainerButtons>
           <C.SelectButton
@@ -75,14 +80,14 @@ export const PortfolioPage = (props: Props) => {
         <C.ContainerPortfolio>
           {(showMode === 'slider') &&
             <SliderMode
-              ProjectList={pageData.portfolio.project.list}
+              projectList={portfolio.projectList}
               searchProject={searchValue}
             />
           }
 
           {(showMode === 'grid') &&
             <GridMode
-              ProjectList={pageData.portfolio.project.list}
+              projectList={portfolio.projectList}
               searchProject={searchValue}
             />
           }

@@ -2,11 +2,44 @@ import { useContext, useEffect, useState, useMemo } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../../contexts/Contexts';
-import { pageData } from '../../../data/PageData';
+import { pageInfo } from '../../../data/PageInfo';
+import { svgs } from '../../../data/SvgList';
 
 export const Form = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
+
+  const form = {
+    name: {
+      placeHolder: pageInfo.contact.form.name.placeHolder[ lang as keyof typeof pageInfo.contact.form.name.placeHolder ],
+      alert: {
+        empty: pageInfo.contact.form.name.alert.empty[ lang as keyof typeof pageInfo.contact.form.name.alert.empty ]
+      }
+    },
+    email: {
+      placeHolder: pageInfo.contact.form.email.placeHolder[ lang as keyof typeof pageInfo.contact.form.email.placeHolder ],
+      alert: {
+        empty: pageInfo.contact.form.email.alert.empty[ lang as keyof typeof pageInfo.contact.form.email.alert.empty ],
+        invalid: pageInfo.contact.form.email.alert.invalid[ lang as keyof typeof pageInfo.contact.form.email.alert.invalid ]
+      }
+    },
+    phone: {
+      placeHolder: pageInfo.contact.form.phone.placeHolder[ lang as keyof typeof pageInfo.contact.form.phone.placeHolder ],
+      alert: {
+        empty: pageInfo.contact.form.phone.alert.empty[ lang as keyof typeof pageInfo.contact.form.phone.alert.empty ],
+        invalid: pageInfo.contact.form.phone.alert.invalid[ lang as keyof typeof pageInfo.contact.form.phone.alert.invalid ]
+      },
+      ddiList: pageInfo.contact.form.phone.ddiList
+    },
+    message: {
+      placeHolder: pageInfo.contact.form.message.placeHolder[ lang as keyof typeof pageInfo.contact.form.message.placeHolder ],
+      alert: {
+        empty: pageInfo.contact.form.message.alert.empty[ lang as keyof typeof pageInfo.contact.form.message.alert.empty ],
+      },
+      send: pageInfo.contact.form.message.send[ lang as keyof typeof pageInfo.contact.form.message.send ]
+    },
+    button: pageInfo.button.sendMessage[ lang as keyof typeof pageInfo.button.sendMessage ]
+  }
 
   const [ name, setName ] = useState<string>('');
   const [ nameAlert, setNameAlert ] = useState<string>('');
@@ -23,7 +56,6 @@ export const Form = () => {
   const [ phoneAlert, setPhoneAlert ] = useState<string>('');
   const [ showPhoneAlert, setShowPhoneAlert ] = useState<boolean>(false);
   const [ isValitedPhone, setIsValitedPhone ] = useState<boolean>(false);
-  const ddiList: string[] = [ '+1', '+7', '+20', '+27', '+30', '+31', '+32', '+33', '+34', '+36', '+39', '+40', '+41', '+43', '+44', '+45', '+46', '+47', '+48', '+49', '+51', '+52', '+53', '+54', '+55', '+56', '+57', '+58', '+60', '+61', '+62', '+63', '+64', '+65', '+66', '+81', '+82', '+84', '+86', '+90', '+91', '+92', '+93', '+94', '+95', '+98', '+212', '+213', '+216', '+218', '+220', '+221', '+222', '+223', '+224', '+225', '+226', '+227', '+228', '+229', '+230', '+231', '+232', '+233', '+234', '+235', '+236', '+237', '+238', '+239', '+240', '+241', '+242', '+243', '+244', '+245', '+246', '+247', '+248', '+249', '+250', '+251', '+252', '+253', '+254', '+255', '+256', '+257', '+258', '+260', '+261', '+262', '+263', '+264', '+265', '+266', '+267', '+268', '+269', '+269', '+290', '+290', '+291', '+297', '+298', '+299', '+350', '+351', '+352', '+353', '+354', '+355', '+356', '+357', '+358', '+359', '+370', '+371', '+372', '+373', '+374', '+375', '+376', '+377', '+378', '+379', '+380', '+381', '+382', '+385', '+386', '+387', '+388', '+389', '+420', '+421', '+423', '+500', '+501', '+502', '+503', '+504', '+505', '+506', '+507', '+508', '+509', '+590', '+591', '+592', '+593', '+594', '+595', '+596', '+597', '+598', '+599', '+670', '+672', '+673', '+674', '+675', '+676', '+677', '+678', '+679', '+680', '+681', '+682', '+683', '+685', '+686', '+687', '+688', '+689', '+690', '+691', '+692', '+800', '+808', '+850', '+852', '+853', '+855', '+856', '+870', '+878', '+880', '+881', '+882', '+883', '+886', '+888', '+960', '+961', '+962', '+963', '+964', '+965', '+966', '+967', '+968', '+970', '+971', '+972', '+973', '+974', '+975', '+976', '+977', '+979', '+991', '+992', '+993', '+994', '+995', '+996', '+998' ];
   const [ selectedDdi, setSelectedDdi ] = useState<string>('+55');
 
   const [ message, setMessage ] = useState<string>('');
@@ -71,30 +103,30 @@ export const Form = () => {
       setEmail('');
       setPhone('');
       setMessage('');
-      alert(pageData.contact.form.message.send[lang]);
+      alert(form.message.send);
     }
     if (name === '') {
-      setNameAlert(pageData.contact.form.name.alert.empty[lang]);
+      setNameAlert(form.name.alert.empty);
       setShowNameAlert(true);
     }
     if (email === '') {
-      setEmailAlert(pageData.contact.form.email.alert.empty[lang]);
+      setEmailAlert(form.email.alert.empty);
       setShowEmailAlert(true);
     } else if (!emailRegex.test(email)) {
-      setEmailAlert(pageData.contact.form.email.alert.invalid[lang]);
+      setEmailAlert(form.email.alert.invalid);
       setShowEmailAlert(true);
     }
     
     if (phone.length === 0) {
-      setPhoneAlert(pageData.contact.form.phone.alert.empty[lang]);
+      setPhoneAlert(form.phone.alert.empty);
       setShowPhoneAlert(true);
     } else if (selectedDdi === '+55' && phone.length > 0 && phone.length < 11) {
-      setPhoneAlert(pageData.contact.form.phone.alert.invalid[lang]);
+      setPhoneAlert(form.phone.alert.invalid);
       setShowPhoneAlert(true);
     }
 
     if (message === '') {
-      setMessageAlert(pageData.contact.form.message.alert.empty[lang]);
+      setMessageAlert(form.message.alert.empty);
       setShowMessageAlert(true);
     }
   }
@@ -123,7 +155,7 @@ export const Form = () => {
             name='name'
             type='text'
             value={name}
-            placeholder={pageData.contact.form.name.placeHolder[lang]}
+            placeholder={form.name.placeHolder}
             required
           />
           <p>{nameAlert}</p>
@@ -138,7 +170,7 @@ export const Form = () => {
             name='email'
             type='email'
             value={email}
-            placeholder={pageData.contact.form.email.placeHolder[lang]}
+            placeholder={form.email.placeHolder}
             required
           />
           <p>{emailAlert}</p>
@@ -150,7 +182,7 @@ export const Form = () => {
               mode={theme.mode.status}
               value={selectedDdi}
             >
-              {ddiList.map((code: string, index:number) => 
+              {form.phone.ddiList.map((code: string, index:number) => 
                 <option key={index} value={code}>{code}</option>
               )}
             </C.Select>
@@ -164,7 +196,7 @@ export const Form = () => {
               type='text'
               value={phone}
               maxLength={(selectedDdi === '+55' ? 11 : 20)}
-              placeholder={pageData.contact.form.phone.placeHolder[lang]}
+              placeholder={form.phone.placeHolder}
               required
             />
           </div>
@@ -180,7 +212,7 @@ export const Form = () => {
             name='message'
             rows={7}
             value={message}
-            placeholder={pageData.contact.form.message.placeHolder[lang]}
+            placeholder={form.message.placeHolder}
             required
           />
           <p>{messageAlert}</p>
@@ -188,11 +220,8 @@ export const Form = () => {
       </div>
       
       <button onClick={handleClickSubmit}>
-        <p>{pageData.button.sendMessage[lang]}</p>
-        <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <path d='M10 14L21 3' stroke='#374047' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/>
-          <path d='M20.9996 3L14.4996 21C14.4557 21.0957 14.3853 21.1769 14.2966 21.2338C14.208 21.2906 14.1049 21.3209 13.9996 21.3209C13.8943 21.3209 13.7912 21.2906 13.7025 21.2338C13.6139 21.1769 13.5435 21.0957 13.4996 21L9.99958 14L2.99958 10.5C2.90384 10.4561 2.82271 10.3857 2.76583 10.2971C2.70895 10.2084 2.67871 10.1053 2.67871 10C2.67871 9.89468 2.70895 9.79158 2.76583 9.70295C2.82271 9.61431 2.90384 9.54387 2.99958 9.5L20.9996 3Z' stroke='#374047' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/>
-        </svg>
+        <p>{form.button}</p>
+        {svgs.systemIcon.send}
       </button>
     </C.Form>
   );

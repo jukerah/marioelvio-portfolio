@@ -9,7 +9,7 @@ import { ProjectType } from "../../../types/ProjectType"
 import { NoDataFound } from "../NoDataFound";
 
 interface Props {
-  ProjectList: ProjectType[];
+  projectList: ProjectType[];
   searchProject: string;
 }
 
@@ -31,7 +31,7 @@ export const SliderMode = (props: Props) => {
     return item.category.includes(props.searchProject);
   }
 
-  const countBannerList: number = props.ProjectList.filter(projectFilter).length;
+  const countBannerList: number = props.projectList.filter(projectFilter).length;
 
   useEffect(() => {
     setActiveBanner(0);
@@ -60,7 +60,19 @@ export const SliderMode = (props: Props) => {
             position={activeBanner * 100}
             countBanner={countBannerList}
           >
-            {props.ProjectList.map((project: any, index:number) =>
+            {props.searchProject === 'All' &&
+              (props.projectList.map((project: ProjectType, index:number) =>
+                <Project
+                  key={index}
+                  name={project.name}
+                  src={project.img}
+                  alt={project.alt}
+                  url={project.url}
+                />
+              ))
+            }
+            {props.searchProject !== 'All' &&
+              (props.projectList.map((project: ProjectType, index:number) =>
                 project.category.includes(props.searchProject) && (
                   <Project
                     key={index}
@@ -69,7 +81,7 @@ export const SliderMode = (props: Props) => {
                     alt={project.alt}
                     url={project.url}
                   />
-                )
+              ))
             )}
           </C.ContainerProject>
 

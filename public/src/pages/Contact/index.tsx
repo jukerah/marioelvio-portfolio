@@ -8,6 +8,7 @@ import { TitlePage } from '../../components/TitlePage';
 import { Form } from './Form';
 import { Footer } from '../../components/Footer';
 import { pageData } from '../../data/PageData';
+import { pageInfo } from '../../data/PageInfo';
 
 export interface Props {
   page: string;
@@ -16,6 +17,23 @@ export interface Props {
 export const ContactPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
   const lang: string = theme.lang.status;
+
+  const contact = {
+    title: pageInfo.contact.pageTitle[ lang as keyof typeof pageInfo.contact.pageTitle ],
+    info: {
+      description: pageInfo.contact.info[ lang as keyof typeof pageInfo.contact.info ],
+      phone: pageInfo.about.personalDetails.phone,
+      email: pageInfo.about.personalDetails.email,
+      linkedin: {
+        text: pageData.about.personalDetails.linkedin.text,
+        url: pageData.about.personalDetails.linkedin.url,
+      },
+      github: {
+        text: pageData.about.personalDetails.linkedin.text,
+        url: pageData.about.personalDetails.linkedin.url,
+      }
+    }
+  }
 
   useEffect(() => {
     if (props.page === 'contact') {
@@ -39,37 +57,37 @@ export const ContactPage = (props: Props) => {
       }
     >      
       <C.Container>
-        <TitlePage title={pageData.contact.pageTitle[lang]} />
+        <TitlePage title={contact.title} />
         
         <C.ContainerInfoForm isMenuOpen={theme.isMenuOpen.status}>
           <C.Info
             mode={theme.mode.status}
             isMenuOpen={theme.isMenuOpen.status}
           >
-            <p className='description'>{pageData.contact.info[lang]}</p>
+            <p className='description'>{contact.info.description}</p>
             <ul>
               <li>
                 {svgs.systemIcon.phone}
-                <a href={`tel:${pageData.about.personalDetails.phone}`} target='_blank' rel='noopener noreferrer'>
-                  {pageData.about.personalDetails.phone}
+                <a href={`tel:${contact.info.phone}`} target='_blank' rel='noopener noreferrer'>
+                  {contact.info.phone}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.mail}
-                <a href={`mailto:${pageData.about.personalDetails.email}`} target='_blank' rel='noopener noreferrer'>
-                  {pageData.about.personalDetails.email}
+                <a href={`mailto:${contact.info.email}`} target='_blank' rel='noopener noreferrer'>
+                  {contact.info.email}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.linkedin}
-                <a href={pageData.about.personalDetails.linkedin.url} target='_blank' rel='noopener noreferrer'>
-                  {pageData.about.personalDetails.linkedin.text}
+                <a href={contact.info.linkedin.url} target='_blank' rel='noopener noreferrer'>
+                  {contact.info.linkedin.text}
                 </a>
               </li>
               <li>
                 {svgs.systemIcon.github}
-                <a href={pageData.about.personalDetails.github.url} target='_blank' rel='noopener noreferrer'>
-                  {pageData.about.personalDetails.github.text}
+                <a href={contact.info.github.url} target='_blank' rel='noopener noreferrer'>
+                  {contact.info.github.text}
                 </a>
               </li>
             </ul>

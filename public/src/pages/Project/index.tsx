@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
+import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
 import { ProjectType } from "../../types/ProjectType";
 
-import { pageData } from "../../data/PageData";
 import { Footer } from "../../components/Footer";
 import { BackButton } from "../../components/BackButton";
 
@@ -20,8 +20,28 @@ export const ProjectPage = (props: Props) => {
   const params = useParams();
 
   const searchProject = (project: ProjectType) => { return project.url === params.slug; }    
-  const projectInfo = pageData.portfolio.project.list.filter(searchProject);
-  const project = projectInfo[0];
+  const projectFilter = pageInfo.portfolio.project.list.filter(searchProject);
+  const projectFiltered = projectFilter[0];
+
+  const project = {
+    name: projectFiltered.name,
+    img: projectFiltered.img,
+    alt: projectFiltered.alt,
+    about: {
+      title: pageInfo.portfolio.project.aboutProject[ lang as keyof typeof pageInfo.portfolio.project.aboutProject ],
+      description: projectFiltered.description[ lang as keyof typeof projectFiltered.description ]
+    },
+    technologies: {
+      title: pageInfo.portfolio.project.projectTechnologies[ lang as keyof typeof pageInfo.portfolio.project.projectTechnologies ],
+      list: projectFiltered.technologies
+    },
+    resources: {
+      title: pageInfo.portfolio.project.resources[ lang as keyof typeof pageInfo.portfolio.project.resources ],
+      webSite: projectFiltered.resources.webSite,
+      figma: projectFiltered.resources.figma,
+      github: projectFiltered.resources.gitHub
+    }
+  }
 
   useEffect(() => {
     if (props.page === "project") {
@@ -47,15 +67,15 @@ export const ProjectPage = (props: Props) => {
         <img src={project.img} alt={project.alt}/>
 
         <C.Description mode={theme.mode.status}>
-          <h2>{pageData.portfolio.project.aboutProject[lang]}</h2>
-          <p>{project.description[lang]}</p>
+          <h2>{project.about.title}</h2>
+          <p>{project.about.description}</p>
         </C.Description>
 
         <C.ContainerTechRes isMenuOpen={theme.isMenuOpen.status}>
           <C.Technologies mode={theme.mode.status}>
-            <h2>{pageData.portfolio.project.projectTechnologies[lang]}</h2>
+            <h2>{project.technologies.title}</h2>
             <ul>
-              {project.technologies.map((tech:string, index:number) => (
+              {project.technologies.list.map((tech: string, index: number) => (
                 <li key={index}>
                   <p>{tech}</p>
                 </li>
@@ -65,9 +85,9 @@ export const ProjectPage = (props: Props) => {
 
           <C.Resources mode={theme.mode.status}>
             {(project.resources.webSite !== "" ||
-                project.resources.gitHub !== "" ||
+                project.resources.github !== "" ||
                 project.resources.figma !== "") &&
-              <h2>{pageData.portfolio.project.resources[lang]}</h2>
+              <h2>{project.resources.title}</h2>
             }
             <ul>
               {(project.resources.webSite !== "") &&
@@ -79,9 +99,9 @@ export const ProjectPage = (props: Props) => {
                 </li>
               }
 
-              {(project.resources.gitHub !== "") &&
+              {(project.resources.github !== "") &&
                 <li>
-                  <a href={project.resources.gitHub} target="_blank" rel="noopener noreferrer">
+                  <a href={project.resources.github} target="_blank" rel="noopener noreferrer">
                     {svgs.systemIcon.github}
                     <p>GitHub</p>
                   </a>

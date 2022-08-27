@@ -139,7 +139,8 @@ export type PageDataType = {
                 alert: {
                     empty: LangType;
                     invalid: LangType;
-                }
+                },
+                ddiList: string[];
             }
             message: {
                 placeHolder: LangType;

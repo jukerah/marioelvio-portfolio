@@ -23,7 +23,7 @@ function App() {
             mode={theme.mode.status}
             isMenuOpen={theme.isMenuOpen.status}
           >
-            <Header />        
+            <Header />
             <RouteList />
           </C.ContainerMain>
 

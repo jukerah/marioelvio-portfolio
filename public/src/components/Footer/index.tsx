@@ -9,6 +9,10 @@ export const Footer = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
+  const footer = {
+    text: pageData.footer[ lang as keyof typeof pageData.footer ]
+  }
+
   return (
     <C.Footer mode={theme.mode.status}>
       <C.SocialButtons mode={theme.mode.status}>
@@ -45,7 +49,7 @@ export const Footer = () => {
           {svgs.socialButton.whatsapp}
         </a>
       </C.SocialButtons>
-      <p>{pageData.footer[lang]}</p>
+      <p>{footer.text}</p>
     </C.Footer>
   );
 };

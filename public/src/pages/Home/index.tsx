@@ -2,14 +2,26 @@ import { useContext, useEffect } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
+import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
 
 import { PrimaryButton } from "../../components/PrimaryButton";
-import { pageData } from "../../data/PageData";
 
 export const HomePage = (props: any) => {
   const { theme, dispatch } = useContext(Context);
   const lang: string = theme.lang.status;
+
+  const home = {
+    info: {
+      hello: pageInfo.home.info.hello[ lang as keyof typeof pageInfo.home.info.hello ],
+      name: pageInfo.home.info.name[ lang as keyof typeof pageInfo.home.info.name ],
+      work: pageInfo.home.info.work[ lang as keyof typeof pageInfo.home.info.work ]
+    },
+    button: {
+      moreAboutMe: pageInfo.button.moreAboutMe[ lang as keyof typeof pageInfo.button.moreAboutMe ],
+      myPortfolio: pageInfo.button.myPortfolio[ lang as keyof typeof pageInfo.button.myPortfolio ]
+    }
+  }
 
   useEffect(() => {
     if (props.page === "home") {
@@ -44,11 +56,11 @@ export const HomePage = (props: any) => {
             lang={lang}
           >
             <h1 className="load-title">
-              {pageData.home.info.hello[lang]}
+              {home.info.hello}
               <br />
-              {pageData.home.info.name[lang]}
+              {home.info.name}
               <br />
-              {pageData.home.info.work[lang]}
+              {home.info.work}
             </h1>
 
             <C.SocialButtons
@@ -95,7 +107,7 @@ export const HomePage = (props: any) => {
           isMenuOpen={theme.isMenuOpen.status}
         >
           <PrimaryButton
-            text={pageData.button.moreAboutMe[lang]}
+            text={home.button.moreAboutMe}
             backgroundColor={"--limed-spruce"}
             backgroundColorHover={"--de-york"}
             color={"--white"}
@@ -104,7 +116,7 @@ export const HomePage = (props: any) => {
           />
 
           <PrimaryButton
-            text={pageData.button.myPortfolio[lang]}
+            text={home.button.myPortfolio}
             backgroundColor={"--skeptic"}
             backgroundColorHover={"--de-york"}
             color={"--limed-spruce"}
