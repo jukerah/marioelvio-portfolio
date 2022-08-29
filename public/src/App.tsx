@@ -12,7 +12,7 @@ function App() {
   const { theme } = useContext(Context);
 
   return (
-    <div>
+    <>
         <GlobalStyle />
         
         <C.ContainerWeb>
@@ -28,7 +28,7 @@ function App() {
           </C.ContainerMain>
 
         </C.ContainerWeb> 
-    </div>
+    </>
   );
 }
 

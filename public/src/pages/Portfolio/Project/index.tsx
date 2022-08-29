@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
-import { pageData } from "../../../data/PageData";
+import { pageInfo } from "../../data/PageInfo";
 
 interface Props {
   name: string;
@@ -18,7 +18,7 @@ export const Project = (props: Props) => {
 
   const project = {
     name: props.name,
-    button: pageData.button.viewMore[ lang as keyof typeof pageData.button.viewMore ],
+    button: pageInfo.button.viewMore[ lang as keyof typeof pageInfo.button.viewMore ],
     img: {
       src: props.src,
       alt: props.alt
