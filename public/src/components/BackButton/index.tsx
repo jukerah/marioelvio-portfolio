@@ -15,6 +15,10 @@ export const BackButton = (props: Props) => {
   const lang: string = theme.lang.status;
   const navigate = useNavigate();
 
+  const button = {
+    text: pageInfo.button.back[ lang as keyof typeof pageInfo.button.back ]
+  }
+
   const handleBackButton = () => { navigate(`${props.url}`); }
 
   return (
@@ -23,7 +27,7 @@ export const BackButton = (props: Props) => {
       onClick={handleBackButton}
     >
       {svgs.systemIcon.back}
-      <p>{pageInfo.button.back[ lang as keyof typeof pageInfo.button.back ]}</p>
+      <p>{button.text}</p>
     </C.BackButton>
   );
 };

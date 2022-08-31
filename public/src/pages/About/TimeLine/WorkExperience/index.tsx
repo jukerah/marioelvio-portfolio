@@ -2,60 +2,66 @@ import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { pageData } from "../../../../data/PageData";
+import { pageInfo } from "../../../../data/PageInfo";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
 import { ContainerLine } from "../ContainerLine";
 import { ContainerInfo } from "../ContainerInfo";
 import { ViewMoreButton } from "../ViewMoreButton";
+import { WorkExperienceType } from "../../../../types/WorkExperienceType";
 
 export const WorkExperience = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
-  const [countWork] = useState<number>(pageData.about.workExperience.workList.length);
+  const [countWork] = useState<number>(pageInfo.about.workExperience.workList.length);
   const [showWork, setShowWork] = useState<number>(2);
+
+  const workExperience = {
+    title: pageInfo.about.workExperience.title[ lang as keyof typeof pageInfo.about.workExperience.title ],
+    list: pageInfo.about.workExperience.workList
+  }
 
   return (
     <C.ContainerWorkExperience isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={pageData.about.workExperience.title[lang]} />
+      <SubTitle subTitle={workExperience.title} />
 
       <C.WorkExperience>
         <>
-          {pageData.about.workExperience.workList.map((workExperience: any, index: number) => index <= showWork && (
+          {workExperience.list.map((work: WorkExperienceType, index: number) => index <= showWork && (
             <Card
-              key={workExperience.id}
+              key={work.id}
               content={<>
                 <ContainerInfo content={
                   <C.WorkInfo mode={theme.mode.status}>
                     <h3>
                       <span className="job-role color-hover">
-                        {workExperience.jobRole[lang]}
+                        {work.jobRole[ lang as keyof typeof work.jobRole ]}
                       </span>
                       <> | </>
-                      {workExperience.company}
+                      {work.company}
                     </h3>
                     <p className="period-seniority">
-                      {workExperience.start}
+                      {work.start}
                       <> - </>
-                      {workExperience.currentStatus
-                        ? (<>{workExperience.current[lang]}</>)
-                        : (<>{workExperience.theEnd}</>)
+                      {work.currentStatus
+                        ? (<>{work.current[ lang as keyof typeof work.current ]}</>)
+                        : (<>{work.theEnd}</>)
                       }
-                      {workExperience.seniority[lang] !== "" && (
+                      {work.seniority[ lang as keyof typeof work.seniority ] !== "" && (
                         <>
                           <> | </>
                           <span className="seniority color-hover">
-                            {workExperience.seniority[lang]}
+                            {work.seniority[ lang as keyof typeof work.seniority ]}
                           </span>
                         </>
                       )}
                     </p>
                     <p>
                       <span className="activities color-hover">
-                      {pageData.about.workExperience.activities[lang]}
+                      {pageInfo.about.workExperience.activities[ lang as keyof typeof pageInfo.about.workExperience.activities ]}
                       </span>
-                      <> {workExperience.activities[lang]}</>
+                      <> {work.activities[ lang as keyof typeof work.activities ]}</>
                     </p>
                   </C.WorkInfo>
                 }/>

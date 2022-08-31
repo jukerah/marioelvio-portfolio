@@ -3,12 +3,20 @@ import { Link } from "react-router-dom";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
-import { pageData } from "../../data/PageData";
+import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
 
 export const MenuDesktop = () => {
   const { theme, dispatch } = useContext(Context);
   const lang: string = theme.lang.status;
+
+  const menu = {
+    home: pageInfo.home.pageTitle[ lang as keyof typeof pageInfo.home.pageTitle ],
+    about: pageInfo.about.pageTitle[ lang as keyof typeof pageInfo.about.pageTitle ],
+    portfolio: pageInfo.portfolio.pageTitle[ lang as keyof typeof pageInfo.portfolio.pageTitle ],
+    blog: pageInfo.blog.pageTitle[ lang as keyof typeof pageInfo.blog.pageTitle ],
+    contact: pageInfo.contact.pageTitle[ lang as keyof typeof pageInfo.contact.pageTitle ]
+  }
 
   const handleClickMenu = () => {
     if (theme.isMenuOpen.status) {
@@ -54,19 +62,19 @@ export const MenuDesktop = () => {
           <li id="home">
             <Link to={'/home'}>
               {svgs.systemIcon.home}
-              <p>{pageData.home.pageTitle[lang]}</p>
+              <p>{menu.home}</p>
             </Link>
           </li>
           <li id="about">
             <Link to={'/about'}>
               {svgs.systemIcon.user}
-              <p>{pageData.about.pageTitle[lang]}</p>
+              <p>{menu.about}</p>
             </Link>
           </li>
           <li id="portfolio">
             <Link to={'/portfolio'}>
               {svgs.systemIcon.book}
-              <p>{pageData.portfolio.pageTitle[lang]}</p>
+              <p>{menu.portfolio}</p>
             </Link>
           </li>
           <li id="blog">
@@ -76,13 +84,13 @@ export const MenuDesktop = () => {
               rel="noopener noreferrer"
             >
               {svgs.systemIcon.article}
-              <p>{pageData.blog.pageTitle[lang]}</p>
+              <p>{menu.blog}</p>
             </a>
           </li>
           <li id="contact">
             <Link to={'/contact'}>
               {svgs.systemIcon.mail}
-              <p>{pageData.contact.pageTitle[lang]}</p>
+              <p>{menu.contact}</p>
             </Link>
           </li>
         </ul>

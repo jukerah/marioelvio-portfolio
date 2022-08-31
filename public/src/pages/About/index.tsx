@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
-import { pageData } from "../../data/PageData";
+import { pageInfo } from "../../data/PageInfo";
 
 import { TitlePage } from "../../components/TitlePage";
 import { Resume } from "./Resume";
@@ -22,6 +22,18 @@ export const AboutPage = (props: Props) => {
   const { theme, dispatch } = useContext(Context);
   const lang: string = theme.lang.status;
 
+  const about = {
+    title: pageInfo.about.pageTitle[ lang as keyof typeof pageInfo.about.pageTitle ],
+    personalResume: {
+      title: pageInfo.about.personalResume.title[ lang as keyof typeof pageInfo.about.personalResume.title ],
+      resume: pageInfo.about.personalResume.resume[ lang as keyof typeof pageInfo.about.personalResume.resume ]
+    },
+    professionalResume: {
+      title: pageInfo.about.professionalResume.title[ lang as keyof typeof pageInfo.about.professionalResume.title ],
+      resume: pageInfo.about.professionalResume.resume[ lang as keyof typeof pageInfo.about.professionalResume.resume ]
+    }
+  }
+
   useEffect(() => {
     if (props.page === "about") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -38,16 +50,16 @@ export const AboutPage = (props: Props) => {
   return (
     <C.AboutSection mode={theme.mode.status}>
       <C.Container>
-        <TitlePage title={pageData.about.pageTitle[lang]} />
+        <TitlePage title={about.title} />
 
         <Resume
-          title={pageData.about.personalResume.title[lang]}
-          description={pageData.about.personalResume.resume[lang]}
+          title={about.personalResume.title}
+          description={about.personalResume.resume}
         />
 
         <Resume
-          title={pageData.about.professionalResume.title[lang]}
-          description={pageData.about.professionalResume.resume[lang]}
+          title={about.professionalResume.title}
+          description={about.professionalResume.resume}
         />
 
         <MyInterests />

@@ -2,27 +2,33 @@ import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { pageData } from "../../../../data/PageData";
+import { pageInfo } from "../../../../data/PageInfo";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
 import { ContainerLine } from "../ContainerLine";
 import { ContainerInfo } from "../ContainerInfo";
 import { ViewMoreButton } from "../ViewMoreButton";
+import { EducationType } from "../../../../types/EducationType";
 
 export const Education = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
-  const [countEducation] = useState<number>(pageData.about.education.educationList.length);
+  const [countEducation] = useState<number>(pageInfo.about.education.educationList.length);
   const [showEducation, setShowEducation] = useState<number>(2);
+
+  const education = {
+    title: pageInfo.about.education.title[ lang as keyof typeof pageInfo.about.education.title ],
+    list: pageInfo.about.education.educationList
+  }
 
   return (
     <C.ContainerEducation isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={pageData.about.education.title[lang]} />
+      <SubTitle subTitle={education.title} />
 
       <C.Education>
         <>
-          {pageData.about.education.educationList.map((education: any, index: number) => index <= showEducation && (
+          {education.list.map((education: EducationType, index: number) => index <= showEducation && (
             <Card
               key={education.id}
               content={<>
@@ -31,7 +37,7 @@ export const Education = () => {
                 <ContainerInfo content={
                   <C.EducationInfo mode={theme.mode.status}>
                     <h3 className="course color-hover">
-                      {education.course[lang]}
+                      {education.course[ lang as keyof typeof education.course ]}
                     </h3>
                     <p>
                       {education.start}

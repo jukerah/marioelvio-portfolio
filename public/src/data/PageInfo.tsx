@@ -6,6 +6,12 @@ export const pageInfo: PageDataType = {
     pt: "Site em desenvolvimento, acompanhe as novidades aqui ou no GitHub:"
   },
   htmlTitle: "Mario Elvio | Front-end developer",
+  header: {
+    logo: {
+      en: "Mario Elvio logo",
+      pt: "Logotipo Mario Elvio"
+    }
+  },
   home: {
     pageTitle: {
       en: "Home",

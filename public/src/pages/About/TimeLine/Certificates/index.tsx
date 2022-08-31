@@ -2,26 +2,32 @@ import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { pageData } from "../../../../data/PageData";
+import { pageInfo } from "../../../../data/PageInfo";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
 import { ContainerLine } from "../ContainerLine";
 import { ContainerInfo } from "../ContainerInfo";
 import { ViewMoreButton } from "../ViewMoreButton";
+import { CertificateType } from "../../../../types/CertificateType";
 
 export const Certificates = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
-  const [countCertificates] = useState<number>(pageData.about.certificates.certificateList.length);
+  const [countCertificates] = useState<number>(pageInfo.about.certificates.certificateList.length);
   const [showCertificates, setShowCertificates] = useState<number>(2);
+
+  const certificates = {
+    title: pageInfo.about.certificates.title[ lang as keyof typeof pageInfo.about.certificates.title ],
+    list: pageInfo.about.certificates.certificateList
+  }
 
   return (
     <C.ContainerCertificates isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={pageData.about.certificates.title[lang]} />
+      <SubTitle subTitle={certificates.title} />
 
       <C.Certificates><>
-        {pageData.about.certificates.certificateList.map((certificate: any, index: number) => index <= showCertificates && (
+        {certificates.list.map((certificate: CertificateType, index: number) => index <= showCertificates && (
           <Card
             key={certificate.id}
             content={<>
@@ -36,7 +42,7 @@ export const Certificates = () => {
                       {certificate.certificateIssuer}
                     </span>
                   </h3>
-                  <p>{certificate.certificate[lang]}</p>
+                  <p>{certificate.certificate[ lang as keyof typeof certificate.certificate ]}</p>
                 </C.CertificatesInfo>
               }/>
             </>}

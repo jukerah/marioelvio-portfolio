@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
-import { pageData } from "../../data/PageData";
+import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
 
 import { SwitchMode } from "../SwitchMode";
@@ -50,6 +50,14 @@ export const NavMobile = () => {
   const { theme, dispatch } = useContext(Context);
   const lang: string = theme.lang.status;
 
+  const menu = {
+    home: pageInfo.home.pageTitle[ lang as keyof typeof pageInfo.home.pageTitle ],
+    about: pageInfo.about.pageTitle[ lang as keyof typeof pageInfo.about.pageTitle ],
+    portfolio: pageInfo.portfolio.pageTitle[ lang as keyof typeof pageInfo.portfolio.pageTitle ],
+    blog: pageInfo.blog.pageTitle[ lang as keyof typeof pageInfo.blog.pageTitle ],
+    contact: pageInfo.contact.pageTitle[ lang as keyof typeof pageInfo.contact.pageTitle ]
+  }
+
   const handleClickMenu = () => {
     if (theme.isMenuOpen.status) {
       dispatch({
@@ -78,19 +86,19 @@ export const NavMobile = () => {
         <li id="home">
           <Link to={"/home"} onClick={handleClickMenu}>
             {svgs.systemIcon.home}
-            <p>{pageData.home.pageTitle[lang]}</p>
+            <p>{menu.home}</p>
           </Link>
         </li>
         <li id="about">
           <Link to={"/about"} onClick={handleClickMenu}>
             {svgs.systemIcon.user}
-            <p>{pageData.about.pageTitle[lang]}</p>
+            <p>{menu.about}</p>
           </Link>
         </li>
         <li id="portfolio">
           <Link to={"/portfolio"} onClick={handleClickMenu}>
             {svgs.systemIcon.book}
-            <p>{pageData.portfolio.pageTitle[lang]}</p>
+            <p>{menu.portfolio}</p>
           </Link>
         </li>
         <li id="blog">
@@ -100,13 +108,13 @@ export const NavMobile = () => {
             rel="noopener noreferrer"
           >
             {svgs.systemIcon.article}
-            <p>{pageData.blog.pageTitle[lang]}</p>
+            <p>{menu.blog}</p>
           </a>
         </li>
         <li id="contact">
           <Link to={"/contact"} onClick={handleClickMenu}>
             {svgs.systemIcon.mail}
-            <p>{pageData.contact.pageTitle[lang]}</p>
+            <p>{menu.contact}</p>
           </Link>
         </li>
       </ul>

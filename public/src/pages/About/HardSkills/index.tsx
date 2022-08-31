@@ -2,8 +2,8 @@ import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
+import { pageInfo } from "../../../data/PageInfo";
 import { svgs } from "../../../data/SvgList";
-import { pageData } from "../../../data/PageData";
 
 import { SubTitle } from "../../../components/SubTitle";
 import { ContainerSkill } from "./ContainerSkill";
@@ -12,25 +12,32 @@ export const HardSkills = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
-  const countFrontEnd: number = pageData.about.hardSkills.frontEnd.skill.length;
-  const countBackEnd: number = pageData.about.hardSkills.backEnd.skill.length;
-  const countMobile: number = pageData.about.hardSkills.mobile.skill.length;
-  const countTools: number = pageData.about.hardSkills.tools.skill.length;
-  const countDatabase: number = pageData.about.hardSkills.database.skill.length;
+  const countFrontEnd: number = pageInfo.about.hardSkills.frontEnd.skill.length;
+  const countBackEnd: number = pageInfo.about.hardSkills.backEnd.skill.length;
+  const countMobile: number = pageInfo.about.hardSkills.mobile.skill.length;
+  const countTools: number = pageInfo.about.hardSkills.tools.skill.length;
+  const countDatabase: number = pageInfo.about.hardSkills.database.skill.length;
+
+  const hardSkills = {
+    title: pageInfo.about.hardSkills.title[ lang as keyof typeof pageInfo.about.hardSkills.title ],
+    description: pageInfo.about.hardSkills.description[ lang as keyof typeof pageInfo.about.hardSkills.description ],
+    tools: pageInfo.about.hardSkills.tools.name[ lang as keyof typeof pageInfo.about.hardSkills.tools.name ],
+    database: pageInfo.about.hardSkills.database.name[ lang as keyof typeof pageInfo.about.hardSkills.database.name ]
+  }
 
   return (
     <C.ContainerHardSkills mode={theme.mode.status}>
-      <SubTitle subTitle={pageData.about.hardSkills.title[lang]} />
+      <SubTitle subTitle={hardSkills.title} />
 
       <p className="description-skills">
-        {pageData.about.hardSkills.description[lang]}
+        {hardSkills.description}
       </p>
 
       <C.HardSkills>
         {countFrontEnd > 0 && (
           <ContainerSkill
             stack={"Front-end"}
-            skillList={pageData.about.hardSkills.frontEnd.skill}
+            skillList={pageInfo.about.hardSkills.frontEnd.skill}
             svg={svgs.systemIcon.frontend}
           />
         )}
@@ -38,7 +45,7 @@ export const HardSkills = () => {
         {countBackEnd > 0 && (
           <ContainerSkill
             stack={"Back-end"}
-            skillList={pageData.about.hardSkills.backEnd.skill}
+            skillList={pageInfo.about.hardSkills.backEnd.skill}
             svg={svgs.systemIcon.backend}
           />
         )}
@@ -46,23 +53,23 @@ export const HardSkills = () => {
         {countMobile > 0 && (
           <ContainerSkill
             stack={"Mobile"}
-            skillList={pageData.about.hardSkills.mobile.skill}
+            skillList={pageInfo.about.hardSkills.mobile.skill}
             svg={svgs.systemIcon.mobile}
           />
         )}
 
         {countTools > 0 && (
           <ContainerSkill
-            stack={pageData.about.hardSkills.tools.name[lang]}
-            skillList={pageData.about.hardSkills.tools.skill}
+            stack={hardSkills.tools}
+            skillList={pageInfo.about.hardSkills.tools.skill}
             svg={svgs.systemIcon.tools}
           />
         )}
 
         {countDatabase > 0 && (
           <ContainerSkill
-            stack={pageData.about.hardSkills.database.name[lang]}
-            skillList={pageData.about.hardSkills.database.skill}
+            stack={hardSkills.database}
+            skillList={pageInfo.about.hardSkills.database.skill}
             svg={svgs.systemIcon.database}
           />
         )}

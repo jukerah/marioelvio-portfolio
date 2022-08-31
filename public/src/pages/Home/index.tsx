@@ -68,7 +68,7 @@ export const HomePage = (props: any) => {
               mode={theme.mode.status}
             >
               <a
-                aria-label="Linkedin button"
+                aria-label="Linkedin"
                 href="https://www.linkedin.com/in/marioelvio/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export const HomePage = (props: any) => {
                 {svgs.socialButton.linkedin}
               </a>
               <a
-                aria-label="GitHub button"
+                aria-label="GitHub"
                 href="https://github.com/jukerah"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export const HomePage = (props: any) => {
                 {svgs.socialButton.github}
               </a>
               <a
-                aria-label="Youtube button"
+                aria-label="Youtube"
                 href="https://www.youtube.com/channel/UCIuG63VswXMTYUuzeZgqRjw"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -92,7 +92,7 @@ export const HomePage = (props: any) => {
                 {svgs.socialButton.youtube}
               </a>
               <a
-                aria-label="WhatsApp button"
+                aria-label="WhatsApp"
                 href="https://api.whatsapp.com/send?phone=5516988658468"
                 target="_blank"
                 rel="noopener noreferrer"

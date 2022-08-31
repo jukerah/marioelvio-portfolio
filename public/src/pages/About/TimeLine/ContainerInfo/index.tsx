@@ -4,7 +4,7 @@ import * as C from "./styles";
 import { Context } from "../../../../contexts/Contexts";
 
 interface Props {
-  content: any;
+  content: React.ReactNode;
 }
 
 export const ContainerInfo = (props: Props) => {

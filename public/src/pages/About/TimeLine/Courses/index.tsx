@@ -2,26 +2,32 @@ import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
-import { pageData } from "../../../../data/PageData";
+import { pageInfo } from "../../../../data/PageInfo";
 
 import { SubTitle } from "../../../../components/SubTitle";
 import { Card } from "../Card";
 import { ContainerLine } from "../ContainerLine";
 import { ContainerInfo } from "../ContainerInfo";
 import { ViewMoreButton } from "../ViewMoreButton";
+import { EducationType } from "../../../../types/EducationType";
 
 export const Courses = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
-  const [ countCourses ] = useState<number>(pageData.about.courses.courseList.length);
+  const [ countCourses ] = useState<number>(pageInfo.about.courses.courseList.length);
   const [ showCourses, setShowCourses ] = useState<number>(2);
+
+  const courses = {
+    title: pageInfo.about.courses.title[ lang as keyof typeof pageInfo.about.courses.title ],
+    list: pageInfo.about.courses.courseList
+  }
 
   return (
     <C.ContainerCourses isMenuOpen={theme.isMenuOpen.status}>
-      <SubTitle subTitle={pageData.about.courses.title[lang]} />
+      <SubTitle subTitle={courses.title} />
 
       <C.Courses><>
-        {pageData.about.courses.courseList.map((course: any, index: number) => index <= showCourses && (
+        {courses.list.map((course: EducationType, index: number) => index <= showCourses && (
           <Card
             key={course.id}
             content={<>

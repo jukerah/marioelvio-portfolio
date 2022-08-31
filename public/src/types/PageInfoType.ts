@@ -10,6 +10,9 @@ import { LangType } from "./LangType";
 export type PageDataType = {
   development: LangType;
   htmlTitle: string;
+  header: {
+    logo: LangType;
+  },
   home: {
     pageTitle: LangType;
     info: {

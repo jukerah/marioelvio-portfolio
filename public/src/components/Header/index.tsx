@@ -9,9 +9,15 @@ import { SwitchMode } from "../SwitchMode";
 import { LoginLogoutButton } from "../LoginLogoutButton";
 import { MenuMobile, NavMobile } from "../MenuMobile";
 import { ChangeLang } from "../ChangeLang";
+import { pageInfo } from "../../data/PageInfo";
 
 export const Header = () => {
   const { theme, dispatch } = useContext(Context);
+  const lang: string = theme.lang.status;
+
+  const header = {
+    logo: pageInfo.header.logo[ lang as keyof typeof pageInfo.header.logo ]
+  }
 
   const handleClickMenu = () => {
     dispatch({
@@ -31,7 +37,7 @@ export const Header = () => {
         <Link 
           to={"/home"}
           onClick={handleClickMenu}
-          aria-label='Mario Elvio logo'
+          aria-label={header.logo}
         >
           {svgs.logo}
         </Link>

@@ -3,12 +3,16 @@ import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
 import { svgs } from "../../../data/SvgList";
-import { pageData } from "../../../data/PageData";
+import { pageInfo } from "../../../data/PageInfo";
 
 export const DownloadButton = () => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
   const [ isOpened, setIsOpened ] = useState(false);
+
+  const button = {
+    text: pageInfo.about.download[ lang as keyof typeof pageInfo.about.download ]
+  }
 
   return (
     <>
@@ -16,7 +20,7 @@ export const DownloadButton = () => {
         mode={theme.mode.status}
         onClick={() => setIsOpened(true)}
       >
-        <p>{pageData.about.download[lang]}</p>
+        <p>{button.text}</p>
         {svgs.systemIcon.download}
       </C.DownloadButton>
 

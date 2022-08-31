@@ -2,13 +2,12 @@ import { useContext, useEffect } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../contexts/Contexts';
+import { pageInfo } from '../../data/PageInfo';
 import { svgs } from '../../data/SvgList';
 
 import { TitlePage } from '../../components/TitlePage';
 import { Form } from './Form';
 import { Footer } from '../../components/Footer';
-import { pageData } from '../../data/PageData';
-import { pageInfo } from '../../data/PageInfo';
 
 export interface Props {
   page: string;
@@ -25,12 +24,12 @@ export const ContactPage = (props: Props) => {
       phone: pageInfo.about.personalDetails.phone,
       email: pageInfo.about.personalDetails.email,
       linkedin: {
-        text: pageData.about.personalDetails.linkedin.text,
-        url: pageData.about.personalDetails.linkedin.url,
+        text: pageInfo.about.personalDetails.linkedin.text,
+        url: pageInfo.about.personalDetails.linkedin.url,
       },
       github: {
-        text: pageData.about.personalDetails.linkedin.text,
-        url: pageData.about.personalDetails.linkedin.url,
+        text: pageInfo.about.personalDetails.linkedin.text,
+        url: pageInfo.about.personalDetails.linkedin.url,
       }
     }
   }
