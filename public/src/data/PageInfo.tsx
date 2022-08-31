@@ -966,6 +966,16 @@ export const pageInfo: PageDataType = {
       pt: "Entrar"
     },
   },
+  notFound: {
+    pageTitle: {
+      en: "Error 404",
+      pt: "Erro 404"
+    },
+    text: {
+      en: "Oops! Page not found.",
+      pt: "Oops! Página não encontrada."
+    },
+  },
   footer: {
     en: "© Copyright 2021-2022 Mario Elvio. All rights reserved.",
     pt: "© Copyright 2021-2022 Mario Elvio. Todos os direitos reservados."

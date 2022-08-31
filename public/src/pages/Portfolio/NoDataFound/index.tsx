@@ -2,7 +2,7 @@ import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../contexts/Contexts";
-import { pageInfo } from "../../data/PageInfo";
+import { pageInfo } from "../../../data/PageInfo";
 
 export const NoDataFound = () => {
   const { theme } = useContext(Context);
