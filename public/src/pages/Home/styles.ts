@@ -48,6 +48,7 @@ export const Container = styled.div<ContainerProps>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 
     gap: 28px;
     margin-top: 60px;
@@ -121,7 +122,7 @@ export const Container = styled.div<ContainerProps>`
     @media (orientation: landscape) { padding: 24px 0; }
 
     @media (min-width: 768px) {
-        max-height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
 
         gap: 48px;
         margin-top: 80px;
@@ -129,7 +130,7 @@ export const Container = styled.div<ContainerProps>`
 
     @media (min-width: 1024px) {
         max-width: calc(100vw - ${(props) => props.isMenuOpen ? '300px' : '100px'});
-        max-height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px);
 
         gap: 32px;
         margin-top: 0;
@@ -222,7 +223,7 @@ export const Info = styled.div<InfoProps>`
     }
 
     @media (min-width: 400px) {
-        .title-name  { font-size: ${(props) => props.lang === 'en' ? '34px' : '28px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '44.8px' : '34.5px'}; }
         .title-work  { font-size: ${(props) => props.lang === 'en' ? '31px' : '25px'}; }
     }
     
@@ -232,7 +233,7 @@ export const Info = styled.div<InfoProps>`
         gap: 40px;
 
         .title-hello { font-size: 56px; }
-        .title-name  { font-size: ${(props) => props.lang === 'en' ? '82px' : '66px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '82px' : '65px'}; }
         .title-work  { font-size: ${(props) => props.lang === 'en' ? '56px' : '46.1px'}; }
     }
 

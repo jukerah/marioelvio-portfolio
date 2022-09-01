@@ -10,7 +10,8 @@ const localLangMode: string | null = localStorage.getItem('lang');
 if (localLangMode === null) localStorage.setItem('lang', lang);
 
 export const langInitialState: themeLangType = {
-    status: (lang === 'pt') ? 'pt' : 'en'
+    status: ((lang === 'pt' && localLangMode === 'pt') ||
+            (lang === 'pt' && localLangMode === null)) ? 'pt' : 'en'
 }
 
 export const langReducer = (state: themeLangType, action: reducerActionType) => {

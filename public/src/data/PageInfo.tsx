@@ -51,8 +51,8 @@ export const pageInfo: PageDataType = {
         pt: "Resumo pessoal",
       },
       resume: {
-        en: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
-        pt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
+        en: "Hello, my name is Mario Elvio, I'm 28 years old, I live in Araraquara, a city in the interior of São Paulo, I consider myself an extremely calm and observant person, I love spending my free time with my family, reading and studying things that add knowledge, I love watching science fiction movies and series. My passion for technology started when I was 6 years old when I got my first computer, it was very old, but it was enough to hold me in this incredible digital world. In 2020 I decided to migrate my career and today I can't see my future away from the lines of code.",
+        pt: "Olá, me chamo Mario Elvio, tenho 28 anos, moro em Araraquara uma cidade no interior de São Paulo, me considero uma pessoa extremamente calma e observadora, adoro passar meu tempo livre com a família, lendo e estudando coisas que agreguem conhecimento, adoro assistir filmes e series de ficção cientifica. Minha paixão por tecnologia começou aos  6 anos de idade quando ganhei meu primeiro computador, ele era bem velhinho, mas foi o suficiente para me prender nesse incrível mundo digital. Em 2020 decidi migrar de carreira e hoje eu não consigo ver meu futuro longe das linhas de códigos.",
       },
     },
     professionalResume: {
@@ -61,8 +61,8 @@ export const pageInfo: PageDataType = {
         pt: "Resumo profissional",
       },
       resume: {
-        en: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
-        pt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores, aliquam nesciunt aperiam quod perspiciatis ex eos amet numquam quos tenetur, laudantium dolorem. Debitis fugit perspiciatis facilis id officiis molestiae.",
+        en: "Dedicated professional with 1 year of experience and skills in modern technologies, self-taught, always looking for new knowledge and super adaptive, no problems in learning new technologies, great relationship of friendship and communication in all the teams I've worked with, I love sharing knowledge between teammates. I believe in the theory that there isn't something we can't do, there's something we haven't learned yet, and if I don't know, I'll do my best to find a solution.",
+        pt: "Profissional dedicado com  1 ano de experiência e habilidades em tecnologias modernas, autodidata, sempre em busca de novos conhecimentos e super adaptativo, sem problemas em aprender novas tecnologias, ótima relação de amizade e comunicação em todas as equipes que já trabalhei, adoro compartilhar conhecimento entre colegas de equipe. Acredito na teoria de que não existe algo que não possamos fazer, existe algo que ainda não aprendemos, e se eu não sei, dou o meu melhor para achar uma solução.",
       },
     },
     myInterests: {
@@ -315,16 +315,6 @@ export const pageInfo: PageDataType = {
           id: 4,
           start: "2022",
           theEnd: "2022",
-          college: "B7Web",
-          course: {
-            en: "JavaScript, TypeScript and React.js.",
-            pt: "JavaScript, TypeScript e React.js.",
-          },
-        },
-        {
-          id: 5,
-          start: "2022",
-          theEnd: "2022",
           college: "Devmedia",
           course: {
             en: "TypeScript, React.js and Node.js.",
@@ -332,7 +322,7 @@ export const pageInfo: PageDataType = {
           },
         },
         {
-          id: 6,
+          id: 5,
           start: "2021",
           theEnd: "2021",
           college: "Devmedia",
@@ -342,7 +332,7 @@ export const pageInfo: PageDataType = {
           },
         },
         {
-          id: 7,
+          id: 6,
           start: "2021",
           theEnd: "2021",
           college: "DIGITAL INNOVATION ONE",
@@ -352,7 +342,7 @@ export const pageInfo: PageDataType = {
           },
         },
         {
-          id: 8,
+          id: 7,
           start: "2021",
           theEnd: "2021",
           college: "AUTOMATION ANYWHERE",
