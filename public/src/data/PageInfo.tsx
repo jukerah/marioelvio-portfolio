@@ -376,8 +376,8 @@ export const pageInfo: PageDataType = {
         pt: "Habilidades Interpessoais",
       },
       description: {
-        en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-        pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+        en: "Soft skills are skills and abilities related to human behavior. In this way, they are considered necessary for a professional to achieve his professional goals, what he establishes for his career.",
+        pt: "As habilidades interpessoais são competências e habilidades relacionadas ao comportamento humano. Dessa forma, são consideradas necessárias para que um profissional alcance os seus objetivos profissionais, aquilo que estabelece para a sua carreira.",
       },
       skill: [
         {
@@ -387,8 +387,8 @@ export const pageInfo: PageDataType = {
             pt: "Comunicação",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I am a person who has no problem communicating with other people, always giving my best to be efficient and the receiver always understands what was said. I love to improve this skill by teaching and answering questions from work friends.",
+            pt: "Sou uma pessoa que não tem problemas em comunicar-se com outras pessoas, sempre entregando o meu máximo para ser eficiente e o receptor sempre entender o que foi dito. Adoro aprimorar essa habilidade ensinando e tirando dúvidas de amigos de trabalho.",
           },
         },
         {
@@ -398,8 +398,8 @@ export const pageInfo: PageDataType = {
             pt: "Trabalho em Equipe",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I love working in a team and solving a problem that I have to challenge myself. In all the teams I've worked on to date, I've always had a good relationship of friendship and I'm always helping my co-workers.",
+            pt: "Adoro trabalhar em equipe e resolver um problema que tenho que desafiar-me. Em todas as equipes em que já trabalhei até hoje, sempre tive uma boa relação de amizade e sempre estou ajudando os colegas de trabalho.",
           },
         },
         {
@@ -409,8 +409,8 @@ export const pageInfo: PageDataType = {
             pt: "Criatividade",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "Being creative is the process of change, development and personal evolution. In all my projects and works, I always dedicate myself to the maximum to deliver something original and I always imagine new solutions for future problems.",
+            pt: "Ser criativo  é o processo de mudança, desenvolvimento e evolução pessoal. Em todos meus projetos e trabalhos sempre me dedico ao máximo para entregar algo original e sempre imagino novas soluções para futuros problemas.",
           },
         },
         {
@@ -420,8 +420,8 @@ export const pageInfo: PageDataType = {
             pt: "Dedicação",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "Everything I take to do, whether study or work, I always do with dedication and hard work, giving my best for the best result.",
+            pt: "Tudo que pego para fazer, sendo estudo ou trabalho, faço sempre com dedicação e muito emprenho, entregando meu máximo para o melhor resultado.",
           },
         },
         {
@@ -431,8 +431,8 @@ export const pageInfo: PageDataType = {
             pt: "Habilidade analítica",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "This skill I have been improving for the last 11 years, I work with data and information, with a critical sense, bringing solutions to solve everyday challenges and always base on facts before making any decision.",
+            pt: "Está habilidade venho aprimorando durante os últimos 11 anos, trabalho com dados e informações, com senso crítico, trazendo soluções para resolver os desafios do dia a dia e sempre baseio em fatos antes de tomar qualquer decisão.",
           },
         },
         {
@@ -442,8 +442,8 @@ export const pageInfo: PageDataType = {
             pt: "Flexibilidade",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I'm always adapting to changes, I love receiving criticism and turning it into reflections for improvement, learning and new opportunities, I'm receptive and I don't lose focus on goals.",
+            pt: "Estou sempre me adaptando as mudanças, adoro receber critícas e transformar em reflexões de melhoria, aprendizado e novas oportunidades, sou receptivo e não perco o foco nos objetivos.",
           },
         },
         {
@@ -453,8 +453,8 @@ export const pageInfo: PageDataType = {
             pt: "Ética",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I am a good person and I always seek to do the right thing. This is one of my main skills, because it is my attitudes that demonstrate who I really am.",
+            pt: "Sou uma pessoa do bem e que busca sempre fazer o certo. Está é uma das minhas principais habilidades, pois são minhas atitudes que demonstram quem eu realmente sou.",
           },
         },
         {
@@ -464,8 +464,8 @@ export const pageInfo: PageDataType = {
             pt: "Espírito Colaborativo",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I believe that collaboration is certainly not suitable for every task and situation. Collaboration is, however, important to get the best result for multifaceted projects and complex problems. To be successful, it is important to identify when and how to collaborate. I also recognize my limitations and ask for help when needed or provide help to those who need it.",
+            pt: "Acredito que a colaboração certamente não é adequada para todas as tarefas e situações. A colaboração é, no entanto, importante para obter o melhor resultado para projetos multifacetados e problemas complexos. Para que seja bem sucedido, é importante identificar quando e como colaborar. Também reconheço minhas limitações e peço ajuda quando necessário ou presto ajuda a quem precisar.",
           },
         },
         {
@@ -475,8 +475,8 @@ export const pageInfo: PageDataType = {
             pt: "Estabilidade Emocional",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "A skill that I've started to hone in the last few years, when I reach the limit, I pause, reflect, and from there, I make a decision on what to do next. One technique I also use is the pomodoro.",
+            pt: "Uma habilidade que comecei aprimorar nos últimos anos, quando chego ao limite, faço uma pausa, reflito e, a partir daí, tomo uma decisão sobre as atitudes seguintes. Uma técnica que também utilizo é o pomodoro.",
           },
         },
         {
@@ -486,8 +486,8 @@ export const pageInfo: PageDataType = {
             pt: "Autodidata",
           },
           description: {
-            en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-            pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
+            en: "I started my study trajectory in 2020, due to college and courses being online, I started to improve my ability to study and learn on my own. Today I love studying reading technology documentation and consuming forum content.",
+            pt: "Iniciei minha trajetória de estudos em 2020, devido a faculdade e cursos serem online, comecei aperfeiçoar minha habilidade de estudar e aprender sozinho. Hoje adoro estudar lendo documentações de tecnologias e consumindo conteúdos de fóruns.",
           },
         },
       ],
@@ -498,8 +498,8 @@ export const pageInfo: PageDataType = {
         pt: "Habilidades Técnicas"
       },
       description: {
-        en: "Lorem ipsum dolor sit amet consec tetur adipisicing elit.",
-        pt: "Lorem ipsum dolor sit amet consec tetur adipisicing elit."
+        en: "Hard skills are skills and technical knowledge, acquired through certifications, degrees, diplomas and proof of experience in a particular area of expertise.",
+        pt: "As habilidades técnicas são habilidades e conhecimentos técnicos, adquiridas por meio de certificações, graduações, diplomas e comprovações de experiência em determinada área de atuação."
       },
       frontEnd: {
         skill: [

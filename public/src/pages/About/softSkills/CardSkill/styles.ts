@@ -75,6 +75,7 @@ export const SkillDescription = styled.p<SkillDescriptionProps>`
     display: ${(props) => props.show ? `flex` : `none`};
 
     font-size: 1em;
+    text-indent: 1.5em;
     line-height: 150%;
 
     padding: 8px;
