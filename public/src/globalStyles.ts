@@ -27,7 +27,16 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Exo 2', sans-serif;
     }
 
-    html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+    html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: var(--black);
+        }
+
+        &::-webkit-scrollbar-thumb { background-color: var(--de-york); }
+    }
     
     body { width: 100%; }
 

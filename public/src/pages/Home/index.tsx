@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
@@ -7,8 +7,13 @@ import { svgs } from "../../data/SvgList";
 
 import { PrimaryButton } from "../../components/PrimaryButton";
 
-export const HomePage = (props: any) => {
-  const { theme, dispatch } = useContext(Context);
+interface Props {
+  page: any;
+  isActivedPage: string;
+}
+
+export const HomePage = (props: Props) => {
+  const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
   const home = {
@@ -23,21 +28,9 @@ export const HomePage = (props: any) => {
     }
   }
 
-  useEffect(() => {
-    if (props.page === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-
-      dispatch({
-        type: "CHANGE_ACTIVE_PAGE",
-        payload: {
-          status: props.page,
-        },
-      });
-    }
-  },[props.page, dispatch, theme.activePage.status]);
-
   return (
     <C.HomeSection
+      ref={props.page}
       mode={theme.mode.status}
       isMenuOpen={theme.isMenuOpen.status}
       backgroundLandscapeSmall={svgs.background.home.landscape.small}
@@ -47,6 +40,7 @@ export const HomePage = (props: any) => {
       <C.Container
         className="load-container"
         isMenuOpen={theme.isMenuOpen.status}
+        isActivedPage={props.isActivedPage === 'home' ? true : false}
       >
         <C.ContainerInfo isMenuOpen={theme.isMenuOpen.status}>
           {svgs.avatar}

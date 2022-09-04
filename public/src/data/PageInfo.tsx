@@ -355,8 +355,8 @@ export const pageInfo: PageDataType = {
     },
     certificates: {
       title: {
-        en: "Certificates",
-        pt: "Certificados",
+        en: "certifications",
+        pt: "Certificações",
       },
       certificateList: [
         {
@@ -818,7 +818,7 @@ export const pageInfo: PageDataType = {
           img: require("../assets/banner/boltz-carregadores.jpg"),
           alt: "Boltz Carregadores",
           url: "boltz-carregadores",
-          category: ["All", "Front-end", "UI Design"],
+          category: ["Front-end", "UI Design"],
           technologies: [
             "Figma",
             "HTML5",
@@ -848,7 +848,7 @@ export const pageInfo: PageDataType = {
           img: require("../assets/banner/2.jpg"),
           alt: "Project 2",
           url: "project-2",
-          category: ["All", "UI Design"],
+          category: ["UI Design"],
           technologies: ["TECH1", "TECH2", "TECH3"],
           resources: {
             webSite: "",
@@ -866,7 +866,7 @@ export const pageInfo: PageDataType = {
           img: require("../assets/banner/3.jpg"),
           alt: "Project 3",
           url: "project-3",
-          category: ["All", "Front-end"],
+          category: ["Front-end"],
           technologies: ["TECH1", "TECH2", "TECH3"],
           resources: {
             webSite: "",
@@ -973,8 +973,8 @@ export const pageInfo: PageDataType = {
     },
   },
   footer: {
-    en: "© Copyright 2021-2022 Mario Elvio. All rights reserved.",
-    pt: "© Copyright 2021-2022 Mario Elvio. Todos os direitos reservados."
+    en: "© 2021-2022 Mario Elvio. All rights reserved.",
+    pt: "© 2021-2022 Mario Elvio. Todos os direitos reservados."
   },
   button: {
     back: {

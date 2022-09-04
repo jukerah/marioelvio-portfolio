@@ -13,8 +13,10 @@ export const GridMode = (props: Props) => {
   const projectFilter = (item: ProjectType) => {
     return item.category.includes(props.searchProject);
   }
-
-  const countBannerList: number = props.projectList.filter(projectFilter).length;
+  
+  const countBannerList: number = (props.searchProject === 'All')
+    ? props.projectList.length
+    : props.projectList.filter(projectFilter).length;
 
   if (countBannerList === 0) {
     return (

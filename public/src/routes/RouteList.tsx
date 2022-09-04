@@ -1,20 +1,18 @@
 import { useRoutes } from 'react-router-dom';
-import { HomePage } from '../pages/Home';
-import { AboutPage } from '../pages/About';
-import { PortfolioPage } from '../pages/Portfolio';
+
+import { Main } from '../pages/Main';
 import { ProjectPage } from '../pages/Project';
 import { LoginPage } from '../pages/Login';
 import { NotFound } from '../pages/NotFound';
-import { ContactPage } from '../pages/Contact';
 
 export const RouteList = () => {
     return useRoutes([
-        { path: '/', element: <HomePage page={'home'} /> },
-        { path: '/home', element: <HomePage page={'home'} /> },
-        { path: '/about', element: <AboutPage page={'about'} /> },
-        { path: '/portfolio', element: <PortfolioPage page={'portfolio'} /> },
+        { path: '/', element: <Main page={'home'} isActivedHomePage={'home'} /> },
+        { path: '/home', element: <Main page={'home'} isActivedHomePage={'home'} /> },
+        { path: '/about', element: <Main page={'about'} /> },
+        { path: '/portfolio', element: <Main page={'portfolio'} /> },
         { path: '/portfolio/:slug', element: <ProjectPage page={'project'} /> },
-        { path: '/contact', element: <ContactPage page={'contact'} /> },
+        { path: '/contact', element: <Main page={'contact'} /> },
         { path: '/login', element: <LoginPage page={'login'} /> },
         { path: '*', element: <NotFound page={'notFound'} /> }
     ]);

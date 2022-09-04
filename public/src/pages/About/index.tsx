@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
@@ -12,14 +12,13 @@ import { DownloadButton } from "./DownloadButton";
 import { TimeLine } from "./TimeLine";
 import { SoftSkills } from "./softSkills";
 import { HardSkills } from "./HardSkills";
-import { Footer } from "../../components/Footer";
 
 interface Props {
-  page: string;
+  page: any;
 }
 
 export const AboutPage = (props: Props) => {
-  const { theme, dispatch } = useContext(Context);
+  const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
   const about = {
@@ -34,21 +33,11 @@ export const AboutPage = (props: Props) => {
     }
   }
 
-  useEffect(() => {
-    if (props.page === "about") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-
-      dispatch({
-        type: "CHANGE_ACTIVE_PAGE",
-        payload: {
-          status: props.page,
-        },
-      });
-    }
-  },[props.page, dispatch, theme.activePage.status]);
-
   return (
-    <C.AboutSection mode={theme.mode.status}>
+    <C.AboutSection
+      ref={props.page}
+      mode={theme.mode.status}
+    >
       <C.Container>
         <TitlePage title={about.title} />
 
@@ -76,8 +65,6 @@ export const AboutPage = (props: Props) => {
 
         <DownloadButton />
       </C.Container>
-
-      <Footer />
     </C.AboutSection>
   );
 };

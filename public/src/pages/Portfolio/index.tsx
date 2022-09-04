@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../contexts/Contexts";
@@ -8,14 +8,13 @@ import { svgs } from "../../data/SvgList";
 import { TitlePage } from "../../components/TitlePage";
 import { SliderMode } from "./Slider";
 import { GridMode } from "./Grid";
-import { Footer } from "../../components/Footer";
 
 interface Props {
-  page: string;
+  page: any;
 }
 
 export const PortfolioPage = (props: Props) => {
-  const { theme, dispatch } = useContext(Context);
+  const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
   const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
@@ -26,25 +25,15 @@ export const PortfolioPage = (props: Props) => {
     projectList: pageInfo.portfolio.project.list
   }
 
-  useEffect(() => {
-    if (props.page === "portfolio") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-
-      dispatch({
-        type: "CHANGE_ACTIVE_PAGE",
-        payload: {
-          status: props.page,
-        },
-      });
-    }
-  },[props.page, dispatch, theme.activePage.status]);
-
   const handleClickSearch = (value: string) => {
     value === 'Todos' ? setSearchValue('All') : setSearchValue(value);
   }
 
   return (
-    <C.PortfolioSection mode={theme.mode.status}>
+    <C.PortfolioSection
+      ref={props.page}
+      mode={theme.mode.status}
+    >
       <C.Container>
         <TitlePage title={portfolio.title} />
 
@@ -93,8 +82,6 @@ export const PortfolioPage = (props: Props) => {
           }
         </C.ContainerPortfolio>
       </C.Container>
-
-      <Footer />
     </C.PortfolioSection>
   );
 };

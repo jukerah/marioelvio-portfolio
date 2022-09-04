@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import * as C from './styles';
 
 import { Context } from '../../contexts/Contexts';
@@ -7,14 +7,13 @@ import { svgs } from '../../data/SvgList';
 
 import { TitlePage } from '../../components/TitlePage';
 import { Form } from './Form';
-import { Footer } from '../../components/Footer';
 
-export interface Props {
-  page: string;
+interface Props {
+  page: any;
 }
 
 export const ContactPage = (props: Props) => {
-  const { theme, dispatch } = useContext(Context);
+  const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
   const contact = {
@@ -34,21 +33,9 @@ export const ContactPage = (props: Props) => {
     }
   }
 
-  useEffect(() => {
-    if (props.page === 'contact') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      dispatch({
-        type: 'CHANGE_ACTIVE_PAGE',
-        payload: {
-          status: props.page,
-        },
-      });
-    }
-  },[props.page, dispatch, theme.activePage.status]);
-
   return (
     <C.ContactSection
+      ref={props.page}
       mode={theme.mode.status}
       background={(theme.mode.status === 'dark')
         ? svgs.background.contact.dark
@@ -95,8 +82,6 @@ export const ContactPage = (props: Props) => {
           <Form />
         </C.ContainerInfoForm>
       </C.Container>
-
-      <Footer />
     </C.ContactSection>
   );
 };

@@ -19,6 +19,7 @@ export const ContainerHardSkills = styled.div<ContainerHardSkillsProps>`
         width: 100%;
 
         font-size: 1em;
+        text-indent: 1.5em;
         line-height: 150%;
 
         transition: all ease-in .5s;

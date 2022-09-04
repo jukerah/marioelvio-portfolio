@@ -31,7 +31,9 @@ export const SliderMode = (props: Props) => {
     return item.category.includes(props.searchProject);
   }
 
-  const countBannerList: number = props.projectList.filter(projectFilter).length;
+  const countBannerList: number = (props.searchProject === 'All')
+    ? props.projectList.length
+    : props.projectList.filter(projectFilter).length;
 
   useEffect(() => {
     setActiveBanner(0);

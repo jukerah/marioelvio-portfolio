@@ -9,15 +9,12 @@ interface HomeSectionProps {
 }
 
 export const HomeSection = styled.section<HomeSectionProps>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--alabaster'});
+    background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--alabaster'});
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    html, body {
-        overflow: hidden;
-    }
+    box-sizing: border-box;
 
     width: 100%;
     min-height: 100vh;
@@ -41,6 +38,7 @@ export const HomeSection = styled.section<HomeSectionProps>`
 
 interface ContainerProps {
     isMenuOpen: boolean;
+    isActivedPage: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -53,71 +51,73 @@ export const Container = styled.div<ContainerProps>`
     gap: 28px;
     margin-top: 60px;
 
-    .load-title { animation: title 2s steps(60) both; }
+    ${(props) => props.isActivedPage && `
+        .load-title { animation: title 1s steps(30) both; }
 
-    .load-avatar { animation: avatar 2s steps(60) both; }
-
-    .load-social { animation: social 2s steps(60) both; }
-
-    .load-button { animation: button 2s steps(60) both; }
-
-    @keyframes title {
-        from {
-            transform: skew(180deg,180deg);
-            opacity: 0;
-            margin-top: -150vh;
+        .load-avatar { animation: avatar 1s steps(30) both; }
+    
+        .load-social { animation: social 1s steps(30) both; }
+    
+        .load-button { animation: button 1s steps(30) both; }
+    
+        @keyframes title {
+            from {
+                transform: skew(180deg,180deg);
+                opacity: 0;
+                margin-top: -150vh;
+            }
+            50% {opacity: .5;}
+            75% {opacity: .75;}
+            to {
+                transform: skew(0deg,0deg);
+                opacity: 3;
+                margin-top: 0;
+            }
         }
-        50% {opacity: .5;}
-        75% {opacity: .75;}
-        to {
-            transform: skew(0deg,0deg);
-            opacity: 3;
-            margin-top: 0;
+    
+        @keyframes avatar {
+            from {
+                transform: skew(-180deg,-180deg);
+                opacity: 0;
+                margin-left: -100vw;
+            }
+            50% {opacity: .5;}
+            75% {opacity: .75;}
+            to {
+                transform: skew(0deg,0deg);
+                opacity: 1;
+                margin-left: 0;
+            }
         }
-    }
-
-    @keyframes avatar {
-        from {
-            transform: skew(-180deg,-180deg);
-            opacity: 0;
-            margin-left: -100vw;
+    
+        @keyframes social {
+            from {
+                transform: skew(180deg,180deg);
+                opacity: 0;
+            }
+            50% {opacity: .5;}
+            75% {opacity: .75;}
+            to {
+                transform: skew(0deg,0deg);
+                opacity: 1;
+            }
         }
-        50% {opacity: .5;}
-        75% {opacity: .75;}
-        to {
-            transform: skew(0deg,0deg);
-            opacity: 1;
-            margin-left: 0;
+    
+        @keyframes button {
+            from {
+                transform: skew(-180deg,-180deg);
+                opacity: 0;
+                margin-bottom: -100vh;
+            }
+            50% {opacity: .5;}
+            75% {opacity: .75;}
+            to {
+                transform: skew(0deg,0deg);
+                opacity: 1;
+                margin-bottom: 0;
+            }
         }
-    }
-
-    @keyframes social {
-        from {
-            transform: skew(180deg,180deg);
-            opacity: 0;
-        }
-        50% {opacity: .5;}
-        75% {opacity: .75;}
-        to {
-            transform: skew(0deg,0deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes button {
-        from {
-            transform: skew(-180deg,-180deg);
-            opacity: 0;
-            margin-bottom: -100vh;
-        }
-        50% {opacity: .5;}
-        75% {opacity: .75;}
-        to {
-            transform: skew(0deg,0deg);
-            opacity: 1;
-            margin-bottom: 0;
-        }
-    }
+    `};
 
     @media (orientation: landscape) { padding: 24px 0; }
 
@@ -366,9 +366,10 @@ export const NavButtons = styled.div<NavButtonsProps>`
 
     @media (min-width: 1024px) {
         flex-direction: row;
-
         gap: 24px;
+    }
 
+    @media (min-width: 1024px) and (max-width: 1250px) {
         margin-left: ${(props) => props.isMenuOpen ? '24px' : 0};
         padding: ${(props) => props.isMenuOpen ? '0 24px' : 0};
         max-width: ${(props) => props.isMenuOpen ? 'calc(100% - 24px)' : '100%'};
