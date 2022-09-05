@@ -52,7 +52,7 @@ export const pageInfo: PageDataType = {
       },
       resume: {
         en: "Hello, my name is Mario Elvio, I'm 28 years old, I live in Araraquara, a city in the interior of São Paulo, I consider myself an extremely calm and observant person, I love spending my free time with my family, reading and studying things that add knowledge, I love watching science fiction movies and series. My passion for technology started when I was 6 years old when I got my first computer, it was very old, but it was enough to hold me in this incredible digital world. In 2020 I decided to migrate my career and today I can't see my future away from the lines of code.",
-        pt: "Olá, me chamo Mario Elvio, tenho 28 anos, moro em Araraquara uma cidade no interior de São Paulo, me considero uma pessoa extremamente calma e observadora, adoro passar meu tempo livre com a família, lendo e estudando coisas que agreguem conhecimento, adoro assistir filmes e series de ficção cientifica. Minha paixão por tecnologia começou aos  6 anos de idade quando ganhei meu primeiro computador, ele era bem velhinho, mas foi o suficiente para me prender nesse incrível mundo digital. Em 2020 decidi migrar de carreira e hoje eu não consigo ver meu futuro longe das linhas de códigos.",
+        pt: "Olá, eu sou Mario Elvio, tenho 28 anos, moro em Araraquara uma cidade no interior de São Paulo, me considero uma pessoa extremamente calma e observadora, adoro passar meu tempo livre com a família, lendo e estudando coisas que agreguem conhecimento, adoro assistir filmes e series de ficção cientifica. Minha paixão por tecnologia começou aos 6 anos de idade quando ganhei meu primeiro computador, ele era bem velhinho, mas foi o suficiente para me prender nesse incrível mundo digital. Em 2020 decidi migrar de carreira e hoje eu não consigo ver meu futuro longe das linhas de códigos.",
       },
     },
     professionalResume: {
@@ -62,7 +62,7 @@ export const pageInfo: PageDataType = {
       },
       resume: {
         en: "Dedicated professional with 1 year of experience and skills in modern technologies, self-taught, always looking for new knowledge and super adaptive, no problems in learning new technologies, great relationship of friendship and communication in all the teams I've worked with, I love sharing knowledge between teammates. I believe in the theory that there isn't something we can't do, there's something we haven't learned yet, and if I don't know, I'll do my best to find a solution.",
-        pt: "Profissional dedicado com  1 ano de experiência e habilidades em tecnologias modernas, autodidata, sempre em busca de novos conhecimentos e super adaptativo, sem problemas em aprender novas tecnologias, ótima relação de amizade e comunicação em todas as equipes que já trabalhei, adoro compartilhar conhecimento entre colegas de equipe. Acredito na teoria de que não existe algo que não possamos fazer, existe algo que ainda não aprendemos, e se eu não sei, dou o meu melhor para achar uma solução.",
+        pt: "Profissional dedicado com 1 ano de experiência e habilidades em tecnologias modernas, autodidata, sempre em busca de novos conhecimentos e super adaptativo, sem problemas em aprender novas tecnologias, ótima relação de amizade e comunicação em todas as equipes que já trabalhei, adoro compartilhar conhecimento entre colegas de equipe. Acredito na teoria de que não existe algo que não possamos fazer, existe algo que ainda não aprendemos, e se eu não sei, dou o meu melhor para achar uma solução.",
       },
     },
     myInterests: {
@@ -410,7 +410,7 @@ export const pageInfo: PageDataType = {
           },
           description: {
             en: "Being creative is the process of change, development and personal evolution. In all my projects and works, I always dedicate myself to the maximum to deliver something original and I always imagine new solutions for future problems.",
-            pt: "Ser criativo  é o processo de mudança, desenvolvimento e evolução pessoal. Em todos meus projetos e trabalhos sempre me dedico ao máximo para entregar algo original e sempre imagino novas soluções para futuros problemas.",
+            pt: "Ser criativo é o processo de mudança, desenvolvimento e evolução pessoal. Em todos meus projetos e trabalhos sempre me dedico ao máximo para entregar algo original e sempre imagino novas soluções para futuros problemas.",
           },
         },
         {
@@ -420,8 +420,8 @@ export const pageInfo: PageDataType = {
             pt: "Dedicação",
           },
           description: {
-            en: "Everything I take to do, whether study or work, I always do with dedication and hard work, giving my best for the best result.",
-            pt: "Tudo que pego para fazer, sendo estudo ou trabalho, faço sempre com dedicação e muito emprenho, entregando meu máximo para o melhor resultado.",
+            en: "Everything I propose to do, whether study or work, I always do it with dedication and hard work, giving my best for the best result.",
+            pt: "Tudo o que me proponho a fazer, sendo estudo ou trabalho, faço sempre com dedicação e muito emprenho, entregando meu máximo para o melhor resultado.",
           },
         },
         {
@@ -453,7 +453,7 @@ export const pageInfo: PageDataType = {
             pt: "Ética",
           },
           description: {
-            en: "I am a good person and I always seek to do the right thing. This is one of my main skills, because it is my attitudes that demonstrate who I really am.",
+            en: "I am a good person and I always seek to do the right thing. This is one of my main skills, because it’s my attitudes that demonstrate who I really am.",
             pt: "Sou uma pessoa do bem e que busca sempre fazer o certo. Está é uma das minhas principais habilidades, pois são minhas atitudes que demonstram quem eu realmente sou.",
           },
         },
@@ -475,7 +475,7 @@ export const pageInfo: PageDataType = {
             pt: "Estabilidade Emocional",
           },
           description: {
-            en: "A skill that I've started to hone in the last few years, when I reach the limit, I pause, reflect, and from there, I make a decision on what to do next. One technique I also use is the pomodoro.",
+            en: "A skill that I've started to hone in the last few years, when I reach the limit, I take a pause, reflect, and from there, I make a decision on what to do next. One technique I also use is the pomodoro.",
             pt: "Uma habilidade que comecei aprimorar nos últimos anos, quando chego ao limite, faço uma pausa, reflito e, a partir daí, tomo uma decisão sobre as atitudes seguintes. Uma técnica que também utilizo é o pomodoro.",
           },
         },
@@ -486,8 +486,8 @@ export const pageInfo: PageDataType = {
             pt: "Autodidata",
           },
           description: {
-            en: "I started my study trajectory in 2020, due to college and courses being online, I started to improve my ability to study and learn on my own. Today I love studying reading technology documentation and consuming forum content.",
-            pt: "Iniciei minha trajetória de estudos em 2020, devido a faculdade e cursos serem online, comecei aperfeiçoar minha habilidade de estudar e aprender sozinho. Hoje adoro estudar lendo documentações de tecnologias e consumindo conteúdos de fóruns.",
+            en: "I started my study trajectory in 2020, due to college and courses being online, I started to improve my ability to study and learn on my own. Today I love to study reading technology documentation and consuming content from forums or blogs.",
+            pt: "Iniciei minha trajetória de estudos em 2020, devido a faculdade e cursos serem online, comecei aperfeiçoar minha habilidade de estudar e aprender sozinho. Hoje adoro estudar lendo documentações de tecnologias e consumindo conteúdos de fóruns ou blogs.",
           },
         },
       ],
@@ -809,16 +809,34 @@ export const pageInfo: PageDataType = {
       },
       list: [
         {
+          id: 2,
+          name: "Mario Elvio",
+          description: {
+            en: "This is a personal portfolio project. Project in development, so far a requirements survey, UI design, front-end development and deployment have been carried out.",
+            pt: "Este é um projeto de portfólio pessoal. O projeto ainda está em desenvolvimento, até o momento foi feito um levantamento de requisitos, criação de UI design, desenvolvimento front-end e deploy."
+          },
+          img: require("../assets/banner/mario-elvio.jpg"),
+          alt: "Mario Elvio",
+          url: "mario-elvio",
+          category: ["UI Design", "Front-end"],
+          technologies: ["Figma", "HTML5", "React.js", "TypeScript", "Styled Components", "React Router DOM","Hooks", "Context", "React Scroll"],
+          resources: {
+            webSite: "https://www.marioelvio.com/",
+            gitHub: "https://github.com/jukerah/marioelvio-portfolio",
+            figma: "https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1"
+          },
+        },
+        {
           id: 1,
           name: "Boltz Carregadores",
           description: {
-            en: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
-            pt: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim."
+            en: "This is a project for a corporate website for the company Boltz Carregadores. A requirements gathering, wireframe creation, UI design creation, logo adjustment, front-end development and deploy.",
+            pt: "Este é um projeto de um site corporativo para empresa Boltz Carregadores. Foi feito um levantamento de requisitos, criação de wireframe, criação de UI design, ajuste no logotipo, desenvolvimento front-end e deploy."
           },
           img: require("../assets/banner/boltz-carregadores.jpg"),
           alt: "Boltz Carregadores",
           url: "boltz-carregadores",
-          category: ["Front-end", "UI Design"],
+          category: ["UI Design", "Front-end"],
           technologies: [
             "Figma",
             "HTML5",
@@ -835,45 +853,9 @@ export const pageInfo: PageDataType = {
             webSite: "https://www.boltzcarregadores.com.br",
             gitHub: "",
             figma:
-              "https://www.figma.com/file/fsN99ba8jI6J2vMNrOtB7A/Boltz-Carregadores?node-id=25%3A174",
+              "https://www.figma.com/file/fsN99ba8jI6J2vMNrOtB7A/Boltz-Carregadores?node-id=25%3A174"
           },
-        },
-        {
-          id: 2,
-          name: "Project 2",
-          description: {
-            en: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
-            pt: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim."
-          },
-          img: require("../assets/banner/2.jpg"),
-          alt: "Project 2",
-          url: "project-2",
-          category: ["UI Design"],
-          technologies: ["TECH1", "TECH2", "TECH3"],
-          resources: {
-            webSite: "",
-            gitHub: "",
-            figma: "",
-          },
-        },
-        {
-          id: 3,
-          name: "Project 3",
-          description: {
-            en: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim.",
-            pt: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid ratione iusto doloremque, unde vitae! Molestias quo laboriosam accusantium ea asperiores necessitatibus sunt cupiditate atque autem, ab fugit cum enim."
-          },
-          img: require("../assets/banner/3.jpg"),
-          alt: "Project 3",
-          url: "project-3",
-          category: ["Front-end"],
-          technologies: ["TECH1", "TECH2", "TECH3"],
-          resources: {
-            webSite: "",
-            gitHub: "",
-            figma: "",
-          },
-        },
+        }
       ],
     }
   },
@@ -890,7 +872,7 @@ export const pageInfo: PageDataType = {
     },
     info: {
       en: "Get in touch through the form or through one of our contacts. I will reply as soon as possible.",
-      pt: "Entre em contato através do formulário ou através de um de nossos contatos. Eu responderei o mais breve possível."
+      pt: "Entre em contato através do formulário ou através de um de nossos contatos. Responderei o mais breve possível."
     },
         form: {
             name: {

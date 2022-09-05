@@ -6,7 +6,6 @@ import { Context } from "../../contexts/Contexts";
 import { svgs } from "../../data/SvgList";
 
 import { SwitchMode } from "../SwitchMode";
-import { LoginLogoutButton } from "../LoginLogoutButton";
 import { MenuMobile, NavMobile } from "../MenuMobile";
 import { ChangeLang } from "../ChangeLang";
 import { pageInfo } from "../../data/PageInfo";
@@ -48,9 +47,8 @@ export const Header = () => {
           <SwitchMode />
         </div>
 
-        <div className="container-button">
+        <div className="switch">
           <ChangeLang />
-          <LoginLogoutButton />
         </div>
       </C.Container>
 

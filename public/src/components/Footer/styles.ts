@@ -5,7 +5,7 @@ interface FooterProps {
 }
 
 export const Footer = styled.footer<FooterProps>`
-    background-color: var(${(props) => props.mode === 'dark' ? '--shark-dark' : '--white'});
+    background-color: var(${(props) => props.mode === 'dark' ? '--limed-spruce' : '--alto'});
 
     display: flex;
     justify-content: center;

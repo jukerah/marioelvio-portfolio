@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import * as C from "./styles";
 
 import { Context } from "../../../../contexts/Contexts";
@@ -11,28 +11,19 @@ interface Props {
 }
 
 export const CardSkill = (props: Props) => {
-  const { theme, dispatch } = useContext(Context);
+  const { theme } = useContext(Context);
+  const [ showSoftSkill, setShowSoftSkill ] = useState<number>(0);
 
   const handleClickQuestion = (index: number) => {
-    if (index === theme.showSoftSkill.status) {
-      dispatch({
-        type: "CHANGE_SOFTSKILL",
-        payload: {
-          status: 0,
-        },
-      });
+    if (index === showSoftSkill) {
+      setShowSoftSkill(0);
     } else {
-      dispatch({
-        type: "CHANGE_SOFTSKILL",
-        payload: {
-          status: index,
-        },
-      });
+      setShowSoftSkill(index);
     }
   };
 
   const showStatus = (skillId: number) => {
-    return theme.showSoftSkill.status === skillId ? true : false;
+    return showSoftSkill === skillId ? true : false;
   };
 
   return (

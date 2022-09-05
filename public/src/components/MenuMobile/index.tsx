@@ -7,7 +7,6 @@ import { pageInfo } from "../../data/PageInfo";
 import { svgs } from "../../data/SvgList";
 
 import { SwitchMode } from "../SwitchMode";
-import { LoginLogoutButton } from "../LoginLogoutButton";
 import { ChangeLang } from "../ChangeLang";
 
 export const MenuMobile = () => {
@@ -123,7 +122,6 @@ export const NavMobile = () => {
           <ChangeLang />
           <SwitchMode />
         </div>
-        <LoginLogoutButton/>
       </C.ContainerButtons>
     </C.NavMobile>
   );

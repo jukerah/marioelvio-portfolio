@@ -71,8 +71,8 @@ Summary
 * [X] Project page
 * [X] Blog page
 * [X] Contact page
-* [ ] Login page
 <br />AdminPanel:
+* [ ] Login page
 * [ ] Settings page
 * [ ] About page
 * [ ] Resume page
@@ -92,8 +92,7 @@ Summary
 > coming soon.
 
 #### Database:
-* [ ] Database Modeling
-* [ ] Database creation
+> coming soon.
 
 <hr/>
 

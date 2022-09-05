@@ -20,12 +20,6 @@ export const Main = (props: Props) => {
   const contactPage = useRef(props.page);
   const isActivedHomePage = props.isActivedHomePage === 'home' ? 'home' : ''
 
-  /*useEffect(() => {
-    if (props.page === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  });*/
-
   useEffect(() => {
     switch (props.page) {
       case 'home':
@@ -41,7 +35,7 @@ export const Main = (props: Props) => {
         contactPage.current.scrollIntoView({ behavior: 'smooth'});
         break;
     }  
-  },[props.page]);
+  });
  
   return (
     <C.Main>
