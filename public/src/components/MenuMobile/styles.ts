@@ -155,6 +155,7 @@ export const ContainerButtons = styled.div`
 
     .top-line {
         display: flex;
+        align-items: center;
         gap: 32px;
     }
 

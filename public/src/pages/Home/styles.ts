@@ -155,6 +155,7 @@ export const ContainerInfo = styled.div<ContainerInfoProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 
     gap: 24px;
     
@@ -198,19 +199,18 @@ export const Info = styled.div<InfoProps>`
     gap: 24px;
     
     h1 {
-        position: relative;
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
 
         font-weight: 700;
         text-transform: uppercase;
-        line-height: 1.4;
-        white-space: nowrap;
+        //line-height: 1.4;
+        word-break: break-all;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     }
 
     .title-hello { font-size: ${(props) => props.lang === 'en' ? '32px' : '24px'}; }
-    .title-name  { font-size: ${(props) => props.lang === 'en' ? '35px' : '27.3px'}; }
-    .title-work  { font-size: ${(props) => props.lang === 'en' ? '24.2px' : '20px'}; }
+    .title-name  { font-size: ${(props) => props.lang === 'en' ? '33px' : '26px'}; }
+    .title-work  { font-size: ${(props) => props.lang === 'en' ? '23.2px' : '19px'}; }
 
     .accent-color {
         color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
@@ -218,17 +218,17 @@ export const Info = styled.div<InfoProps>`
 
     @media (min-width: 360px) {
         .title-hello { font-size: ${(props) => props.lang === 'en' ? '34px' : '28px'}; }
-        .title-name  { font-size: ${(props) => props.lang === 'en' ? '40.5px' : '30.2px'}; }
-        .title-work  { font-size: ${(props) => props.lang === 'en' ? '28px' : '22px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '37px' : '28.8px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '26px' : '21px'}; }
     }
 
     @media (min-width: 400px) {
-        .title-name  { font-size: ${(props) => props.lang === 'en' ? '44.8px' : '34.5px'}; }
-        .title-work  { font-size: ${(props) => props.lang === 'en' ? '31px' : '25px'}; }
+        .title-name  { font-size: ${(props) => props.lang === 'en' ? '41px' : '32.2px'}; }
+        .title-work  { font-size: ${(props) => props.lang === 'en' ? '28.5px' : '23.5px'}; }
     }
     
     @media (min-width: 768px) {
-        h1 { line-height: 1.1; }
+        //h1 { line-height: 1.1; }
 
         gap: 40px;
 
@@ -242,7 +242,7 @@ export const Info = styled.div<InfoProps>`
 
         gap: 0;
 
-        h1 { line-height: 1.2; }
+        //h1 { line-height: 1.2; }
 
         .title-hello { font-size: ${(props) => props.lang === 'en' ? '56px' : '56px'}; }
         .title-name  { font-size: ${(props) => props.lang === 'en' ? '70px' : '54.9px'}; }

@@ -11,7 +11,8 @@ export const ChangeLang = styled.button<ChangeLangProps>`
     display: flex;
     align-items: center;
 
-    width: 80px;
+    width: 88px;
+    height: 48px;
 
     gap: 8px;
 
@@ -34,8 +35,6 @@ export const ChangeLang = styled.button<ChangeLangProps>`
 
     @media (min-width: 1024px) {
         background-color: var(${(props) => props.mode === 'dark' ? '--black' : '--skeptic'});
-
-        p { margin-top: 4px; }
 
         &:hover { p { text-decoration: underline; } }
     }

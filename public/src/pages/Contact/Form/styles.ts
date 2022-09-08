@@ -194,7 +194,7 @@ interface SelectProps {
 }
 
 export const Select = styled.select<SelectProps>`
--webkit-appearance: none;
+    -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;

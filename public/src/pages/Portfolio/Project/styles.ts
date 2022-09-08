@@ -13,6 +13,7 @@ export const Project = styled.div`
 
     img { 
         width: 100%;
+        height: auto;
         transition: all ease-in .3s;
     }
 

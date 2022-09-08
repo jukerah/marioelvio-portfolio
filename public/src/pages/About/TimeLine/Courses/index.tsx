@@ -40,7 +40,7 @@ export const Courses = () => {
                       ? `${course.start} - ${course.theEnd} | `
                       : `${course.theEnd} | `
                     }
-                    <span className="college color-hover">
+                    <span className="college">
                       {course.college}
                     </span>
                   </h3>

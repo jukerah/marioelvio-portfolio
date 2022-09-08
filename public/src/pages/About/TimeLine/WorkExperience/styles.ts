@@ -36,11 +36,13 @@ export const WorkInfo = styled.div<WorkInfoProps>`
     
     gap: 16px;
 
-    .job-role, .seniority, .activities {
+    .job-role,
+    .seniority,
+    .activities {
         color: var(${(props) => props.mode === 'dark' ? '--de-york' : '--green-pea'});
-
         font-weight: 700;
     }
 
-    .period-seniority, .activities { text-transform: uppercase; }
+    .period-seniority,
+    .activities { text-transform: uppercase; }
 `;

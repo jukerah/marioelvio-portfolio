@@ -35,7 +35,7 @@ export const WorkExperience = () => {
                 <ContainerInfo content={
                   <C.WorkInfo mode={theme.mode.status}>
                     <h3>
-                      <span className="job-role color-hover">
+                      <span className="job-role">
                         {work.jobRole[ lang as keyof typeof work.jobRole ]}
                       </span>
                       <> | </>
@@ -51,14 +51,14 @@ export const WorkExperience = () => {
                       {work.seniority[ lang as keyof typeof work.seniority ] !== "" && (
                         <>
                           <> | </>
-                          <span className="seniority color-hover">
+                          <span className="seniority">
                             {work.seniority[ lang as keyof typeof work.seniority ]}
                           </span>
                         </>
                       )}
                     </p>
                     <p>
-                      <span className="activities color-hover">
+                      <span className="activities">
                       {pageInfo.about.workExperience.activities[ lang as keyof typeof pageInfo.about.workExperience.activities ]}
                       </span>
                       <> {work.activities[ lang as keyof typeof work.activities ]}</>

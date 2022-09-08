@@ -36,7 +36,7 @@ export const Education = () => {
 
                 <ContainerInfo content={
                   <C.EducationInfo mode={theme.mode.status}>
-                    <h3 className="course color-hover">
+                    <h3 className="course">
                       {education.course[ lang as keyof typeof education.course ]}
                     </h3>
                     <p>
@@ -44,7 +44,7 @@ export const Education = () => {
                       <> - </>
                       {education.theEnd}
                       <> | </>
-                      <span className="college color-hover">
+                      <span className="college">
                         {education.college}
                       </span>
                     </p>

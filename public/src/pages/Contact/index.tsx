@@ -37,10 +37,6 @@ export const ContactPage = (props: Props) => {
     <C.ContactSection
       ref={props.page}
       mode={theme.mode.status}
-      background={(theme.mode.status === 'dark')
-        ? svgs.background.contact.dark
-        : svgs.background.contact.light
-      }
     >      
       <C.Container>
         <TitlePage title={contact.title} />

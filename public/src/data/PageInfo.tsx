@@ -36,7 +36,7 @@ export const pageInfo: PageDataType = {
             </span>,
         pt: <span className="title-work">
             Desenvolvedor <span className="accent-color">Front-end</span>
-          </span>
+            </span>
       }
     }
   },

@@ -26,7 +26,7 @@ export const Footer = styled.footer<FooterProps>`
         color: var(${(props) => props.mode === 'dark' ? '--white' : '--limed-spruce'});
     }
 
-    @media (min-width: 430px) { font-size: 1em; }
+    @media (min-width: 360px) { font-size: 1em; }
 
     @media (min-width: 768px) {
         height: 160px;

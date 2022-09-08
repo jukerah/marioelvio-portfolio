@@ -15,8 +15,8 @@ export const CardTech = (props: Props) => {
 
   return (
     <C.CardTech mode={theme.mode.status}>
-      <img className="img" src={props.src} alt={props.alt} />
-      <img className="img-hover" src={props.srcHover} alt={props.alt} />
+      <img className="img" src={props.src} alt={props.alt} loading="lazy" />
+      <img className="img-hover" src={props.srcHover} alt={props.alt} loading="lazy" />
       <figcaption>{props.tech}</figcaption>
     </C.CardTech>
   );

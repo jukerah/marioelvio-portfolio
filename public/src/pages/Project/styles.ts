@@ -66,6 +66,8 @@ export const Container = styled.div<ContainerProps>`
 
     img {
         width: 100%;
+        max-width: 1200px;
+        max-height: 720px;
         height: auto;
     }
     

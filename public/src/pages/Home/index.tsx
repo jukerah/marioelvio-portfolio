@@ -38,7 +38,6 @@ export const HomePage = (props: Props) => {
       backgroundPortrait={svgs.background.home.portrait}
     >
       <C.Container
-        className="load-container"
         isMenuOpen={theme.isMenuOpen.status}
         isActivedPage={props.isActivedPage === 'home' ? true : false}
       >
@@ -49,7 +48,7 @@ export const HomePage = (props: Props) => {
             mode={theme.mode.status}
             lang={lang}
           >
-            <h1 className="load-title">
+            <h1>
               {home.info.hello}
               <br />
               {home.info.name}
@@ -57,10 +56,7 @@ export const HomePage = (props: Props) => {
               {home.info.work}
             </h1>
 
-            <C.SocialButtons
-              className="load-social"
-              mode={theme.mode.status}
-            >
+            <C.SocialButtons mode={theme.mode.status}>
               <a
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/marioelvio/"
@@ -96,10 +92,7 @@ export const HomePage = (props: Props) => {
             </C.SocialButtons>
           </C.Info>
         </C.ContainerInfo>
-        <C.NavButtons
-          className="load-button"
-          isMenuOpen={theme.isMenuOpen.status}
-        >
+        <C.NavButtons isMenuOpen={theme.isMenuOpen.status}>
           <PrimaryButton
             text={home.button.moreAboutMe}
             backgroundColor={"--limed-spruce"}

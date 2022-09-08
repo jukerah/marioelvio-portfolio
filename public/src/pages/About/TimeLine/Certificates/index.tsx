@@ -38,7 +38,7 @@ export const Certificates = () => {
                   <h3>
                     {certificate.year}
                     <> | </>
-                    <span className="certificate-issuer color-hover">
+                    <span className="certificate-issuer">
                       {certificate.certificateIssuer}
                     </span>
                   </h3>

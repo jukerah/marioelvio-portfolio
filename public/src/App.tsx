@@ -13,21 +13,21 @@ function App() {
 
   return (
     <>
-        <GlobalStyle />
-        
-        <C.ContainerWeb>
+      <GlobalStyle />
+      
+      <C.ContainerWeb>
 
-          <MenuDesktop />
+        <MenuDesktop />
 
-          <C.ContainerMain
-            mode={theme.mode.status}
-            isMenuOpen={theme.isMenuOpen.status}
-          >
-            <Header />
-            <RouteList />
-          </C.ContainerMain>
+        <C.ContainerMain
+          mode={theme.mode.status}
+          isMenuOpen={theme.isMenuOpen.status}
+        >
+          <Header />
+          <RouteList />
+        </C.ContainerMain>
 
-        </C.ContainerWeb> 
+      </C.ContainerWeb> 
     </>
   );
 }

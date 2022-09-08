@@ -74,10 +74,6 @@ export const SelectButton = styled.select`
 
     &:focus { outline: none; }
 
-    option {
-        
-    }
-
     option:checked { background-color: var(--skeptic); }
 
     cursor: pointer;
