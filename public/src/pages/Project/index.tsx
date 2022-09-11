@@ -64,7 +64,7 @@ export const ProjectPage = (props: Props) => {
           <h1>{project.name}</h1>        
         </C.Header>
 
-        <img src={project.img} alt={project.alt}/>
+        <img src={project.img.sm} srcSet={`${project.img.sm} 300w, ${project.img.md} 768w, ${project.img.lg} 1024w`} alt={project.alt} />
 
         <C.Description mode={theme.mode.status}>
           <h2>{project.about.title}</h2>

@@ -30,7 +30,7 @@ export const GridMode = (props: Props) => {
             <Project
               key={index}
               name={project.name}
-              src={project.img}
+              src={project.img.sm}
               alt={project.alt}
               url={project.url}
             />
@@ -42,7 +42,7 @@ export const GridMode = (props: Props) => {
               <Project
                 key={index}
                 name={project.name}
-                src={project.img}
+                src={project.img.sm}
                 alt={project.alt}
                 url={project.url}
               />

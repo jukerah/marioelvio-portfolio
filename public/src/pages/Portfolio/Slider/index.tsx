@@ -67,7 +67,7 @@ export const SliderMode = (props: Props) => {
                 <Project
                   key={index}
                   name={project.name}
-                  src={project.img}
+                  src={project.img.lg}
                   alt={project.alt}
                   url={project.url}
                 />
@@ -79,7 +79,7 @@ export const SliderMode = (props: Props) => {
                   <Project
                     key={index}
                     name={project.name}
-                    src={project.img}
+                    src={project.img.lg}
                     alt={project.alt}
                     url={project.url}
                   />

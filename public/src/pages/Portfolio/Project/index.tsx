@@ -28,7 +28,8 @@ export const Project = (props: Props) => {
 
   return (
     <C.Project>
-      <img width="640" height="360" src={project.img.src} alt={project.img.alt} loading="lazy" />
+      <img width="1200" height="720" src={project.img.src} alt={project.img.alt} loading="lazy" />
+      
       <div className="project-info">
         <h3>{project.name}</h3>
         <Link to={`/portfolio/${project.url}`}>{project.button}</Link>

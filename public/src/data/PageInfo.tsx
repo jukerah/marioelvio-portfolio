@@ -809,17 +809,62 @@ export const pageInfo: PageDataType = {
       },
       list: [
         {
+          id: 3,
+          name: "devfinder",
+          description: {
+            en: "This is a challenge from the Frontend Mentor website. The challenge is to build an application to search GitHub users and return data from the searched profile.",
+            pt: "Este é um desafio do site Frontend Mentor. O desafio é construir uma aplicação para pesquisar usuários do GitHub e retornar dados do perfil pesquisado."
+          },
+          img: {
+            sm: require("../assets/banner/devfinder-sm.jpg"),
+            md: require("../assets/banner/devfinder-md.jpg"),
+            lg: require("../assets/banner/devfinder-lg.jpg")
+          },
+          alt: "devfinder",
+          url: "devfinder",
+          category: ["Front-end"],
+          technologies: [
+            "NPM",
+            "HTML5",
+            "React.js",
+            "JavaScript",
+            "Tailwind CSS",
+            "Hooks",
+            "API"
+          ],
+          resources: {
+            webSite: "https://devfinder-j35p36vcx-jukamebaj-gmailcom.vercel.app/",
+            gitHub: "https://github.com/jukerah/devfinder",
+            figma: ""
+          }
+        },
+        {
           id: 2,
           name: "Mario Elvio",
           description: {
             en: "This is a personal portfolio project. Project in development, so far a requirements survey, UI design, front-end development and deployment have been carried out.",
             pt: "Este é um projeto de portfólio pessoal. O projeto ainda está em desenvolvimento, até o momento foi feito um levantamento de requisitos, criação de UI design, desenvolvimento front-end e deploy."
           },
-          img: require("../assets/banner/mario-elvio.jpg"),
+          img: {
+            sm: require("../assets/banner/mario-elvio-sm.jpg"),
+            md: require("../assets/banner/mario-elvio-md.jpg"),
+            lg: require("../assets/banner/mario-elvio-lg.jpg")
+          },
           alt: "Mario Elvio",
           url: "mario-elvio",
           category: ["UI Design", "Front-end"],
-          technologies: ["Figma", "HTML5", "React.js", "TypeScript", "Styled Components", "React Router DOM","Hooks", "Context", "React Scroll"],
+          technologies: [
+            "Figma",
+            "NPM",
+            "HTML5",
+            "React.js",
+            "TypeScript",
+            "Styled Components",
+            "React Router DOM",
+            "Hooks",
+            "Context",
+            "React Scroll"
+          ],
           resources: {
             webSite: "https://www.marioelvio.com/",
             gitHub: "https://github.com/jukerah/marioelvio-portfolio",
@@ -833,12 +878,17 @@ export const pageInfo: PageDataType = {
             en: "This is a project for a corporate website for the company Boltz Carregadores. A requirements gathering, wireframe creation, UI design creation, logo adjustment, front-end development and deploy.",
             pt: "Este é um projeto de um site corporativo para empresa Boltz Carregadores. Foi feito um levantamento de requisitos, criação de wireframe, criação de UI design, ajuste no logotipo, desenvolvimento front-end e deploy."
           },
-          img: require("../assets/banner/boltz-carregadores.jpg"),
+          img: {
+            sm: require("../assets/banner/boltz-carregadores-sm.jpg"),
+            md: require("../assets/banner/boltz-carregadores-md.jpg"),
+            lg: require("../assets/banner/boltz-carregadores-lg.jpg"),
+          },
           alt: "Boltz Carregadores",
           url: "boltz-carregadores",
           category: ["UI Design", "Front-end"],
           technologies: [
             "Figma",
+            "NPM",
             "HTML5",
             "React.js",
             "TypeScript",

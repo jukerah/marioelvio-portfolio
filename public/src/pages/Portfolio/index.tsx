@@ -17,7 +17,7 @@ export const PortfolioPage = (props: Props) => {
   const { theme } = useContext(Context);
   const lang: string = theme.lang.status;
 
-  const [ showMode, setShowMode ] = useState<"slider" | "grid">("slider");
+  const [ showMode, setShowMode ] = useState<"slider" | "grid">("grid");
   const [ searchValue, setSearchValue ] = useState<string>("All");
 
   const portfolio = {

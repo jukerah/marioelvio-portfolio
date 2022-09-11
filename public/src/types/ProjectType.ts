@@ -4,7 +4,11 @@ export type ProjectType = {
   id: number;
   name: string;
   description: LangType;
-  img: string;
+  img: {
+    sm: string;
+    md: string;
+    lg: string;
+  }
   alt: string;
   url:string;
   category: string[];

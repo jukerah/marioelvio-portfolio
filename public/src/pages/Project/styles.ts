@@ -36,6 +36,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
     display: flex;
+    align-items: center;
     flex-direction: column;
     box-sizing: border-box;
 
