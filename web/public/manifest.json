@@ -1,0 +1,28 @@
+{
+  "short_name": "Mario",
+  "name": "Mario Elvio",
+  "icons": [
+    {
+      "src": "image/png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "mario-elvio-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "mario-elvio-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://www.marioelvio.com",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "description": "Front-end developer"
+}
