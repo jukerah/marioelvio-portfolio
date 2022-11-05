@@ -1,52 +1,65 @@
-# Mario Elvio Portfolio
+# Mario Elvio Portfólio
 
-<img src="preview.jpg"/>
+<img src="preview/preview.jpg"/>
 
 <br>
 
-Summary
+Sumário
 =================
 <!--ts-->
-   * [Project description](#about)
-   * [Project Deployment](#demo-project)
+   * [Descrição do Projeto](#about)
+   * [Deploy do Projeto](#demo-project)
    * [Features](#features)
-   * [Prerequisites and project installation](#pre-req)
+   * [Pré-requisitos e instalação do projeto](#pre-req)
 <!--te-->
 
 <hr/>
 
-<h2 id="about">Project Description</h2>
+<h2 id="about">Descrição do Projeto</h2>
 <br />
 
-> This project is a personal site to talk about myself and publish the projects I developed or worked on. The technologies used for the development of this site were chosen according to the project's need for code reuse, easy maintenance, readability and the entire design was thought for mobile first.
+> Este projeto é um site pessoal para falar sobre mim e publicar os projetos que desenvolvi ou trabalhei. As tecnologias utilizadas para o desenvolvimento deste site foram escolhidas de acordo com a necessidade do projeto de reutilização de código, fácil manutenção, legibilidade e todo o design foi pensado para mobile first.
 
-<br />
-
-### Functionalities:
-* coming soon.
 
 <br />
 
-### Technologies used in development:
+### Design da interface com Figma:
+### Link: <a align="left" href="https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1">https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1</a>
 
-* <strong>Figma</strong> - Editor for creating the interface design.
-* <strong>PhotoShop</strong> - Software used for image editing.
-* <strong>HTML5</strong> - Markup language.
-* <strong>React.js</strong> - Library for front-end development.
-* <strong>TypeScript</strong> - Programming language used in development.
-* <strong>styled-components</strong> - React library used for styling.
-* <strong>Node.js</strong> - Server-side development.
-* <strong>Mysql</strong> - Database.
+<br />
+
+### Tecnologias e dependências utilizadas no projeto:
+* <strong>Figma</strong> - Editor para criar o design da interface.
+* <strong>PhotoShop</strong> - Software usado para edição de imagens.
+* <strong>HTML5</strong> - Linguagem de marcação.
+* <strong>React.js</strong> - Biblioteca para desenvolvimento front-end.
+* <strong>TypeScript</strong> - Linguagem de programação usada no desenvolvimento.
+* <strong>Styled Components</strong> - Biblioteca React usada para estilização.
+* <strong>Node.js</strong> - Desenvolvimento no lado do servidor.
+* <strong>MySQL</strong> - Banco de dados.
 
 <hr/>
 
-<h2 id="demo-project">Project Deployment</h2>
+<h2 id="demo-project">Deploy do Projeto</h2>
 
-### Interface design with Figma:
-<a align="left" href="https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1">https://www.figma.com/file/t85caWsRB2xisvnuplY9An/Mario-Elvio?node-id=0%3A1</a>
+<br />
 
-### Deploy:
-<a align="left" href="https://www.marioelvio.com/" target="_blank">https://www.marioelvio.com/</a>
+### Deploy front-end:
+> O deploy do front-end foi realizado na hostinger.
+
+<br />
+
+### Link: <a align="left" href="https://www.marioelvio.com/" target="_blank">https://www.marioelvio.com/</a>
+
+<br />
+
+### Deploy do back-end:
+> Em breve.
+
+<br />
+
+### Deploy do banco de dados:
+> Em breve.
 
 <hr/>
 
@@ -54,12 +67,12 @@ Summary
 
 <br />
 
-> The project is still in development and the next steps will be updated below:
+> Projeto ainda está em desenvolvimento e os próximos passos serão atualizados abaixo:
 
 * [X] Requirements gathering.
 * [X] Interface design.
 * [X] Svgs adjustments.
-#### Front-end:
+### Front-end:
 * [X] Project structure (folders, color palette, fonts and routes).
 * [X] Header
 * [X] Menu
@@ -71,7 +84,8 @@ Summary
 * [X] Project page
 * [X] Blog page
 * [X] Contact page
-<br />AdminPanel:
+
+### AdminPanel:
 * [ ] Login page
 * [ ] Settings page
 * [ ] About page
@@ -88,33 +102,38 @@ Summary
 * [ ] Edit portfolio page
 * [ ] Technologies page
 
-#### Back-end:
-> coming soon.
+### Back-end:
+> Em breve.
 
 #### Database:
-> coming soon.
+* [X] Database model
+
+<img src="preview/database_model.png"/>
+
+* [ ] Create database
 
 <hr/>
 
-<h2 id="pre-req">Prerequisites and project installation</h2>
+<h2 id="pre-req">Pré-requisitos e instalação do projeto</h2>
 
 ### Public (Front-end):
-#### Installation:
+#### Instalação:
 #### `npm install`
-#### Execution:
+#### Execução:
 #### `npm start`
 
 #### Build:
 #### `npm run build`
 
+<br />
 
 ### Server (Back-end):
+> Em breve.
 
-> coming soon.
+<br />
 
 ### Database:
-
-> coming soon.
+> Em breve.
 
 <hr/>
 
@@ -124,7 +143,7 @@ Summary
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81795443?v=4" width="100px;" alt=""/>
 </a> <a href="https://marioelvio.com" title="Mario Elvio" target="_blank"></a>
 
-<p>Developed by <a href="https://marioelvio.com">Mario Elvio</a>.</p>
+<p>Desenvolvido por <a href="https://marioelvio.com">Mario Elvio</a>.</p>
 
 [![Linkedin Badge](https://img.shields.io/badge/-Mario_Elvio-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/marioelvio/)](https://www.linkedin.com/in/marioelvio/)
 
