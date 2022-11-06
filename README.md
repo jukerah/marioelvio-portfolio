@@ -137,7 +137,7 @@ Sumário
 
 <hr/>
 
-<h2 align="center">Author</h2>
+<h2 align="center">Autor</h2>
 
 <a href="https://marioelvio.com" target="_blank">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/81795443?v=4" width="100px;" alt=""/>
