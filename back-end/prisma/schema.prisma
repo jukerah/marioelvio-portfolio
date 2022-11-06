@@ -13,6 +13,8 @@ datasource db {
 model Language {
   id                 String               @id @default(uuid())
   name               String
+  active             Boolean
+  flag_url           String
   About              About[]
   SoftSkillDetails   SoftSkillDetails[]
   CourseDetails      CourseDetails[]

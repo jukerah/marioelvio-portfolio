@@ -74,43 +74,98 @@ Sumário
 * [X] Svgs adjustments.
 ### Front-end:
 * [X] Project structure (folders, color palette, fonts and routes).
-* [X] Header
-* [X] Menu
-* [X] Footer
-* [X] Multi-language
-* [X] Home page
-* [X] About page
-* [X] Portfolio page
-* [X] Project page
-* [X] Blog page
-* [X] Contact page
+* [X] Header.
+* [X] Menu.
+* [X] Footer.
+* [X] Multi-language.
+* [X] Home page.
+* [X] About page.
+* [X] Portfolio page.
+* [X] Project page.
+* [X] Blog page.
+* [X] Contact page.
 
 ### AdminPanel:
-* [ ] Login page
-* [ ] Settings page
-* [ ] About page
-* [ ] Resume page
-* [ ] Personal details page
-* [ ] My interests page
-* [ ] Work Experience page
-* [ ] Education page
-* [ ] Certificates page
-* [ ] Courses page
-* [ ] Soft Skills page
-* [ ] Hard Skills page
-* [ ] Portfolio list page
-* [ ] Edit portfolio page
-* [ ] Technologies page
+* [ ] Login page.
+* [ ] Settings page.
+* [ ] About page.
+* [ ] Resume page.
+* [ ] Personal details page.
+* [ ] My interests page.
+* [ ] Work Experience page.
+* [ ] Education page.
+* [ ] Certificates page.
+* [ ] Courses page.
+* [ ] Soft Skills page.
+* [ ] Hard Skills page.
+* [ ] Portfolio list page.
+* [ ] Edit portfolio page.
+* [ ] Technologies page.
 
 ### Back-end:
-> Em breve.
+* [X] Configurar Prisma schema.
+
+* [ ] Cadastrar usuário (Limite de apenas um usuário).
+* [ ] Listar dados do usuário.
+* [ ] Editar usuário.
+
+* [ ] Cadastrar idiomas (ao criar um idioma deve ser inserido uma linha para cada idioma cadastrato na tabela "about").
+* [ ] Editar idiomas.
+* [ ] Listar idiomas.
+
+* [ ] Editor about (fornecer um idioma para editar os dados).
+* [ ] Listar about.
+
+* [ ] Cadastrar meus interesses.
+* [ ] Listar meus interesses.
+* [ ] Deletar interesse.
+
+* [ ] Cadastrar experiencia de trabalho (ao iniciar o cadastro deve ser criar uma linha na tabela "work_experience" e uma linha para cada idioma na tabela "work_details").
+* [ ] Listar experiencias de trabalho.
+* [ ] Editar experiencia de trabalho (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar experiencia de trabalho.
+
+* [ ] Cadastrar curso (ao iniciar o cadastro deve ser criar uma linha na tabela "courses" e uma linha para cada idioma na tabela "course_details").
+* [ ] Listar cursos.
+* [ ] Editar curso (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar curso.
+
+* [ ] Cadastrar educação (ao iniciar o cadastro deve ser criar uma linha na tabela "education" e uma linha para cada idioma na tabela "education_details").
+* [ ] Listar educação.
+* [ ] Editar educação (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar educação.
+
+* [ ] Cadastrar certificados (ao iniciar o cadastro deve ser criar uma linha na tabela "certificates" e uma linha para cada idioma na tabela "certificate_details").
+* [ ] Listar certificados.
+* [ ] Editar certificado (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar certificado.
+
+* [ ] Cadastrar soft skill (ao iniciar o cadastro deve ser criar uma linha na tabela "soft_skills" e uma linha para cada idioma na tabela "soft_skills_details").
+* [ ] Listar soft skills.
+* [ ] Editar soft skill (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar soft skills.
+
+* [ ] Cadastrar hard skill (ao iniciar o cadastro deve ser criar uma linha na tabela "hard_skills" e uma linha para cada idioma na tabela "hard_skills_details").
+* [ ] Listar hard skills.
+* [ ] Editar hard skill (após abrir cadastro fornecer um idioma para editar os dados).
+* [ ] Deletar hard skills.
+
+* [ ] Cadastrar tecnologia.
+* [ ] Listar tecnologias.
+* [ ] Editar tecnologia.
+* [ ] Deletar tecnologia.
+
+* [ ] Cadastrar projeto (ao iniciar o cadastro deve ser criar uma linha na tabela "projects" e uma linha para cada idioma na tabela "project_description").
+* [ ] Listar projetos.
+* [ ] Editar projeto.
+* [ ] Deletar projeto.
 
 #### Database:
 * [X] Database model
 
 <img src="preview/database_model.png"/>
 
-* [ ] Create database
+* [X] Create database.
 
 <hr/>
 
