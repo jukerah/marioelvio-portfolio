@@ -9,3 +9,240 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Language {
+  id                 String               @id @default(uuid())
+  name               String
+  About              About[]
+  SoftSkillDetails   SoftSkillDetails[]
+  CourseDetails      CourseDetails[]
+  EducationDetails   EducationDetails[]
+  CertificateDetails CertificateDetails[]
+  WorkDetails        WorkDetails[]
+  ProjectDescription ProjectDescription[]
+
+  @@map("languages")
+}
+
+model User {
+  id       String @id @default(uuid())
+  username String
+  password String
+  email    String
+  phone    String
+  address  String
+  linkedin String
+  github   String
+  youtube  String
+
+  @@map("user")
+}
+
+model About {
+  id_language            String @unique
+  person_resume          String
+  professional_resume    String
+  cv_url                 String
+  soft_skill_description String
+  hard_skill_description String
+
+  language Language @relation(fields: [id_language], references: [id])
+
+  @@map("about")
+}
+
+model SoftSkills {
+  id        String             @id @default(uuid())
+  SoftSkill SoftSkillDetails[]
+
+  @@map("soft_skills")
+}
+
+model SoftSkillDetails {
+  id_language   String @unique
+  name          String
+  description   String
+  id_soft_skill String
+
+  language    Language   @relation(fields: [id_language], references: [id])
+  softSkillId SoftSkills @relation(fields: [id_soft_skill], references: [id])
+
+  @@map("soft_skill_details")
+}
+
+model Courses {
+  id            String          @id @default(uuid())
+  CourseDetails CourseDetails[]
+
+  @@map("courses")
+}
+
+model CourseDetails {
+  id_language String   @unique
+  course      String
+  college     String
+  year        DateTime
+  id_course   String
+
+  language Language @relation(fields: [id_language], references: [id])
+  courseId Courses  @relation(fields: [id_course], references: [id])
+
+  @@map("course_details")
+}
+
+model Education {
+  id               String             @id @default(uuid())
+  EducationDetails EducationDetails[]
+
+  @@map("education")
+}
+
+model EducationDetails {
+  id_language  String   @unique
+  course       String
+  start        DateTime
+  the_end      DateTime
+  current      Boolean
+  id_education String
+
+  language    Language  @relation(fields: [id_language], references: [id])
+  educationId Education @relation(fields: [id_education], references: [id])
+
+  @@map("education_details")
+}
+
+model Certificates {
+  id                 String               @id @default(uuid())
+  CertificateDetails CertificateDetails[]
+
+  @@map("certificates")
+}
+
+model CertificateDetails {
+  id_language        String   @unique
+  certificate_issuer String
+  certificates       String
+  year               DateTime
+  id_certificate     String
+
+  language      Language     @relation(fields: [id_language], references: [id])
+  certificateId Certificates @relation(fields: [id_certificate], references: [id])
+
+  @@map("certificate_details")
+}
+
+model WorkExperience {
+  id          String        @id @default(uuid())
+  WorkDetails WorkDetails[]
+
+  @@map("work_experience")
+}
+
+model WorkDetails {
+  id_language        String   @unique
+  company            String
+  job_role           String
+  start              DateTime
+  the_end            DateTime
+  current            Boolean
+  seniority          String
+  activities         String
+  id_work_experience String
+
+  language Language       @relation(fields: [id_language], references: [id])
+  workId   WorkExperience @relation(fields: [id_work_experience], references: [id])
+
+  @@map("work_details")
+}
+
+model Technologies {
+  id                  String                @id @default(uuid())
+  name                String
+  primary_image_url   String
+  light_image_url     String
+  dark_image_url      String
+  MyInterests         MyInterests[]
+  HardSkills          HardSkills[]
+  ProjectTechnologies ProjectTechnologies[]
+
+  @@map("technologies")
+}
+
+model MyInterests {
+  id            String @id @default(uuid())
+  id_technology String
+
+  technologyId Technologies @relation(fields: [id_technology], references: [id])
+
+  @@map("my_interests")
+}
+
+model Stack {
+  id            String          @id @default(uuid())
+  name          String
+  HardSkills    HardSkills[]
+  ProjectStacks ProjectStacks[]
+
+  @@map("stack")
+}
+
+model HardSkills {
+  id            String @id @default(uuid())
+  id_technology String
+  id_stack      String
+
+  technologyId Technologies @relation(fields: [id_technology], references: [id])
+  stackId      Stack        @relation(fields: [id_stack], references: [id])
+
+  @@map("hard_skills")
+}
+
+model Projects {
+  id          String    @id @default(uuid())
+  name        String
+  banner_url  String
+  website_url String
+  github_url  String
+  figma_url   String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  ProjectStacks       ProjectStacks[]
+  ProjectTechnologies ProjectTechnologies[]
+  ProjectDescription  ProjectDescription[]
+
+  @@map("projects")
+}
+
+model ProjectStacks {
+  id         String @id @default(uuid())
+  id_project String
+  id_stack   String
+
+  projectId Projects @relation(fields: [id_project], references: [id])
+  stackId   Stack    @relation(fields: [id_stack], references: [id])
+
+  @@map("project_stacks")
+}
+
+model ProjectTechnologies {
+  id            String @id @default(uuid())
+  id_project    String
+  id_technology String
+
+  projectId    Projects     @relation(fields: [id_project], references: [id])
+  technologyId Technologies @relation(fields: [id_technology], references: [id])
+
+  @@map("project_technologies")
+}
+
+model ProjectDescription {
+  id_language String @unique
+  description String
+  id_project  String
+
+  language  Language @relation(fields: [id_language], references: [id])
+  projectId Projects @relation(fields: [id_project], references: [id])
+
+  @@map("project_description")
+}
