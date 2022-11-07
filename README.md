@@ -180,6 +180,11 @@ Sumário
       "youtube": "https://www.youtube.com/channel/UCIuG63VswXMTYUuzeZgqRjw"
    }
   ```
+  
+  #### Bearer Token:
+  `TOKEN: token recebi ao logar usuário`
+
+  `PREFIX: Bearer`
 
 * [ ] Cadastrar idiomas (ao criar um idioma deve ser inserido uma linha para cada idioma cadastrato na tabela "about").
 * [ ] Editar idiomas.
