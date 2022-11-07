@@ -105,8 +105,8 @@ Sumário
 ### Back-end:
 * [X] Configurar Prisma schema.
 
-* [ ] Cadastrar usuário (Limite de apenas um usuário).
-* [ ] Listar dados do usuário.
+* [X] Cadastrar usuário (Limite de apenas um usuário).
+* [X] Listar dados do usuário.
 * [ ] Editar usuário.
 
 * [ ] Cadastrar idiomas (ao criar um idioma deve ser inserido uma linha para cada idioma cadastrato na tabela "about").
