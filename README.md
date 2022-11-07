@@ -107,6 +107,7 @@ Sumário
 
 * [X] Cadastrar usuário (Limite de apenas um usuário).
 * [X] Listar dados do usuário.
+* [X] Login do usuário.
 * [X] Editar usuário.
 
 * [ ] Cadastrar idiomas (ao criar um idioma deve ser inserido uma linha para cada idioma cadastrato na tabela "about").

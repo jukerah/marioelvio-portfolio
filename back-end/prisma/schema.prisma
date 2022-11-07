@@ -32,7 +32,6 @@ model User {
   password String
   email    String
   phone    String
-  address  String
   linkedin String
   github   String
   youtube  String
@@ -45,6 +44,7 @@ model About {
   person_resume          String
   professional_resume    String
   cv_url                 String
+  address                String
   soft_skill_description String
   hard_skill_description String
 

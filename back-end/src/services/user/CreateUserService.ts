@@ -13,13 +13,13 @@ class CreateUserService {
     if (!email) throw new Error("Email is required!");
     if (!password) throw new Error("Password is required!");
     
-    const emailAlreadyExists = await prismaClient.user.aggregate({
+    const userAlreadyRegistered = await prismaClient.user.aggregate({
       _count: {
         id: true,
       },
     });
 
-    if (emailAlreadyExists._count.id >= 1) throw new Error("User already registered!");
+    if (userAlreadyRegistered._count.id >= 1) throw new Error("User already registered!");
 
     const passwordHash = await hash(password, 8);
 
@@ -29,15 +29,9 @@ class CreateUserService {
         email: email,
         password: passwordHash,
         phone: "",
-        address: "",
         linkedin: "",
         github: "",
         youtube: ""
-      },
-      select: {
-        id: true,
-        username: true,
-        email: true
       }
     });
 

@@ -3,6 +3,7 @@ import { Router, Request, Response } from 'express';
 import { CreateUserController } from '../controllers/user/CreateUserController';
 import { DetailUserController } from '../controllers/user/DetailUserController';
 import { AuthUserController } from '../services/user/AuthUserController';
+import { UpdateUserController } from '../controllers/user/UpdateUserController';
 
 import { isAuthenticated } from '../middlewares/isAuthenticated';
 
@@ -15,5 +16,6 @@ router.get('/test', (req: Request, res: Response) => {
 router.post('/user', new CreateUserController().handle);
 router.get('/user', new DetailUserController().handle);
 router.post('/session', new AuthUserController().handle);
+router.put('/user', isAuthenticated, new UpdateUserController().handle);
 
 export { router };
