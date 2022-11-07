@@ -34,9 +34,16 @@ Sumário
 * <strong>HTML5</strong> - Linguagem de marcação.
 * <strong>React.js</strong> - Biblioteca para desenvolvimento front-end.
 * <strong>TypeScript</strong> - Linguagem de programação usada no desenvolvimento.
-* <strong>Styled Components</strong> - Biblioteca React usada para estilização.
-* <strong>Node.js</strong> - Desenvolvimento no lado do servidor.
+* <strong>Styled Components</strong> - Usada para estilização.
+* <strong>Node.js</strong> - É um runtime, que nada mais é do que um conjunto de códigos, API’s, ou seja, são bibliotecas responsáveis pelo tempo de execução (é o que faz o seu programa rodar) que funciona como um interpretador de JavaScript fora do ambiente do navegador web..
 * <strong>MySQL</strong> - Banco de dados.
+* <strong>Express</strong> - Framework para Node.js que fornece recursos mínimos para construção de servidores web.
+* <strong>Prisma</strong> - Biblioteca open source, um ORM de próxima geração cuja arquitetura é desenhada em três camadas fundamentais: Prisma Client: um construtor de queries gerado automaticamente e type-safe para Node.js e TypeScript.
+* <strong>Cors</strong> - Biblioteca para um sistema que consiste na transmissão de HTTP headers (en-US), que determina se navegadores vão bloquear código JavaScript de acessarem respostas provindas de requisições entre origens.
+* <strong>Bcryptjs</strong> - Biblioteca para encriptação de dados.
+* <strong>Dotenv</strong> - Biblioteca que carrega automaticamente as variáveis de ambiente de um arquivo.
+* <strong>Jsonwebtoken</strong> - Biblioteca para criação de dados com assinatura opcional e/ou criptografia cujo payload contém o JSON que afirma algum número de declarações.
+* <strong>Multer</strong> - Biblioteca middleware que vai interceptar o upload e salvar o arquivo em uma pasta do disco.
 
 <hr/>
 
