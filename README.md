@@ -106,9 +106,73 @@ Sumário
 * [X] Configurar Prisma schema.
 
 * [X] Cadastrar usuário (Limite de apenas um usuário).
+  #### Método:
+  > POST
+
+  #### Rota:
+  > /user
+
+  #### json:
+  ``` json
+   {
+      "username": "username",
+      "email": "exemplo@exemplo.com",
+      "password": "12345678"
+   }
+  ```
+
 * [X] Listar dados do usuário.
+  #### Método:
+  > GET
+
+  #### Rota:
+  > /user
+
 * [X] Login do usuário.
+  #### Método:
+  > POST
+
+  #### Rota:
+  > /session
+
+  #### json:
+  ``` json
+   {
+      "username": "username",
+      "password": "12345678"
+   }
+  ```
+
+  > Ao fazer login irá retornar os dados do usuário e o token que será utilizado para as proximas APIs.
+
+  #### resposta exemplo:
+  ``` json
+   {
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "username": "username",
+      "email": "exemplo@exemplo.com",
+      "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   }
+  ```
+
 * [X] Editar usuário.
+  #### Método:
+  > PUT
+
+  #### Rota:
+  > /user
+
+  #### json:
+  ``` json
+   {
+      "id_user": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "email": "exemplo@exemplo.com",
+      "phone": "+55 99 99999-9999",
+      "linkedin": "https://www.linkedin.com/in/marioelvio/",
+      "github": "https://github.com/jukerah/",
+      "youtube": "https://www.youtube.com/channel/UCIuG63VswXMTYUuzeZgqRjw"
+   }
+  ```
 
 * [ ] Cadastrar idiomas (ao criar um idioma deve ser inserido uma linha para cada idioma cadastrato na tabela "about").
 * [ ] Editar idiomas.
@@ -184,12 +248,51 @@ Sumário
 <br />
 
 ### Server (Back-end):
-> Em breve.
+#### Instalação:
+#### `npm install`
+#### Execução:
+#### `yarn dev`
 
 <br />
 
-### Database:
-> Em breve.
+#### Banco de dados localhost:
+
+- Instalar MySQL.
+- Abrir o MySQL Workbench no localhost.
+- Executar as queries abaixo:
+
+``` sql
+CREATE DATABASE db_name;
+```
+
+``` sql
+USE db_name;
+```
+
+<br>
+
+#### Configurando variavel de ambiente:
+
+#### Arquivo: `marioelvio-portfolio/back-end/.env`
+
+<br>
+
+#### `DATABASE_URL="mysql://user:password@host:port/db_name"`
+
+<br>
+
+#### Criando a Migrate em desenvolvimento:
+
+#### marioelvio-portfolio\back-end>
+`yarn prisma migrate dev`
+
+<br>
+
+#### Criando a Migrate em produção:
+
+#### marioelvio-portfolio\back-end>
+`yarn prisma migrate deploy`
+
 
 <hr/>
 
