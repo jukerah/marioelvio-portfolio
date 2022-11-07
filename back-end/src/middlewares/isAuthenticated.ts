@@ -1,35 +1,35 @@
-// import { NextFunction, Request, Response } from "express";
-// import { verify } from "jsonwebtoken";
+import { NextFunction, Request, Response } from "express";
+import { verify } from "jsonwebtoken";
 
-// interface PayLoad {
-//   sub: string;
-// }
+interface PayLoad {
+  sub: string;
+}
 
-// export const isAuthenticated = (
-//   req: Request,
-//   res: Response,
-//   next: NextFunction
-// ) => {
-//   const authToken = req.headers.authorization;
+export const isAuthenticated = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const authToken = req.headers.authorization;
 
-//   if (!authToken) return res.status(401).json({
-//     error: "User not authenticated."
-//   }).end();
+  if (!authToken) return res.status(401).json({
+    error: "User not authenticated."
+  }).end();
 
-//   const [, token] = authToken.split(" ");
+  const [, token] = authToken.split(" ");
 
-//   try {
-//     const { sub } = verify(
-//       token,
-//       process.env.JWT_SECRET
-//     ) as PayLoad;
+  try {
+    const { sub } = verify(
+      token,
+      process.env.JWT_SECRET
+    ) as PayLoad;
 
-//     req.user_id = sub;
+    req.id_user = sub;
 
-//     return next();
-//   } catch (err) {
-//     return res.status(401).json({
-//       error: "User not authenticated."
-//     }).end();
-//   }
-// }
+    return next();
+  } catch (err) {
+    return res.status(401).json({
+      error: "User not authenticated."
+    }).end();
+  }
+}
